@@ -23,7 +23,11 @@ import matplotlib
 import matplotlib.pyplot as plt
 
 """
-CUDA_VISIBLE_DEVICES=0 python main.py --logdir logs/test_run --model deeplabv3plus_mobilenet --dataset cityscapes --enable_vis --vis_port 8097 --gpu_id 0  --lr 0.1  --crop_size 256 --batch_size 16 --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes
+nohup sh -c 'CUDA_VISIBLE_DEVICES=1 python main.py \
+    --logdir logs/test_run \
+        --model deeplabv3plus_mobilenet --dataset cityscapes --enable_vis --vis_port 8097 --gpu_id 0  --lr 0.1  --crop_size 256 --batch_size 16 \
+            --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
+            2>&1 | tee -a nohup_output-test_run.log &
 
 python -m visdom.server -p 8097
 
@@ -274,6 +278,9 @@ def main():
     torch.manual_seed(opts.random_seed)
     np.random.seed(opts.random_seed)
     random.seed(opts.random_seed)
+    # set deterministic cudnn
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
 
     # Setup dataloader
     if opts.dataset == 'voc' and not opts.crop_val:
