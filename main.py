@@ -5,6 +5,9 @@ import os
 import random
 import argparse
 import numpy as np
+import logging
+from pathlib import Path
+import datetime
 
 from torch.utils import data
 from datasets import VOCSegmentation, Cityscapes
@@ -19,11 +22,16 @@ from PIL import Image
 import matplotlib
 import matplotlib.pyplot as plt
 
+"""
+CUDA_VISIBLE_DEVICES=0 python main.py --logdir logs/test_run --model deeplabv3plus_mobilenet --dataset cityscapes --enable_vis --vis_port 8097 --gpu_id 0  --lr 0.1  --crop_size 256 --batch_size 16 --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes
 
+python -m visdom.server -p 8097
+
+"""
 def get_argparser():
     parser = argparse.ArgumentParser()
 
-    # Datset Options
+    # Dataset Options
     parser.add_argument("--data_root", type=str, default='./datasets/data',
                         help="path to Dataset")
     parser.add_argument("--dataset", type=str, default='voc',
@@ -59,7 +67,8 @@ def get_argparser():
                         help='batch size (default: 16)')
     parser.add_argument("--val_batch_size", type=int, default=4,
                         help='batch size for validation (default: 4)')
-    parser.add_argument("--crop_size", type=int, default=513)
+    
+    parser.add_argument("--crop_size", type=int, default=256)
 
     parser.add_argument("--ckpt", default=None, type=str,
                         help="restore from checkpoint")
@@ -93,7 +102,34 @@ def get_argparser():
                         help='env for visdom')
     parser.add_argument("--vis_num_samples", type=int, default=8,
                         help='number of samples for visualization (default: 8)')
+
+    # Log directory
+    parser.add_argument("--logdir", type=str, default=None,
+                        help="path to the log directory")
+
     return parser
+
+
+def init_logging(logdir):
+    r"""
+    Create log directory for storing checkpoints and output images.
+    Given a log dir like logs/test_run, creates a new directory logs/2020_0101_1234_test_run
+
+    Args:
+        logdir (str): Log directory name
+    """
+    # log dir
+    date_uid = str(datetime.datetime.now().strftime("%Y_%m%d_%H%M_%S"))
+    logdir_path = Path(logdir)
+    logdir = str(logdir_path.parent / f"{date_uid}_{logdir_path.name}")
+    os.makedirs(logdir, exist_ok=True)
+    # log file
+    log_file = os.path.join(logdir, 'log.log')
+    logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', level=logging.INFO)
+    fh = logging.FileHandler(log_file, mode='w')
+    fh.setFormatter(logging.Formatter('%(asctime)s %(levelname)s %(message)s'))
+    logging.getLogger().addHandler(fh)
+    return logdir
 
 
 def get_dataset(opts):
@@ -101,7 +137,7 @@ def get_dataset(opts):
     """
     if opts.dataset == 'voc':
         train_transform = et.ExtCompose([
-            # et.ExtResize(size=opts.crop_size),
+            et.ExtResize(size=opts.crop_size),
             et.ExtRandomScale((0.5, 2.0)),
             et.ExtRandomCrop(size=(opts.crop_size, opts.crop_size), pad_if_needed=True),
             et.ExtRandomHorizontalFlip(),
@@ -111,6 +147,7 @@ def get_dataset(opts):
         ])
         if opts.crop_val:
             val_transform = et.ExtCompose([
+                et.ExtResize(size=opts.crop_size),
                 et.ExtResize(opts.crop_size),
                 et.ExtCenterCrop(opts.crop_size),
                 et.ExtToTensor(),
@@ -119,6 +156,7 @@ def get_dataset(opts):
             ])
         else:
             val_transform = et.ExtCompose([
+                et.ExtResize(size=opts.crop_size),
                 et.ExtToTensor(),
                 et.ExtNormalize(mean=[0.485, 0.456, 0.406],
                                 std=[0.229, 0.224, 0.225]),
@@ -158,15 +196,17 @@ def validate(opts, model, loader, device, metrics, ret_samples_ids=None):
     metrics.reset()
     ret_samples = []
     if opts.save_val_results:
-        if not os.path.exists('results'):
-            os.mkdir('results')
+        if opts.logdir is not None:
+            results_dir = os.path.join(opts.logdir, 'results')
+            os.makedirs(results_dir, exist_ok=True)
+        else:
+            results_dir = 'results'
         denorm = utils.Denormalize(mean=[0.485, 0.456, 0.406],
                                    std=[0.229, 0.224, 0.225])
         img_id = 0
 
     with torch.no_grad():
         for i, (images, labels) in tqdm(enumerate(loader)):
-
             images = images.to(device, dtype=torch.float32)
             labels = labels.to(device, dtype=torch.long)
 
@@ -189,9 +229,9 @@ def validate(opts, model, loader, device, metrics, ret_samples_ids=None):
                     target = loader.dataset.decode_target(target).astype(np.uint8)
                     pred = loader.dataset.decode_target(pred).astype(np.uint8)
 
-                    Image.fromarray(image).save('results/%d_image.png' % img_id)
-                    Image.fromarray(target).save('results/%d_target.png' % img_id)
-                    Image.fromarray(pred).save('results/%d_pred.png' % img_id)
+                    Image.fromarray(image).save(os.path.join(results_dir, '%d_image.png' % img_id))
+                    Image.fromarray(target).save(os.path.join(results_dir, '%d_target.png' % img_id))
+                    Image.fromarray(pred).save(os.path.join(results_dir, '%d_pred.png' % img_id))
 
                     fig = plt.figure()
                     plt.imshow(image)
@@ -200,7 +240,7 @@ def validate(opts, model, loader, device, metrics, ret_samples_ids=None):
                     ax = plt.gca()
                     ax.xaxis.set_major_locator(matplotlib.ticker.NullLocator())
                     ax.yaxis.set_major_locator(matplotlib.ticker.NullLocator())
-                    plt.savefig('results/%d_overlay.png' % img_id, bbox_inches='tight', pad_inches=0)
+                    plt.savefig(os.path.join(results_dir, '%d_overlay.png' % img_id), bbox_inches='tight', pad_inches=0)
                     plt.close()
                     img_id += 1
 
@@ -210,6 +250,11 @@ def validate(opts, model, loader, device, metrics, ret_samples_ids=None):
 
 def main():
     opts = get_argparser().parse_args()
+
+    # init logging
+    if opts.logdir is not None:
+        opts.logdir = init_logging(opts.logdir)
+
     if opts.dataset.lower() == 'voc':
         opts.num_classes = 21
     elif opts.dataset.lower() == 'cityscapes':
@@ -217,13 +262,13 @@ def main():
 
     # Setup visualization
     vis = Visualizer(port=opts.vis_port,
-                     env=opts.vis_env) if opts.enable_vis else None
+                     env=opts.vis_env, logdir=opts.logdir) if opts.enable_vis else None
     if vis is not None:  # display options
         vis.vis_table("Options", vars(opts))
 
     os.environ['CUDA_VISIBLE_DEVICES'] = opts.gpu_id
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    print("Device: %s" % device)
+    logging.info("Device: %s" % device)
 
     # Setup random seed
     torch.manual_seed(opts.random_seed)
@@ -240,7 +285,7 @@ def main():
         drop_last=True)  # drop_last=True to ignore single-image batches.
     val_loader = data.DataLoader(
         val_dst, batch_size=opts.val_batch_size, shuffle=True, num_workers=2)
-    print("Dataset: %s, Train set: %d, Val set: %d" %
+    logging.info("Dataset: %s, Train set: %d, Val set: %d" %
           (opts.dataset, len(train_dst), len(val_dst)))
 
     # Set up model (all models are 'constructed at network.modeling)
@@ -257,15 +302,13 @@ def main():
         {'params': model.backbone.parameters(), 'lr': 0.1 * opts.lr},
         {'params': model.classifier.parameters(), 'lr': opts.lr},
     ], lr=opts.lr, momentum=0.9, weight_decay=opts.weight_decay)
-    # optimizer = torch.optim.SGD(params=model.parameters(), lr=opts.lr, momentum=0.9, weight_decay=opts.weight_decay)
-    # torch.optim.lr_scheduler.StepLR(optimizer, step_size=opts.lr_decay_step, gamma=opts.lr_decay_factor)
+
     if opts.lr_policy == 'poly':
         scheduler = utils.PolyLR(optimizer, opts.total_itrs, power=0.9)
     elif opts.lr_policy == 'step':
         scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=opts.step_size, gamma=0.1)
 
     # Set up criterion
-    # criterion = utils.get_loss(opts.loss_type)
     if opts.loss_type == 'focal_loss':
         criterion = utils.FocalLoss(ignore_index=255, size_average=True)
     elif opts.loss_type == 'cross_entropy':
@@ -274,6 +317,8 @@ def main():
     def save_ckpt(path):
         """ save current model
         """
+        if opts.logdir is not None:
+            path = os.path.join(opts.logdir, path)
         torch.save({
             "cur_itrs": cur_itrs,
             "model_state": model.module.state_dict(),
@@ -281,15 +326,17 @@ def main():
             "scheduler_state": scheduler.state_dict(),
             "best_score": best_score,
         }, path)
-        print("Model saved as %s" % path)
+        logging.info("Model saved as %s" % path)
 
-    utils.mkdir('checkpoints')
+    if opts.logdir is not None:
+        os.makedirs(opts.logdir, exist_ok=True)
+        os.makedirs(os.path.join(opts.logdir, 'checkpoints'), exist_ok=True)
+
     # Restore
     best_score = 0.0
     cur_itrs = 0
     cur_epochs = 0
     if opts.ckpt is not None and os.path.isfile(opts.ckpt):
-        # https://github.com/VainF/DeepLabV3Plus-Pytorch/issues/8#issuecomment-605601402, @PytaichukBohdan
         checkpoint = torch.load(opts.ckpt, map_location=torch.device('cpu'))
         model.load_state_dict(checkpoint["model_state"])
         model = nn.DataParallel(model)
@@ -299,24 +346,23 @@ def main():
             scheduler.load_state_dict(checkpoint["scheduler_state"])
             cur_itrs = checkpoint["cur_itrs"]
             best_score = checkpoint['best_score']
-            print("Training state restored from %s" % opts.ckpt)
-        print("Model restored from %s" % opts.ckpt)
+            logging.info("Training state restored from %s" % opts.ckpt)
+        logging.info("Model restored from %s" % opts.ckpt)
         del checkpoint  # free memory
     else:
-        print("[!] Retrain")
+        logging.info("[!] Retrain")
         model = nn.DataParallel(model)
         model.to(device)
 
     # ==========   Train Loop   ==========#
-    vis_sample_id = np.random.randint(0, len(val_loader), opts.vis_num_samples,
-                                      np.int32) if opts.enable_vis else None  # sample idxs for visualization
+    vis_sample_id = np.random.randint(0, len(val_loader), opts.vis_num_samples, np.int32) if opts.enable_vis else None  # sample idxs for visualization
     denorm = utils.Denormalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])  # denormalization for ori images
 
     if opts.test_only:
         model.eval()
         val_score, ret_samples = validate(
             opts=opts, model=model, loader=val_loader, device=device, metrics=metrics, ret_samples_ids=vis_sample_id)
-        print(metrics.to_str(val_score))
+        logging.info(metrics.to_str(val_score))
         return
 
     interval_loss = 0
@@ -341,21 +387,21 @@ def main():
             if vis is not None:
                 vis.vis_scalar('Loss', cur_itrs, np_loss)
 
-            if (cur_itrs) % 10 == 0:
-                interval_loss = interval_loss / 10
-                print("Epoch %d, Itrs %d/%d, Loss=%f" %
+            if (cur_itrs) % opts.print_interval == 0:
+                interval_loss = interval_loss / opts.print_interval 
+                logging.info("Epoch %d, Itrs %d/%d, Loss=%f" %
                       (cur_epochs, cur_itrs, opts.total_itrs, interval_loss))
                 interval_loss = 0.0
 
             if (cur_itrs) % opts.val_interval == 0:
                 save_ckpt('checkpoints/latest_%s_%s_os%d.pth' %
                           (opts.model, opts.dataset, opts.output_stride))
-                print("validation...")
+                logging.info("validation...")
                 model.eval()
                 val_score, ret_samples = validate(
                     opts=opts, model=model, loader=val_loader, device=device, metrics=metrics,
                     ret_samples_ids=vis_sample_id)
-                print(metrics.to_str(val_score))
+                logging.info(metrics.to_str(val_score))
                 if val_score['Mean IoU'] > best_score:  # save best model
                     best_score = val_score['Mean IoU']
                     save_ckpt('checkpoints/best_%s_%s_os%d.pth' %

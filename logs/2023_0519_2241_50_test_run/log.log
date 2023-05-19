@@ -1,0 +1,68 @@
+2023-05-19 22:41:50,801 WARNING Setting up a new session...
+2023-05-19 22:41:50,808 INFO Websocket connected
+2023-05-19 22:41:50,809 INFO Visdom successfully connected to server
+2023-05-19 22:41:51,122 INFO Device: cuda
+2023-05-19 22:41:51,140 INFO Dataset: cityscapes, Train set: 2975, Val set: 500
+2023-05-19 22:41:51,363 INFO [!] Retrain
+2023-05-19 22:42:00,326 INFO Epoch 1, Itrs 10/30000, Loss=2.233604
+2023-05-19 22:42:06,707 INFO Epoch 1, Itrs 20/30000, Loss=1.521198
+2023-05-19 22:42:16,793 INFO Epoch 1, Itrs 30/30000, Loss=1.661903
+2023-05-19 22:42:28,711 INFO Epoch 1, Itrs 40/30000, Loss=1.312500
+2023-05-19 22:42:40,643 INFO Epoch 1, Itrs 50/30000, Loss=1.446069
+2023-05-19 22:42:51,495 INFO Epoch 1, Itrs 60/30000, Loss=1.420513
+2023-05-19 22:43:03,060 INFO Epoch 1, Itrs 70/30000, Loss=1.335728
+2023-05-19 22:43:14,933 INFO Epoch 1, Itrs 80/30000, Loss=1.481725
+2023-05-19 22:43:26,554 INFO Epoch 1, Itrs 90/30000, Loss=1.318163
+2023-05-19 22:43:38,827 INFO Epoch 1, Itrs 100/30000, Loss=1.185507
+2023-05-19 22:43:38,912 INFO Model saved as logs/test_run/checkpoints/latest_deeplabv3plus_mobilenet_cityscapes_os16.pth
+2023-05-19 22:43:38,912 INFO validation...
+2023-05-19 22:44:36,569 INFO 
+Overall Acc: 0.586963
+Mean Acc: 0.132861
+FreqW Acc: 0.381004
+Mean IoU: 0.094161
+
+2023-05-19 22:44:36,636 INFO Model saved as logs/test_run/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16.pth
+2023-05-19 22:44:53,265 INFO Epoch 1, Itrs 110/30000, Loss=1.166824
+2023-05-19 22:45:05,517 INFO Epoch 1, Itrs 120/30000, Loss=1.062475
+2023-05-19 22:45:17,904 INFO Epoch 1, Itrs 130/30000, Loss=1.257737
+2023-05-19 22:45:30,842 INFO Epoch 1, Itrs 140/30000, Loss=0.978064
+2023-05-19 22:45:42,962 INFO Epoch 1, Itrs 150/30000, Loss=0.921121
+2023-05-19 22:45:54,876 INFO Epoch 1, Itrs 160/30000, Loss=1.065509
+2023-05-19 22:46:06,338 INFO Epoch 1, Itrs 170/30000, Loss=0.989754
+2023-05-19 22:46:17,822 INFO Epoch 1, Itrs 180/30000, Loss=1.124973
+2023-05-19 22:46:29,530 INFO Epoch 2, Itrs 190/30000, Loss=1.112270
+2023-05-19 22:46:36,066 INFO Epoch 2, Itrs 200/30000, Loss=0.926499
+2023-05-19 22:46:36,247 INFO Model saved as logs/test_run/checkpoints/latest_deeplabv3plus_mobilenet_cityscapes_os16.pth
+2023-05-19 22:46:36,247 INFO validation...
+2023-05-19 22:47:24,981 INFO 
+Overall Acc: 0.773021
+Mean Acc: 0.237172
+FreqW Acc: 0.628875
+Mean IoU: 0.190738
+
+2023-05-19 22:47:25,110 INFO Model saved as logs/test_run/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16.pth
+2023-05-19 22:47:37,533 INFO Epoch 2, Itrs 210/30000, Loss=0.763888
+2023-05-19 22:47:44,026 INFO Epoch 2, Itrs 220/30000, Loss=0.922525
+2023-05-19 22:47:50,555 INFO Epoch 2, Itrs 230/30000, Loss=1.052271
+2023-05-19 22:47:57,096 INFO Epoch 2, Itrs 240/30000, Loss=1.027567
+2023-05-19 22:48:03,552 INFO Epoch 2, Itrs 250/30000, Loss=0.856183
+2023-05-19 22:48:10,654 INFO Epoch 2, Itrs 260/30000, Loss=0.933966
+2023-05-19 22:48:17,658 INFO Epoch 2, Itrs 270/30000, Loss=0.836056
+2023-05-19 22:48:24,117 INFO Epoch 2, Itrs 280/30000, Loss=0.911778
+2023-05-19 22:48:30,605 INFO Epoch 2, Itrs 290/30000, Loss=0.921859
+2023-05-19 22:48:37,221 INFO Epoch 2, Itrs 300/30000, Loss=0.810815
+2023-05-19 22:48:37,370 INFO Model saved as logs/test_run/checkpoints/latest_deeplabv3plus_mobilenet_cityscapes_os16.pth
+2023-05-19 22:48:37,370 INFO validation...
+2023-05-19 22:49:19,990 INFO 
+Overall Acc: 0.780733
+Mean Acc: 0.248771
+FreqW Acc: 0.650201
+Mean IoU: 0.194837
+
+2023-05-19 22:49:20,118 INFO Model saved as logs/test_run/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16.pth
+2023-05-19 22:49:33,694 INFO Epoch 2, Itrs 310/30000, Loss=0.818362
+2023-05-19 22:49:41,069 INFO Epoch 2, Itrs 320/30000, Loss=0.729567
+2023-05-19 22:49:47,676 INFO Epoch 2, Itrs 330/30000, Loss=0.785748
+2023-05-19 22:49:54,318 INFO Epoch 2, Itrs 340/30000, Loss=0.822413
+2023-05-19 22:50:01,077 INFO Epoch 2, Itrs 350/30000, Loss=1.032482

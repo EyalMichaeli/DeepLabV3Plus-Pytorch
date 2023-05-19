@@ -4,11 +4,12 @@ import json
 class Visualizer(object):
     """ Visualizer
     """
-    def __init__(self, port='13579', env='main', id=None):
+    def __init__(self, port='13579', env='main', id=None, logdir=None):
         #self.cur_win = {}
         self.vis = Visdom(port=port, env=env)
         self.id = id
         self.env = env
+        self.logdir = logdir
         # Restore
         #ori_win = self.vis.get_window_data()
         #ori_win = json.loads(ori_win)
