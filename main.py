@@ -24,11 +24,14 @@ import matplotlib.pyplot as plt
 
 """
 nohup sh -c 'CUDA_VISIBLE_DEVICES=1 python main.py \
-    --logdir logs/test_run \
+    --random_seed 1 \
+    --logdir logs/cs_base_run \
         --model deeplabv3plus_mobilenet --dataset cityscapes --enable_vis --vis_port 8097 --gpu_id 0  --lr 0.1  --crop_size 256 --batch_size 16 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
-            2>&1 | tee -a nohup_output-test_run.log &
+            2>&1 | tee -a nohup_output-cs_base_run.log &
 
+
+# Visdom
 python -m visdom.server -p 8097
 
 """
@@ -172,7 +175,7 @@ def get_dataset(opts):
 
     if opts.dataset == 'cityscapes':
         train_transform = et.ExtCompose([
-            # et.ExtResize( 512 ),
+            et.ExtResize(size=opts.crop_size),
             et.ExtRandomCrop(size=(opts.crop_size, opts.crop_size)),
             et.ExtColorJitter(brightness=0.5, contrast=0.5, saturation=0.5),
             et.ExtRandomHorizontalFlip(),
@@ -182,7 +185,7 @@ def get_dataset(opts):
         ])
 
         val_transform = et.ExtCompose([
-            # et.ExtResize( 512 ),
+            et.ExtResize(size=opts.crop_size),
             et.ExtToTensor(),
             et.ExtNormalize(mean=[0.485, 0.456, 0.406],
                             std=[0.229, 0.224, 0.225]),
@@ -357,7 +360,7 @@ def main():
         logging.info("Model restored from %s" % opts.ckpt)
         del checkpoint  # free memory
     else:
-        logging.info("[!] Retrain")
+        logging.info("[!] Training from scratch, no checkpoint file used")
         model = nn.DataParallel(model)
         model.to(device)
 
