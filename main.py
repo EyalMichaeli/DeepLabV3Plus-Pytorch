@@ -16,22 +16,22 @@ from metrics import StreamSegMetrics
 
 import torch
 import torch.nn as nn
-from utils.visualizer import Visualizer
 
 from PIL import Image
 import matplotlib
 import matplotlib.pyplot as plt
 from tensorboardX import SummaryWriter
+import pprint
 
 """
-nohup sh -c 'CUDA_VISIBLE_DEVICES=1 python main.py \
+nohup sh -c 'CUDA_VISIBLE_DEVICES=3 python main.py \
     --random_seed 1 \
     --logdir logs/cs_base_run \
-        --model deeplabv3plus_mobilenet --dataset cityscapes --gpu_id 0  --lr 0.1  --crop_size 256 --batch_size 16 \
+        --model deeplabv3plus_mobilenet --dataset cityscapes --gpu_id 0  --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
             2>&1 | tee -a nohup_output-cs_base_run.log &
 
-
+tensorboard --logdir=logs --port=6006
 """
 def get_argparser():
     parser = argparse.ArgumentParser()
@@ -87,9 +87,9 @@ def get_argparser():
                         help='weight decay (default: 1e-4)')
     parser.add_argument("--random_seed", type=int, default=1,
                         help="random seed (default: 1)")
-    parser.add_argument("--print_interval", type=int, default=10,
-                        help="print interval of loss (default: 10)")
-    parser.add_argument("--val_interval", type=int, default=100,
+    parser.add_argument("--print_interval", type=int, default=50,
+                        help="print interval of loss (default: 50)")
+    parser.add_argument("--val_interval", type=int, default=10,
                         help="epoch interval for eval (default: 100)")
     parser.add_argument("--download", action='store_true', default=False,
                         help="download datasets")
@@ -97,16 +97,6 @@ def get_argparser():
     # PASCAL VOC Options
     parser.add_argument("--year", type=str, default='2012',
                         choices=['2012_aug', '2012', '2011', '2009', '2008', '2007'], help='year of VOC')
-
-    # Visdom options
-    parser.add_argument("--enable_vis", action='store_true', default=False,
-                        help="use visdom for visualization")
-    parser.add_argument("--vis_port", type=str, default='13570',
-                        help='port for visdom')
-    parser.add_argument("--vis_env", type=str, default='main',
-                        help='env for visdom')
-    parser.add_argument("--vis_num_samples", type=int, default=8,
-                        help='number of samples for visualization (default: 8)')
 
     # Log directory
     parser.add_argument("--logdir", type=str, default=None,
@@ -199,7 +189,7 @@ def get_dataset(opts):
 def validate(opts, model, loader, device, metrics, epoch=0, iter=0):
     """Do validation and return specified samples"""
     metrics.reset()
-    ret_samples = []
+    images_to_visualize = []
     if opts.save_val_results:
         if opts.logdir is not None:
             results_dir = os.path.join(opts.logdir, 'results')
@@ -208,7 +198,6 @@ def validate(opts, model, loader, device, metrics, epoch=0, iter=0):
             results_dir = 'results'
         denorm = utils.Denormalize(mean=[0.485, 0.456, 0.406],
                                    std=[0.229, 0.224, 0.225])
-        img_id = 0
 
     # divide results_dir into subdirs, that are named after the epoch
     if opts.save_val_results:
@@ -216,7 +205,7 @@ def validate(opts, model, loader, device, metrics, epoch=0, iter=0):
         os.makedirs(results_dir, exist_ok=True)
 
     with torch.no_grad():
-        for i, (images, labels) in tqdm(enumerate(loader)):
+        for batch_index, (images, labels) in tqdm(enumerate(loader)):
             images = images.to(device, dtype=torch.float32)
             labels = labels.to(device, dtype=torch.long)
 
@@ -224,37 +213,46 @@ def validate(opts, model, loader, device, metrics, epoch=0, iter=0):
             preds = outputs.detach().max(dim=1)[1].cpu().numpy()
             targets = labels.cpu().numpy()
 
-            if opts.save_val_results:
-                for i in range(len(images)):
-                    # choose only 25 images to save
-                    if i not in list(range(0, 500, 20)):
-                        continue
+            metrics.update(targets, preds)
 
-                    image = images[i].detach().cpu().numpy()
-                    target = targets[i]
-                    pred = preds[i]
+            if batch_index % 20 == 0 and opts.save_val_results:
+                
+                i = 0  # only save one image per batch, the first one
 
-                    image = (denorm(image) * 255).transpose(1, 2, 0).astype(np.uint8)
-                    target = loader.dataset.decode_target(target).astype(np.uint8)
-                    pred = loader.dataset.decode_target(pred).astype(np.uint8)
+                images_to_visualize.append((
+                    images[i].detach().cpu().numpy(), 
+                    targets[i], 
+                    preds[i]
+                    ))
+                # will images_to_visualize be the same every validation?
+                # it should be, because the validation set is the same
+                # but it is not, because the dataloader is shuffled
 
-                    Image.fromarray(image).save(os.path.join(results_dir, f"{img_id}_image_iter{iter}.png"))
-                    Image.fromarray(target).save(os.path.join(results_dir, f"{img_id}_gt_iter{iter}.png"))
-                    Image.fromarray(pred).save(os.path.join(results_dir, f"{img_id}_pred_iter{iter}.png"))
+                image = images[i].detach().cpu().numpy()
+                target = targets[i]
+                pred = preds[i]
 
-                    fig = plt.figure()
-                    plt.imshow(image)
-                    plt.axis('off')
-                    plt.imshow(pred, alpha=0.7)
-                    ax = plt.gca()
-                    ax.xaxis.set_major_locator(matplotlib.ticker.NullLocator())
-                    ax.yaxis.set_major_locator(matplotlib.ticker.NullLocator())
-                    plt.savefig(os.path.join(results_dir, f"{img_id}_overlay_iter{iter}.png"), bbox_inches='tight', pad_inches=0.0)
-                    plt.close()
-                    img_id += 1
+                image = (denorm(image) * 255).transpose(1, 2, 0).astype(np.uint8)
+                target = loader.dataset.decode_target(target).astype(np.uint8)
+                pred = loader.dataset.decode_target(pred).astype(np.uint8)
+
+                Image.fromarray(image).save(os.path.join(results_dir, f"{batch_index}_image_iter{iter}.png"))
+                Image.fromarray(target).save(os.path.join(results_dir, f"{batch_index}_gt_iter{iter}.png"))
+                Image.fromarray(pred).save(os.path.join(results_dir, f"{batch_index}_pred_iter{iter}.png"))
+
+                fig = plt.figure()
+                plt.imshow(image)
+                plt.axis('off')
+                plt.imshow(pred, alpha=0.7)
+                ax = plt.gca()
+                ax.xaxis.set_major_locator(matplotlib.ticker.NullLocator())
+                ax.yaxis.set_major_locator(matplotlib.ticker.NullLocator())
+                plt.savefig(os.path.join(results_dir, f"{batch_index}_overlay_iter{iter}.png"), bbox_inches='tight', pad_inches=0.0)
+                plt.close()
 
         score = metrics.get_results()
-    return score, ret_samples
+
+    return score, images_to_visualize
 
 
 def main():
@@ -271,14 +269,10 @@ def main():
     elif opts.dataset.lower() == 'cityscapes':
         opts.num_classes = 19
 
-    # Setup visualization
-    vis = Visualizer(port=opts.vis_port,
-                     env=opts.vis_env, logdir=opts.logdir) if opts.enable_vis else None
-    if vis is not None:  # display options
-        vis.vis_table("Options", vars(opts))
-
-    # same for tensorboard
-    writer.add_text('Options', str(opts))
+    # write the options to tensorboard, so that we know what we have been running
+    # make sure it is readble
+    text_for_tensorboard = pprint.pformat(str(vars(opts)))
+    writer.add_text('opts', text_for_tensorboard)
 
     os.environ['CUDA_VISIBLE_DEVICES'] = opts.gpu_id
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -301,7 +295,7 @@ def main():
         train_dst, batch_size=opts.batch_size, shuffle=True, num_workers=2,
         drop_last=True)  # drop_last=True to ignore single-image batches.
     val_loader = data.DataLoader(
-        val_dst, batch_size=opts.val_batch_size, shuffle=True, num_workers=2)
+        val_dst, batch_size=opts.val_batch_size, shuffle=False, num_workers=2)
     logging.info("Dataset: %s, Train set: %d, Val set: %d" %
           (opts.dataset, len(train_dst), len(val_dst)))
 
@@ -372,18 +366,17 @@ def main():
         model.to(device)
 
     # ==========   Train Loop   ==========#
-    vis_sample_id = np.random.randint(0, len(val_loader), opts.vis_num_samples, np.int32) if opts.enable_vis else None  # sample idxs for visualization
     denorm = utils.Denormalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])  # denormalization for ori images
 
     if opts.test_only:
         model.eval()
-        val_score, ret_samples = validate(
-            opts=opts, model=model, loader=val_loader, device=device, metrics=metrics, ret_samples_ids=vis_sample_id)
+        val_score, images_to_visualize = validate(
+            opts=opts, model=model, loader=val_loader, device=device, metrics=metrics)
         logging.info(metrics.to_str(val_score))
         return
 
     interval_loss = 0
-    while True:  # cur_itrs < opts.total_itrs:
+    while True: 
         # =====  Train  =====
         model.train()
         cur_epochs += 1
@@ -401,11 +394,10 @@ def main():
 
             np_loss = loss.detach().cpu().numpy()
             interval_loss += np_loss
-            if vis is not None:
-                vis.vis_scalar('Loss', cur_itrs, np_loss)
-            # same for tensorboard
+
+            # tensorboard
             if writer is not None:
-                writer.add_scalar('Loss', np_loss, cur_itrs)
+                writer.add_scalar('Train_Loss', np_loss, cur_itrs)
 
             if (cur_itrs) % opts.print_interval == 0:
                 interval_loss = interval_loss / opts.print_interval 
@@ -418,45 +410,38 @@ def main():
                           (opts.model, opts.dataset, opts.output_stride))
                 logging.info("validation...")
                 model.eval()
-                val_score, ret_samples = validate(
-                    opts=opts, model=model, loader=val_loader, device=device, metrics=metrics,
-                    ret_samples_ids=vis_sample_id, )
+                val_score, images_to_visualize = validate(
+                    opts=opts, model=model, loader=val_loader, device=device, metrics=metrics, epoch=cur_epochs, iter=cur_itrs)
                 logging.info(metrics.to_str(val_score))
                 if val_score['Mean IoU'] > best_score:  # save best model
                     best_score = val_score['Mean IoU']
                     save_ckpt('checkpoints/best_%s_%s_os%d.pth' %
                               (opts.model, opts.dataset, opts.output_stride))
 
-                if vis is not None:  # visualize validation score and samples
-                    vis.vis_scalar("[Val] Overall Acc", cur_itrs, val_score['Overall Acc'])
-                    vis.vis_scalar("[Val] Mean IoU", cur_itrs, val_score['Mean IoU'])
-                    vis.vis_table("[Val] Class IoU", val_score['Class IoU'])
-
-                    for k, (img, target, lbl) in enumerate(ret_samples):
-                        img = (denorm(img) * 255).astype(np.uint8)
-                        target = train_dst.decode_target(target).transpose(2, 0, 1).astype(np.uint8)
-                        lbl = train_dst.decode_target(lbl).transpose(2, 0, 1).astype(np.uint8)
-                        concat_img = np.concatenate((img, target, lbl), axis=2)  # concat along width
-                        vis.vis_image('Sample %d' % k, concat_img)
-
                 # same for tensorboard
                 if writer is not None:
-                    writer.add_scalar('[Val] Overall Acc', val_score['Overall Acc'], cur_itrs)
-                    writer.add_scalar('[Val] Mean IoU', val_score['Mean IoU'], cur_itrs)
-                    for k, iou in enumerate(val_score['Class IoU']):
-                        writer.add_scalar('[Val] Class IoU %d' % k, iou, cur_itrs)
-                    for k, (img, target, lbl) in enumerate(ret_samples):
+                    writer.add_scalar('Val_Acc', val_score['Overall Acc'], cur_itrs)
+                    writer.add_scalar('Val_MIoU', val_score['Mean IoU'], cur_itrs)
+                    # add also class IOU, but all in the same graph
+                    for class_id, iou in enumerate(val_score['Class IoU']):
+                        writer.add_scalar(f'Val_class_iou/{class_id}_IoU', iou, cur_itrs)
+                        
+                    for k, (img, target, lbl) in enumerate(images_to_visualize):
                         img = (denorm(img) * 255).astype(np.uint8)
                         target = train_dst.decode_target(target).transpose(2, 0, 1).astype(np.uint8)
                         lbl = train_dst.decode_target(lbl).transpose(2, 0, 1).astype(np.uint8)
                         concat_img = np.concatenate((img, target, lbl), axis=2)
                         # write with a good title
-                        writer.add_image(f"[Val] Sample {k}", concat_img, cur_itrs, dataformats='HWC')
-
-                    
+                        writer.add_image(f"images/Val_image_pred{k}", concat_img, cur_itrs, dataformats='CHW')
+                                         
                 
                 model.train()
             scheduler.step()
+            # get current lr
+            lr = optimizer.param_groups[0]['lr']
+            # tensorboard
+            if writer is not None:
+                writer.add_scalar('learning_rate', lr, cur_itrs)
 
             if cur_itrs >= opts.total_itrs:
                 return
