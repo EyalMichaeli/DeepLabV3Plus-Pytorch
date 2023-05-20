@@ -12,4 +12,5 @@ test_results
 *.png
 *.jpg
 *.pth
-
+*tensorboard*
+*checkpoint*

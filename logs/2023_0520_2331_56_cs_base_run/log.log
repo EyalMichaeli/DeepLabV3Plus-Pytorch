@@ -1,0 +1,3 @@
+2023-05-20 23:31:56,780 INFO Device: cuda
+2023-05-20 23:31:56,799 INFO Dataset: cityscapes, Train set: 2975, Val set: 500
+2023-05-20 23:31:56,943 INFO [!] Training from scratch, no checkpoint file used

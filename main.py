@@ -89,8 +89,8 @@ def get_argparser():
                         help="random seed (default: 1)")
     parser.add_argument("--print_interval", type=int, default=50,
                         help="print interval of loss (default: 50)")
-    parser.add_argument("--val_interval", type=int, default=10,
-                        help="epoch interval for eval (default: 100)")
+    parser.add_argument("--val_interval", type=int, default=200,
+                        help="epoch interval for eval (default: 200)")
     parser.add_argument("--download", action='store_true', default=False,
                         help="download datasets")
 
@@ -236,9 +236,9 @@ def validate(opts, model, loader, device, metrics, epoch=0, iter=0):
                 target = loader.dataset.decode_target(target).astype(np.uint8)
                 pred = loader.dataset.decode_target(pred).astype(np.uint8)
 
-                Image.fromarray(image).save(os.path.join(results_dir, f"{batch_index}_image_iter{iter}.png"))
-                Image.fromarray(target).save(os.path.join(results_dir, f"{batch_index}_gt_iter{iter}.png"))
-                Image.fromarray(pred).save(os.path.join(results_dir, f"{batch_index}_pred_iter{iter}.png"))
+                Image.fromarray(image).save(os.path.join(results_dir, f"{batch_index}_image_iter_{iter}.png"))
+                Image.fromarray(target).save(os.path.join(results_dir, f"{batch_index}_gt_iter_{iter}.png"))
+                Image.fromarray(pred).save(os.path.join(results_dir, f"{batch_index}_pred_iter_{iter}.png"))
 
                 fig = plt.figure()
                 plt.imshow(image)
@@ -247,7 +247,7 @@ def validate(opts, model, loader, device, metrics, epoch=0, iter=0):
                 ax = plt.gca()
                 ax.xaxis.set_major_locator(matplotlib.ticker.NullLocator())
                 ax.yaxis.set_major_locator(matplotlib.ticker.NullLocator())
-                plt.savefig(os.path.join(results_dir, f"{batch_index}_overlay_iter{iter}.png"), bbox_inches='tight', pad_inches=0.0)
+                plt.savefig(os.path.join(results_dir, f"{batch_index}_overlay_iter_{iter}.png"), bbox_inches='tight', pad_inches=0.0)
                 plt.close()
 
         score = metrics.get_results()

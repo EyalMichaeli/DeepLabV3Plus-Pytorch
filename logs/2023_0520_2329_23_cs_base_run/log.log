@@ -1,3 +1,32 @@
 2023-05-20 23:29:23,883 INFO Device: cuda
 2023-05-20 23:29:23,901 INFO Dataset: cityscapes, Train set: 2975, Val set: 500
 2023-05-20 23:29:24,014 INFO [!] Training from scratch, no checkpoint file used
+2023-05-20 23:29:40,953 INFO Model saved as logs/2023_0520_2329_23_cs_base_run/checkpoints/latest_deeplabv3plus_mobilenet_cityscapes_os16.pth
+2023-05-20 23:29:40,953 INFO validation...
+2023-05-20 23:30:05,949 INFO 
+Overall Acc: 0.629399
+Mean Acc: 0.148242
+FreqW Acc: 0.442763
+Mean IoU: 0.107487
+
+2023-05-20 23:30:06,032 INFO Model saved as logs/2023_0520_2329_23_cs_base_run/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16.pth
+2023-05-20 23:30:16,392 INFO Model saved as logs/2023_0520_2329_23_cs_base_run/checkpoints/latest_deeplabv3plus_mobilenet_cityscapes_os16.pth
+2023-05-20 23:30:16,392 INFO validation...
+2023-05-20 23:30:40,006 INFO 
+Overall Acc: 0.756106
+Mean Acc: 0.224425
+FreqW Acc: 0.601893
+Mean IoU: 0.172415
+
+2023-05-20 23:30:40,140 INFO Model saved as logs/2023_0520_2329_23_cs_base_run/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16.pth
+2023-05-20 23:30:50,322 INFO Model saved as logs/2023_0520_2329_23_cs_base_run/checkpoints/latest_deeplabv3plus_mobilenet_cityscapes_os16.pth
+2023-05-20 23:30:50,322 INFO validation...
+2023-05-20 23:31:14,710 INFO 
+Overall Acc: 0.778254
+Mean Acc: 0.243730
+FreqW Acc: 0.632482
+Mean IoU: 0.192510
+
+2023-05-20 23:31:14,908 INFO Model saved as logs/2023_0520_2329_23_cs_base_run/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16.pth
+2023-05-20 23:31:25,134 INFO Model saved as logs/2023_0520_2329_23_cs_base_run/checkpoints/latest_deeplabv3plus_mobilenet_cityscapes_os16.pth
+2023-05-20 23:31:25,134 INFO validation...
