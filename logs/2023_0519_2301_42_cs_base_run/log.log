@@ -1723,3 +1723,51 @@ Mean IoU: 0.455220
 2023-05-20 22:10:23,696 INFO Epoch 50, Itrs 9200/30000, Loss=0.275626
 2023-05-20 22:10:23,878 INFO Model saved as logs/2023_0519_2301_42_cs_base_run/checkpoints/latest_deeplabv3plus_mobilenet_cityscapes_os16.pth
 2023-05-20 22:10:23,878 INFO validation...
+2023-05-20 22:14:32,527 ERROR Connection to remote host was lost.
+2023-05-20 22:14:32,528 ERROR Connection to remote host was lost. - goodbye
+2023-05-20 22:14:32,528 ERROR error from callback <function Visdom.setup_socket.<locals>.on_close at 0x7f4d2fa5c280>: on_close() takes 1 positional argument but 3 were given
+2023-05-20 22:14:32,528 ERROR on_close() takes 1 positional argument but 3 were given
+2023-05-20 22:14:35,532 ERROR [Errno 111] Connection refused
+2023-05-20 22:14:35,532 ERROR [Errno 111] Connection refused - goodbye
+2023-05-20 22:14:35,532 ERROR error from callback <function Visdom.setup_socket.<locals>.on_close at 0x7f4d2fa5c280>: on_close() takes 1 positional argument but 3 were given
+2023-05-20 22:14:35,532 ERROR on_close() takes 1 positional argument but 3 were given
+2023-05-20 22:14:38,535 ERROR [Errno 111] Connection refused
+2023-05-20 22:14:38,536 ERROR [Errno 111] Connection refused - goodbye
+2023-05-20 22:14:38,536 ERROR error from callback <function Visdom.setup_socket.<locals>.on_close at 0x7f4d2fa5c280>: on_close() takes 1 positional argument but 3 were given
+2023-05-20 22:14:38,536 ERROR on_close() takes 1 positional argument but 3 were given
+2023-05-20 22:14:41,539 ERROR [Errno 111] Connection refused
+2023-05-20 22:14:41,539 ERROR [Errno 111] Connection refused - goodbye
+2023-05-20 22:14:41,539 ERROR error from callback <function Visdom.setup_socket.<locals>.on_close at 0x7f4d2fa5c280>: on_close() takes 1 positional argument but 3 were given
+2023-05-20 22:14:41,539 ERROR on_close() takes 1 positional argument but 3 were given
+2023-05-20 22:14:44,543 ERROR [Errno 111] Connection refused
+2023-05-20 22:14:44,543 ERROR [Errno 111] Connection refused - goodbye
+2023-05-20 22:14:44,544 ERROR error from callback <function Visdom.setup_socket.<locals>.on_close at 0x7f4d2fa5c280>: on_close() takes 1 positional argument but 3 were given
+2023-05-20 22:14:44,544 ERROR on_close() takes 1 positional argument but 3 were given
+2023-05-20 22:14:47,547 ERROR [Errno 111] Connection refused
+2023-05-20 22:14:47,548 ERROR [Errno 111] Connection refused - goodbye
+2023-05-20 22:14:47,548 ERROR error from callback <function Visdom.setup_socket.<locals>.on_close at 0x7f4d2fa5c280>: on_close() takes 1 positional argument but 3 were given
+2023-05-20 22:14:47,548 ERROR on_close() takes 1 positional argument but 3 were given
+2023-05-20 22:14:50,551 ERROR [Errno 111] Connection refused
+2023-05-20 22:14:50,551 ERROR [Errno 111] Connection refused - goodbye
+2023-05-20 22:14:50,551 ERROR error from callback <function Visdom.setup_socket.<locals>.on_close at 0x7f4d2fa5c280>: on_close() takes 1 positional argument but 3 were given
+2023-05-20 22:14:50,552 ERROR on_close() takes 1 positional argument but 3 were given
+2023-05-20 22:14:53,555 ERROR [Errno 111] Connection refused
+2023-05-20 22:14:53,555 ERROR [Errno 111] Connection refused - goodbye
+2023-05-20 22:14:53,555 ERROR error from callback <function Visdom.setup_socket.<locals>.on_close at 0x7f4d2fa5c280>: on_close() takes 1 positional argument but 3 were given
+2023-05-20 22:14:53,555 ERROR on_close() takes 1 positional argument but 3 were given
+2023-05-20 22:14:56,569 ERROR [Errno 111] Connection refused
+2023-05-20 22:14:56,569 ERROR [Errno 111] Connection refused - goodbye
+2023-05-20 22:14:56,569 ERROR error from callback <function Visdom.setup_socket.<locals>.on_close at 0x7f4d2fa5c280>: on_close() takes 1 positional argument but 3 were given
+2023-05-20 22:14:56,569 ERROR on_close() takes 1 positional argument but 3 were given
+2023-05-20 22:14:59,573 ERROR [Errno 111] Connection refused
+2023-05-20 22:14:59,573 ERROR [Errno 111] Connection refused - goodbye
+2023-05-20 22:14:59,573 ERROR error from callback <function Visdom.setup_socket.<locals>.on_close at 0x7f4d2fa5c280>: on_close() takes 1 positional argument but 3 were given
+2023-05-20 22:14:59,573 ERROR on_close() takes 1 positional argument but 3 were given
+2023-05-20 22:15:02,577 ERROR [Errno 111] Connection refused
+2023-05-20 22:15:02,577 ERROR [Errno 111] Connection refused - goodbye
+2023-05-20 22:15:02,578 ERROR error from callback <function Visdom.setup_socket.<locals>.on_close at 0x7f4d2fa5c280>: on_close() takes 1 positional argument but 3 were given
+2023-05-20 22:15:02,578 ERROR on_close() takes 1 positional argument but 3 were given
+2023-05-20 22:15:05,582 ERROR [Errno 111] Connection refused
+2023-05-20 22:15:05,582 ERROR [Errno 111] Connection refused - goodbye
+2023-05-20 22:15:05,582 ERROR error from callback <function Visdom.setup_socket.<locals>.on_close at 0x7f4d2fa5c280>: on_close() takes 1 positional argument but 3 were given
+2023-05-20 22:15:05,582 ERROR on_close() takes 1 positional argument but 3 were given

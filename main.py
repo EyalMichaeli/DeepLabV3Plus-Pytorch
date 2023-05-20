@@ -21,18 +21,16 @@ from utils.visualizer import Visualizer
 from PIL import Image
 import matplotlib
 import matplotlib.pyplot as plt
+from tensorboardX import SummaryWriter
 
 """
 nohup sh -c 'CUDA_VISIBLE_DEVICES=1 python main.py \
     --random_seed 1 \
     --logdir logs/cs_base_run \
-        --model deeplabv3plus_mobilenet --dataset cityscapes --enable_vis --vis_port 8097 --gpu_id 0  --lr 0.1  --crop_size 256 --batch_size 16 \
+        --model deeplabv3plus_mobilenet --dataset cityscapes --gpu_id 0  --lr 0.1  --crop_size 256 --batch_size 16 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
             2>&1 | tee -a nohup_output-cs_base_run.log &
 
-
-# Visdom
-python -m visdom.server -p 8097
 
 """
 def get_argparser():
@@ -198,7 +196,7 @@ def get_dataset(opts):
     return train_dst, val_dst
 
 
-def validate(opts, model, loader, device, metrics, ret_samples_ids=None):
+def validate(opts, model, loader, device, metrics, epoch=0, iter=0):
     """Do validation and return specified samples"""
     metrics.reset()
     ret_samples = []
@@ -212,6 +210,11 @@ def validate(opts, model, loader, device, metrics, ret_samples_ids=None):
                                    std=[0.229, 0.224, 0.225])
         img_id = 0
 
+    # divide results_dir into subdirs, that are named after the epoch
+    if opts.save_val_results:
+        results_dir = os.path.join(results_dir, str(epoch))
+        os.makedirs(results_dir, exist_ok=True)
+
     with torch.no_grad():
         for i, (images, labels) in tqdm(enumerate(loader)):
             images = images.to(device, dtype=torch.float32)
@@ -221,13 +224,12 @@ def validate(opts, model, loader, device, metrics, ret_samples_ids=None):
             preds = outputs.detach().max(dim=1)[1].cpu().numpy()
             targets = labels.cpu().numpy()
 
-            metrics.update(targets, preds)
-            if ret_samples_ids is not None and i in ret_samples_ids:  # get vis samples
-                ret_samples.append(
-                    (images[0].detach().cpu().numpy(), targets[0], preds[0]))
-
             if opts.save_val_results:
                 for i in range(len(images)):
+                    # choose only 25 images to save
+                    if i not in list(range(0, 500, 20)):
+                        continue
+
                     image = images[i].detach().cpu().numpy()
                     target = targets[i]
                     pred = preds[i]
@@ -236,9 +238,9 @@ def validate(opts, model, loader, device, metrics, ret_samples_ids=None):
                     target = loader.dataset.decode_target(target).astype(np.uint8)
                     pred = loader.dataset.decode_target(pred).astype(np.uint8)
 
-                    Image.fromarray(image).save(os.path.join(results_dir, '%d_image.png' % img_id))
-                    Image.fromarray(target).save(os.path.join(results_dir, '%d_target.png' % img_id))
-                    Image.fromarray(pred).save(os.path.join(results_dir, '%d_pred.png' % img_id))
+                    Image.fromarray(image).save(os.path.join(results_dir, f"{img_id}_image_iter{iter}.png"))
+                    Image.fromarray(target).save(os.path.join(results_dir, f"{img_id}_gt_iter{iter}.png"))
+                    Image.fromarray(pred).save(os.path.join(results_dir, f"{img_id}_pred_iter{iter}.png"))
 
                     fig = plt.figure()
                     plt.imshow(image)
@@ -247,7 +249,7 @@ def validate(opts, model, loader, device, metrics, ret_samples_ids=None):
                     ax = plt.gca()
                     ax.xaxis.set_major_locator(matplotlib.ticker.NullLocator())
                     ax.yaxis.set_major_locator(matplotlib.ticker.NullLocator())
-                    plt.savefig(os.path.join(results_dir, '%d_overlay.png' % img_id), bbox_inches='tight', pad_inches=0)
+                    plt.savefig(os.path.join(results_dir, f"{img_id}_overlay_iter{iter}.png"), bbox_inches='tight', pad_inches=0.0)
                     plt.close()
                     img_id += 1
 
@@ -262,6 +264,8 @@ def main():
     if opts.logdir is not None:
         opts.logdir = init_logging(opts.logdir)
 
+    writer = SummaryWriter(log_dir=str(Path(opts.logdir) / 'tensorboard')) 
+    
     if opts.dataset.lower() == 'voc':
         opts.num_classes = 21
     elif opts.dataset.lower() == 'cityscapes':
@@ -272,6 +276,9 @@ def main():
                      env=opts.vis_env, logdir=opts.logdir) if opts.enable_vis else None
     if vis is not None:  # display options
         vis.vis_table("Options", vars(opts))
+
+    # same for tensorboard
+    writer.add_text('Options', str(opts))
 
     os.environ['CUDA_VISIBLE_DEVICES'] = opts.gpu_id
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -396,6 +403,9 @@ def main():
             interval_loss += np_loss
             if vis is not None:
                 vis.vis_scalar('Loss', cur_itrs, np_loss)
+            # same for tensorboard
+            if writer is not None:
+                writer.add_scalar('Loss', np_loss, cur_itrs)
 
             if (cur_itrs) % opts.print_interval == 0:
                 interval_loss = interval_loss / opts.print_interval 
@@ -410,7 +420,7 @@ def main():
                 model.eval()
                 val_score, ret_samples = validate(
                     opts=opts, model=model, loader=val_loader, device=device, metrics=metrics,
-                    ret_samples_ids=vis_sample_id)
+                    ret_samples_ids=vis_sample_id, )
                 logging.info(metrics.to_str(val_score))
                 if val_score['Mean IoU'] > best_score:  # save best model
                     best_score = val_score['Mean IoU']
@@ -428,6 +438,23 @@ def main():
                         lbl = train_dst.decode_target(lbl).transpose(2, 0, 1).astype(np.uint8)
                         concat_img = np.concatenate((img, target, lbl), axis=2)  # concat along width
                         vis.vis_image('Sample %d' % k, concat_img)
+
+                # same for tensorboard
+                if writer is not None:
+                    writer.add_scalar('[Val] Overall Acc', val_score['Overall Acc'], cur_itrs)
+                    writer.add_scalar('[Val] Mean IoU', val_score['Mean IoU'], cur_itrs)
+                    for k, iou in enumerate(val_score['Class IoU']):
+                        writer.add_scalar('[Val] Class IoU %d' % k, iou, cur_itrs)
+                    for k, (img, target, lbl) in enumerate(ret_samples):
+                        img = (denorm(img) * 255).astype(np.uint8)
+                        target = train_dst.decode_target(target).transpose(2, 0, 1).astype(np.uint8)
+                        lbl = train_dst.decode_target(lbl).transpose(2, 0, 1).astype(np.uint8)
+                        concat_img = np.concatenate((img, target, lbl), axis=2)
+                        # write with a good title
+                        writer.add_image(f"[Val] Sample {k}", concat_img, cur_itrs, dataformats='HWC')
+
+                    
+                
                 model.train()
             scheduler.step()
 
