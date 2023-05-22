@@ -1,11 +1,14 @@
 import json
 import os
 from collections import namedtuple
+from pathlib import Path
+import random
 
 import torch
 import torch.utils.data as data
 from PIL import Image
 import numpy as np
+import logging
 
 
 class Cityscapes(data.Dataset):
@@ -70,7 +73,7 @@ class Cityscapes(data.Dataset):
     #train_id_to_color = np.array(train_id_to_color)
     #id_to_train_id = np.array([c.category_id for c in classes], dtype='uint8') - 1
 
-    def __init__(self, root, split='train', mode='fine', target_type='semantic', transform=None):
+    def __init__(self, root, split='train', mode='fine', target_type='semantic', transform=None, aug_json=None, sample_aug_ratio: float = None):
         self.root = os.path.expanduser(root)
         self.mode = 'gtFine'
         self.target_type = target_type
@@ -101,6 +104,22 @@ class Cityscapes(data.Dataset):
                                              self._get_target_suffix(self.mode, self.target_type))
                 self.targets.append(os.path.join(target_dir, target_name))
 
+        if aug_json:
+            assert sample_aug_ratio is not None
+            assert sample_aug_ratio > 0 and sample_aug_ratio <= 1
+            with open(aug_json, 'r') as f:
+                self.aug_json = json.load(f)
+            self.sample_aug_ratio = sample_aug_ratio
+
+            logging.info(f"Using augmented images with ratio {sample_aug_ratio}")
+            logging.info(f"Number of augmented images: {len(self.aug_json)}")
+            logging.info(f"json file: {aug_json}")
+
+        else:
+            self.aug_json = None
+            logging.info('Not using augmented images')
+
+
     @classmethod
     def encode_target(cls, target):
         return cls.id_to_train_id[np.array(target)]
@@ -119,7 +138,13 @@ class Cityscapes(data.Dataset):
             tuple: (image, target) where target is a tuple of all target types if target_type is a list with more
             than one item. Otherwise target is a json object if target_type="polygon", else the image segmentation.
         """
-        image = Image.open(self.images[index]).convert('RGB')
+        image_path = self.images[index]
+        if self.aug_json:
+            if random.random() < self.sample_aug_ratio:
+                image_path = self.aug_json.get(image_path, image_path)  # if image_path is not in aug_json, return image_path
+                #logging.info(f"Using augmented image: {image_path}")
+
+        image = Image.open(image_path).convert('RGB')
         target = Image.open(self.targets[index])
         if self.transform:
             image, target = self.transform(image, target)

@@ -29,7 +29,7 @@ nohup sh -c 'python main.py \
     --gpu_id 1 \
     --random_seed 1 \
     --logdir logs/cs_base_run \
-        --model deeplabv3plus_mobilenet --dataset cityscapes --gpu_id 0  --lr 0.2  --crop_size 256 --batch_size 32 \
+        --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
             2>&1 | tee -a nohup_output-cs_base_run.log &
 
@@ -44,7 +44,31 @@ nohup sh -c 'python main.py \
                   --continue_training --ckpt logs/2023_0520_2331_56_cs_base_run/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16.pth'
                   
 
+# train from scratch with aug, MUNIT
+nohup sh -c 'python main.py \
+    --gpu_id 1 \
+    --random_seed 1 \
+    --logdir logs/cs_aug_run_munit_default_run_style_1.5 \
+    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cs2cs-default_run/2023_0519_1215_17_ampO1_lower_LR/inference_cp_400k_style_std_1.5.json \
+    --aug_sample_ratio 0.5 \
+        --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
+            --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
+            2>&1 | tee -a nohup_output-cs_aug_run_munit_default_run_style_1.5.log &
 
+            
+# train from scratch with aug, MUNIT
+nohup sh -c 'python main.py \
+    --gpu_id 1 \
+    --random_seed 1 \
+    --logdir logs/cs_aug_run_munit_default_run_style_2.0 \
+    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cs2cs-default_run/2023_0519_1215_17_ampO1_lower_LR/inference_cp_400k_style_std_1.5.json \
+    --aug_sample_ratio 0.5 \
+        --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
+            --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
+            2>&1 | tee -a nohup_output-cs_aug_run_munit_default_run_style_2.log &
+
+            
+            
 tensorboard --logdir=logs --port=6006 --max_reload 30
 """
 def get_argparser():
@@ -103,8 +127,8 @@ def get_argparser():
                         help="random seed (default: 1)")
     parser.add_argument("--print_interval", type=int, default=50,
                         help="iterations interval of loss (default: 50)")
-    parser.add_argument("--val_interval", type=int, default=200,
-                        help="iterations interval for eval (default: 200)")
+    parser.add_argument("--val_interval", type=int, default=100,
+                        help="iterations interval for eval (default: 100)")
     parser.add_argument("--download", action='store_true', default=False,
                         help="download datasets")
 
@@ -116,6 +140,12 @@ def get_argparser():
     parser.add_argument("--logdir", type=str, default=None,
                         help="path to the log directory")
 
+    # augmentation options
+    parser.add_argument("--aug_json", type=str, default=None,
+                        help="path to augmentation json file")
+    parser.add_argument("--aug_sample_ratio", type=float, default=0.5,
+                        help="ratio to augment the original image")
+    
     return parser
 
 
@@ -194,7 +224,7 @@ def get_dataset(opts):
         ])
 
         train_dst = Cityscapes(root=opts.data_root,
-                               split='train', transform=train_transform)
+                               split='train', transform=train_transform, aug_json=opts.aug_json, sample_aug_ratio=opts.aug_sample_ratio)
         val_dst = Cityscapes(root=opts.data_root,
                              split='val', transform=val_transform)
     return train_dst, val_dst
@@ -276,7 +306,7 @@ def main():
     if opts.logdir is not None:
         opts.logdir = init_logging(opts.logdir)
 
-    writer = SummaryWriter(log_dir=str(Path(opts.logdir) / 'tensorboard'), max_images=30) 
+    writer = SummaryWriter(log_dir=str(Path(opts.logdir) / 'tensorboard')) 
     
     if opts.dataset.lower() == 'voc':
         opts.num_classes = 21
@@ -289,7 +319,7 @@ def main():
     writer.add_text('opts', text_for_tensorboard)
 
     os.environ['CUDA_VISIBLE_DEVICES'] = opts.gpu_id
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    device = torch.device(f'cuda' if torch.cuda.is_available() else 'cpu')
     logging.info("Device: %s" % device)
 
     # Setup random seed
@@ -398,6 +428,7 @@ def main():
         # =====  Train  =====
         model.train()
         cur_epochs += 1
+        logging.info(f"\nCurrent epoch: {cur_epochs}")
         for (images, labels) in train_loader:
             cur_itrs += 1
 
@@ -423,7 +454,7 @@ def main():
                       (cur_epochs, cur_itrs, opts.total_itrs, interval_loss))
                 interval_loss = 0.0
 
-            if (cur_itrs) % opts.val_interval == 0:
+            if (cur_itrs) % opts.val_interval == 0 or cur_itrs == opts.total_itrs or cur_itrs == 1:
                 save_ckpt('checkpoints/latest_%s_%s_os%d.pth' %
                           (opts.model, opts.dataset, opts.output_stride))
                 logging.info("validation...")

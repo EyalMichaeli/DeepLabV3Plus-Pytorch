@@ -1,0 +1,31 @@
+2023-05-22 12:00:12,326 INFO Device: cuda
+2023-05-22 12:00:12,362 INFO Using augmented images with ratio 0.5
+2023-05-22 12:00:12,362 INFO Number of augmented images: 2975
+2023-05-22 12:00:12,362 INFO json file: /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cs2cs-default_run/2023_0519_1215_17_ampO1_lower_LR/inference_cp_400k_style_std_1.5.json
+2023-05-22 12:00:12,364 INFO Not using augmented images
+2023-05-22 12:00:12,364 INFO Dataset: cityscapes, Train set: 2975, Val set: 500
+2023-05-22 12:00:12,477 INFO [!] Training from scratch, no checkpoint file used
+2023-05-22 12:00:13,775 INFO 
+Current epoch: 1
+2023-05-22 12:00:18,874 INFO Model saved as logs/2023_0522_1200_12_cs_aug_run_munit_default_run_style_1.5/checkpoints/latest_deeplabv3plus_mobilenet_cityscapes_os16.pth
+2023-05-22 12:00:18,874 INFO validation...
+2023-05-22 12:00:44,451 INFO 
+Overall Acc: 0.212693
+Mean Acc: 0.061803
+FreqW Acc: 0.079625
+Mean IoU: 0.023526
+
+2023-05-22 12:00:44,527 INFO Model saved as logs/2023_0522_1200_12_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16.pth
+2023-05-22 12:01:51,387 INFO Epoch 1, Itrs 50/30000, Loss=0.735421
+2023-05-22 12:02:51,302 INFO 
+Current epoch: 2
+2023-05-22 12:03:03,450 INFO Epoch 2, Itrs 100/30000, Loss=0.447505
+2023-05-22 12:03:03,597 INFO Model saved as logs/2023_0522_1200_12_cs_aug_run_munit_default_run_style_1.5/checkpoints/latest_deeplabv3plus_mobilenet_cityscapes_os16.pth
+2023-05-22 12:03:03,597 INFO validation...
+2023-05-22 12:03:26,766 INFO 
+Overall Acc: 0.807526
+Mean Acc: 0.290059
+FreqW Acc: 0.676031
+Mean IoU: 0.238288
+
+2023-05-22 12:03:26,922 INFO Model saved as logs/2023_0522_1200_12_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16.pth

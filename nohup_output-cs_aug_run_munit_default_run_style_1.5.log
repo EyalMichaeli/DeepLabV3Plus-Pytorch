@@ -1,0 +1,34 @@
+nohup: ignoring input
+2023-05-22 12:00:12,326 INFO Device: cuda
+2023-05-22 12:00:12,362 INFO Using augmented images with ratio 0.5
+2023-05-22 12:00:12,362 INFO Number of augmented images: 2975
+2023-05-22 12:00:12,362 INFO json file: /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cs2cs-default_run/2023_0519_1215_17_ampO1_lower_LR/inference_cp_400k_style_std_1.5.json
+2023-05-22 12:00:12,364 INFO Not using augmented images
+2023-05-22 12:00:12,364 INFO Dataset: cityscapes, Train set: 2975, Val set: 500
+2023-05-22 12:00:12,477 INFO [!] Training from scratch, no checkpoint file used
+2023-05-22 12:00:13,775 INFO 
+Current epoch: 1
+2023-05-22 12:00:18,874 INFO Model saved as logs/2023_0522_1200_12_cs_aug_run_munit_default_run_style_1.5/checkpoints/latest_deeplabv3plus_mobilenet_cityscapes_os16.pth
+2023-05-22 12:00:18,874 INFO validation...
+0it [00:00, ?it/s]1it [00:00,  1.20it/s]3it [00:01,  3.49it/s]5it [00:01,  3.97it/s]7it [00:01,  4.16it/s]9it [00:02,  3.99it/s]11it [00:02,  4.16it/s]13it [00:03,  4.14it/s]15it [00:03,  4.23it/s]17it [00:04,  4.28it/s]19it [00:04,  4.52it/s]21it [00:05,  4.19it/s]23it [00:05,  5.09it/s]25it [00:05,  5.21it/s]27it [00:06,  5.26it/s]29it [00:06,  5.37it/s]31it [00:06,  5.45it/s]33it [00:07,  5.50it/s]35it [00:07,  5.51it/s]37it [00:07,  5.55it/s]39it [00:08,  5.48it/s]41it [00:08,  4.54it/s]43it [00:09,  5.78it/s]45it [00:09,  5.73it/s]47it [00:09,  5.28it/s]49it [00:10,  4.97it/s]51it [00:10,  4.95it/s]53it [00:11,  5.07it/s]55it [00:11,  5.21it/s]57it [00:11,  5.26it/s]59it [00:12,  4.97it/s]61it [00:12,  4.30it/s]63it [00:13,  4.84it/s]65it [00:13,  4.72it/s]67it [00:14,  4.57it/s]69it [00:14,  4.56it/s]71it [00:14,  4.53it/s]73it [00:15,  4.83it/s]75it [00:15,  5.01it/s]77it [00:16,  5.14it/s]79it [00:16,  5.20it/s]81it [00:17,  4.40it/s]83it [00:17,  5.63it/s]85it [00:17,  5.60it/s]87it [00:17,  5.59it/s]89it [00:18,  5.57it/s]91it [00:18,  5.52it/s]92it [00:18,  5.88it/s]93it [00:19,  5.47it/s]94it [00:19,  5.23it/s]95it [00:19,  4.72it/s]96it [00:19,  4.96it/s]97it [00:19,  4.50it/s]98it [00:20,  5.14it/s]99it [00:20,  4.31it/s]101it [00:21,  3.57it/s]103it [00:21,  4.65it/s]105it [00:21,  4.65it/s]107it [00:22,  4.85it/s]109it [00:22,  5.07it/s]111it [00:22,  5.12it/s]113it [00:23,  5.24it/s]115it [00:23,  5.27it/s]117it [00:23,  5.34it/s]119it [00:24,  5.37it/s]121it [00:24,  4.67it/s]123it [00:25,  5.65it/s]125it [00:25,  5.64it/s]125it [00:25,  4.90it/s]
+2023-05-22 12:00:44,451 INFO 
+Overall Acc: 0.212693
+Mean Acc: 0.061803
+FreqW Acc: 0.079625
+Mean IoU: 0.023526
+
+2023-05-22 12:00:44,527 INFO Model saved as logs/2023_0522_1200_12_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16.pth
+2023-05-22 12:01:51,387 INFO Epoch 1, Itrs 50/30000, Loss=0.735421
+2023-05-22 12:02:51,302 INFO 
+Current epoch: 2
+2023-05-22 12:03:03,450 INFO Epoch 2, Itrs 100/30000, Loss=0.447505
+2023-05-22 12:03:03,597 INFO Model saved as logs/2023_0522_1200_12_cs_aug_run_munit_default_run_style_1.5/checkpoints/latest_deeplabv3plus_mobilenet_cityscapes_os16.pth
+2023-05-22 12:03:03,597 INFO validation...
+0it [00:00, ?it/s]1it [00:00,  1.21it/s]3it [00:01,  3.44it/s]5it [00:01,  3.94it/s]7it [00:01,  4.13it/s]9it [00:02,  4.52it/s]11it [00:02,  4.84it/s]13it [00:03,  5.06it/s]15it [00:03,  5.20it/s]17it [00:03,  5.30it/s]19it [00:04,  5.37it/s]21it [00:04,  4.54it/s]23it [00:04,  5.79it/s]25it [00:05,  5.64it/s]27it [00:05,  5.72it/s]29it [00:05,  5.73it/s]31it [00:06,  5.70it/s]33it [00:06,  5.78it/s]35it [00:06,  5.70it/s]37it [00:07,  5.70it/s]39it [00:07,  5.67it/s]41it [00:08,  4.74it/s]43it [00:08,  6.08it/s]45it [00:08,  6.00it/s]47it [00:09,  5.92it/s]49it [00:09,  5.83it/s]51it [00:09,  5.74it/s]53it [00:10,  5.70it/s]55it [00:10,  5.70it/s]57it [00:10,  5.67it/s]59it [00:11,  5.61it/s]61it [00:11,  4.69it/s]63it [00:11,  5.88it/s]65it [00:12,  5.76it/s]67it [00:12,  5.72it/s]69it [00:12,  5.68it/s]71it [00:13,  5.74it/s]73it [00:13,  5.75it/s]75it [00:14,  5.67it/s]77it [00:14,  5.71it/s]79it [00:14,  5.63it/s]81it [00:15,  4.90it/s]83it [00:15,  5.92it/s]85it [00:15,  5.79it/s]87it [00:16,  5.74it/s]89it [00:16,  5.77it/s]91it [00:16,  5.67it/s]93it [00:17,  5.65it/s]95it [00:17,  5.63it/s]97it [00:17,  5.68it/s]99it [00:18,  5.65it/s]101it [00:18,  4.92it/s]103it [00:19,  5.91it/s]105it [00:19,  5.85it/s]107it [00:19,  5.75it/s]109it [00:20,  5.73it/s]111it [00:20,  5.61it/s]113it [00:20,  5.56it/s]115it [00:21,  5.45it/s]117it [00:21,  5.40it/s]119it [00:21,  5.47it/s]121it [00:22,  4.57it/s]123it [00:22,  5.77it/s]125it [00:23,  5.65it/s]125it [00:23,  5.41it/s]
+2023-05-22 12:03:26,766 INFO 
+Overall Acc: 0.807526
+Mean Acc: 0.290059
+FreqW Acc: 0.676031
+Mean IoU: 0.238288
+
+2023-05-22 12:03:26,922 INFO Model saved as logs/2023_0522_1200_12_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16.pth
