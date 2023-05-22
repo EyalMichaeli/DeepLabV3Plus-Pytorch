@@ -24,14 +24,28 @@ from tensorboardX import SummaryWriter
 import pprint
 
 """
-nohup sh -c 'CUDA_VISIBLE_DEVICES=3 python main.py \
+# train base model from scratch
+nohup sh -c 'python main.py \
+    --gpu_id 1 \
     --random_seed 1 \
     --logdir logs/cs_base_run \
         --model deeplabv3plus_mobilenet --dataset cityscapes --gpu_id 0  --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
             2>&1 | tee -a nohup_output-cs_base_run.log &
 
-tensorboard --logdir=logs --port=6006
+            
+# resume training with diff seed
+nohup sh -c 'python main.py \
+    --gpu_id 1 \
+    --random_seed 2 \
+    --logdir logs/cs_base_run_continue \
+        --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
+            --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results\
+                  --continue_training --ckpt logs/2023_0520_2331_56_cs_base_run/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16.pth'
+                  
+
+
+tensorboard --logdir=logs --port=6006 --max_reload 30
 """
 def get_argparser():
     parser = argparse.ArgumentParser()
@@ -88,9 +102,9 @@ def get_argparser():
     parser.add_argument("--random_seed", type=int, default=1,
                         help="random seed (default: 1)")
     parser.add_argument("--print_interval", type=int, default=50,
-                        help="print interval of loss (default: 50)")
+                        help="iterations interval of loss (default: 50)")
     parser.add_argument("--val_interval", type=int, default=200,
-                        help="epoch interval for eval (default: 200)")
+                        help="iterations interval for eval (default: 200)")
     parser.add_argument("--download", action='store_true', default=False,
                         help="download datasets")
 
@@ -262,7 +276,7 @@ def main():
     if opts.logdir is not None:
         opts.logdir = init_logging(opts.logdir)
 
-    writer = SummaryWriter(log_dir=str(Path(opts.logdir) / 'tensorboard')) 
+    writer = SummaryWriter(log_dir=str(Path(opts.logdir) / 'tensorboard'), max_images=30) 
     
     if opts.dataset.lower() == 'voc':
         opts.num_classes = 21
@@ -375,6 +389,10 @@ def main():
         logging.info(metrics.to_str(val_score))
         return
 
+    lr = optimizer.param_groups[0]['lr']
+    if writer is not None:
+        writer.add_scalar('learning_rate', lr, cur_itrs)
+        
     interval_loss = 0
     while True: 
         # =====  Train  =====
@@ -436,12 +454,12 @@ def main():
                                          
                 
                 model.train()
+            
+            last_lr = optimizer.param_groups[0]['lr']
             scheduler.step()
-            # get current lr
-            lr = optimizer.param_groups[0]['lr']
-            # tensorboard
-            if writer is not None:
-                writer.add_scalar('learning_rate', lr, cur_itrs)
+            current_lr = optimizer.param_groups[0]['lr']
+            if current_lr != last_lr:
+                writer.add_scalar('learning_rate', current_lr, cur_itrs)
 
             if cur_itrs >= opts.total_itrs:
                 return
