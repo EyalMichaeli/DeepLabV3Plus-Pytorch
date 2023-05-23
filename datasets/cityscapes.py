@@ -62,7 +62,8 @@ class Cityscapes(data.Dataset):
         CityscapesClass('bicycle',              33, 18, 'vehicle', 7, True, False, (119, 11, 32)),
         CityscapesClass('license plate',        -1, 255, 'vehicle', 7, False, True, (0, 0, 142)),
     ]
-
+    # if u want to get the class name given the train_id, use this: classes[train_id].name
+    
     train_id_to_color = [c.color for c in classes if (c.train_id != -1 and c.train_id != 255)]
     train_id_to_color.append([0, 0, 0])
     train_id_to_color = np.array(train_id_to_color)

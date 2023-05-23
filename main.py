@@ -23,15 +23,39 @@ import matplotlib.pyplot as plt
 from tensorboardX import SummaryWriter
 import pprint
 
+
+"""
+Using the famous DeepLabV3+ model with MobileNetV2 backbone, trained on Cityscapes dataset.
+Cityscapes dataset is a dataset of street scenes from 50 different cities, with pixel-level annotations for 30 classes.
+The model is trained on 19 classes, and the 11 remaining classes are ignored.
+The model is trained for 30k iterations, with a batch size of 32, and a learning rate of 0.01.
+The cityscapes dataset has 2975 training images, and 500 validation images.
+The model is trained with augmentations:
+* random crops of size 256x256 (after it was resized to 512x512).
+* random horizontal flip.
+* random color jitter.
+
+The hparams are as follows:
+* model: deeplabv3plus_mobilenet
+* lr: 0.01
+* batch_size: 32
+* loss_type: ce
+* weight_decay: 0.0001
+* crop_size: 256
+"""
+
+
+
+
 """
 # train base model from scratch
 nohup sh -c 'python main.py \
     --gpu_id 1 \
     --random_seed 1 \
-    --logdir logs/cs_base_run \
+    --logdir logs/cs_base_run_seed_1 \
         --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
-            2>&1 | tee -a nohup_output-cs_base_run.log &
+            2>&1 | tee -a nohup_output-cs_base_run_seed_2.log &
 
             
 # resume training with diff seed
@@ -69,7 +93,7 @@ nohup sh -c 'python main.py \
 
             
             
-tensorboard --logdir=logs --port=6006 --max_reload 30
+tensorboard --logdir=logs --port=6006
 """
 def get_argparser():
     parser = argparse.ArgumentParser()
@@ -125,6 +149,7 @@ def get_argparser():
                         help='weight decay (default: 1e-4)')
     parser.add_argument("--random_seed", type=int, default=1,
                         help="random seed (default: 1)")
+    
     parser.add_argument("--print_interval", type=int, default=50,
                         help="iterations interval of loss (default: 50)")
     parser.add_argument("--val_interval", type=int, default=100,
@@ -186,7 +211,7 @@ def get_dataset(opts):
         ])
         if opts.crop_val:
             val_transform = et.ExtCompose([
-                et.ExtResize(size=opts.crop_size),
+                # et.ExtResize(size=opts.crop_size),
                 et.ExtResize(opts.crop_size),
                 et.ExtCenterCrop(opts.crop_size),
                 et.ExtToTensor(),
@@ -260,6 +285,18 @@ def validate(opts, model, loader, device, metrics, epoch=0, iter=0):
             metrics.update(targets, preds)
 
             if batch_index % 20 == 0 and opts.save_val_results:
+                # if iter is higher than 5000: do it for iter % 1000 == 0
+                # if iter is higher than 1000: do it for iter % 300 == 0
+                # else: do it for iter % 100 == 0
+                if iter > 5000:
+                    if iter % 1000 != 0:
+                        continue
+                elif iter > 1000:
+                    if iter % 300 != 0:
+                        continue
+                else:
+                    if iter % 100 != 0:
+                        continue
                 
                 i = 0  # only save one image per batch, the first one
 
@@ -306,7 +343,7 @@ def main():
     if opts.logdir is not None:
         opts.logdir = init_logging(opts.logdir)
 
-    writer = SummaryWriter(log_dir=str(Path(opts.logdir) / 'tensorboard')) 
+    writer = SummaryWriter(log_dir=str(Path(opts.logdir) / 'tb')) 
     
     if opts.dataset.lower() == 'voc':
         opts.num_classes = 21
@@ -321,7 +358,9 @@ def main():
     os.environ['CUDA_VISIBLE_DEVICES'] = opts.gpu_id
     device = torch.device(f'cuda' if torch.cuda.is_available() else 'cpu')
     logging.info("Device: %s" % device)
-
+    logging.info("Random Seed: %d \n" % opts.random_seed)
+    logging.info("Options: %s" % pprint.pformat(vars(opts)))
+    
     # Setup random seed
     torch.manual_seed(opts.random_seed)
     np.random.seed(opts.random_seed)
@@ -455,8 +494,7 @@ def main():
                 interval_loss = 0.0
 
             if (cur_itrs) % opts.val_interval == 0 or cur_itrs == opts.total_itrs or cur_itrs == 1:
-                save_ckpt('checkpoints/latest_%s_%s_os%d.pth' %
-                          (opts.model, opts.dataset, opts.output_stride))
+                save_ckpt(f"checkpoints/{opts.model}_{opts.dataset}_os{opts.output_stride}_iter{cur_itrs}_epoch{cur_epochs}_miou{best_score:.4f}.pth")
                 logging.info("validation...")
                 model.eval()
                 val_score, images_to_visualize = validate(
@@ -464,16 +502,21 @@ def main():
                 logging.info(metrics.to_str(val_score))
                 if val_score['Mean IoU'] > best_score:  # save best model
                     best_score = val_score['Mean IoU']
-                    save_ckpt('checkpoints/best_%s_%s_os%d.pth' %
-                              (opts.model, opts.dataset, opts.output_stride))
+
+                    # convert the above line to f strinng
+                    save_ckpt(f'checkpoints/best_{opts.model}_{opts.dataset}_os{opts.output_stride}_iter{cur_itrs}_epoch{cur_epochs}_miou{val_score["Mean IoU"]:.4f}.pth')
+
 
                 # same for tensorboard
                 if writer is not None:
                     writer.add_scalar('Val_Acc', val_score['Overall Acc'], cur_itrs)
+                    writer.add_scalar('Val_mean_class_wise_acc', val_score['Mean Acc'], cur_itrs)
                     writer.add_scalar('Val_MIoU', val_score['Mean IoU'], cur_itrs)
                     # add also class IOU, but all in the same graph
-                    for class_id, iou in enumerate(val_score['Class IoU']):
-                        writer.add_scalar(f'Val_class_iou/{class_id}_IoU', iou, cur_itrs)
+                    for class_id, iou in val_score['Class IoU'].items():
+                        class_name = train_dst.classes[class_id].name
+                        class_name = class_name.replace(' ', '_')
+                        writer.add_scalar(f'Val_class_iou/{class_name}', iou, cur_itrs)
                         
                     for k, (img, target, lbl) in enumerate(images_to_visualize):
                         img = (denorm(img) * 255).astype(np.uint8)

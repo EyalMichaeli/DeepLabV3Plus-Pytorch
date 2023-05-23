@@ -37,10 +37,16 @@ class StreamSegMetrics(_StreamMetrics):
     @staticmethod
     def to_str(results):
         string = "\n"
-        for k, v in results.items():
-            if k!="Class IoU":
-                string += "%s: %f\n"%(k, v)
+        # This used to work:
+        # for k, v in results.items():
+        #     if k!="Class IoU":
+        #         string += "%s: %f\n"%(k, v)
         
+        # copy the above, make sure float point is 4 digits after decimal point
+        string = "\n"
+        for k, v in results.items():
+           if k!="Class IoU":
+               string += "%s: %.4f\n"%(k, v)
         #string+='Class IoU:\n'
         #for k, v in results['Class IoU'].items():
         #    string += "\tclass %d: %f\n"%(k, v)
