@@ -426,6 +426,7 @@ class ExtResize(object):
         interpolate_str = _pil_interpolation_to_str[self.interpolation]
         return self.__class__.__name__ + '(size={0}, interpolation={1})'.format(self.size, interpolate_str) 
     
+
 class ExtColorJitter(object):
     """Randomly change the brightness, contrast and saturation of an image.
     Args:
@@ -517,6 +518,27 @@ class ExtColorJitter(object):
         format_string += ', saturation={0}'.format(self.saturation)
         format_string += ', hue={0})'.format(self.hue)
         return format_string
+
+
+class ExtGaussianBlur(object):
+    """Gaussian blur augmentation in SimCLR https://arxiv.org/abs/2002.05709
+    using pytorch transforms.
+    """
+
+    def __init__(self, kernel_size=3, min=0.1, max=2.0):
+        self.min = min
+        self.max = max
+        # kernel size is set to be 10% of the image height/width
+        self.kernel_size = kernel_size
+
+    def __call__(self, img, lbl):
+        # random sigma between 0.1 and 2.0
+        sigma = random.random() * (self.max - self.min) + self.min
+        return F.gaussian_blur(img, self.kernel_size, [sigma, sigma]), lbl
+
+    def __repr__(self):
+        return self.__class__.__name__ + '(kernel_size={0}, min={1}, max={2})'.format(self.kernel_size, self.min, self.max)
+    
 
 class Lambda(object):
     """Apply a user-defined lambda as a transform.

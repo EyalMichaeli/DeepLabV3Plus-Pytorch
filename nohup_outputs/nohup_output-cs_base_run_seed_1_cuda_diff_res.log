@@ -1,0 +1,102 @@
+nohup: ignoring input
+2023-05-28 21:42:16,968 INFO Device: cuda
+2023-05-28 21:42:16,970 INFO Random Seed: 1 
+
+2023-05-28 21:42:16,971 INFO Options: {'aug_json': None,
+ 'aug_sample_ratio': 0.5,
+ 'batch_size': 32,
+ 'ckpt': None,
+ 'continue_training': False,
+ 'crop_size': 393,
+ 'crop_val': False,
+ 'data_root': '/mnt/raid/home/eyal_michaeli/datasets/cityscapes',
+ 'dataset': 'cityscapes',
+ 'download': False,
+ 'gpu_id': '3',
+ 'logdir': 'logs/2023_0528_2142_16_cs_base_run_seed_1_cuda_diff_res',
+ 'loss_type': 'cross_entropy',
+ 'lr': 0.2,
+ 'lr_policy': 'poly',
+ 'model': 'deeplabv3plus_mobilenet',
+ 'num_classes': 19,
+ 'output_stride': 16,
+ 'print_interval': 50,
+ 'random_seed': 1,
+ 'save_val_results': True,
+ 'separable_conv': False,
+ 'step_size': 10000,
+ 'test_only': False,
+ 'total_itrs': 30000.0,
+ 'val_batch_size': 4,
+ 'val_interval': 100,
+ 'weight_decay': 0.0001,
+ 'year': '2012'}
+2023-05-28 21:42:16,989 INFO Not using augmented images
+2023-05-28 21:42:16,991 INFO Not using augmented images
+2023-05-28 21:42:16,992 INFO Dataset: cityscapes, Train set: 2975, Val set: 500
+2023-05-28 21:42:17,155 INFO [!] Training from scratch, no checkpoint file used
+2023-05-28 21:42:18,832 INFO 
+Current epoch: 1
+Traceback (most recent call last):
+  File "main.py", line 548, in <module>
+    main()
+  File "main.py", line 484, in main
+    loss = criterion(outputs, labels)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/nn/modules/loss.py", line 1174, in forward
+    return F.cross_entropy(input, target, weight=self.weight,
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/nn/functional.py", line 3029, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(input, target, weight, _Reduction.get_enum(reduction), ignore_index, label_smoothing)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 360.00 MiB (GPU 0; 23.70 GiB total capacity; 10.60 GiB already allocated; 59.56 MiB free; 10.79 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+nohup: ignoring input
+2023-05-28 21:48:16,247 INFO Device: cuda
+2023-05-28 21:48:16,248 INFO Random Seed: 1 
+
+2023-05-28 21:48:16,249 INFO Options: {'aug_json': None,
+ 'aug_sample_ratio': 0.5,
+ 'batch_size': 32,
+ 'ckpt': None,
+ 'continue_training': False,
+ 'crop_size': 393,
+ 'crop_val': False,
+ 'data_root': '/mnt/raid/home/eyal_michaeli/datasets/cityscapes',
+ 'dataset': 'cityscapes',
+ 'download': False,
+ 'gpu_id': '3',
+ 'logdir': 'logs/2023_0528_2148_16_cs_base_run_seed_1_cuda_diff_res',
+ 'loss_type': 'cross_entropy',
+ 'lr': 0.2,
+ 'lr_policy': 'poly',
+ 'model': 'deeplabv3plus_mobilenet',
+ 'num_classes': 19,
+ 'output_stride': 16,
+ 'print_interval': 50,
+ 'random_seed': 1,
+ 'save_val_results': True,
+ 'separable_conv': False,
+ 'step_size': 10000,
+ 'test_only': False,
+ 'total_itrs': 30000.0,
+ 'val_batch_size': 4,
+ 'val_interval': 100,
+ 'weight_decay': 0.0001,
+ 'year': '2012'}
+2023-05-28 21:48:16,267 INFO Not using augmented images
+2023-05-28 21:48:16,269 INFO Not using augmented images
+2023-05-28 21:48:16,269 INFO Dataset: cityscapes, Train set: 2975, Val set: 500
+2023-05-28 21:48:16,423 INFO [!] Training from scratch, no checkpoint file used
+2023-05-28 21:48:18,146 INFO 
+Current epoch: 1
+Traceback (most recent call last):
+  File "main.py", line 548, in <module>
+    main()
+  File "main.py", line 484, in main
+    loss = criterion(outputs, labels)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/nn/modules/loss.py", line 1174, in forward
+    return F.cross_entropy(input, target, weight=self.weight,
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/nn/functional.py", line 3029, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(input, target, weight, _Reduction.get_enum(reduction), ignore_index, label_smoothing)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 360.00 MiB (GPU 0; 23.70 GiB total capacity; 10.60 GiB already allocated; 59.56 MiB free; 10.79 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

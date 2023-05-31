@@ -24,38 +24,16 @@ from tensorboardX import SummaryWriter
 import pprint
 
 
-"""
-Using the famous DeepLabV3+ model with MobileNetV2 backbone, trained on Cityscapes dataset.
-Cityscapes dataset is a dataset of street scenes from 50 different cities, with pixel-level annotations for 30 classes.
-The model is trained on 19 classes, and the 11 remaining classes are ignored.
-The model is trained for 30k iterations, with a batch size of 32, and a learning rate of 0.01.
-The cityscapes dataset has 2975 training images, and 500 validation images.
-The model is trained with augmentations:
-* random crops of size 256x256 (after it was resized to 512x512).
-* random horizontal flip.
-* random color jitter.
-
-The hparams are as follows:
-* model: deeplabv3plus_mobilenet
-* lr: 0.01
-* batch_size: 32
-* loss_type: ce
-* weight_decay: 0.0001
-* crop_size: 256
-"""
-
-
-
 
 """
 # train base model from scratch
 nohup sh -c 'python main.py \
-    --gpu_id 1 \
-    --random_seed 1 \
-    --logdir logs/cs_base_run_seed_1 \
+    --gpu_id 3 \
+    --random_seed 3 \
+    --logdir logs/cs_base_run_seed_3_cuda \
         --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
-            2>&1 | tee -a nohup_output-cs_base_run_seed_2.log &
+            2>&1 | tee -a nohup_outputs/nohup_output-cs_base_run_seed_3_cuda.log &
 
             
 # resume training with diff seed
@@ -65,36 +43,57 @@ nohup sh -c 'python main.py \
     --logdir logs/cs_base_run_continue \
         --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results\
-                  --continue_training --ckpt logs/2023_0520_2331_56_cs_base_run/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16.pth'
+                  --continue_training --ckpt logs/2023_0520_2331_56_cs_base_run/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16.pth' \
+            2>&1 | tee -a nohup_outputs/nohup_output-.log &
                   
 
 # train from scratch with aug, MUNIT
 nohup sh -c 'python main.py \
-    --gpu_id 1 \
+    --gpu_id 2 \
     --random_seed 1 \
-    --logdir logs/cs_aug_run_munit_default_run_style_1.5 \
-    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cs2cs-default_run/2023_0519_1215_17_ampO1_lower_LR/inference_cp_400k_style_std_1.5.json \
+    --logdir logs/cs_aug_run_munit_default_run_style_1.5_seed_1_cuda \
+    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cs2cs-style_recon_2_perceptual_1/2023_0518_1805_39_ampO1_lower_LR/inference_cp_400k_style_std_2.0.json \
     --aug_sample_ratio 0.5 \
         --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
-            2>&1 | tee -a nohup_output-cs_aug_run_munit_default_run_style_1.5.log &
+            2>&1 | tee -a nohup_outputs/nohup_output-cs_aug_run_munit_default_run_style_1.5_seed_1_cuda.log &
 
             
 # train from scratch with aug, MUNIT
 nohup sh -c 'python main.py \
-    --gpu_id 1 \
+    --gpu_id 2 \
     --random_seed 1 \
-    --logdir logs/cs_aug_run_munit_default_run_style_2.0 \
-    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cs2cs-default_run/2023_0519_1215_17_ampO1_lower_LR/inference_cp_400k_style_std_1.5.json \
+    --logdir logs/cs_aug_run_munit_style_recon_2_perceptual_1_style_1.5_aug_ratio_0.75 \
+    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cs2cs-style_recon_2_perceptual_1/2023_0518_1805_39_ampO1_lower_LR/inference_cp_400k_style_std_1.5.json \
+    --aug_sample_ratio 0.75 \
+        --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
+            --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
+            2>&1 | tee -a nohup_outputs/nohup_output-cs_aug_run_munit_style_recon_2_perceptual_1_style_1.5_aug_ratio_0.75.log &
+
+            
+# train from scratch with aug, MUNIT
+nohup sh -c 'python main.py \
+    --gpu_id 2 \
+    --random_seed 1 \
+    --logdir logs/cs_aug_run_munit_style_recon_2_perceptual_1_style_1.5_aug_ratio_0.5 \
+    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cs2cs-style_recon_2_perceptual_1/2023_0518_1805_39_ampO1_lower_LR/inference_cp_400k_style_std_1.5.json \
     --aug_sample_ratio 0.5 \
         --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
-            2>&1 | tee -a nohup_output-cs_aug_run_munit_default_run_style_2.log &
-
+            2>&1 | tee -a nohup_outputs/nohup_output-cs_aug_run_munit_style_recon_2_perceptual_1_style_1.5_aug_ratio_0.5.log &
             
             
+pkill -u eyal_michaeli tensorboard
 tensorboard --logdir=logs --port=6006
+
+
+# send command after x minutes: (does it work???) perhaps try: 
+# try with diff syntax:
+# nohup sh -c 'sleep 1m; python main.py \
+
 """
+
+
 def get_argparser():
     parser = argparse.ArgumentParser()
 
@@ -236,6 +235,7 @@ def get_dataset(opts):
             et.ExtRandomCrop(size=(opts.crop_size, opts.crop_size)),
             et.ExtColorJitter(brightness=0.5, contrast=0.5, saturation=0.5),
             et.ExtRandomHorizontalFlip(),
+            #et.ExtRandomGaussianBlur(), if u want it, the default params are ok (I cheked)
             et.ExtToTensor(),
             et.ExtNormalize(mean=[0.485, 0.456, 0.406],
                             std=[0.229, 0.224, 0.225]),
@@ -268,11 +268,6 @@ def validate(opts, model, loader, device, metrics, epoch=0, iter=0):
         denorm = utils.Denormalize(mean=[0.485, 0.456, 0.406],
                                    std=[0.229, 0.224, 0.225])
 
-    # divide results_dir into subdirs, that are named after the epoch
-    if opts.save_val_results:
-        results_dir = os.path.join(results_dir, str(epoch))
-        os.makedirs(results_dir, exist_ok=True)
-
     with torch.no_grad():
         for batch_index, (images, labels) in tqdm(enumerate(loader)):
             images = images.to(device, dtype=torch.float32)
@@ -298,6 +293,10 @@ def validate(opts, model, loader, device, metrics, epoch=0, iter=0):
                     if iter % 100 != 0:
                         continue
                 
+                # divide results_dir into subdirs, that are named after the epoch
+                results_dir = os.path.join(results_dir, str(epoch))
+                os.makedirs(results_dir, exist_ok=True)
+
                 i = 0  # only save one image per batch, the first one
 
                 images_to_visualize.append((
@@ -338,11 +337,12 @@ def validate(opts, model, loader, device, metrics, epoch=0, iter=0):
 
 def main():
     opts = get_argparser().parse_args()
-
+    
     # init logging
     if opts.logdir is not None:
         opts.logdir = init_logging(opts.logdir)
 
+    
     writer = SummaryWriter(log_dir=str(Path(opts.logdir) / 'tb')) 
     
     if opts.dataset.lower() == 'voc':
@@ -363,6 +363,8 @@ def main():
     
     # Setup random seed
     torch.manual_seed(opts.random_seed)
+    torch.cuda.manual_seed(opts.random_seed)
+    torch.cuda.manual_seed_all(opts.random_seed)
     np.random.seed(opts.random_seed)
     random.seed(opts.random_seed)
     # set deterministic cudnn
@@ -384,6 +386,9 @@ def main():
 
     # Set up model (all models are 'constructed at network.modeling)
     model = network.modeling.__dict__[opts.model](num_classes=opts.num_classes, output_stride=opts.output_stride)
+    # compile with pytorch 2.0
+    # model = torch.compile(model)
+
     if opts.separable_conv and 'plus' in opts.model:
         network.convert_to_separable_conv(model.classifier)
     utils.set_bn_momentum(model.backbone, momentum=0.01)
@@ -494,7 +499,7 @@ def main():
                 interval_loss = 0.0
 
             if (cur_itrs) % opts.val_interval == 0 or cur_itrs == opts.total_itrs or cur_itrs == 1:
-                save_ckpt(f"checkpoints/{opts.model}_{opts.dataset}_os{opts.output_stride}_iter{cur_itrs}_epoch{cur_epochs}_miou{best_score:.4f}.pth")
+                #save_ckpt(f"checkpoints/{opts.model}_{opts.dataset}_os{opts.output_stride}_iter{cur_itrs}_epoch{cur_epochs}_miou{best_score:.4f}.pth")
                 logging.info("validation...")
                 model.eval()
                 val_score, images_to_visualize = validate(

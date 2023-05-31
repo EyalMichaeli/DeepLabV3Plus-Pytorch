@@ -1,0 +1,3433 @@
+2023-05-27 23:38:05,910 INFO Device: cuda
+2023-05-27 23:38:05,912 INFO Random Seed: 1 
+
+2023-05-27 23:38:05,913 INFO Options: {'aug_json': '/mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cs2cs-default_run/2023_0519_1215_17_ampO1_lower_LR/inference_cp_400k_style_std_1.5.json',
+ 'aug_sample_ratio': 0.5,
+ 'batch_size': 32,
+ 'ckpt': None,
+ 'continue_training': False,
+ 'crop_size': 256,
+ 'crop_val': False,
+ 'data_root': '/mnt/raid/home/eyal_michaeli/datasets/cityscapes',
+ 'dataset': 'cityscapes',
+ 'download': False,
+ 'gpu_id': '2',
+ 'logdir': 'logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5',
+ 'loss_type': 'cross_entropy',
+ 'lr': 0.2,
+ 'lr_policy': 'poly',
+ 'model': 'deeplabv3plus_mobilenet',
+ 'num_classes': 19,
+ 'output_stride': 16,
+ 'print_interval': 50,
+ 'random_seed': 1,
+ 'save_val_results': True,
+ 'separable_conv': False,
+ 'step_size': 10000,
+ 'test_only': False,
+ 'total_itrs': 30000.0,
+ 'val_batch_size': 4,
+ 'val_interval': 100,
+ 'weight_decay': 0.0001,
+ 'year': '2012'}
+2023-05-27 23:38:05,937 INFO Using augmented images with ratio 0.5
+2023-05-27 23:38:05,937 INFO Number of augmented images: 2975
+2023-05-27 23:38:05,937 INFO json file: /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cs2cs-default_run/2023_0519_1215_17_ampO1_lower_LR/inference_cp_400k_style_std_1.5.json
+2023-05-27 23:38:05,939 INFO Not using augmented images
+2023-05-27 23:38:05,939 INFO Dataset: cityscapes, Train set: 2975, Val set: 500
+2023-05-27 23:38:06,077 INFO [!] Training from scratch, no checkpoint file used
+2023-05-27 23:38:07,524 INFO 
+Current epoch: 1
+2023-05-27 23:38:13,142 INFO validation...
+2023-05-27 23:38:37,965 INFO 
+Overall Acc: 0.2127
+Mean Acc: 0.0618
+FreqW Acc: 0.0796
+Mean IoU: 0.0235
+
+2023-05-27 23:38:38,046 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter1_epoch1_miou0.0235.pth
+2023-05-27 23:39:46,897 INFO Epoch 1, Itrs 50/30000, Loss=0.734347
+2023-05-27 23:40:51,767 INFO 
+Current epoch: 2
+2023-05-27 23:41:04,888 INFO Epoch 2, Itrs 100/30000, Loss=0.446797
+2023-05-27 23:41:04,889 INFO validation...
+2023-05-27 23:41:30,902 INFO 
+Overall Acc: 0.8082
+Mean Acc: 0.2924
+FreqW Acc: 0.6752
+Mean IoU: 0.2380
+
+2023-05-27 23:41:30,987 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter100_epoch2_miou0.2380.pth
+2023-05-27 23:42:40,486 INFO Epoch 2, Itrs 150/30000, Loss=0.376219
+2023-05-27 23:43:31,268 INFO 
+Current epoch: 3
+2023-05-27 23:43:56,651 INFO Epoch 3, Itrs 200/30000, Loss=0.341489
+2023-05-27 23:43:56,651 INFO validation...
+2023-05-27 23:44:20,634 INFO 
+Overall Acc: 0.8724
+Mean Acc: 0.4254
+FreqW Acc: 0.7822
+Mean IoU: 0.3530
+
+2023-05-27 23:44:20,714 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter200_epoch3_miou0.3530.pth
+2023-05-27 23:45:32,558 INFO Epoch 3, Itrs 250/30000, Loss=0.326451
+2023-05-27 23:46:11,706 INFO 
+Current epoch: 4
+2023-05-27 23:46:47,802 INFO Epoch 4, Itrs 300/30000, Loss=0.302692
+2023-05-27 23:46:47,803 INFO validation...
+2023-05-27 23:47:13,847 INFO 
+Overall Acc: 0.8881
+Mean Acc: 0.4731
+FreqW Acc: 0.8089
+Mean IoU: 0.3992
+
+2023-05-27 23:47:13,928 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter300_epoch4_miou0.3992.pth
+2023-05-27 23:48:24,544 INFO Epoch 4, Itrs 350/30000, Loss=0.293179
+2023-05-27 23:48:52,314 INFO 
+Current epoch: 5
+2023-05-27 23:49:41,676 INFO Epoch 5, Itrs 400/30000, Loss=0.283669
+2023-05-27 23:49:41,677 INFO validation...
+2023-05-27 23:50:06,601 INFO 
+Overall Acc: 0.8892
+Mean Acc: 0.4991
+FreqW Acc: 0.8089
+Mean IoU: 0.4207
+
+2023-05-27 23:50:06,688 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter400_epoch5_miou0.4207.pth
+2023-05-27 23:51:17,073 INFO Epoch 5, Itrs 450/30000, Loss=0.278977
+2023-05-27 23:51:31,717 INFO 
+Current epoch: 6
+2023-05-27 23:52:31,304 INFO Epoch 6, Itrs 500/30000, Loss=0.271379
+2023-05-27 23:52:31,305 INFO validation...
+2023-05-27 23:52:57,823 INFO 
+Overall Acc: 0.8935
+Mean Acc: 0.5006
+FreqW Acc: 0.8153
+Mean IoU: 0.4193
+
+2023-05-27 23:54:08,753 INFO Epoch 6, Itrs 550/30000, Loss=0.266642
+2023-05-27 23:54:11,750 INFO 
+Current epoch: 7
+2023-05-27 23:55:25,209 INFO Epoch 7, Itrs 600/30000, Loss=0.254203
+2023-05-27 23:55:25,210 INFO validation...
+2023-05-27 23:55:49,409 INFO 
+Overall Acc: 0.8975
+Mean Acc: 0.5300
+FreqW Acc: 0.8242
+Mean IoU: 0.4448
+
+2023-05-27 23:55:49,480 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter600_epoch7_miou0.4448.pth
+2023-05-27 23:56:52,127 INFO 
+Current epoch: 8
+2023-05-27 23:57:01,316 INFO Epoch 8, Itrs 650/30000, Loss=0.255443
+2023-05-27 23:58:17,190 INFO Epoch 8, Itrs 700/30000, Loss=0.250819
+2023-05-27 23:58:17,191 INFO validation...
+2023-05-27 23:58:42,610 INFO 
+Overall Acc: 0.8934
+Mean Acc: 0.5193
+FreqW Acc: 0.8175
+Mean IoU: 0.4297
+
+2023-05-27 23:59:33,062 INFO 
+Current epoch: 9
+2023-05-27 23:59:54,481 INFO Epoch 9, Itrs 750/30000, Loss=0.242946
+2023-05-28 00:01:08,140 INFO Epoch 9, Itrs 800/30000, Loss=0.241368
+2023-05-28 00:01:08,140 INFO validation...
+2023-05-28 00:01:34,289 INFO 
+Overall Acc: 0.9038
+Mean Acc: 0.5832
+FreqW Acc: 0.8343
+Mean IoU: 0.4837
+
+2023-05-28 00:01:34,381 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter800_epoch9_miou0.4837.pth
+2023-05-28 00:02:11,385 INFO 
+Current epoch: 10
+2023-05-28 00:02:46,177 INFO Epoch 10, Itrs 850/30000, Loss=0.233161
+2023-05-28 00:04:01,915 INFO Epoch 10, Itrs 900/30000, Loss=0.232382
+2023-05-28 00:04:01,916 INFO validation...
+2023-05-28 00:04:26,193 INFO 
+Overall Acc: 0.9022
+Mean Acc: 0.5881
+FreqW Acc: 0.8321
+Mean IoU: 0.4783
+
+2023-05-28 00:04:51,938 INFO 
+Current epoch: 11
+2023-05-28 00:05:40,080 INFO Epoch 11, Itrs 950/30000, Loss=0.232203
+2023-05-28 00:06:54,368 INFO Epoch 11, Itrs 1000/30000, Loss=0.227926
+2023-05-28 00:06:54,368 INFO validation...
+2023-05-28 00:07:19,207 INFO 
+Overall Acc: 0.9055
+Mean Acc: 0.5871
+FreqW Acc: 0.8365
+Mean IoU: 0.4895
+
+2023-05-28 00:07:19,282 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter1000_epoch11_miou0.4895.pth
+2023-05-28 00:07:33,439 INFO 
+Current epoch: 12
+2023-05-28 00:08:30,742 INFO Epoch 12, Itrs 1050/30000, Loss=0.221539
+2023-05-28 00:09:48,839 INFO Epoch 12, Itrs 1100/30000, Loss=0.223986
+2023-05-28 00:09:48,840 INFO validation...
+2023-05-28 00:10:14,418 INFO 
+Overall Acc: 0.9045
+Mean Acc: 0.5716
+FreqW Acc: 0.8327
+Mean IoU: 0.4909
+
+2023-05-28 00:10:14,502 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter1100_epoch12_miou0.4909.pth
+2023-05-28 00:10:15,164 INFO 
+Current epoch: 13
+2023-05-28 00:11:24,764 INFO Epoch 13, Itrs 1150/30000, Loss=0.221099
+2023-05-28 00:12:35,833 INFO 
+Current epoch: 14
+2023-05-28 00:12:43,181 INFO Epoch 14, Itrs 1200/30000, Loss=0.216379
+2023-05-28 00:12:43,182 INFO validation...
+2023-05-28 00:13:09,542 INFO 
+Overall Acc: 0.9088
+Mean Acc: 0.5811
+FreqW Acc: 0.8410
+Mean IoU: 0.4984
+
+2023-05-28 00:13:09,626 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter1200_epoch14_miou0.4984.pth
+2023-05-28 00:14:20,534 INFO Epoch 14, Itrs 1250/30000, Loss=0.212067
+2023-05-28 00:15:18,037 INFO 
+Current epoch: 15
+2023-05-28 00:15:38,945 INFO Epoch 15, Itrs 1300/30000, Loss=0.217289
+2023-05-28 00:15:38,946 INFO validation...
+2023-05-28 00:16:04,821 INFO 
+Overall Acc: 0.9073
+Mean Acc: 0.6073
+FreqW Acc: 0.8408
+Mean IoU: 0.5082
+
+2023-05-28 00:16:04,903 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter1300_epoch15_miou0.5082.pth
+2023-05-28 00:17:15,922 INFO Epoch 15, Itrs 1350/30000, Loss=0.210610
+2023-05-28 00:18:00,782 INFO 
+Current epoch: 16
+2023-05-28 00:18:31,737 INFO Epoch 16, Itrs 1400/30000, Loss=0.210206
+2023-05-28 00:18:31,738 INFO validation...
+2023-05-28 00:18:56,789 INFO 
+Overall Acc: 0.9030
+Mean Acc: 0.5618
+FreqW Acc: 0.8308
+Mean IoU: 0.4898
+
+2023-05-28 00:20:06,657 INFO Epoch 16, Itrs 1450/30000, Loss=0.209519
+2023-05-28 00:20:41,208 INFO 
+Current epoch: 17
+2023-05-28 00:21:24,865 INFO Epoch 17, Itrs 1500/30000, Loss=0.204514
+2023-05-28 00:21:24,866 INFO validation...
+2023-05-28 00:21:51,213 INFO 
+Overall Acc: 0.9083
+Mean Acc: 0.6017
+FreqW Acc: 0.8399
+Mean IoU: 0.5162
+
+2023-05-28 00:21:51,294 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter1500_epoch17_miou0.5162.pth
+2023-05-28 00:23:01,599 INFO Epoch 17, Itrs 1550/30000, Loss=0.204202
+2023-05-28 00:23:23,913 INFO 
+Current epoch: 18
+2023-05-28 00:24:18,072 INFO Epoch 18, Itrs 1600/30000, Loss=0.203425
+2023-05-28 00:24:18,073 INFO validation...
+2023-05-28 00:24:42,798 INFO 
+Overall Acc: 0.9117
+Mean Acc: 0.5961
+FreqW Acc: 0.8444
+Mean IoU: 0.5189
+
+2023-05-28 00:24:42,880 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter1600_epoch18_miou0.5189.pth
+2023-05-28 00:25:52,305 INFO Epoch 18, Itrs 1650/30000, Loss=0.201608
+2023-05-28 00:26:01,209 INFO 
+Current epoch: 19
+2023-05-28 00:27:09,056 INFO Epoch 19, Itrs 1700/30000, Loss=0.197883
+2023-05-28 00:27:09,057 INFO validation...
+2023-05-28 00:27:35,546 INFO 
+Overall Acc: 0.9111
+Mean Acc: 0.6136
+FreqW Acc: 0.8456
+Mean IoU: 0.5222
+
+2023-05-28 00:27:35,654 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter1700_epoch19_miou0.5222.pth
+2023-05-28 00:28:41,822 INFO 
+Current epoch: 20
+2023-05-28 00:28:45,792 INFO Epoch 20, Itrs 1750/30000, Loss=0.204246
+2023-05-28 00:29:59,970 INFO Epoch 20, Itrs 1800/30000, Loss=0.194218
+2023-05-28 00:29:59,971 INFO validation...
+2023-05-28 00:30:24,518 INFO 
+Overall Acc: 0.9101
+Mean Acc: 0.5893
+FreqW Acc: 0.8430
+Mean IoU: 0.5029
+
+2023-05-28 00:31:19,456 INFO 
+Current epoch: 21
+2023-05-28 00:31:34,854 INFO Epoch 21, Itrs 1850/30000, Loss=0.194946
+2023-05-28 00:32:51,011 INFO Epoch 21, Itrs 1900/30000, Loss=0.195856
+2023-05-28 00:32:51,012 INFO validation...
+2023-05-28 00:33:15,978 INFO 
+Overall Acc: 0.9083
+Mean Acc: 0.5941
+FreqW Acc: 0.8398
+Mean IoU: 0.5083
+
+2023-05-28 00:33:59,005 INFO 
+Current epoch: 22
+2023-05-28 00:34:26,716 INFO Epoch 22, Itrs 1950/30000, Loss=0.192789
+2023-05-28 00:35:43,308 INFO Epoch 22, Itrs 2000/30000, Loss=0.193380
+2023-05-28 00:35:43,309 INFO validation...
+2023-05-28 00:36:06,840 INFO 
+Overall Acc: 0.9138
+Mean Acc: 0.5978
+FreqW Acc: 0.8485
+Mean IoU: 0.5243
+
+2023-05-28 00:36:06,913 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter2000_epoch22_miou0.5243.pth
+2023-05-28 00:36:37,502 INFO 
+Current epoch: 23
+2023-05-28 00:37:18,138 INFO Epoch 23, Itrs 2050/30000, Loss=0.187447
+2023-05-28 00:38:34,576 INFO Epoch 23, Itrs 2100/30000, Loss=0.191577
+2023-05-28 00:38:34,576 INFO validation...
+2023-05-28 00:38:59,897 INFO 
+Overall Acc: 0.9117
+Mean Acc: 0.6263
+FreqW Acc: 0.8473
+Mean IoU: 0.5304
+
+2023-05-28 00:38:59,981 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter2100_epoch23_miou0.5304.pth
+2023-05-28 00:39:20,129 INFO 
+Current epoch: 24
+2023-05-28 00:40:12,049 INFO Epoch 24, Itrs 2150/30000, Loss=0.185214
+2023-05-28 00:41:27,874 INFO Epoch 24, Itrs 2200/30000, Loss=0.186374
+2023-05-28 00:41:27,874 INFO validation...
+2023-05-28 00:41:54,529 INFO 
+Overall Acc: 0.9134
+Mean Acc: 0.6115
+FreqW Acc: 0.8480
+Mean IoU: 0.5252
+
+2023-05-28 00:42:01,391 INFO 
+Current epoch: 25
+2023-05-28 00:43:07,445 INFO Epoch 25, Itrs 2250/30000, Loss=0.184224
+2023-05-28 00:44:22,318 INFO Epoch 25, Itrs 2300/30000, Loss=0.183029
+2023-05-28 00:44:22,319 INFO validation...
+2023-05-28 00:44:46,877 INFO 
+Overall Acc: 0.9164
+Mean Acc: 0.6210
+FreqW Acc: 0.8525
+Mean IoU: 0.5353
+
+2023-05-28 00:44:46,963 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter2300_epoch25_miou0.5353.pth
+2023-05-28 00:44:47,046 INFO 
+Current epoch: 26
+2023-05-28 00:46:03,475 INFO Epoch 26, Itrs 2350/30000, Loss=0.181367
+2023-05-28 00:47:07,544 INFO 
+Current epoch: 27
+2023-05-28 00:47:20,392 INFO Epoch 27, Itrs 2400/30000, Loss=0.186593
+2023-05-28 00:47:20,392 INFO validation...
+2023-05-28 00:47:45,470 INFO 
+Overall Acc: 0.9158
+Mean Acc: 0.6108
+FreqW Acc: 0.8515
+Mean IoU: 0.5344
+
+2023-05-28 00:48:56,751 INFO Epoch 27, Itrs 2450/30000, Loss=0.178929
+2023-05-28 00:49:48,585 INFO 
+Current epoch: 28
+2023-05-28 00:50:14,021 INFO Epoch 28, Itrs 2500/30000, Loss=0.181963
+2023-05-28 00:50:14,022 INFO validation...
+2023-05-28 00:50:38,636 INFO 
+Overall Acc: 0.9117
+Mean Acc: 0.6006
+FreqW Acc: 0.8459
+Mean IoU: 0.5198
+
+2023-05-28 00:51:49,965 INFO Epoch 28, Itrs 2550/30000, Loss=0.179612
+2023-05-28 00:52:29,990 INFO 
+Current epoch: 29
+2023-05-28 00:53:06,534 INFO Epoch 29, Itrs 2600/30000, Loss=0.176551
+2023-05-28 00:53:06,534 INFO validation...
+2023-05-28 00:53:31,776 INFO 
+Overall Acc: 0.9151
+Mean Acc: 0.6126
+FreqW Acc: 0.8517
+Mean IoU: 0.5302
+
+2023-05-28 00:54:41,095 INFO Epoch 29, Itrs 2650/30000, Loss=0.181620
+2023-05-28 00:55:08,508 INFO 
+Current epoch: 30
+2023-05-28 00:55:57,403 INFO Epoch 30, Itrs 2700/30000, Loss=0.177830
+2023-05-28 00:55:57,404 INFO validation...
+2023-05-28 00:56:23,309 INFO 
+Overall Acc: 0.9152
+Mean Acc: 0.6076
+FreqW Acc: 0.8512
+Mean IoU: 0.5304
+
+2023-05-28 00:57:33,757 INFO Epoch 30, Itrs 2750/30000, Loss=0.178692
+2023-05-28 00:57:48,902 INFO 
+Current epoch: 31
+2023-05-28 00:58:49,672 INFO Epoch 31, Itrs 2800/30000, Loss=0.173289
+2023-05-28 00:58:49,673 INFO validation...
+2023-05-28 00:59:14,448 INFO 
+Overall Acc: 0.9078
+Mean Acc: 0.6125
+FreqW Acc: 0.8391
+Mean IoU: 0.5303
+
+2023-05-28 01:00:24,340 INFO Epoch 31, Itrs 2850/30000, Loss=0.174645
+2023-05-28 01:00:27,823 INFO 
+Current epoch: 32
+2023-05-28 01:01:42,129 INFO Epoch 32, Itrs 2900/30000, Loss=0.173354
+2023-05-28 01:01:42,130 INFO validation...
+2023-05-28 01:02:07,361 INFO 
+Overall Acc: 0.9180
+Mean Acc: 0.6179
+FreqW Acc: 0.8552
+Mean IoU: 0.5352
+
+2023-05-28 01:03:08,698 INFO 
+Current epoch: 33
+2023-05-28 01:03:18,765 INFO Epoch 33, Itrs 2950/30000, Loss=0.176283
+2023-05-28 01:04:33,666 INFO Epoch 33, Itrs 3000/30000, Loss=0.172759
+2023-05-28 01:04:33,666 INFO validation...
+2023-05-28 01:04:57,964 INFO 
+Overall Acc: 0.9174
+Mean Acc: 0.6069
+FreqW Acc: 0.8545
+Mean IoU: 0.5244
+
+2023-05-28 01:05:48,632 INFO 
+Current epoch: 34
+2023-05-28 01:06:10,623 INFO Epoch 34, Itrs 3050/30000, Loss=0.170831
+2023-05-28 01:07:28,034 INFO Epoch 34, Itrs 3100/30000, Loss=0.171014
+2023-05-28 01:07:28,035 INFO validation...
+2023-05-28 01:07:53,770 INFO 
+Overall Acc: 0.9177
+Mean Acc: 0.6170
+FreqW Acc: 0.8544
+Mean IoU: 0.5416
+
+2023-05-28 01:07:53,861 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter3100_epoch34_miou0.5416.pth
+2023-05-28 01:08:30,476 INFO 
+Current epoch: 35
+2023-05-28 01:09:04,813 INFO Epoch 35, Itrs 3150/30000, Loss=0.168287
+2023-05-28 01:10:19,452 INFO Epoch 35, Itrs 3200/30000, Loss=0.169340
+2023-05-28 01:10:19,470 INFO validation...
+2023-05-28 01:10:45,431 INFO 
+Overall Acc: 0.9184
+Mean Acc: 0.6370
+FreqW Acc: 0.8565
+Mean IoU: 0.5521
+
+2023-05-28 01:10:45,504 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter3200_epoch35_miou0.5521.pth
+2023-05-28 01:11:10,121 INFO 
+Current epoch: 36
+2023-05-28 01:11:55,848 INFO Epoch 36, Itrs 3250/30000, Loss=0.167737
+2023-05-28 01:13:11,860 INFO Epoch 36, Itrs 3300/30000, Loss=0.168467
+2023-05-28 01:13:11,861 INFO validation...
+2023-05-28 01:13:36,835 INFO 
+Overall Acc: 0.9155
+Mean Acc: 0.6173
+FreqW Acc: 0.8526
+Mean IoU: 0.5405
+
+2023-05-28 01:13:50,832 INFO 
+Current epoch: 37
+2023-05-28 01:14:48,604 INFO Epoch 37, Itrs 3350/30000, Loss=0.167975
+2023-05-28 01:16:03,871 INFO Epoch 37, Itrs 3400/30000, Loss=0.167919
+2023-05-28 01:16:03,872 INFO validation...
+2023-05-28 01:16:28,332 INFO 
+Overall Acc: 0.9198
+Mean Acc: 0.6381
+FreqW Acc: 0.8594
+Mean IoU: 0.5553
+
+2023-05-28 01:16:28,422 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter3400_epoch37_miou0.5553.pth
+2023-05-28 01:16:28,969 INFO 
+Current epoch: 38
+2023-05-28 01:17:39,033 INFO Epoch 38, Itrs 3450/30000, Loss=0.166983
+2023-05-28 01:18:48,838 INFO 
+Current epoch: 39
+2023-05-28 01:18:55,609 INFO Epoch 39, Itrs 3500/30000, Loss=0.166040
+2023-05-28 01:18:55,610 INFO validation...
+2023-05-28 01:19:20,171 INFO 
+Overall Acc: 0.9194
+Mean Acc: 0.6419
+FreqW Acc: 0.8578
+Mean IoU: 0.5565
+
+2023-05-28 01:19:20,255 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter3500_epoch39_miou0.5565.pth
+2023-05-28 01:20:29,816 INFO Epoch 39, Itrs 3550/30000, Loss=0.162435
+2023-05-28 01:21:25,330 INFO 
+Current epoch: 40
+2023-05-28 01:21:44,549 INFO Epoch 40, Itrs 3600/30000, Loss=0.161493
+2023-05-28 01:21:44,550 INFO validation...
+2023-05-28 01:22:08,902 INFO 
+Overall Acc: 0.9179
+Mean Acc: 0.6205
+FreqW Acc: 0.8558
+Mean IoU: 0.5429
+
+2023-05-28 01:23:19,077 INFO Epoch 40, Itrs 3650/30000, Loss=0.162689
+2023-05-28 01:24:05,081 INFO 
+Current epoch: 41
+2023-05-28 01:24:35,890 INFO Epoch 41, Itrs 3700/30000, Loss=0.159001
+2023-05-28 01:24:35,890 INFO validation...
+2023-05-28 01:25:01,136 INFO 
+Overall Acc: 0.9201
+Mean Acc: 0.6227
+FreqW Acc: 0.8588
+Mean IoU: 0.5440
+
+2023-05-28 01:26:10,805 INFO Epoch 41, Itrs 3750/30000, Loss=0.159443
+2023-05-28 01:26:44,578 INFO 
+Current epoch: 42
+2023-05-28 01:27:27,271 INFO Epoch 42, Itrs 3800/30000, Loss=0.159555
+2023-05-28 01:27:27,271 INFO validation...
+2023-05-28 01:27:52,985 INFO 
+Overall Acc: 0.9195
+Mean Acc: 0.6339
+FreqW Acc: 0.8582
+Mean IoU: 0.5455
+
+2023-05-28 01:29:01,526 INFO Epoch 42, Itrs 3850/30000, Loss=0.163379
+2023-05-28 01:29:22,936 INFO 
+Current epoch: 43
+2023-05-28 01:30:18,814 INFO Epoch 43, Itrs 3900/30000, Loss=0.161349
+2023-05-28 01:30:18,814 INFO validation...
+2023-05-28 01:30:44,291 INFO 
+Overall Acc: 0.9192
+Mean Acc: 0.6369
+FreqW Acc: 0.8575
+Mean IoU: 0.5473
+
+2023-05-28 01:31:53,349 INFO Epoch 43, Itrs 3950/30000, Loss=0.160871
+2023-05-28 01:32:02,391 INFO 
+Current epoch: 44
+2023-05-28 01:33:10,503 INFO Epoch 44, Itrs 4000/30000, Loss=0.157023
+2023-05-28 01:33:10,504 INFO validation...
+2023-05-28 01:33:35,706 INFO 
+Overall Acc: 0.9199
+Mean Acc: 0.6503
+FreqW Acc: 0.8599
+Mean IoU: 0.5599
+
+2023-05-28 01:33:35,792 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter4000_epoch44_miou0.5599.pth
+2023-05-28 01:34:43,456 INFO 
+Current epoch: 45
+2023-05-28 01:34:47,478 INFO Epoch 45, Itrs 4050/30000, Loss=0.162329
+2023-05-28 01:36:02,453 INFO Epoch 45, Itrs 4100/30000, Loss=0.156492
+2023-05-28 01:36:02,453 INFO validation...
+2023-05-28 01:36:27,738 INFO 
+Overall Acc: 0.9145
+Mean Acc: 0.6411
+FreqW Acc: 0.8499
+Mean IoU: 0.5578
+
+2023-05-28 01:37:23,262 INFO 
+Current epoch: 46
+2023-05-28 01:37:39,434 INFO Epoch 46, Itrs 4150/30000, Loss=0.159699
+2023-05-28 01:38:57,500 INFO Epoch 46, Itrs 4200/30000, Loss=0.158277
+2023-05-28 01:38:57,501 INFO validation...
+2023-05-28 01:39:22,631 INFO 
+Overall Acc: 0.9192
+Mean Acc: 0.6521
+FreqW Acc: 0.8594
+Mean IoU: 0.5619
+
+2023-05-28 01:39:22,713 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter4200_epoch46_miou0.5619.pth
+2023-05-28 01:40:06,562 INFO 
+Current epoch: 47
+2023-05-28 01:40:34,003 INFO Epoch 47, Itrs 4250/30000, Loss=0.155738
+2023-05-28 01:41:49,017 INFO Epoch 47, Itrs 4300/30000, Loss=0.154186
+2023-05-28 01:41:49,026 INFO validation...
+2023-05-28 01:42:12,997 INFO 
+Overall Acc: 0.9171
+Mean Acc: 0.6385
+FreqW Acc: 0.8562
+Mean IoU: 0.5502
+
+2023-05-28 01:42:44,273 INFO 
+Current epoch: 48
+2023-05-28 01:43:24,945 INFO Epoch 48, Itrs 4350/30000, Loss=0.155257
+2023-05-28 01:44:39,431 INFO Epoch 48, Itrs 4400/30000, Loss=0.153370
+2023-05-28 01:44:39,431 INFO validation...
+2023-05-28 01:45:03,906 INFO 
+Overall Acc: 0.9197
+Mean Acc: 0.6549
+FreqW Acc: 0.8596
+Mean IoU: 0.5572
+
+2023-05-28 01:45:22,254 INFO 
+Current epoch: 49
+2023-05-28 01:46:13,737 INFO Epoch 49, Itrs 4450/30000, Loss=0.153469
+2023-05-28 01:47:27,494 INFO Epoch 49, Itrs 4500/30000, Loss=0.155841
+2023-05-28 01:47:27,494 INFO validation...
+2023-05-28 01:47:53,120 INFO 
+Overall Acc: 0.9200
+Mean Acc: 0.6419
+FreqW Acc: 0.8593
+Mean IoU: 0.5598
+
+2023-05-28 01:48:00,944 INFO 
+Current epoch: 50
+2023-05-28 01:49:04,912 INFO Epoch 50, Itrs 4550/30000, Loss=0.152702
+2023-05-28 01:50:18,906 INFO Epoch 50, Itrs 4600/30000, Loss=0.155092
+2023-05-28 01:50:18,907 INFO validation...
+2023-05-28 01:50:44,186 INFO 
+Overall Acc: 0.9197
+Mean Acc: 0.6405
+FreqW Acc: 0.8583
+Mean IoU: 0.5460
+
+2023-05-28 01:50:44,265 INFO 
+Current epoch: 51
+2023-05-28 01:51:59,527 INFO Epoch 51, Itrs 4650/30000, Loss=0.147850
+2023-05-28 01:53:01,971 INFO 
+Current epoch: 52
+2023-05-28 01:53:15,100 INFO Epoch 52, Itrs 4700/30000, Loss=0.155530
+2023-05-28 01:53:15,101 INFO validation...
+2023-05-28 01:53:40,428 INFO 
+Overall Acc: 0.9210
+Mean Acc: 0.6497
+FreqW Acc: 0.8612
+Mean IoU: 0.5637
+
+2023-05-28 01:53:40,510 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter4700_epoch52_miou0.5637.pth
+2023-05-28 01:54:50,315 INFO Epoch 52, Itrs 4750/30000, Loss=0.151690
+2023-05-28 01:55:42,754 INFO 
+Current epoch: 53
+2023-05-28 01:56:07,814 INFO Epoch 53, Itrs 4800/30000, Loss=0.151955
+2023-05-28 01:56:07,815 INFO validation...
+2023-05-28 01:56:32,765 INFO 
+Overall Acc: 0.9210
+Mean Acc: 0.6497
+FreqW Acc: 0.8609
+Mean IoU: 0.5656
+
+2023-05-28 01:56:32,849 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter4800_epoch53_miou0.5656.pth
+2023-05-28 01:57:43,496 INFO Epoch 53, Itrs 4850/30000, Loss=0.155028
+2023-05-28 01:58:21,459 INFO 
+Current epoch: 54
+2023-05-28 01:59:00,244 INFO Epoch 54, Itrs 4900/30000, Loss=0.151533
+2023-05-28 01:59:00,244 INFO validation...
+2023-05-28 01:59:24,682 INFO 
+Overall Acc: 0.9171
+Mean Acc: 0.6330
+FreqW Acc: 0.8549
+Mean IoU: 0.5492
+
+2023-05-28 02:00:33,426 INFO Epoch 54, Itrs 4950/30000, Loss=0.149952
+2023-05-28 02:00:59,844 INFO 
+Current epoch: 55
+2023-05-28 02:01:47,935 INFO Epoch 55, Itrs 5000/30000, Loss=0.148623
+2023-05-28 02:01:47,936 INFO validation...
+2023-05-28 02:02:13,388 INFO 
+Overall Acc: 0.9211
+Mean Acc: 0.6220
+FreqW Acc: 0.8606
+Mean IoU: 0.5455
+
+2023-05-28 02:03:24,064 INFO Epoch 55, Itrs 5050/30000, Loss=0.150449
+2023-05-28 02:03:38,738 INFO 
+Current epoch: 56
+2023-05-28 02:04:39,856 INFO Epoch 56, Itrs 5100/30000, Loss=0.145310
+2023-05-28 02:04:39,857 INFO validation...
+2023-05-28 02:05:04,058 INFO 
+Overall Acc: 0.9213
+Mean Acc: 0.6451
+FreqW Acc: 0.8610
+Mean IoU: 0.5655
+
+2023-05-28 02:06:16,220 INFO Epoch 56, Itrs 5150/30000, Loss=0.148886
+2023-05-28 02:06:19,161 INFO 
+Current epoch: 57
+2023-05-28 02:07:31,247 INFO Epoch 57, Itrs 5200/30000, Loss=0.150807
+2023-05-28 02:07:31,247 INFO validation...
+2023-05-28 02:07:55,843 INFO 
+Overall Acc: 0.9214
+Mean Acc: 0.6447
+FreqW Acc: 0.8625
+Mean IoU: 0.5471
+
+2023-05-28 02:08:57,179 INFO 
+Current epoch: 58
+2023-05-28 02:09:07,555 INFO Epoch 58, Itrs 5250/30000, Loss=0.148333
+2023-05-28 02:10:23,345 INFO Epoch 58, Itrs 5300/30000, Loss=0.151043
+2023-05-28 02:10:23,345 INFO validation...
+2023-05-28 02:10:47,036 INFO 
+Overall Acc: 0.9222
+Mean Acc: 0.6535
+FreqW Acc: 0.8626
+Mean IoU: 0.5679
+
+2023-05-28 02:10:47,414 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter5300_epoch58_miou0.5679.pth
+2023-05-28 02:11:36,719 INFO 
+Current epoch: 59
+2023-05-28 02:11:58,298 INFO Epoch 59, Itrs 5350/30000, Loss=0.145050
+2023-05-28 02:13:14,915 INFO Epoch 59, Itrs 5400/30000, Loss=0.147643
+2023-05-28 02:13:14,916 INFO validation...
+2023-05-28 02:13:39,420 INFO 
+Overall Acc: 0.9214
+Mean Acc: 0.6500
+FreqW Acc: 0.8616
+Mean IoU: 0.5690
+
+2023-05-28 02:13:39,515 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter5400_epoch59_miou0.5690.pth
+2023-05-28 02:14:16,627 INFO 
+Current epoch: 60
+2023-05-28 02:14:51,499 INFO Epoch 60, Itrs 5450/30000, Loss=0.148507
+2023-05-28 02:16:06,330 INFO Epoch 60, Itrs 5500/30000, Loss=0.147354
+2023-05-28 02:16:06,330 INFO validation...
+2023-05-28 02:16:31,154 INFO 
+Overall Acc: 0.9222
+Mean Acc: 0.6534
+FreqW Acc: 0.8631
+Mean IoU: 0.5675
+
+2023-05-28 02:16:55,829 INFO 
+Current epoch: 61
+2023-05-28 02:17:42,450 INFO Epoch 61, Itrs 5550/30000, Loss=0.142399
+2023-05-28 02:18:58,297 INFO Epoch 61, Itrs 5600/30000, Loss=0.145461
+2023-05-28 02:18:58,298 INFO validation...
+2023-05-28 02:19:23,333 INFO 
+Overall Acc: 0.9198
+Mean Acc: 0.6357
+FreqW Acc: 0.8589
+Mean IoU: 0.5573
+
+2023-05-28 02:19:36,584 INFO 
+Current epoch: 62
+2023-05-28 02:20:36,145 INFO Epoch 62, Itrs 5650/30000, Loss=0.146624
+2023-05-28 02:21:49,327 INFO Epoch 62, Itrs 5700/30000, Loss=0.144975
+2023-05-28 02:21:49,328 INFO validation...
+2023-05-28 02:22:13,838 INFO 
+Overall Acc: 0.9225
+Mean Acc: 0.6566
+FreqW Acc: 0.8633
+Mean IoU: 0.5703
+
+2023-05-28 02:22:13,923 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter5700_epoch62_miou0.5703.pth
+2023-05-28 02:22:14,625 INFO 
+Current epoch: 63
+2023-05-28 02:23:23,849 INFO Epoch 63, Itrs 5750/30000, Loss=0.145256
+2023-05-28 02:24:32,515 INFO 
+Current epoch: 64
+2023-05-28 02:24:39,111 INFO Epoch 64, Itrs 5800/30000, Loss=0.141834
+2023-05-28 02:24:39,112 INFO validation...
+2023-05-28 02:25:04,738 INFO 
+Overall Acc: 0.9213
+Mean Acc: 0.6415
+FreqW Acc: 0.8606
+Mean IoU: 0.5604
+
+2023-05-28 02:26:14,163 INFO Epoch 64, Itrs 5850/30000, Loss=0.143754
+2023-05-28 02:27:10,238 INFO 
+Current epoch: 65
+2023-05-28 02:27:28,978 INFO Epoch 65, Itrs 5900/30000, Loss=0.141536
+2023-05-28 02:27:28,979 INFO validation...
+2023-05-28 02:27:53,908 INFO 
+Overall Acc: 0.9224
+Mean Acc: 0.6498
+FreqW Acc: 0.8628
+Mean IoU: 0.5691
+
+2023-05-28 02:29:05,502 INFO Epoch 65, Itrs 5950/30000, Loss=0.142167
+2023-05-28 02:29:50,905 INFO 
+Current epoch: 66
+2023-05-28 02:30:21,676 INFO Epoch 66, Itrs 6000/30000, Loss=0.142493
+2023-05-28 02:30:21,676 INFO validation...
+2023-05-28 02:30:47,149 INFO 
+Overall Acc: 0.9218
+Mean Acc: 0.6422
+FreqW Acc: 0.8626
+Mean IoU: 0.5599
+
+2023-05-28 02:31:57,462 INFO Epoch 66, Itrs 6050/30000, Loss=0.142572
+2023-05-28 02:32:30,151 INFO 
+Current epoch: 67
+2023-05-28 02:33:12,328 INFO Epoch 67, Itrs 6100/30000, Loss=0.143586
+2023-05-28 02:33:12,329 INFO validation...
+2023-05-28 02:33:37,175 INFO 
+Overall Acc: 0.9205
+Mean Acc: 0.6163
+FreqW Acc: 0.8590
+Mean IoU: 0.5421
+
+2023-05-28 02:34:47,003 INFO Epoch 67, Itrs 6150/30000, Loss=0.143594
+2023-05-28 02:35:08,448 INFO 
+Current epoch: 68
+2023-05-28 02:36:02,171 INFO Epoch 68, Itrs 6200/30000, Loss=0.141978
+2023-05-28 02:36:02,171 INFO validation...
+2023-05-28 02:36:26,604 INFO 
+Overall Acc: 0.9193
+Mean Acc: 0.6483
+FreqW Acc: 0.8599
+Mean IoU: 0.5571
+
+2023-05-28 02:37:39,177 INFO Epoch 68, Itrs 6250/30000, Loss=0.141860
+2023-05-28 02:37:47,920 INFO 
+Current epoch: 69
+2023-05-28 02:38:55,652 INFO Epoch 69, Itrs 6300/30000, Loss=0.139485
+2023-05-28 02:38:55,653 INFO validation...
+2023-05-28 02:39:20,252 INFO 
+Overall Acc: 0.9224
+Mean Acc: 0.6505
+FreqW Acc: 0.8627
+Mean IoU: 0.5649
+
+2023-05-28 02:40:28,304 INFO 
+Current epoch: 70
+2023-05-28 02:40:32,149 INFO Epoch 70, Itrs 6350/30000, Loss=0.140249
+2023-05-28 02:41:47,660 INFO Epoch 70, Itrs 6400/30000, Loss=0.139921
+2023-05-28 02:41:47,660 INFO validation...
+2023-05-28 02:42:12,160 INFO 
+Overall Acc: 0.9231
+Mean Acc: 0.6660
+FreqW Acc: 0.8643
+Mean IoU: 0.5743
+
+2023-05-28 02:42:12,246 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter6400_epoch70_miou0.5743.pth
+2023-05-28 02:43:06,870 INFO 
+Current epoch: 71
+2023-05-28 02:43:22,690 INFO Epoch 71, Itrs 6450/30000, Loss=0.140732
+2023-05-28 02:44:39,312 INFO Epoch 71, Itrs 6500/30000, Loss=0.140665
+2023-05-28 02:44:39,313 INFO validation...
+2023-05-28 02:45:03,445 INFO 
+Overall Acc: 0.9220
+Mean Acc: 0.6569
+FreqW Acc: 0.8634
+Mean IoU: 0.5709
+
+2023-05-28 02:45:45,937 INFO 
+Current epoch: 72
+2023-05-28 02:46:14,314 INFO Epoch 72, Itrs 6550/30000, Loss=0.138390
+2023-05-28 02:47:29,339 INFO Epoch 72, Itrs 6600/30000, Loss=0.139418
+2023-05-28 02:47:29,340 INFO validation...
+2023-05-28 02:47:54,690 INFO 
+Overall Acc: 0.9233
+Mean Acc: 0.6646
+FreqW Acc: 0.8647
+Mean IoU: 0.5735
+
+2023-05-28 02:48:25,026 INFO 
+Current epoch: 73
+2023-05-28 02:49:04,503 INFO Epoch 73, Itrs 6650/30000, Loss=0.137800
+2023-05-28 02:50:19,503 INFO Epoch 73, Itrs 6700/30000, Loss=0.136863
+2023-05-28 02:50:19,504 INFO validation...
+2023-05-28 02:50:44,491 INFO 
+Overall Acc: 0.9237
+Mean Acc: 0.6551
+FreqW Acc: 0.8648
+Mean IoU: 0.5745
+
+2023-05-28 02:50:44,579 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter6700_epoch73_miou0.5745.pth
+2023-05-28 02:51:03,370 INFO 
+Current epoch: 74
+2023-05-28 02:51:53,871 INFO Epoch 74, Itrs 6750/30000, Loss=0.138404
+2023-05-28 02:53:10,703 INFO Epoch 74, Itrs 6800/30000, Loss=0.138980
+2023-05-28 02:53:10,704 INFO validation...
+2023-05-28 02:53:35,192 INFO 
+Overall Acc: 0.9221
+Mean Acc: 0.6577
+FreqW Acc: 0.8634
+Mean IoU: 0.5736
+
+2023-05-28 02:53:42,493 INFO 
+Current epoch: 75
+2023-05-28 02:54:45,952 INFO Epoch 75, Itrs 6850/30000, Loss=0.136118
+2023-05-28 02:55:59,473 INFO Epoch 75, Itrs 6900/30000, Loss=0.137970
+2023-05-28 02:55:59,474 INFO validation...
+2023-05-28 02:56:23,566 INFO 
+Overall Acc: 0.9208
+Mean Acc: 0.6514
+FreqW Acc: 0.8611
+Mean IoU: 0.5563
+
+2023-05-28 02:56:23,637 INFO 
+Current epoch: 76
+2023-05-28 02:57:40,852 INFO Epoch 76, Itrs 6950/30000, Loss=0.134889
+2023-05-28 02:58:43,358 INFO 
+Current epoch: 77
+2023-05-28 02:58:56,230 INFO Epoch 77, Itrs 7000/30000, Loss=0.135112
+2023-05-28 02:58:56,231 INFO validation...
+2023-05-28 02:59:22,436 INFO 
+Overall Acc: 0.9229
+Mean Acc: 0.6796
+FreqW Acc: 0.8660
+Mean IoU: 0.5810
+
+2023-05-28 02:59:22,507 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter7000_epoch77_miou0.5810.pth
+2023-05-28 03:00:32,723 INFO Epoch 77, Itrs 7050/30000, Loss=0.136065
+2023-05-28 03:01:23,395 INFO 
+Current epoch: 78
+2023-05-28 03:01:49,036 INFO Epoch 78, Itrs 7100/30000, Loss=0.133859
+2023-05-28 03:01:49,036 INFO validation...
+2023-05-28 03:02:13,733 INFO 
+Overall Acc: 0.9216
+Mean Acc: 0.6520
+FreqW Acc: 0.8625
+Mean IoU: 0.5674
+
+2023-05-28 03:03:23,784 INFO Epoch 78, Itrs 7150/30000, Loss=0.136220
+2023-05-28 03:04:01,794 INFO 
+Current epoch: 79
+2023-05-28 03:04:37,452 INFO Epoch 79, Itrs 7200/30000, Loss=0.135360
+2023-05-28 03:04:37,452 INFO validation...
+2023-05-28 03:05:03,767 INFO 
+Overall Acc: 0.9223
+Mean Acc: 0.6490
+FreqW Acc: 0.8631
+Mean IoU: 0.5668
+
+2023-05-28 03:06:13,437 INFO Epoch 79, Itrs 7250/30000, Loss=0.134934
+2023-05-28 03:06:39,642 INFO 
+Current epoch: 80
+2023-05-28 03:07:29,070 INFO Epoch 80, Itrs 7300/30000, Loss=0.135521
+2023-05-28 03:07:29,070 INFO validation...
+2023-05-28 03:07:54,788 INFO 
+Overall Acc: 0.9224
+Mean Acc: 0.6598
+FreqW Acc: 0.8633
+Mean IoU: 0.5708
+
+2023-05-28 03:09:03,946 INFO Epoch 80, Itrs 7350/30000, Loss=0.133440
+2023-05-28 03:09:18,461 INFO 
+Current epoch: 81
+2023-05-28 03:10:19,740 INFO Epoch 81, Itrs 7400/30000, Loss=0.135478
+2023-05-28 03:10:19,750 INFO validation...
+2023-05-28 03:10:44,416 INFO 
+Overall Acc: 0.9228
+Mean Acc: 0.6536
+FreqW Acc: 0.8630
+Mean IoU: 0.5734
+
+2023-05-28 03:11:53,509 INFO Epoch 81, Itrs 7450/30000, Loss=0.135060
+2023-05-28 03:11:56,896 INFO 
+Current epoch: 82
+2023-05-28 03:13:08,759 INFO Epoch 82, Itrs 7500/30000, Loss=0.133583
+2023-05-28 03:13:08,759 INFO validation...
+2023-05-28 03:13:33,714 INFO 
+Overall Acc: 0.9230
+Mean Acc: 0.6420
+FreqW Acc: 0.8633
+Mean IoU: 0.5661
+
+2023-05-28 03:14:35,266 INFO 
+Current epoch: 83
+2023-05-28 03:14:45,292 INFO Epoch 83, Itrs 7550/30000, Loss=0.134542
+2023-05-28 03:15:59,940 INFO Epoch 83, Itrs 7600/30000, Loss=0.133497
+2023-05-28 03:15:59,941 INFO validation...
+2023-05-28 03:16:26,174 INFO 
+Overall Acc: 0.9236
+Mean Acc: 0.6540
+FreqW Acc: 0.8660
+Mean IoU: 0.5702
+
+2023-05-28 03:17:16,312 INFO 
+Current epoch: 84
+2023-05-28 03:17:37,151 INFO Epoch 84, Itrs 7650/30000, Loss=0.133129
+2023-05-28 03:18:52,050 INFO Epoch 84, Itrs 7700/30000, Loss=0.132435
+2023-05-28 03:18:52,051 INFO validation...
+2023-05-28 03:19:16,722 INFO 
+Overall Acc: 0.9221
+Mean Acc: 0.6525
+FreqW Acc: 0.8633
+Mean IoU: 0.5715
+
+2023-05-28 03:19:53,915 INFO 
+Current epoch: 85
+2023-05-28 03:20:27,978 INFO Epoch 85, Itrs 7750/30000, Loss=0.135357
+2023-05-28 03:21:43,222 INFO Epoch 85, Itrs 7800/30000, Loss=0.131826
+2023-05-28 03:21:43,223 INFO validation...
+2023-05-28 03:22:06,904 INFO 
+Overall Acc: 0.9227
+Mean Acc: 0.6531
+FreqW Acc: 0.8630
+Mean IoU: 0.5720
+
+2023-05-28 03:22:31,819 INFO 
+Current epoch: 86
+2023-05-28 03:23:17,453 INFO Epoch 86, Itrs 7850/30000, Loss=0.130859
+2023-05-28 03:24:31,928 INFO Epoch 86, Itrs 7900/30000, Loss=0.133818
+2023-05-28 03:24:31,928 INFO validation...
+2023-05-28 03:24:56,015 INFO 
+Overall Acc: 0.9235
+Mean Acc: 0.6522
+FreqW Acc: 0.8654
+Mean IoU: 0.5693
+
+2023-05-28 03:25:08,645 INFO 
+Current epoch: 87
+2023-05-28 03:26:05,894 INFO Epoch 87, Itrs 7950/30000, Loss=0.132692
+2023-05-28 03:27:20,209 INFO Epoch 87, Itrs 8000/30000, Loss=0.132242
+2023-05-28 03:27:20,210 INFO validation...
+2023-05-28 03:27:43,945 INFO 
+Overall Acc: 0.9234
+Mean Acc: 0.6643
+FreqW Acc: 0.8643
+Mean IoU: 0.5798
+
+2023-05-28 03:27:45,251 INFO 
+Current epoch: 88
+2023-05-28 03:28:57,093 INFO Epoch 88, Itrs 8050/30000, Loss=0.132092
+2023-05-28 03:30:04,879 INFO 
+Current epoch: 89
+2023-05-28 03:30:11,758 INFO Epoch 89, Itrs 8100/30000, Loss=0.132264
+2023-05-28 03:30:11,758 INFO validation...
+2023-05-28 03:30:36,971 INFO 
+Overall Acc: 0.9230
+Mean Acc: 0.6586
+FreqW Acc: 0.8632
+Mean IoU: 0.5745
+
+2023-05-28 03:31:47,484 INFO Epoch 89, Itrs 8150/30000, Loss=0.130715
+2023-05-28 03:32:44,827 INFO 
+Current epoch: 90
+2023-05-28 03:33:03,853 INFO Epoch 90, Itrs 8200/30000, Loss=0.135758
+2023-05-28 03:33:03,854 INFO validation...
+2023-05-28 03:33:28,941 INFO 
+Overall Acc: 0.9199
+Mean Acc: 0.6434
+FreqW Acc: 0.8600
+Mean IoU: 0.5554
+
+2023-05-28 03:34:38,327 INFO Epoch 90, Itrs 8250/30000, Loss=0.131251
+2023-05-28 03:35:23,341 INFO 
+Current epoch: 91
+2023-05-28 03:35:54,331 INFO Epoch 91, Itrs 8300/30000, Loss=0.131645
+2023-05-28 03:35:54,332 INFO validation...
+2023-05-28 03:36:19,583 INFO 
+Overall Acc: 0.9230
+Mean Acc: 0.6472
+FreqW Acc: 0.8642
+Mean IoU: 0.5661
+
+2023-05-28 03:37:30,860 INFO Epoch 91, Itrs 8350/30000, Loss=0.129745
+2023-05-28 03:38:05,211 INFO 
+Current epoch: 92
+2023-05-28 03:38:48,949 INFO Epoch 92, Itrs 8400/30000, Loss=0.130394
+2023-05-28 03:38:48,949 INFO validation...
+2023-05-28 03:39:12,749 INFO 
+Overall Acc: 0.9218
+Mean Acc: 0.6277
+FreqW Acc: 0.8625
+Mean IoU: 0.5463
+
+2023-05-28 03:40:23,648 INFO Epoch 92, Itrs 8450/30000, Loss=0.129121
+2023-05-28 03:40:45,090 INFO 
+Current epoch: 93
+2023-05-28 03:41:40,214 INFO Epoch 93, Itrs 8500/30000, Loss=0.129115
+2023-05-28 03:41:40,215 INFO validation...
+2023-05-28 03:42:05,257 INFO 
+Overall Acc: 0.9249
+Mean Acc: 0.6622
+FreqW Acc: 0.8671
+Mean IoU: 0.5785
+
+2023-05-28 03:43:15,905 INFO Epoch 93, Itrs 8550/30000, Loss=0.129602
+2023-05-28 03:43:24,771 INFO 
+Current epoch: 94
+2023-05-28 03:44:33,668 INFO Epoch 94, Itrs 8600/30000, Loss=0.127086
+2023-05-28 03:44:33,669 INFO validation...
+2023-05-28 03:44:58,009 INFO 
+Overall Acc: 0.9231
+Mean Acc: 0.6413
+FreqW Acc: 0.8637
+Mean IoU: 0.5624
+
+2023-05-28 03:46:06,232 INFO 
+Current epoch: 95
+2023-05-28 03:46:10,171 INFO Epoch 95, Itrs 8650/30000, Loss=0.129368
+2023-05-28 03:47:24,753 INFO Epoch 95, Itrs 8700/30000, Loss=0.128349
+2023-05-28 03:47:24,753 INFO validation...
+2023-05-28 03:47:48,752 INFO 
+Overall Acc: 0.9224
+Mean Acc: 0.6530
+FreqW Acc: 0.8635
+Mean IoU: 0.5689
+
+2023-05-28 03:48:42,925 INFO 
+Current epoch: 96
+2023-05-28 03:48:59,052 INFO Epoch 96, Itrs 8750/30000, Loss=0.129015
+2023-05-28 03:50:13,588 INFO Epoch 96, Itrs 8800/30000, Loss=0.126001
+2023-05-28 03:50:13,589 INFO validation...
+2023-05-28 03:50:40,462 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6719
+FreqW Acc: 0.8665
+Mean IoU: 0.5862
+
+2023-05-28 03:50:41,997 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter8800_epoch96_miou0.5862.pth
+2023-05-28 03:51:26,029 INFO 
+Current epoch: 97
+2023-05-28 03:51:54,631 INFO Epoch 97, Itrs 8850/30000, Loss=0.127481
+2023-05-28 03:53:12,812 INFO Epoch 97, Itrs 8900/30000, Loss=0.126820
+2023-05-28 03:53:12,813 INFO validation...
+2023-05-28 03:53:37,820 INFO 
+Overall Acc: 0.9229
+Mean Acc: 0.6579
+FreqW Acc: 0.8644
+Mean IoU: 0.5738
+
+2023-05-28 03:54:08,294 INFO 
+Current epoch: 98
+2023-05-28 03:54:48,083 INFO Epoch 98, Itrs 8950/30000, Loss=0.129053
+2023-05-28 03:56:03,558 INFO Epoch 98, Itrs 9000/30000, Loss=0.125676
+2023-05-28 03:56:03,559 INFO validation...
+2023-05-28 03:56:28,748 INFO 
+Overall Acc: 0.9250
+Mean Acc: 0.6619
+FreqW Acc: 0.8677
+Mean IoU: 0.5816
+
+2023-05-28 03:56:48,318 INFO 
+Current epoch: 99
+2023-05-28 03:57:42,555 INFO Epoch 99, Itrs 9050/30000, Loss=0.130951
+2023-05-28 03:58:57,025 INFO Epoch 99, Itrs 9100/30000, Loss=0.134972
+2023-05-28 03:58:57,025 INFO validation...
+2023-05-28 03:59:22,635 INFO 
+Overall Acc: 0.9087
+Mean Acc: 0.6226
+FreqW Acc: 0.8451
+Mean IoU: 0.5299
+
+2023-05-28 03:59:29,425 INFO 
+Current epoch: 100
+2023-05-28 04:00:31,514 INFO Epoch 100, Itrs 9150/30000, Loss=0.132234
+2023-05-28 04:01:46,541 INFO Epoch 100, Itrs 9200/30000, Loss=0.129783
+2023-05-28 04:01:46,542 INFO validation...
+2023-05-28 04:02:11,817 INFO 
+Overall Acc: 0.9235
+Mean Acc: 0.6566
+FreqW Acc: 0.8641
+Mean IoU: 0.5760
+
+2023-05-28 04:02:11,908 INFO 
+Current epoch: 101
+2023-05-28 04:03:26,372 INFO Epoch 101, Itrs 9250/30000, Loss=0.130202
+2023-05-28 04:04:31,073 INFO 
+Current epoch: 102
+2023-05-28 04:04:44,355 INFO Epoch 102, Itrs 9300/30000, Loss=0.126665
+2023-05-28 04:04:44,356 INFO validation...
+2023-05-28 04:05:08,985 INFO 
+Overall Acc: 0.9235
+Mean Acc: 0.6481
+FreqW Acc: 0.8646
+Mean IoU: 0.5711
+
+2023-05-28 04:06:20,596 INFO Epoch 102, Itrs 9350/30000, Loss=0.127012
+2023-05-28 04:07:10,933 INFO 
+Current epoch: 103
+2023-05-28 04:07:35,186 INFO Epoch 103, Itrs 9400/30000, Loss=0.125748
+2023-05-28 04:07:35,187 INFO validation...
+2023-05-28 04:08:00,054 INFO 
+Overall Acc: 0.9227
+Mean Acc: 0.6608
+FreqW Acc: 0.8645
+Mean IoU: 0.5715
+
+2023-05-28 04:09:10,862 INFO Epoch 103, Itrs 9450/30000, Loss=0.126085
+2023-05-28 04:09:48,575 INFO 
+Current epoch: 104
+2023-05-28 04:10:24,654 INFO Epoch 104, Itrs 9500/30000, Loss=0.125111
+2023-05-28 04:10:24,655 INFO validation...
+2023-05-28 04:10:49,293 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6573
+FreqW Acc: 0.8659
+Mean IoU: 0.5786
+
+2023-05-28 04:11:58,332 INFO Epoch 104, Itrs 9550/30000, Loss=0.125082
+2023-05-28 04:12:25,476 INFO 
+Current epoch: 105
+2023-05-28 04:13:13,210 INFO Epoch 105, Itrs 9600/30000, Loss=0.124701
+2023-05-28 04:13:13,211 INFO validation...
+2023-05-28 04:13:38,668 INFO 
+Overall Acc: 0.9238
+Mean Acc: 0.6654
+FreqW Acc: 0.8655
+Mean IoU: 0.5814
+
+2023-05-28 04:14:48,115 INFO Epoch 105, Itrs 9650/30000, Loss=0.126058
+2023-05-28 04:15:02,585 INFO 
+Current epoch: 106
+2023-05-28 04:16:04,079 INFO Epoch 106, Itrs 9700/30000, Loss=0.124541
+2023-05-28 04:16:04,080 INFO validation...
+2023-05-28 04:16:28,320 INFO 
+Overall Acc: 0.9214
+Mean Acc: 0.6346
+FreqW Acc: 0.8613
+Mean IoU: 0.5586
+
+2023-05-28 04:17:38,761 INFO Epoch 106, Itrs 9750/30000, Loss=0.125068
+2023-05-28 04:17:41,703 INFO 
+Current epoch: 107
+2023-05-28 04:18:54,258 INFO Epoch 107, Itrs 9800/30000, Loss=0.123034
+2023-05-28 04:18:54,259 INFO validation...
+2023-05-28 04:19:19,360 INFO 
+Overall Acc: 0.9236
+Mean Acc: 0.6630
+FreqW Acc: 0.8655
+Mean IoU: 0.5761
+
+2023-05-28 04:20:21,015 INFO 
+Current epoch: 108
+2023-05-28 04:20:30,719 INFO Epoch 108, Itrs 9850/30000, Loss=0.123217
+2023-05-28 04:21:45,229 INFO Epoch 108, Itrs 9900/30000, Loss=0.124100
+2023-05-28 04:21:45,229 INFO validation...
+2023-05-28 04:22:08,990 INFO 
+Overall Acc: 0.9227
+Mean Acc: 0.6537
+FreqW Acc: 0.8636
+Mean IoU: 0.5745
+
+2023-05-28 04:22:57,973 INFO 
+Current epoch: 109
+2023-05-28 04:23:19,976 INFO Epoch 109, Itrs 9950/30000, Loss=0.123977
+2023-05-28 04:24:35,980 INFO Epoch 109, Itrs 10000/30000, Loss=0.126384
+2023-05-28 04:24:35,980 INFO validation...
+2023-05-28 04:25:01,824 INFO 
+Overall Acc: 0.9235
+Mean Acc: 0.6567
+FreqW Acc: 0.8652
+Mean IoU: 0.5737
+
+2023-05-28 04:25:38,610 INFO 
+Current epoch: 110
+2023-05-28 04:26:11,409 INFO Epoch 110, Itrs 10050/30000, Loss=0.124224
+2023-05-28 04:27:27,438 INFO Epoch 110, Itrs 10100/30000, Loss=0.121897
+2023-05-28 04:27:27,438 INFO validation...
+2023-05-28 04:27:52,330 INFO 
+Overall Acc: 0.9235
+Mean Acc: 0.6614
+FreqW Acc: 0.8666
+Mean IoU: 0.5679
+
+2023-05-28 04:28:17,617 INFO 
+Current epoch: 111
+2023-05-28 04:29:03,873 INFO Epoch 111, Itrs 10150/30000, Loss=0.122139
+2023-05-28 04:30:19,410 INFO Epoch 111, Itrs 10200/30000, Loss=0.121893
+2023-05-28 04:30:19,410 INFO validation...
+2023-05-28 04:30:43,655 INFO 
+Overall Acc: 0.9229
+Mean Acc: 0.6427
+FreqW Acc: 0.8642
+Mean IoU: 0.5594
+
+2023-05-28 04:30:57,076 INFO 
+Current epoch: 112
+2023-05-28 04:31:56,534 INFO Epoch 112, Itrs 10250/30000, Loss=0.123373
+2023-05-28 04:33:11,642 INFO Epoch 112, Itrs 10300/30000, Loss=0.123051
+2023-05-28 04:33:12,101 INFO validation...
+2023-05-28 04:33:38,017 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6615
+FreqW Acc: 0.8665
+Mean IoU: 0.5791
+
+2023-05-28 04:33:38,582 INFO 
+Current epoch: 113
+2023-05-28 04:34:48,380 INFO Epoch 113, Itrs 10350/30000, Loss=0.120931
+2023-05-28 04:35:59,092 INFO 
+Current epoch: 114
+2023-05-28 04:36:05,794 INFO Epoch 114, Itrs 10400/30000, Loss=0.122602
+2023-05-28 04:36:05,794 INFO validation...
+2023-05-28 04:36:29,996 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6682
+FreqW Acc: 0.8668
+Mean IoU: 0.5840
+
+2023-05-28 04:37:41,110 INFO Epoch 114, Itrs 10450/30000, Loss=0.121445
+2023-05-28 04:38:38,302 INFO 
+Current epoch: 115
+2023-05-28 04:38:56,693 INFO Epoch 115, Itrs 10500/30000, Loss=0.122081
+2023-05-28 04:38:56,693 INFO validation...
+2023-05-28 04:39:20,561 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6632
+FreqW Acc: 0.8651
+Mean IoU: 0.5827
+
+2023-05-28 04:40:30,540 INFO Epoch 115, Itrs 10550/30000, Loss=0.122152
+2023-05-28 04:41:14,417 INFO 
+Current epoch: 116
+2023-05-28 04:41:44,660 INFO Epoch 116, Itrs 10600/30000, Loss=0.120760
+2023-05-28 04:41:44,660 INFO validation...
+2023-05-28 04:42:10,086 INFO 
+Overall Acc: 0.9231
+Mean Acc: 0.6574
+FreqW Acc: 0.8651
+Mean IoU: 0.5723
+
+2023-05-28 04:43:19,184 INFO Epoch 116, Itrs 10650/30000, Loss=0.121968
+2023-05-28 04:43:53,132 INFO 
+Current epoch: 117
+2023-05-28 04:44:36,599 INFO Epoch 117, Itrs 10700/30000, Loss=0.122860
+2023-05-28 04:44:36,599 INFO validation...
+2023-05-28 04:45:02,321 INFO 
+Overall Acc: 0.9238
+Mean Acc: 0.6479
+FreqW Acc: 0.8646
+Mean IoU: 0.5749
+
+2023-05-28 04:46:12,621 INFO Epoch 117, Itrs 10750/30000, Loss=0.121152
+2023-05-28 04:46:34,781 INFO 
+Current epoch: 118
+2023-05-28 04:47:29,930 INFO Epoch 118, Itrs 10800/30000, Loss=0.121824
+2023-05-28 04:47:29,931 INFO validation...
+2023-05-28 04:47:55,227 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6523
+FreqW Acc: 0.8647
+Mean IoU: 0.5764
+
+2023-05-28 04:49:05,298 INFO Epoch 118, Itrs 10850/30000, Loss=0.121270
+2023-05-28 04:49:14,100 INFO 
+Current epoch: 119
+2023-05-28 04:50:21,801 INFO Epoch 119, Itrs 10900/30000, Loss=0.118812
+2023-05-28 04:50:21,802 INFO validation...
+2023-05-28 04:50:45,774 INFO 
+Overall Acc: 0.9231
+Mean Acc: 0.6556
+FreqW Acc: 0.8645
+Mean IoU: 0.5727
+
+2023-05-28 04:51:53,881 INFO 
+Current epoch: 120
+2023-05-28 04:51:57,889 INFO Epoch 120, Itrs 10950/30000, Loss=0.120078
+2023-05-28 04:53:14,619 INFO Epoch 120, Itrs 11000/30000, Loss=0.118465
+2023-05-28 04:53:14,620 INFO validation...
+2023-05-28 04:53:39,152 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6780
+FreqW Acc: 0.8670
+Mean IoU: 0.5878
+
+2023-05-28 04:53:39,237 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter11000_epoch120_miou0.5878.pth
+2023-05-28 04:54:34,740 INFO 
+Current epoch: 121
+2023-05-28 04:54:51,263 INFO Epoch 121, Itrs 11050/30000, Loss=0.121434
+2023-05-28 04:56:05,909 INFO Epoch 121, Itrs 11100/30000, Loss=0.119260
+2023-05-28 04:56:05,910 INFO validation...
+2023-05-28 04:56:30,547 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6567
+FreqW Acc: 0.8653
+Mean IoU: 0.5785
+
+2023-05-28 04:57:12,853 INFO 
+Current epoch: 122
+2023-05-28 04:57:40,683 INFO Epoch 122, Itrs 11150/30000, Loss=0.119463
+2023-05-28 04:58:55,616 INFO Epoch 122, Itrs 11200/30000, Loss=0.119509
+2023-05-28 04:58:55,617 INFO validation...
+2023-05-28 04:59:20,517 INFO 
+Overall Acc: 0.9246
+Mean Acc: 0.6630
+FreqW Acc: 0.8666
+Mean IoU: 0.5829
+
+2023-05-28 04:59:51,706 INFO 
+Current epoch: 123
+2023-05-28 05:00:32,396 INFO Epoch 123, Itrs 11250/30000, Loss=0.118974
+2023-05-28 05:01:50,175 INFO Epoch 123, Itrs 11300/30000, Loss=0.119352
+2023-05-28 05:01:50,176 INFO validation...
+2023-05-28 05:02:14,488 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6656
+FreqW Acc: 0.8664
+Mean IoU: 0.5828
+
+2023-05-28 05:02:33,424 INFO 
+Current epoch: 124
+2023-05-28 05:03:25,464 INFO Epoch 124, Itrs 11350/30000, Loss=0.118692
+2023-05-28 05:04:41,771 INFO Epoch 124, Itrs 11400/30000, Loss=0.119801
+2023-05-28 05:04:41,772 INFO validation...
+2023-05-28 05:05:06,182 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6655
+FreqW Acc: 0.8659
+Mean IoU: 0.5823
+
+2023-05-28 05:05:13,115 INFO 
+Current epoch: 125
+2023-05-28 05:06:16,419 INFO Epoch 125, Itrs 11450/30000, Loss=0.118402
+2023-05-28 05:07:30,946 INFO Epoch 125, Itrs 11500/30000, Loss=0.120209
+2023-05-28 05:07:30,946 INFO validation...
+2023-05-28 05:07:56,631 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6671
+FreqW Acc: 0.8665
+Mean IoU: 0.5828
+
+2023-05-28 05:07:56,732 INFO 
+Current epoch: 126
+2023-05-28 05:09:10,623 INFO Epoch 126, Itrs 11550/30000, Loss=0.118034
+2023-05-28 05:10:12,959 INFO 
+Current epoch: 127
+2023-05-28 05:10:26,003 INFO Epoch 127, Itrs 11600/30000, Loss=0.117811
+2023-05-28 05:10:26,004 INFO validation...
+2023-05-28 05:10:49,682 INFO 
+Overall Acc: 0.9234
+Mean Acc: 0.6474
+FreqW Acc: 0.8640
+Mean IoU: 0.5718
+
+2023-05-28 05:11:57,085 INFO Epoch 127, Itrs 11650/30000, Loss=0.118346
+2023-05-28 05:12:47,779 INFO 
+Current epoch: 128
+2023-05-28 05:13:12,756 INFO Epoch 128, Itrs 11700/30000, Loss=0.120232
+2023-05-28 05:13:12,756 INFO validation...
+2023-05-28 05:13:36,977 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6674
+FreqW Acc: 0.8671
+Mean IoU: 0.5799
+
+2023-05-28 05:14:48,147 INFO Epoch 128, Itrs 11750/30000, Loss=0.118812
+2023-05-28 05:15:27,511 INFO 
+Current epoch: 129
+2023-05-28 05:16:03,897 INFO Epoch 129, Itrs 11800/30000, Loss=0.117142
+2023-05-28 05:16:03,897 INFO validation...
+2023-05-28 05:16:29,587 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6600
+FreqW Acc: 0.8661
+Mean IoU: 0.5726
+
+2023-05-28 05:17:39,182 INFO Epoch 129, Itrs 11850/30000, Loss=0.117063
+2023-05-28 05:18:06,460 INFO 
+Current epoch: 130
+2023-05-28 05:18:56,170 INFO Epoch 130, Itrs 11900/30000, Loss=0.118598
+2023-05-28 05:18:56,170 INFO validation...
+2023-05-28 05:19:21,838 INFO 
+Overall Acc: 0.9233
+Mean Acc: 0.6634
+FreqW Acc: 0.8640
+Mean IoU: 0.5760
+
+2023-05-28 05:20:30,957 INFO Epoch 130, Itrs 11950/30000, Loss=0.115470
+2023-05-28 05:20:45,521 INFO 
+Current epoch: 131
+2023-05-28 05:21:45,847 INFO Epoch 131, Itrs 12000/30000, Loss=0.116295
+2023-05-28 05:21:45,847 INFO validation...
+2023-05-28 05:22:11,924 INFO 
+Overall Acc: 0.9221
+Mean Acc: 0.6509
+FreqW Acc: 0.8639
+Mean IoU: 0.5646
+
+2023-05-28 05:23:22,168 INFO Epoch 131, Itrs 12050/30000, Loss=0.116941
+2023-05-28 05:23:25,174 INFO 
+Current epoch: 132
+2023-05-28 05:24:37,334 INFO Epoch 132, Itrs 12100/30000, Loss=0.116451
+2023-05-28 05:24:37,340 INFO validation...
+2023-05-28 05:25:01,583 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6705
+FreqW Acc: 0.8666
+Mean IoU: 0.5849
+
+2023-05-28 05:26:00,498 INFO 
+Current epoch: 133
+2023-05-28 05:26:10,488 INFO Epoch 133, Itrs 12150/30000, Loss=0.115299
+2023-05-28 05:27:26,000 INFO Epoch 133, Itrs 12200/30000, Loss=0.114405
+2023-05-28 05:27:26,000 INFO validation...
+2023-05-28 05:27:50,125 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6678
+FreqW Acc: 0.8665
+Mean IoU: 0.5800
+
+2023-05-28 05:28:38,383 INFO 
+Current epoch: 134
+2023-05-28 05:29:00,110 INFO Epoch 134, Itrs 12250/30000, Loss=0.117233
+2023-05-28 05:30:14,250 INFO Epoch 134, Itrs 12300/30000, Loss=0.117388
+2023-05-28 05:30:14,250 INFO validation...
+2023-05-28 05:30:38,386 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6541
+FreqW Acc: 0.8658
+Mean IoU: 0.5787
+
+2023-05-28 05:31:16,808 INFO 
+Current epoch: 135
+2023-05-28 05:31:50,796 INFO Epoch 135, Itrs 12350/30000, Loss=0.116680
+2023-05-28 05:33:06,719 INFO Epoch 135, Itrs 12400/30000, Loss=0.114493
+2023-05-28 05:33:06,720 INFO validation...
+2023-05-28 05:33:31,448 INFO 
+Overall Acc: 0.9237
+Mean Acc: 0.6454
+FreqW Acc: 0.8648
+Mean IoU: 0.5672
+
+2023-05-28 05:33:57,648 INFO 
+Current epoch: 136
+2023-05-28 05:34:44,668 INFO Epoch 136, Itrs 12450/30000, Loss=0.114263
+2023-05-28 05:35:58,280 INFO Epoch 136, Itrs 12500/30000, Loss=0.116069
+2023-05-28 05:35:58,281 INFO validation...
+2023-05-28 05:36:23,113 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6603
+FreqW Acc: 0.8668
+Mean IoU: 0.5765
+
+2023-05-28 05:36:36,512 INFO 
+Current epoch: 137
+2023-05-28 05:37:33,807 INFO Epoch 137, Itrs 12550/30000, Loss=0.116146
+2023-05-28 05:38:47,478 INFO Epoch 137, Itrs 12600/30000, Loss=0.115702
+2023-05-28 05:38:47,478 INFO validation...
+2023-05-28 05:39:12,023 INFO 
+Overall Acc: 0.9231
+Mean Acc: 0.6508
+FreqW Acc: 0.8641
+Mean IoU: 0.5692
+
+2023-05-28 05:39:12,557 INFO 
+Current epoch: 138
+2023-05-28 05:40:24,234 INFO Epoch 138, Itrs 12650/30000, Loss=0.115142
+2023-05-28 05:41:32,065 INFO 
+Current epoch: 139
+2023-05-28 05:41:38,967 INFO Epoch 139, Itrs 12700/30000, Loss=0.115515
+2023-05-28 05:41:38,967 INFO validation...
+2023-05-28 05:42:04,707 INFO 
+Overall Acc: 0.9253
+Mean Acc: 0.6685
+FreqW Acc: 0.8678
+Mean IoU: 0.5844
+
+2023-05-28 05:43:13,924 INFO Epoch 139, Itrs 12750/30000, Loss=0.115250
+2023-05-28 05:44:10,998 INFO 
+Current epoch: 140
+2023-05-28 05:44:30,151 INFO Epoch 140, Itrs 12800/30000, Loss=0.114584
+2023-05-28 05:44:30,152 INFO validation...
+2023-05-28 05:44:54,760 INFO 
+Overall Acc: 0.9249
+Mean Acc: 0.6708
+FreqW Acc: 0.8674
+Mean IoU: 0.5839
+
+2023-05-28 05:46:03,601 INFO Epoch 140, Itrs 12850/30000, Loss=0.116028
+2023-05-28 05:46:48,441 INFO 
+Current epoch: 141
+2023-05-28 05:47:19,532 INFO Epoch 141, Itrs 12900/30000, Loss=0.120988
+2023-05-28 05:47:19,533 INFO validation...
+2023-05-28 05:47:45,193 INFO 
+Overall Acc: 0.9196
+Mean Acc: 0.6321
+FreqW Acc: 0.8585
+Mean IoU: 0.5499
+
+2023-05-28 05:48:54,954 INFO Epoch 141, Itrs 12950/30000, Loss=0.115924
+2023-05-28 05:49:28,936 INFO 
+Current epoch: 142
+2023-05-28 05:50:12,069 INFO Epoch 142, Itrs 13000/30000, Loss=0.114993
+2023-05-28 05:50:12,070 INFO validation...
+2023-05-28 05:50:36,653 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6597
+FreqW Acc: 0.8663
+Mean IoU: 0.5763
+
+2023-05-28 05:51:47,512 INFO Epoch 142, Itrs 13050/30000, Loss=0.114119
+2023-05-28 05:52:08,210 INFO 
+Current epoch: 143
+2023-05-28 05:53:03,707 INFO Epoch 143, Itrs 13100/30000, Loss=0.115733
+2023-05-28 05:53:03,708 INFO validation...
+2023-05-28 05:53:28,132 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6632
+FreqW Acc: 0.8664
+Mean IoU: 0.5789
+
+2023-05-28 05:54:37,639 INFO Epoch 143, Itrs 13150/30000, Loss=0.114647
+2023-05-28 05:54:46,399 INFO 
+Current epoch: 144
+2023-05-28 05:55:53,362 INFO Epoch 144, Itrs 13200/30000, Loss=0.114402
+2023-05-28 05:55:53,363 INFO validation...
+2023-05-28 05:56:17,294 INFO 
+Overall Acc: 0.9237
+Mean Acc: 0.6497
+FreqW Acc: 0.8656
+Mean IoU: 0.5695
+
+2023-05-28 05:57:24,066 INFO 
+Current epoch: 145
+2023-05-28 05:57:27,758 INFO Epoch 145, Itrs 13250/30000, Loss=0.114291
+2023-05-28 05:58:43,270 INFO Epoch 145, Itrs 13300/30000, Loss=0.117295
+2023-05-28 05:58:43,270 INFO validation...
+2023-05-28 05:59:08,227 INFO 
+Overall Acc: 0.9198
+Mean Acc: 0.6647
+FreqW Acc: 0.8608
+Mean IoU: 0.5714
+
+2023-05-28 06:00:03,724 INFO 
+Current epoch: 146
+2023-05-28 06:00:19,571 INFO Epoch 146, Itrs 13350/30000, Loss=0.115483
+2023-05-28 06:01:34,760 INFO Epoch 146, Itrs 13400/30000, Loss=0.112810
+2023-05-28 06:01:34,760 INFO validation...
+2023-05-28 06:02:00,112 INFO 
+Overall Acc: 0.9250
+Mean Acc: 0.6632
+FreqW Acc: 0.8675
+Mean IoU: 0.5812
+
+2023-05-28 06:02:42,839 INFO 
+Current epoch: 147
+2023-05-28 06:03:11,017 INFO Epoch 147, Itrs 13450/30000, Loss=0.115308
+2023-05-28 06:04:26,120 INFO Epoch 147, Itrs 13500/30000, Loss=0.113724
+2023-05-28 06:04:26,121 INFO validation...
+2023-05-28 06:04:50,154 INFO 
+Overall Acc: 0.9236
+Mean Acc: 0.6491
+FreqW Acc: 0.8651
+Mean IoU: 0.5737
+
+2023-05-28 06:05:20,394 INFO 
+Current epoch: 148
+2023-05-28 06:05:59,729 INFO Epoch 148, Itrs 13550/30000, Loss=0.113045
+2023-05-28 06:07:14,243 INFO Epoch 148, Itrs 13600/30000, Loss=0.112770
+2023-05-28 06:07:14,243 INFO validation...
+2023-05-28 06:07:39,286 INFO 
+Overall Acc: 0.9250
+Mean Acc: 0.6777
+FreqW Acc: 0.8677
+Mean IoU: 0.5883
+
+2023-05-28 06:07:39,386 INFO Model saved as logs/2023_0527_2338_05_cs_aug_run_munit_default_run_style_1.5/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter13600_epoch148_miou0.5883.pth
+2023-05-28 06:07:57,813 INFO 
+Current epoch: 149
+2023-05-28 06:08:49,720 INFO Epoch 149, Itrs 13650/30000, Loss=0.112068
+2023-05-28 06:10:05,171 INFO Epoch 149, Itrs 13700/30000, Loss=0.112814
+2023-05-28 06:10:05,172 INFO validation...
+2023-05-28 06:10:29,735 INFO 
+Overall Acc: 0.9253
+Mean Acc: 0.6548
+FreqW Acc: 0.8679
+Mean IoU: 0.5732
+
+2023-05-28 06:10:36,005 INFO 
+Current epoch: 150
+2023-05-28 06:11:41,019 INFO Epoch 150, Itrs 13750/30000, Loss=0.113234
+2023-05-28 06:12:57,059 INFO Epoch 150, Itrs 13800/30000, Loss=0.112497
+2023-05-28 06:12:57,059 INFO validation...
+2023-05-28 06:13:22,555 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6522
+FreqW Acc: 0.8660
+Mean IoU: 0.5712
+
+2023-05-28 06:13:22,666 INFO 
+Current epoch: 151
+2023-05-28 06:14:39,519 INFO Epoch 151, Itrs 13850/30000, Loss=0.112557
+2023-05-28 06:15:42,393 INFO 
+Current epoch: 152
+2023-05-28 06:15:55,827 INFO Epoch 152, Itrs 13900/30000, Loss=0.111051
+2023-05-28 06:15:55,828 INFO validation...
+2023-05-28 06:16:21,507 INFO 
+Overall Acc: 0.9236
+Mean Acc: 0.6681
+FreqW Acc: 0.8660
+Mean IoU: 0.5804
+
+2023-05-28 06:17:30,399 INFO Epoch 152, Itrs 13950/30000, Loss=0.110237
+2023-05-28 06:18:21,251 INFO 
+Current epoch: 153
+2023-05-28 06:18:46,889 INFO Epoch 153, Itrs 14000/30000, Loss=0.113820
+2023-05-28 06:18:46,889 INFO validation...
+2023-05-28 06:19:13,008 INFO 
+Overall Acc: 0.9246
+Mean Acc: 0.6704
+FreqW Acc: 0.8670
+Mean IoU: 0.5850
+
+2023-05-28 06:20:24,164 INFO Epoch 153, Itrs 14050/30000, Loss=0.112310
+2023-05-28 06:21:03,271 INFO 
+Current epoch: 154
+2023-05-28 06:21:40,614 INFO Epoch 154, Itrs 14100/30000, Loss=0.111707
+2023-05-28 06:21:40,615 INFO validation...
+2023-05-28 06:22:05,018 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6678
+FreqW Acc: 0.8669
+Mean IoU: 0.5815
+
+2023-05-28 06:23:14,234 INFO Epoch 154, Itrs 14150/30000, Loss=0.111871
+2023-05-28 06:23:40,891 INFO 
+Current epoch: 155
+2023-05-28 06:24:31,870 INFO Epoch 155, Itrs 14200/30000, Loss=0.111229
+2023-05-28 06:24:31,871 INFO validation...
+2023-05-28 06:24:57,000 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6610
+FreqW Acc: 0.8653
+Mean IoU: 0.5753
+
+2023-05-28 06:26:06,416 INFO Epoch 155, Itrs 14250/30000, Loss=0.112925
+2023-05-28 06:26:21,118 INFO 
+Current epoch: 156
+2023-05-28 06:27:24,467 INFO Epoch 156, Itrs 14300/30000, Loss=0.112406
+2023-05-28 06:27:24,468 INFO validation...
+2023-05-28 06:27:50,167 INFO 
+Overall Acc: 0.9235
+Mean Acc: 0.6683
+FreqW Acc: 0.8650
+Mean IoU: 0.5832
+
+2023-05-28 06:28:59,462 INFO Epoch 156, Itrs 14350/30000, Loss=0.110719
+2023-05-28 06:29:02,513 INFO 
+Current epoch: 157
+2023-05-28 06:30:16,616 INFO Epoch 157, Itrs 14400/30000, Loss=0.111936
+2023-05-28 06:30:16,617 INFO validation...
+2023-05-28 06:30:41,320 INFO 
+Overall Acc: 0.9238
+Mean Acc: 0.6561
+FreqW Acc: 0.8658
+Mean IoU: 0.5761
+
+2023-05-28 06:31:42,130 INFO 
+Current epoch: 158
+2023-05-28 06:31:51,313 INFO Epoch 158, Itrs 14450/30000, Loss=0.108568
+2023-05-28 06:33:08,476 INFO Epoch 158, Itrs 14500/30000, Loss=0.109496
+2023-05-28 06:33:08,477 INFO validation...
+2023-05-28 06:33:33,691 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6588
+FreqW Acc: 0.8659
+Mean IoU: 0.5772
+
+2023-05-28 06:34:22,251 INFO 
+Current epoch: 159
+2023-05-28 06:34:44,192 INFO Epoch 159, Itrs 14550/30000, Loss=0.113755
+2023-05-28 06:35:58,882 INFO Epoch 159, Itrs 14600/30000, Loss=0.110387
+2023-05-28 06:35:58,883 INFO validation...
+2023-05-28 06:36:23,921 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6484
+FreqW Acc: 0.8666
+Mean IoU: 0.5655
+
+2023-05-28 06:37:01,222 INFO 
+Current epoch: 160
+2023-05-28 06:37:36,785 INFO Epoch 160, Itrs 14650/30000, Loss=0.111785
+2023-05-28 06:38:50,201 INFO Epoch 160, Itrs 14700/30000, Loss=0.109866
+2023-05-28 06:38:50,201 INFO validation...
+2023-05-28 06:39:14,336 INFO 
+Overall Acc: 0.9237
+Mean Acc: 0.6577
+FreqW Acc: 0.8660
+Mean IoU: 0.5716
+
+2023-05-28 06:39:39,358 INFO 
+Current epoch: 161
+2023-05-28 06:40:27,204 INFO Epoch 161, Itrs 14750/30000, Loss=0.111202
+2023-05-28 06:41:41,050 INFO Epoch 161, Itrs 14800/30000, Loss=0.110979
+2023-05-28 06:41:41,050 INFO validation...
+2023-05-28 06:42:05,803 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6607
+FreqW Acc: 0.8664
+Mean IoU: 0.5733
+
+2023-05-28 06:42:18,385 INFO 
+Current epoch: 162
+2023-05-28 06:43:16,440 INFO Epoch 162, Itrs 14850/30000, Loss=0.111623
+2023-05-28 06:44:34,814 INFO Epoch 162, Itrs 14900/30000, Loss=0.110534
+2023-05-28 06:44:34,814 INFO validation...
+2023-05-28 06:44:59,362 INFO 
+Overall Acc: 0.9236
+Mean Acc: 0.6653
+FreqW Acc: 0.8654
+Mean IoU: 0.5758
+
+2023-05-28 06:44:59,916 INFO 
+Current epoch: 163
+2023-05-28 06:46:09,591 INFO Epoch 163, Itrs 14950/30000, Loss=0.110083
+2023-05-28 06:47:18,272 INFO 
+Current epoch: 164
+2023-05-28 06:47:24,979 INFO Epoch 164, Itrs 15000/30000, Loss=0.109811
+2023-05-28 06:47:24,980 INFO validation...
+2023-05-28 06:47:50,624 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6576
+FreqW Acc: 0.8655
+Mean IoU: 0.5738
+
+2023-05-28 06:49:01,310 INFO Epoch 164, Itrs 15050/30000, Loss=0.109534
+2023-05-28 06:49:57,347 INFO 
+Current epoch: 165
+2023-05-28 06:50:17,105 INFO Epoch 165, Itrs 15100/30000, Loss=0.111053
+2023-05-28 06:50:17,106 INFO validation...
+2023-05-28 06:50:41,023 INFO 
+Overall Acc: 0.9227
+Mean Acc: 0.6530
+FreqW Acc: 0.8642
+Mean IoU: 0.5707
+
+2023-05-28 06:51:49,381 INFO Epoch 165, Itrs 15150/30000, Loss=0.108590
+2023-05-28 06:52:33,785 INFO 
+Current epoch: 166
+2023-05-28 06:53:05,069 INFO Epoch 166, Itrs 15200/30000, Loss=0.110068
+2023-05-28 06:53:05,070 INFO validation...
+2023-05-28 06:53:29,323 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6599
+FreqW Acc: 0.8658
+Mean IoU: 0.5773
+
+2023-05-28 06:54:38,553 INFO Epoch 166, Itrs 15250/30000, Loss=0.109695
+2023-05-28 06:55:14,129 INFO 
+Current epoch: 167
+2023-05-28 06:55:56,111 INFO Epoch 167, Itrs 15300/30000, Loss=0.108967
+2023-05-28 06:55:56,111 INFO validation...
+2023-05-28 06:56:21,027 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6462
+FreqW Acc: 0.8650
+Mean IoU: 0.5672
+
+2023-05-28 06:57:30,048 INFO Epoch 167, Itrs 15350/30000, Loss=0.108248
+2023-05-28 06:57:50,707 INFO 
+Current epoch: 168
+2023-05-28 06:58:45,155 INFO Epoch 168, Itrs 15400/30000, Loss=0.107784
+2023-05-28 06:58:45,156 INFO validation...
+2023-05-28 06:59:10,462 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6475
+FreqW Acc: 0.8653
+Mean IoU: 0.5654
+
+2023-05-28 07:00:21,102 INFO Epoch 168, Itrs 15450/30000, Loss=0.109762
+2023-05-28 07:00:30,032 INFO 
+Current epoch: 169
+2023-05-28 07:01:38,937 INFO Epoch 169, Itrs 15500/30000, Loss=0.108365
+2023-05-28 07:01:38,937 INFO validation...
+2023-05-28 07:02:02,538 INFO 
+Overall Acc: 0.9248
+Mean Acc: 0.6680
+FreqW Acc: 0.8675
+Mean IoU: 0.5844
+
+2023-05-28 07:03:08,109 INFO 
+Current epoch: 170
+2023-05-28 07:03:11,916 INFO Epoch 170, Itrs 15550/30000, Loss=0.107855
+2023-05-28 07:04:26,446 INFO Epoch 170, Itrs 15600/30000, Loss=0.108557
+2023-05-28 07:04:26,447 INFO validation...
+2023-05-28 07:04:51,202 INFO 
+Overall Acc: 0.9234
+Mean Acc: 0.6495
+FreqW Acc: 0.8650
+Mean IoU: 0.5703
+
+2023-05-28 07:05:45,327 INFO 
+Current epoch: 171
+2023-05-28 07:06:01,984 INFO Epoch 171, Itrs 15650/30000, Loss=0.110148
+2023-05-28 07:07:15,928 INFO Epoch 171, Itrs 15700/30000, Loss=0.106332
+2023-05-28 07:07:15,928 INFO validation...
+2023-05-28 07:07:40,528 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6576
+FreqW Acc: 0.8667
+Mean IoU: 0.5693
+
+2023-05-28 07:08:24,327 INFO 
+Current epoch: 172
+2023-05-28 07:08:52,047 INFO Epoch 172, Itrs 15750/30000, Loss=0.108600
+2023-05-28 07:10:05,651 INFO Epoch 172, Itrs 15800/30000, Loss=0.107892
+2023-05-28 07:10:05,652 INFO validation...
+2023-05-28 07:10:30,607 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6477
+FreqW Acc: 0.8654
+Mean IoU: 0.5668
+
+2023-05-28 07:11:02,353 INFO 
+Current epoch: 173
+2023-05-28 07:11:42,755 INFO Epoch 173, Itrs 15850/30000, Loss=0.107862
+2023-05-28 07:12:58,848 INFO Epoch 173, Itrs 15900/30000, Loss=0.108211
+2023-05-28 07:12:58,849 INFO validation...
+2023-05-28 07:13:24,011 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6479
+FreqW Acc: 0.8653
+Mean IoU: 0.5682
+
+2023-05-28 07:13:42,980 INFO 
+Current epoch: 174
+2023-05-28 07:14:35,007 INFO Epoch 174, Itrs 15950/30000, Loss=0.108035
+2023-05-28 07:15:50,476 INFO Epoch 174, Itrs 16000/30000, Loss=0.108264
+2023-05-28 07:15:50,477 INFO validation...
+2023-05-28 07:16:14,904 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6639
+FreqW Acc: 0.8665
+Mean IoU: 0.5746
+
+2023-05-28 07:16:22,709 INFO 
+Current epoch: 175
+2023-05-28 07:17:26,033 INFO Epoch 175, Itrs 16050/30000, Loss=0.107077
+2023-05-28 07:18:41,043 INFO Epoch 175, Itrs 16100/30000, Loss=0.109130
+2023-05-28 07:18:41,043 INFO validation...
+2023-05-28 07:19:06,957 INFO 
+Overall Acc: 0.9230
+Mean Acc: 0.6573
+FreqW Acc: 0.8649
+Mean IoU: 0.5653
+
+2023-05-28 07:19:07,032 INFO 
+Current epoch: 176
+2023-05-28 07:20:22,951 INFO Epoch 176, Itrs 16150/30000, Loss=0.107172
+2023-05-28 07:21:26,767 INFO 
+Current epoch: 177
+2023-05-28 07:21:40,217 INFO Epoch 177, Itrs 16200/30000, Loss=0.107351
+2023-05-28 07:21:40,218 INFO validation...
+2023-05-28 07:22:04,690 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6543
+FreqW Acc: 0.8658
+Mean IoU: 0.5697
+
+2023-05-28 07:23:13,102 INFO Epoch 177, Itrs 16250/30000, Loss=0.106175
+2023-05-28 07:24:03,302 INFO 
+Current epoch: 178
+2023-05-28 07:24:29,135 INFO Epoch 178, Itrs 16300/30000, Loss=0.108125
+2023-05-28 07:24:29,136 INFO validation...
+2023-05-28 07:24:52,878 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6605
+FreqW Acc: 0.8663
+Mean IoU: 0.5738
+
+2023-05-28 07:26:02,285 INFO Epoch 178, Itrs 16350/30000, Loss=0.108129
+2023-05-28 07:26:42,209 INFO 
+Current epoch: 179
+2023-05-28 07:27:18,887 INFO Epoch 179, Itrs 16400/30000, Loss=0.105607
+2023-05-28 07:27:18,888 INFO validation...
+2023-05-28 07:27:43,438 INFO 
+Overall Acc: 0.9248
+Mean Acc: 0.6593
+FreqW Acc: 0.8672
+Mean IoU: 0.5800
+
+2023-05-28 07:28:53,148 INFO Epoch 179, Itrs 16450/30000, Loss=0.107446
+2023-05-28 07:29:21,555 INFO 
+Current epoch: 180
+2023-05-28 07:30:12,768 INFO Epoch 180, Itrs 16500/30000, Loss=0.107660
+2023-05-28 07:30:12,769 INFO validation...
+2023-05-28 07:30:38,680 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6560
+FreqW Acc: 0.8664
+Mean IoU: 0.5717
+
+2023-05-28 07:31:48,808 INFO Epoch 180, Itrs 16550/30000, Loss=0.107341
+2023-05-28 07:32:03,438 INFO 
+Current epoch: 181
+2023-05-28 07:33:04,510 INFO Epoch 181, Itrs 16600/30000, Loss=0.107100
+2023-05-28 07:33:04,511 INFO validation...
+2023-05-28 07:33:29,419 INFO 
+Overall Acc: 0.9246
+Mean Acc: 0.6663
+FreqW Acc: 0.8667
+Mean IoU: 0.5809
+
+2023-05-28 07:34:39,756 INFO Epoch 181, Itrs 16650/30000, Loss=0.107890
+2023-05-28 07:34:42,785 INFO 
+Current epoch: 182
+2023-05-28 07:35:54,149 INFO Epoch 182, Itrs 16700/30000, Loss=0.107919
+2023-05-28 07:35:54,150 INFO validation...
+2023-05-28 07:36:19,167 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6513
+FreqW Acc: 0.8660
+Mean IoU: 0.5705
+
+2023-05-28 07:37:19,552 INFO 
+Current epoch: 183
+2023-05-28 07:37:28,773 INFO Epoch 183, Itrs 16750/30000, Loss=0.106720
+2023-05-28 07:38:43,775 INFO Epoch 183, Itrs 16800/30000, Loss=0.105993
+2023-05-28 07:38:43,775 INFO validation...
+2023-05-28 07:39:10,326 INFO 
+Overall Acc: 0.9249
+Mean Acc: 0.6527
+FreqW Acc: 0.8672
+Mean IoU: 0.5719
+
+2023-05-28 07:39:58,790 INFO 
+Current epoch: 184
+2023-05-28 07:40:21,600 INFO Epoch 184, Itrs 16850/30000, Loss=0.107354
+2023-05-28 07:41:35,960 INFO Epoch 184, Itrs 16900/30000, Loss=0.107812
+2023-05-28 07:41:35,961 INFO validation...
+2023-05-28 07:42:00,850 INFO 
+Overall Acc: 0.9229
+Mean Acc: 0.6530
+FreqW Acc: 0.8651
+Mean IoU: 0.5611
+
+2023-05-28 07:42:38,339 INFO 
+Current epoch: 185
+2023-05-28 07:43:11,914 INFO Epoch 185, Itrs 16950/30000, Loss=0.108063
+2023-05-28 07:44:26,069 INFO Epoch 185, Itrs 17000/30000, Loss=0.106925
+2023-05-28 07:44:26,070 INFO validation...
+2023-05-28 07:44:52,226 INFO 
+Overall Acc: 0.9230
+Mean Acc: 0.6478
+FreqW Acc: 0.8641
+Mean IoU: 0.5696
+
+2023-05-28 07:45:17,434 INFO 
+Current epoch: 186
+2023-05-28 07:46:03,961 INFO Epoch 186, Itrs 17050/30000, Loss=0.106122
+2023-05-28 07:47:20,295 INFO Epoch 186, Itrs 17100/30000, Loss=0.105698
+2023-05-28 07:47:20,867 INFO validation...
+2023-05-28 07:47:45,641 INFO 
+Overall Acc: 0.9232
+Mean Acc: 0.6569
+FreqW Acc: 0.8652
+Mean IoU: 0.5700
+
+2023-05-28 07:47:58,177 INFO 
+Current epoch: 187
+2023-05-28 07:48:56,153 INFO Epoch 187, Itrs 17150/30000, Loss=0.105599
+2023-05-28 07:50:10,137 INFO Epoch 187, Itrs 17200/30000, Loss=0.106948
+2023-05-28 07:50:10,138 INFO validation...
+2023-05-28 07:50:35,418 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6578
+FreqW Acc: 0.8653
+Mean IoU: 0.5774
+
+2023-05-28 07:50:36,017 INFO 
+Current epoch: 188
+2023-05-28 07:51:48,055 INFO Epoch 188, Itrs 17250/30000, Loss=0.106221
+2023-05-28 07:52:56,086 INFO 
+Current epoch: 189
+2023-05-28 07:53:03,011 INFO Epoch 189, Itrs 17300/30000, Loss=0.106350
+2023-05-28 07:53:03,012 INFO validation...
+2023-05-28 07:53:28,886 INFO 
+Overall Acc: 0.9238
+Mean Acc: 0.6603
+FreqW Acc: 0.8654
+Mean IoU: 0.5768
+
+2023-05-28 07:54:37,420 INFO Epoch 189, Itrs 17350/30000, Loss=0.105057
+2023-05-28 07:55:35,017 INFO 
+Current epoch: 190
+2023-05-28 07:55:53,892 INFO Epoch 190, Itrs 17400/30000, Loss=0.106850
+2023-05-28 07:55:53,893 INFO validation...
+2023-05-28 07:56:18,850 INFO 
+Overall Acc: 0.9238
+Mean Acc: 0.6579
+FreqW Acc: 0.8656
+Mean IoU: 0.5766
+
+2023-05-28 07:57:27,823 INFO Epoch 190, Itrs 17450/30000, Loss=0.104989
+2023-05-28 07:58:13,989 INFO 
+Current epoch: 191
+2023-05-28 07:58:44,406 INFO Epoch 191, Itrs 17500/30000, Loss=0.105081
+2023-05-28 07:58:44,407 INFO validation...
+2023-05-28 07:59:09,172 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6567
+FreqW Acc: 0.8663
+Mean IoU: 0.5736
+
+2023-05-28 08:00:17,610 INFO Epoch 191, Itrs 17550/30000, Loss=0.105172
+2023-05-28 08:00:50,429 INFO 
+Current epoch: 192
+2023-05-28 08:01:32,857 INFO Epoch 192, Itrs 17600/30000, Loss=0.103720
+2023-05-28 08:01:32,858 INFO validation...
+2023-05-28 08:01:56,737 INFO 
+Overall Acc: 0.9235
+Mean Acc: 0.6591
+FreqW Acc: 0.8657
+Mean IoU: 0.5730
+
+2023-05-28 08:03:04,741 INFO Epoch 192, Itrs 17650/30000, Loss=0.105717
+2023-05-28 08:03:25,181 INFO 
+Current epoch: 193
+2023-05-28 08:04:20,739 INFO Epoch 193, Itrs 17700/30000, Loss=0.105190
+2023-05-28 08:04:20,740 INFO validation...
+2023-05-28 08:04:46,261 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6533
+FreqW Acc: 0.8662
+Mean IoU: 0.5690
+
+2023-05-28 08:05:55,927 INFO Epoch 193, Itrs 17750/30000, Loss=0.103890
+2023-05-28 08:06:04,673 INFO 
+Current epoch: 194
+2023-05-28 08:07:10,763 INFO Epoch 194, Itrs 17800/30000, Loss=0.103526
+2023-05-28 08:07:10,764 INFO validation...
+2023-05-28 08:07:34,918 INFO 
+Overall Acc: 0.9237
+Mean Acc: 0.6493
+FreqW Acc: 0.8656
+Mean IoU: 0.5692
+
+2023-05-28 08:08:40,629 INFO 
+Current epoch: 195
+2023-05-28 08:08:44,480 INFO Epoch 195, Itrs 17850/30000, Loss=0.102596
+2023-05-28 08:09:59,980 INFO Epoch 195, Itrs 17900/30000, Loss=0.103436
+2023-05-28 08:10:00,000 INFO validation...
+2023-05-28 08:10:24,896 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6568
+FreqW Acc: 0.8671
+Mean IoU: 0.5703
+
+2023-05-28 08:11:21,303 INFO 
+Current epoch: 196
+2023-05-28 08:11:36,229 INFO Epoch 196, Itrs 17950/30000, Loss=0.102752
+2023-05-28 08:12:50,498 INFO Epoch 196, Itrs 18000/30000, Loss=0.104355
+2023-05-28 08:12:50,499 INFO validation...
+2023-05-28 08:13:14,459 INFO 
+Overall Acc: 0.9238
+Mean Acc: 0.6603
+FreqW Acc: 0.8662
+Mean IoU: 0.5744
+
+2023-05-28 08:13:57,013 INFO 
+Current epoch: 197
+2023-05-28 08:14:25,785 INFO Epoch 197, Itrs 18050/30000, Loss=0.104198
+2023-05-28 08:15:41,432 INFO Epoch 197, Itrs 18100/30000, Loss=0.104995
+2023-05-28 08:15:41,433 INFO validation...
+2023-05-28 08:16:06,029 INFO 
+Overall Acc: 0.9204
+Mean Acc: 0.6381
+FreqW Acc: 0.8603
+Mean IoU: 0.5581
+
+2023-05-28 08:16:37,372 INFO 
+Current epoch: 198
+2023-05-28 08:17:16,842 INFO Epoch 198, Itrs 18150/30000, Loss=0.106824
+2023-05-28 08:18:30,675 INFO Epoch 198, Itrs 18200/30000, Loss=0.105619
+2023-05-28 08:18:30,675 INFO validation...
+2023-05-28 08:18:55,178 INFO 
+Overall Acc: 0.9233
+Mean Acc: 0.6559
+FreqW Acc: 0.8653
+Mean IoU: 0.5709
+
+2023-05-28 08:19:13,667 INFO 
+Current epoch: 199
+2023-05-28 08:20:05,736 INFO Epoch 199, Itrs 18250/30000, Loss=0.102956
+2023-05-28 08:21:21,185 INFO Epoch 199, Itrs 18300/30000, Loss=0.103253
+2023-05-28 08:21:21,186 INFO validation...
+2023-05-28 08:21:46,586 INFO 
+Overall Acc: 0.9237
+Mean Acc: 0.6646
+FreqW Acc: 0.8659
+Mean IoU: 0.5794
+
+2023-05-28 08:21:52,841 INFO 
+Current epoch: 200
+2023-05-28 08:22:56,572 INFO Epoch 200, Itrs 18350/30000, Loss=0.104368
+2023-05-28 08:24:11,088 INFO Epoch 200, Itrs 18400/30000, Loss=0.104522
+2023-05-28 08:24:11,089 INFO validation...
+2023-05-28 08:24:35,861 INFO 
+Overall Acc: 0.9237
+Mean Acc: 0.6532
+FreqW Acc: 0.8652
+Mean IoU: 0.5747
+
+2023-05-28 08:24:35,938 INFO 
+Current epoch: 201
+2023-05-28 08:25:50,801 INFO Epoch 201, Itrs 18450/30000, Loss=0.103143
+2023-05-28 08:26:52,589 INFO 
+Current epoch: 202
+2023-05-28 08:27:04,943 INFO Epoch 202, Itrs 18500/30000, Loss=0.103651
+2023-05-28 08:27:04,944 INFO validation...
+2023-05-28 08:27:29,773 INFO 
+Overall Acc: 0.9238
+Mean Acc: 0.6637
+FreqW Acc: 0.8661
+Mean IoU: 0.5760
+
+2023-05-28 08:28:37,499 INFO Epoch 202, Itrs 18550/30000, Loss=0.102276
+2023-05-28 08:29:28,353 INFO 
+Current epoch: 203
+2023-05-28 08:29:53,381 INFO Epoch 203, Itrs 18600/30000, Loss=0.103555
+2023-05-28 08:29:53,381 INFO validation...
+2023-05-28 08:30:18,954 INFO 
+Overall Acc: 0.9236
+Mean Acc: 0.6638
+FreqW Acc: 0.8655
+Mean IoU: 0.5748
+
+2023-05-28 08:31:26,970 INFO Epoch 203, Itrs 18650/30000, Loss=0.103122
+2023-05-28 08:32:05,984 INFO 
+Current epoch: 204
+2023-05-28 08:32:41,680 INFO Epoch 204, Itrs 18700/30000, Loss=0.103636
+2023-05-28 08:32:41,681 INFO validation...
+2023-05-28 08:33:06,743 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6565
+FreqW Acc: 0.8659
+Mean IoU: 0.5729
+
+2023-05-28 08:34:16,426 INFO Epoch 204, Itrs 18750/30000, Loss=0.101751
+2023-05-28 08:34:42,551 INFO 
+Current epoch: 205
+2023-05-28 08:35:30,181 INFO Epoch 205, Itrs 18800/30000, Loss=0.103310
+2023-05-28 08:35:30,182 INFO validation...
+2023-05-28 08:35:53,801 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6559
+FreqW Acc: 0.8658
+Mean IoU: 0.5736
+
+2023-05-28 08:37:02,841 INFO Epoch 205, Itrs 18850/30000, Loss=0.103056
+2023-05-28 08:37:17,962 INFO 
+Current epoch: 206
+2023-05-28 08:38:19,810 INFO Epoch 206, Itrs 18900/30000, Loss=0.102034
+2023-05-28 08:38:19,811 INFO validation...
+2023-05-28 08:38:44,995 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6590
+FreqW Acc: 0.8656
+Mean IoU: 0.5747
+
+2023-05-28 08:39:53,234 INFO Epoch 206, Itrs 18950/30000, Loss=0.102527
+2023-05-28 08:39:56,297 INFO 
+Current epoch: 207
+2023-05-28 08:41:07,561 INFO Epoch 207, Itrs 19000/30000, Loss=0.101898
+2023-05-28 08:41:07,562 INFO validation...
+2023-05-28 08:41:32,666 INFO 
+Overall Acc: 0.9249
+Mean Acc: 0.6590
+FreqW Acc: 0.8673
+Mean IoU: 0.5785
+
+2023-05-28 08:42:32,877 INFO 
+Current epoch: 208
+2023-05-28 08:42:42,711 INFO Epoch 208, Itrs 19050/30000, Loss=0.102960
+2023-05-28 08:43:57,705 INFO Epoch 208, Itrs 19100/30000, Loss=0.103619
+2023-05-28 08:43:57,706 INFO validation...
+2023-05-28 08:44:22,335 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6509
+FreqW Acc: 0.8657
+Mean IoU: 0.5707
+
+2023-05-28 08:45:10,215 INFO 
+Current epoch: 209
+2023-05-28 08:45:31,133 INFO Epoch 209, Itrs 19150/30000, Loss=0.101501
+2023-05-28 08:46:45,789 INFO Epoch 209, Itrs 19200/30000, Loss=0.102584
+2023-05-28 08:46:46,246 INFO validation...
+2023-05-28 08:47:11,537 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6587
+FreqW Acc: 0.8660
+Mean IoU: 0.5768
+
+2023-05-28 08:47:50,975 INFO 
+Current epoch: 210
+2023-05-28 08:48:24,443 INFO Epoch 210, Itrs 19250/30000, Loss=0.102180
+2023-05-28 08:49:40,344 INFO Epoch 210, Itrs 19300/30000, Loss=0.101583
+2023-05-28 08:49:40,345 INFO validation...
+2023-05-28 08:50:05,248 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6499
+FreqW Acc: 0.8656
+Mean IoU: 0.5728
+
+2023-05-28 08:50:30,310 INFO 
+Current epoch: 211
+2023-05-28 08:51:16,050 INFO Epoch 211, Itrs 19350/30000, Loss=0.100770
+2023-05-28 08:52:33,458 INFO Epoch 211, Itrs 19400/30000, Loss=0.101316
+2023-05-28 08:52:33,459 INFO validation...
+2023-05-28 08:52:59,706 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6482
+FreqW Acc: 0.8659
+Mean IoU: 0.5691
+
+2023-05-28 08:53:13,198 INFO 
+Current epoch: 212
+2023-05-28 08:54:10,940 INFO Epoch 212, Itrs 19450/30000, Loss=0.100822
+2023-05-28 08:55:27,438 INFO Epoch 212, Itrs 19500/30000, Loss=0.101694
+2023-05-28 08:55:27,439 INFO validation...
+2023-05-28 08:55:52,689 INFO 
+Overall Acc: 0.9236
+Mean Acc: 0.6441
+FreqW Acc: 0.8649
+Mean IoU: 0.5651
+
+2023-05-28 08:55:53,281 INFO 
+Current epoch: 213
+2023-05-28 08:57:03,131 INFO Epoch 213, Itrs 19550/30000, Loss=0.101106
+2023-05-28 08:58:13,494 INFO 
+Current epoch: 214
+2023-05-28 08:58:20,001 INFO Epoch 214, Itrs 19600/30000, Loss=0.101123
+2023-05-28 08:58:20,002 INFO validation...
+2023-05-28 08:58:44,720 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6522
+FreqW Acc: 0.8657
+Mean IoU: 0.5738
+
+2023-05-28 08:59:54,756 INFO Epoch 214, Itrs 19650/30000, Loss=0.101596
+2023-05-28 09:00:55,511 INFO 
+Current epoch: 215
+2023-05-28 09:01:14,546 INFO Epoch 215, Itrs 19700/30000, Loss=0.100229
+2023-05-28 09:01:14,547 INFO validation...
+2023-05-28 09:01:40,223 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6563
+FreqW Acc: 0.8657
+Mean IoU: 0.5766
+
+2023-05-28 09:02:51,067 INFO Epoch 215, Itrs 19750/30000, Loss=0.099810
+2023-05-28 09:03:37,485 INFO 
+Current epoch: 216
+2023-05-28 09:04:08,079 INFO Epoch 216, Itrs 19800/30000, Loss=0.101882
+2023-05-28 09:04:08,080 INFO validation...
+2023-05-28 09:04:32,400 INFO 
+Overall Acc: 0.9236
+Mean Acc: 0.6493
+FreqW Acc: 0.8659
+Mean IoU: 0.5679
+
+2023-05-28 09:05:42,449 INFO Epoch 216, Itrs 19850/30000, Loss=0.101111
+2023-05-28 09:06:16,211 INFO 
+Current epoch: 217
+2023-05-28 09:07:00,170 INFO Epoch 217, Itrs 19900/30000, Loss=0.098862
+2023-05-28 09:07:00,170 INFO validation...
+2023-05-28 09:07:24,770 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6522
+FreqW Acc: 0.8659
+Mean IoU: 0.5745
+
+2023-05-28 09:08:35,181 INFO Epoch 217, Itrs 19950/30000, Loss=0.099886
+2023-05-28 09:08:56,792 INFO 
+Current epoch: 218
+2023-05-28 09:09:52,312 INFO Epoch 218, Itrs 20000/30000, Loss=0.100064
+2023-05-28 09:09:52,312 INFO validation...
+2023-05-28 09:10:16,956 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6505
+FreqW Acc: 0.8667
+Mean IoU: 0.5710
+
+2023-05-28 09:11:28,349 INFO Epoch 218, Itrs 20050/30000, Loss=0.100818
+2023-05-28 09:11:37,065 INFO 
+Current epoch: 219
+2023-05-28 09:12:43,999 INFO Epoch 219, Itrs 20100/30000, Loss=0.100191
+2023-05-28 09:12:44,000 INFO validation...
+2023-05-28 09:13:08,843 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6500
+FreqW Acc: 0.8661
+Mean IoU: 0.5718
+
+2023-05-28 09:14:15,812 INFO 
+Current epoch: 220
+2023-05-28 09:14:19,831 INFO Epoch 220, Itrs 20150/30000, Loss=0.101166
+2023-05-28 09:15:33,593 INFO Epoch 220, Itrs 20200/30000, Loss=0.099283
+2023-05-28 09:15:33,594 INFO validation...
+2023-05-28 09:15:58,205 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6518
+FreqW Acc: 0.8659
+Mean IoU: 0.5732
+
+2023-05-28 09:16:53,763 INFO 
+Current epoch: 221
+2023-05-28 09:17:08,973 INFO Epoch 221, Itrs 20250/30000, Loss=0.101520
+2023-05-28 09:18:23,242 INFO Epoch 221, Itrs 20300/30000, Loss=0.100910
+2023-05-28 09:18:23,242 INFO validation...
+2023-05-28 09:18:47,638 INFO 
+Overall Acc: 0.9237
+Mean Acc: 0.6504
+FreqW Acc: 0.8655
+Mean IoU: 0.5703
+
+2023-05-28 09:19:30,720 INFO 
+Current epoch: 222
+2023-05-28 09:19:58,017 INFO Epoch 222, Itrs 20350/30000, Loss=0.099251
+2023-05-28 09:21:13,099 INFO Epoch 222, Itrs 20400/30000, Loss=0.099500
+2023-05-28 09:21:13,099 INFO validation...
+2023-05-28 09:21:39,844 INFO 
+Overall Acc: 0.9237
+Mean Acc: 0.6449
+FreqW Acc: 0.8652
+Mean IoU: 0.5671
+
+2023-05-28 09:22:12,774 INFO 
+Current epoch: 223
+2023-05-28 09:22:52,329 INFO Epoch 223, Itrs 20450/30000, Loss=0.099355
+2023-05-28 09:24:08,731 INFO Epoch 223, Itrs 20500/30000, Loss=0.100193
+2023-05-28 09:24:08,732 INFO validation...
+2023-05-28 09:24:34,292 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6604
+FreqW Acc: 0.8660
+Mean IoU: 0.5745
+
+2023-05-28 09:24:53,938 INFO 
+Current epoch: 224
+2023-05-28 09:25:47,820 INFO Epoch 224, Itrs 20550/30000, Loss=0.099671
+2023-05-28 09:27:01,952 INFO Epoch 224, Itrs 20600/30000, Loss=0.100014
+2023-05-28 09:27:01,952 INFO validation...
+2023-05-28 09:27:27,519 INFO 
+Overall Acc: 0.9234
+Mean Acc: 0.6477
+FreqW Acc: 0.8651
+Mean IoU: 0.5690
+
+2023-05-28 09:27:34,622 INFO 
+Current epoch: 225
+2023-05-28 09:28:38,017 INFO Epoch 225, Itrs 20650/30000, Loss=0.099879
+2023-05-28 09:29:53,698 INFO Epoch 225, Itrs 20700/30000, Loss=0.099248
+2023-05-28 09:29:53,699 INFO validation...
+2023-05-28 09:30:19,366 INFO 
+Overall Acc: 0.9247
+Mean Acc: 0.6634
+FreqW Acc: 0.8666
+Mean IoU: 0.5798
+
+2023-05-28 09:30:19,476 INFO 
+Current epoch: 226
+2023-05-28 09:31:36,142 INFO Epoch 226, Itrs 20750/30000, Loss=0.100390
+2023-05-28 09:32:39,661 INFO 
+Current epoch: 227
+2023-05-28 09:32:52,693 INFO Epoch 227, Itrs 20800/30000, Loss=0.099222
+2023-05-28 09:32:52,694 INFO validation...
+2023-05-28 09:33:17,642 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6623
+FreqW Acc: 0.8666
+Mean IoU: 0.5757
+
+2023-05-28 09:34:27,684 INFO Epoch 227, Itrs 20850/30000, Loss=0.098397
+2023-05-28 09:35:17,934 INFO 
+Current epoch: 228
+2023-05-28 09:35:42,532 INFO Epoch 228, Itrs 20900/30000, Loss=0.099094
+2023-05-28 09:35:42,532 INFO validation...
+2023-05-28 09:36:07,200 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6545
+FreqW Acc: 0.8656
+Mean IoU: 0.5756
+
+2023-05-28 09:37:17,164 INFO Epoch 228, Itrs 20950/30000, Loss=0.099246
+2023-05-28 09:37:55,597 INFO 
+Current epoch: 229
+2023-05-28 09:38:32,246 INFO Epoch 229, Itrs 21000/30000, Loss=0.097613
+2023-05-28 09:38:32,247 INFO validation...
+2023-05-28 09:38:56,333 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6522
+FreqW Acc: 0.8655
+Mean IoU: 0.5743
+
+2023-05-28 09:40:05,332 INFO Epoch 229, Itrs 21050/30000, Loss=0.099714
+2023-05-28 09:40:33,106 INFO 
+Current epoch: 230
+2023-05-28 09:41:20,731 INFO Epoch 230, Itrs 21100/30000, Loss=0.099600
+2023-05-28 09:41:20,731 INFO validation...
+2023-05-28 09:41:46,371 INFO 
+Overall Acc: 0.9236
+Mean Acc: 0.6500
+FreqW Acc: 0.8653
+Mean IoU: 0.5693
+
+2023-05-28 09:42:55,444 INFO Epoch 230, Itrs 21150/30000, Loss=0.098865
+2023-05-28 09:43:10,198 INFO 
+Current epoch: 231
+2023-05-28 09:44:09,648 INFO Epoch 231, Itrs 21200/30000, Loss=0.098867
+2023-05-28 09:44:09,649 INFO validation...
+2023-05-28 09:44:33,659 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6662
+FreqW Acc: 0.8663
+Mean IoU: 0.5790
+
+2023-05-28 09:45:40,653 INFO Epoch 231, Itrs 21250/30000, Loss=0.099753
+2023-05-28 09:45:43,627 INFO 
+Current epoch: 232
+2023-05-28 09:46:54,398 INFO Epoch 232, Itrs 21300/30000, Loss=0.099494
+2023-05-28 09:46:54,399 INFO validation...
+2023-05-28 09:47:18,029 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6525
+FreqW Acc: 0.8661
+Mean IoU: 0.5743
+
+2023-05-28 09:48:17,539 INFO 
+Current epoch: 233
+2023-05-28 09:48:26,658 INFO Epoch 233, Itrs 21350/30000, Loss=0.098862
+2023-05-28 09:49:40,067 INFO Epoch 233, Itrs 21400/30000, Loss=0.097553
+2023-05-28 09:49:40,068 INFO validation...
+2023-05-28 09:50:03,681 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6557
+FreqW Acc: 0.8671
+Mean IoU: 0.5710
+
+2023-05-28 09:50:51,413 INFO 
+Current epoch: 234
+2023-05-28 09:51:13,246 INFO Epoch 234, Itrs 21450/30000, Loss=0.099273
+2023-05-28 09:52:26,987 INFO Epoch 234, Itrs 21500/30000, Loss=0.096947
+2023-05-28 09:52:26,988 INFO validation...
+2023-05-28 09:52:50,585 INFO 
+Overall Acc: 0.9234
+Mean Acc: 0.6524
+FreqW Acc: 0.8649
+Mean IoU: 0.5702
+
+2023-05-28 09:53:25,846 INFO 
+Current epoch: 235
+2023-05-28 09:53:59,048 INFO Epoch 235, Itrs 21550/30000, Loss=0.098289
+2023-05-28 09:55:13,005 INFO Epoch 235, Itrs 21600/30000, Loss=0.097270
+2023-05-28 09:55:13,005 INFO validation...
+2023-05-28 09:55:38,477 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6486
+FreqW Acc: 0.8659
+Mean IoU: 0.5711
+
+2023-05-28 09:56:02,794 INFO 
+Current epoch: 236
+2023-05-28 09:56:47,276 INFO Epoch 236, Itrs 21650/30000, Loss=0.097404
+2023-05-28 09:58:00,278 INFO Epoch 236, Itrs 21700/30000, Loss=0.098924
+2023-05-28 09:58:00,279 INFO validation...
+2023-05-28 09:58:23,911 INFO 
+Overall Acc: 0.9247
+Mean Acc: 0.6601
+FreqW Acc: 0.8665
+Mean IoU: 0.5815
+
+2023-05-28 09:58:36,643 INFO 
+Current epoch: 237
+2023-05-28 09:59:32,231 INFO Epoch 237, Itrs 21750/30000, Loss=0.098148
+2023-05-28 10:00:45,339 INFO Epoch 237, Itrs 21800/30000, Loss=0.098216
+2023-05-28 10:00:45,339 INFO validation...
+2023-05-28 10:01:09,322 INFO 
+Overall Acc: 0.9246
+Mean Acc: 0.6530
+FreqW Acc: 0.8662
+Mean IoU: 0.5753
+
+2023-05-28 10:01:09,894 INFO 
+Current epoch: 238
+2023-05-28 10:02:17,120 INFO Epoch 238, Itrs 21850/30000, Loss=0.097055
+2023-05-28 10:03:26,315 INFO 
+Current epoch: 239
+2023-05-28 10:03:33,071 INFO Epoch 239, Itrs 21900/30000, Loss=0.098285
+2023-05-28 10:03:33,072 INFO validation...
+2023-05-28 10:03:57,148 INFO 
+Overall Acc: 0.9238
+Mean Acc: 0.6590
+FreqW Acc: 0.8659
+Mean IoU: 0.5740
+
+2023-05-28 10:05:06,296 INFO Epoch 239, Itrs 21950/30000, Loss=0.097871
+2023-05-28 10:06:01,368 INFO 
+Current epoch: 240
+2023-05-28 10:06:20,441 INFO Epoch 240, Itrs 22000/30000, Loss=0.098571
+2023-05-28 10:06:20,441 INFO validation...
+2023-05-28 10:06:44,184 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6489
+FreqW Acc: 0.8656
+Mean IoU: 0.5680
+
+2023-05-28 10:07:52,839 INFO Epoch 240, Itrs 22050/30000, Loss=0.097458
+2023-05-28 10:08:36,938 INFO 
+Current epoch: 241
+2023-05-28 10:09:08,071 INFO Epoch 241, Itrs 22100/30000, Loss=0.097513
+2023-05-28 10:09:08,071 INFO validation...
+2023-05-28 10:09:32,224 INFO 
+Overall Acc: 0.9236
+Mean Acc: 0.6649
+FreqW Acc: 0.8661
+Mean IoU: 0.5764
+
+2023-05-28 10:10:40,040 INFO Epoch 241, Itrs 22150/30000, Loss=0.095766
+2023-05-28 10:11:12,501 INFO 
+Current epoch: 242
+2023-05-28 10:11:54,443 INFO Epoch 242, Itrs 22200/30000, Loss=0.097226
+2023-05-28 10:11:54,444 INFO validation...
+2023-05-28 10:12:18,527 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6516
+FreqW Acc: 0.8655
+Mean IoU: 0.5693
+
+2023-05-28 10:13:25,728 INFO Epoch 242, Itrs 22250/30000, Loss=0.096869
+2023-05-28 10:13:46,786 INFO 
+Current epoch: 243
+2023-05-28 10:14:39,845 INFO Epoch 243, Itrs 22300/30000, Loss=0.095682
+2023-05-28 10:14:39,846 INFO validation...
+2023-05-28 10:15:04,005 INFO 
+Overall Acc: 0.9246
+Mean Acc: 0.6615
+FreqW Acc: 0.8674
+Mean IoU: 0.5751
+
+2023-05-28 10:16:11,744 INFO Epoch 243, Itrs 22350/30000, Loss=0.097305
+2023-05-28 10:16:20,651 INFO 
+Current epoch: 244
+2023-05-28 10:17:25,803 INFO Epoch 244, Itrs 22400/30000, Loss=0.096823
+2023-05-28 10:17:25,803 INFO validation...
+2023-05-28 10:17:49,835 INFO 
+Overall Acc: 0.9248
+Mean Acc: 0.6591
+FreqW Acc: 0.8675
+Mean IoU: 0.5767
+
+2023-05-28 10:18:54,971 INFO 
+Current epoch: 245
+2023-05-28 10:18:58,954 INFO Epoch 245, Itrs 22450/30000, Loss=0.097432
+2023-05-28 10:20:12,634 INFO Epoch 245, Itrs 22500/30000, Loss=0.095978
+2023-05-28 10:20:12,635 INFO validation...
+2023-05-28 10:20:36,786 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6503
+FreqW Acc: 0.8659
+Mean IoU: 0.5726
+
+2023-05-28 10:21:31,020 INFO 
+Current epoch: 246
+2023-05-28 10:21:46,635 INFO Epoch 246, Itrs 22550/30000, Loss=0.096850
+2023-05-28 10:22:59,415 INFO Epoch 246, Itrs 22600/30000, Loss=0.096887
+2023-05-28 10:22:59,415 INFO validation...
+2023-05-28 10:23:23,747 INFO 
+Overall Acc: 0.9238
+Mean Acc: 0.6490
+FreqW Acc: 0.8649
+Mean IoU: 0.5732
+
+2023-05-28 10:24:05,778 INFO 
+Current epoch: 247
+2023-05-28 10:24:32,673 INFO Epoch 247, Itrs 22650/30000, Loss=0.095633
+2023-05-28 10:25:45,278 INFO Epoch 247, Itrs 22700/30000, Loss=0.096042
+2023-05-28 10:25:45,279 INFO validation...
+2023-05-28 10:26:10,053 INFO 
+Overall Acc: 0.9248
+Mean Acc: 0.6582
+FreqW Acc: 0.8669
+Mean IoU: 0.5784
+
+2023-05-28 10:26:39,718 INFO 
+Current epoch: 248
+2023-05-28 10:27:18,825 INFO Epoch 248, Itrs 22750/30000, Loss=0.095348
+2023-05-28 10:28:33,281 INFO Epoch 248, Itrs 22800/30000, Loss=0.096290
+2023-05-28 10:28:33,282 INFO validation...
+2023-05-28 10:28:57,576 INFO 
+Overall Acc: 0.9246
+Mean Acc: 0.6690
+FreqW Acc: 0.8666
+Mean IoU: 0.5835
+
+2023-05-28 10:29:16,253 INFO 
+Current epoch: 249
+2023-05-28 10:30:07,498 INFO Epoch 249, Itrs 22850/30000, Loss=0.095957
+2023-05-28 10:31:20,729 INFO Epoch 249, Itrs 22900/30000, Loss=0.096722
+2023-05-28 10:31:20,730 INFO validation...
+2023-05-28 10:31:44,796 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6600
+FreqW Acc: 0.8663
+Mean IoU: 0.5791
+
+2023-05-28 10:31:51,677 INFO 
+Current epoch: 250
+2023-05-28 10:32:54,098 INFO Epoch 250, Itrs 22950/30000, Loss=0.095876
+2023-05-28 10:34:06,639 INFO Epoch 250, Itrs 23000/30000, Loss=0.094948
+2023-05-28 10:34:06,640 INFO validation...
+2023-05-28 10:34:31,504 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6676
+FreqW Acc: 0.8663
+Mean IoU: 0.5796
+
+2023-05-28 10:34:32,451 INFO 
+Current epoch: 251
+2023-05-28 10:35:46,633 INFO Epoch 251, Itrs 23050/30000, Loss=0.095308
+2023-05-28 10:36:47,659 INFO 
+Current epoch: 252
+2023-05-28 10:36:59,598 INFO Epoch 252, Itrs 23100/30000, Loss=0.095635
+2023-05-28 10:36:59,598 INFO validation...
+2023-05-28 10:37:24,907 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6481
+FreqW Acc: 0.8658
+Mean IoU: 0.5697
+
+2023-05-28 10:38:32,736 INFO Epoch 252, Itrs 23150/30000, Loss=0.095561
+2023-05-28 10:39:21,697 INFO 
+Current epoch: 253
+2023-05-28 10:39:46,823 INFO Epoch 253, Itrs 23200/30000, Loss=0.095233
+2023-05-28 10:39:46,823 INFO validation...
+2023-05-28 10:40:11,374 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6558
+FreqW Acc: 0.8662
+Mean IoU: 0.5731
+
+2023-05-28 10:41:19,731 INFO Epoch 253, Itrs 23250/30000, Loss=0.094992
+2023-05-28 10:41:57,519 INFO 
+Current epoch: 254
+2023-05-28 10:42:33,900 INFO Epoch 254, Itrs 23300/30000, Loss=0.094949
+2023-05-28 10:42:33,901 INFO validation...
+2023-05-28 10:42:58,428 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6550
+FreqW Acc: 0.8666
+Mean IoU: 0.5778
+
+2023-05-28 10:44:06,347 INFO Epoch 254, Itrs 23350/30000, Loss=0.095643
+2023-05-28 10:44:33,259 INFO 
+Current epoch: 255
+2023-05-28 10:45:21,015 INFO Epoch 255, Itrs 23400/30000, Loss=0.095198
+2023-05-28 10:45:21,016 INFO validation...
+2023-05-28 10:45:44,439 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6598
+FreqW Acc: 0.8670
+Mean IoU: 0.5754
+
+2023-05-28 10:46:51,878 INFO Epoch 255, Itrs 23450/30000, Loss=0.096500
+2023-05-28 10:47:06,937 INFO 
+Current epoch: 256
+2023-05-28 10:48:05,632 INFO Epoch 256, Itrs 23500/30000, Loss=0.095374
+2023-05-28 10:48:05,632 INFO validation...
+2023-05-28 10:48:29,803 INFO 
+Overall Acc: 0.9238
+Mean Acc: 0.6578
+FreqW Acc: 0.8652
+Mean IoU: 0.5720
+
+2023-05-28 10:49:36,877 INFO Epoch 256, Itrs 23550/30000, Loss=0.095216
+2023-05-28 10:49:39,883 INFO 
+Current epoch: 257
+2023-05-28 10:50:50,813 INFO Epoch 257, Itrs 23600/30000, Loss=0.094735
+2023-05-28 10:50:50,814 INFO validation...
+2023-05-28 10:51:15,492 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6530
+FreqW Acc: 0.8665
+Mean IoU: 0.5719
+
+2023-05-28 10:52:14,553 INFO 
+Current epoch: 258
+2023-05-28 10:52:23,935 INFO Epoch 258, Itrs 23650/30000, Loss=0.094654
+2023-05-28 10:53:36,957 INFO Epoch 258, Itrs 23700/30000, Loss=0.095900
+2023-05-28 10:53:36,957 INFO validation...
+2023-05-28 10:54:00,975 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6627
+FreqW Acc: 0.8657
+Mean IoU: 0.5781
+
+2023-05-28 10:54:48,438 INFO 
+Current epoch: 259
+2023-05-28 10:55:09,143 INFO Epoch 259, Itrs 23750/30000, Loss=0.095030
+2023-05-28 10:56:21,697 INFO Epoch 259, Itrs 23800/30000, Loss=0.095030
+2023-05-28 10:56:21,698 INFO validation...
+2023-05-28 10:56:46,334 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6588
+FreqW Acc: 0.8664
+Mean IoU: 0.5777
+
+2023-05-28 10:57:22,112 INFO 
+Current epoch: 260
+2023-05-28 10:57:54,963 INFO Epoch 260, Itrs 23850/30000, Loss=0.094969
+2023-05-28 10:59:06,807 INFO Epoch 260, Itrs 23900/30000, Loss=0.095342
+2023-05-28 10:59:06,808 INFO validation...
+2023-05-28 10:59:30,219 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6605
+FreqW Acc: 0.8663
+Mean IoU: 0.5768
+
+2023-05-28 10:59:55,057 INFO 
+Current epoch: 261
+2023-05-28 11:00:39,719 INFO Epoch 261, Itrs 23950/30000, Loss=0.094813
+2023-05-28 11:01:52,936 INFO Epoch 261, Itrs 24000/30000, Loss=0.093813
+2023-05-28 11:01:52,936 INFO validation...
+2023-05-28 11:02:17,071 INFO 
+Overall Acc: 0.9237
+Mean Acc: 0.6555
+FreqW Acc: 0.8651
+Mean IoU: 0.5739
+
+2023-05-28 11:02:30,525 INFO 
+Current epoch: 262
+2023-05-28 11:03:26,748 INFO Epoch 262, Itrs 24050/30000, Loss=0.096054
+2023-05-28 11:04:39,010 INFO Epoch 262, Itrs 24100/30000, Loss=0.093574
+2023-05-28 11:04:39,011 INFO validation...
+2023-05-28 11:05:03,923 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6587
+FreqW Acc: 0.8663
+Mean IoU: 0.5741
+
+2023-05-28 11:05:04,475 INFO 
+Current epoch: 263
+2023-05-28 11:06:11,358 INFO Epoch 263, Itrs 24150/30000, Loss=0.093592
+2023-05-28 11:07:17,801 INFO 
+Current epoch: 264
+2023-05-28 11:07:24,411 INFO Epoch 264, Itrs 24200/30000, Loss=0.094784
+2023-05-28 11:07:24,412 INFO validation...
+2023-05-28 11:07:48,133 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6507
+FreqW Acc: 0.8659
+Mean IoU: 0.5739
+
+2023-05-28 11:08:54,932 INFO Epoch 264, Itrs 24250/30000, Loss=0.093054
+2023-05-28 11:09:50,315 INFO 
+Current epoch: 265
+2023-05-28 11:10:08,931 INFO Epoch 265, Itrs 24300/30000, Loss=0.095103
+2023-05-28 11:10:08,932 INFO validation...
+2023-05-28 11:10:32,856 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6531
+FreqW Acc: 0.8657
+Mean IoU: 0.5726
+
+2023-05-28 11:11:40,762 INFO Epoch 265, Itrs 24350/30000, Loss=0.092613
+2023-05-28 11:12:23,521 INFO 
+Current epoch: 266
+2023-05-28 11:12:54,078 INFO Epoch 266, Itrs 24400/30000, Loss=0.094907
+2023-05-28 11:12:54,078 INFO validation...
+2023-05-28 11:13:17,596 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6597
+FreqW Acc: 0.8666
+Mean IoU: 0.5766
+
+2023-05-28 11:14:25,064 INFO Epoch 266, Itrs 24450/30000, Loss=0.094168
+2023-05-28 11:14:56,432 INFO 
+Current epoch: 267
+2023-05-28 11:15:38,479 INFO Epoch 267, Itrs 24500/30000, Loss=0.094383
+2023-05-28 11:15:38,480 INFO validation...
+2023-05-28 11:16:01,578 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6592
+FreqW Acc: 0.8662
+Mean IoU: 0.5774
+
+2023-05-28 11:17:09,578 INFO Epoch 267, Itrs 24550/30000, Loss=0.093724
+2023-05-28 11:17:29,628 INFO 
+Current epoch: 268
+2023-05-28 11:18:22,824 INFO Epoch 268, Itrs 24600/30000, Loss=0.094112
+2023-05-28 11:18:22,824 INFO validation...
+2023-05-28 11:18:47,370 INFO 
+Overall Acc: 0.9247
+Mean Acc: 0.6538
+FreqW Acc: 0.8664
+Mean IoU: 0.5742
+
+2023-05-28 11:19:53,787 INFO Epoch 268, Itrs 24650/30000, Loss=0.093060
+2023-05-28 11:20:02,403 INFO 
+Current epoch: 269
+2023-05-28 11:21:06,869 INFO Epoch 269, Itrs 24700/30000, Loss=0.092061
+2023-05-28 11:21:06,869 INFO validation...
+2023-05-28 11:21:31,848 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6593
+FreqW Acc: 0.8667
+Mean IoU: 0.5747
+
+2023-05-28 11:22:36,077 INFO 
+Current epoch: 270
+2023-05-28 11:22:39,974 INFO Epoch 270, Itrs 24750/30000, Loss=0.093687
+2023-05-28 11:23:51,504 INFO Epoch 270, Itrs 24800/30000, Loss=0.093682
+2023-05-28 11:23:51,504 INFO validation...
+2023-05-28 11:24:15,416 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6534
+FreqW Acc: 0.8664
+Mean IoU: 0.5755
+
+2023-05-28 11:25:07,957 INFO 
+Current epoch: 271
+2023-05-28 11:25:23,129 INFO Epoch 271, Itrs 24850/30000, Loss=0.092669
+2023-05-28 11:26:35,002 INFO Epoch 271, Itrs 24900/30000, Loss=0.093010
+2023-05-28 11:26:35,003 INFO validation...
+2023-05-28 11:26:59,552 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6489
+FreqW Acc: 0.8661
+Mean IoU: 0.5704
+
+2023-05-28 11:27:41,557 INFO 
+Current epoch: 272
+2023-05-28 11:28:08,666 INFO Epoch 272, Itrs 24950/30000, Loss=0.093202
+2023-05-28 11:29:21,954 INFO Epoch 272, Itrs 25000/30000, Loss=0.092533
+2023-05-28 11:29:21,954 INFO validation...
+2023-05-28 11:29:45,741 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6455
+FreqW Acc: 0.8659
+Mean IoU: 0.5686
+
+2023-05-28 11:30:16,315 INFO 
+Current epoch: 273
+2023-05-28 11:30:55,046 INFO Epoch 273, Itrs 25050/30000, Loss=0.094080
+2023-05-28 11:32:06,381 INFO Epoch 273, Itrs 25100/30000, Loss=0.092115
+2023-05-28 11:32:06,382 INFO validation...
+2023-05-28 11:32:31,653 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6540
+FreqW Acc: 0.8660
+Mean IoU: 0.5718
+
+2023-05-28 11:32:49,733 INFO 
+Current epoch: 274
+2023-05-28 11:33:39,775 INFO Epoch 274, Itrs 25150/30000, Loss=0.091965
+2023-05-28 11:34:52,683 INFO Epoch 274, Itrs 25200/30000, Loss=0.093176
+2023-05-28 11:34:52,684 INFO validation...
+2023-05-28 11:35:17,186 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6548
+FreqW Acc: 0.8661
+Mean IoU: 0.5751
+
+2023-05-28 11:35:23,941 INFO 
+Current epoch: 275
+2023-05-28 11:36:25,616 INFO Epoch 275, Itrs 25250/30000, Loss=0.092832
+2023-05-28 11:37:38,004 INFO Epoch 275, Itrs 25300/30000, Loss=0.092464
+2023-05-28 11:37:38,004 INFO validation...
+2023-05-28 11:38:02,386 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6514
+FreqW Acc: 0.8662
+Mean IoU: 0.5672
+
+2023-05-28 11:38:02,499 INFO 
+Current epoch: 276
+2023-05-28 11:39:16,833 INFO Epoch 276, Itrs 25350/30000, Loss=0.091611
+2023-05-28 11:40:17,682 INFO 
+Current epoch: 277
+2023-05-28 11:40:30,071 INFO Epoch 277, Itrs 25400/30000, Loss=0.092294
+2023-05-28 11:40:30,072 INFO validation...
+2023-05-28 11:40:54,788 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6561
+FreqW Acc: 0.8660
+Mean IoU: 0.5714
+
+2023-05-28 11:42:02,829 INFO Epoch 277, Itrs 25450/30000, Loss=0.092533
+2023-05-28 11:42:52,232 INFO 
+Current epoch: 278
+2023-05-28 11:43:16,624 INFO Epoch 278, Itrs 25500/30000, Loss=0.092475
+2023-05-28 11:43:16,625 INFO validation...
+2023-05-28 11:43:40,843 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6472
+FreqW Acc: 0.8652
+Mean IoU: 0.5702
+
+2023-05-28 11:44:51,025 INFO Epoch 278, Itrs 25550/30000, Loss=0.092814
+2023-05-28 11:45:28,896 INFO 
+Current epoch: 279
+2023-05-28 11:46:04,724 INFO Epoch 279, Itrs 25600/30000, Loss=0.092034
+2023-05-28 11:46:04,725 INFO validation...
+2023-05-28 11:46:28,944 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6545
+FreqW Acc: 0.8662
+Mean IoU: 0.5739
+
+2023-05-28 11:47:35,711 INFO Epoch 279, Itrs 25650/30000, Loss=0.091454
+2023-05-28 11:48:02,015 INFO 
+Current epoch: 280
+2023-05-28 11:48:49,709 INFO Epoch 280, Itrs 25700/30000, Loss=0.090682
+2023-05-28 11:48:49,710 INFO validation...
+2023-05-28 11:49:14,142 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6461
+FreqW Acc: 0.8656
+Mean IoU: 0.5681
+
+2023-05-28 11:50:23,601 INFO Epoch 280, Itrs 25750/30000, Loss=0.093232
+2023-05-28 11:50:38,182 INFO 
+Current epoch: 281
+2023-05-28 11:51:36,994 INFO Epoch 281, Itrs 25800/30000, Loss=0.092370
+2023-05-28 11:51:36,995 INFO validation...
+2023-05-28 11:52:01,344 INFO 
+Overall Acc: 0.9236
+Mean Acc: 0.6501
+FreqW Acc: 0.8658
+Mean IoU: 0.5684
+
+2023-05-28 11:53:11,595 INFO Epoch 281, Itrs 25850/30000, Loss=0.090950
+2023-05-28 11:53:14,559 INFO 
+Current epoch: 282
+2023-05-28 11:54:26,741 INFO Epoch 282, Itrs 25900/30000, Loss=0.091517
+2023-05-28 11:54:26,742 INFO validation...
+2023-05-28 11:54:50,858 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6545
+FreqW Acc: 0.8660
+Mean IoU: 0.5745
+
+2023-05-28 11:55:49,213 INFO 
+Current epoch: 283
+2023-05-28 11:55:58,661 INFO Epoch 283, Itrs 25950/30000, Loss=0.092241
+2023-05-28 11:57:12,076 INFO Epoch 283, Itrs 26000/30000, Loss=0.091738
+2023-05-28 11:57:12,077 INFO validation...
+2023-05-28 11:57:35,808 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6638
+FreqW Acc: 0.8663
+Mean IoU: 0.5780
+
+2023-05-28 11:58:23,811 INFO 
+Current epoch: 284
+2023-05-28 11:58:45,658 INFO Epoch 284, Itrs 26050/30000, Loss=0.091531
+2023-05-28 11:59:59,229 INFO Epoch 284, Itrs 26100/30000, Loss=0.091047
+2023-05-28 11:59:59,230 INFO validation...
+2023-05-28 12:00:23,344 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6587
+FreqW Acc: 0.8662
+Mean IoU: 0.5784
+
+2023-05-28 12:00:58,574 INFO 
+Current epoch: 285
+2023-05-28 12:01:31,365 INFO Epoch 285, Itrs 26150/30000, Loss=0.091195
+2023-05-28 12:02:44,652 INFO Epoch 285, Itrs 26200/30000, Loss=0.090517
+2023-05-28 12:02:44,653 INFO validation...
+2023-05-28 12:03:08,618 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6546
+FreqW Acc: 0.8663
+Mean IoU: 0.5742
+
+2023-05-28 12:03:32,949 INFO 
+Current epoch: 286
+2023-05-28 12:04:16,589 INFO Epoch 286, Itrs 26250/30000, Loss=0.091098
+2023-05-28 12:05:29,642 INFO Epoch 286, Itrs 26300/30000, Loss=0.090701
+2023-05-28 12:05:29,643 INFO validation...
+2023-05-28 12:05:53,944 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6526
+FreqW Acc: 0.8661
+Mean IoU: 0.5738
+
+2023-05-28 12:06:06,657 INFO 
+Current epoch: 287
+2023-05-28 12:07:03,145 INFO Epoch 287, Itrs 26350/30000, Loss=0.090685
+2023-05-28 12:08:16,251 INFO Epoch 287, Itrs 26400/30000, Loss=0.090820
+2023-05-28 12:08:16,252 INFO validation...
+2023-05-28 12:08:40,338 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6575
+FreqW Acc: 0.8662
+Mean IoU: 0.5747
+
+2023-05-28 12:08:40,911 INFO 
+Current epoch: 288
+2023-05-28 12:09:48,853 INFO Epoch 288, Itrs 26450/30000, Loss=0.091693
+2023-05-28 12:10:54,951 INFO 
+Current epoch: 289
+2023-05-28 12:11:01,094 INFO Epoch 289, Itrs 26500/30000, Loss=0.088814
+2023-05-28 12:11:01,095 INFO validation...
+2023-05-28 12:11:25,856 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6559
+FreqW Acc: 0.8666
+Mean IoU: 0.5745
+
+2023-05-28 12:12:32,688 INFO Epoch 289, Itrs 26550/30000, Loss=0.091165
+2023-05-28 12:13:27,147 INFO 
+Current epoch: 290
+2023-05-28 12:13:45,206 INFO Epoch 290, Itrs 26600/30000, Loss=0.090530
+2023-05-28 12:13:45,207 INFO validation...
+2023-05-28 12:14:08,925 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6532
+FreqW Acc: 0.8661
+Mean IoU: 0.5746
+
+2023-05-28 12:15:15,614 INFO Epoch 290, Itrs 26650/30000, Loss=0.090397
+2023-05-28 12:15:58,909 INFO 
+Current epoch: 291
+2023-05-28 12:16:28,497 INFO Epoch 291, Itrs 26700/30000, Loss=0.091536
+2023-05-28 12:16:28,498 INFO validation...
+2023-05-28 12:16:51,922 INFO 
+Overall Acc: 0.9238
+Mean Acc: 0.6563
+FreqW Acc: 0.8660
+Mean IoU: 0.5718
+
+2023-05-28 12:17:59,043 INFO Epoch 291, Itrs 26750/30000, Loss=0.089079
+2023-05-28 12:18:30,909 INFO 
+Current epoch: 292
+2023-05-28 12:19:11,756 INFO Epoch 292, Itrs 26800/30000, Loss=0.090952
+2023-05-28 12:19:11,757 INFO validation...
+2023-05-28 12:19:36,169 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6508
+FreqW Acc: 0.8659
+Mean IoU: 0.5710
+
+2023-05-28 12:20:42,977 INFO Epoch 292, Itrs 26850/30000, Loss=0.090139
+2023-05-28 12:21:03,047 INFO 
+Current epoch: 293
+2023-05-28 12:21:56,197 INFO Epoch 293, Itrs 26900/30000, Loss=0.091864
+2023-05-28 12:21:56,197 INFO validation...
+2023-05-28 12:22:20,129 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6498
+FreqW Acc: 0.8658
+Mean IoU: 0.5704
+
+2023-05-28 12:23:27,726 INFO Epoch 293, Itrs 26950/30000, Loss=0.088984
+2023-05-28 12:23:36,342 INFO 
+Current epoch: 294
+2023-05-28 12:24:41,035 INFO Epoch 294, Itrs 27000/30000, Loss=0.090903
+2023-05-28 12:24:41,035 INFO validation...
+2023-05-28 12:25:05,134 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6485
+FreqW Acc: 0.8654
+Mean IoU: 0.5706
+
+2023-05-28 12:26:09,628 INFO 
+Current epoch: 295
+2023-05-28 12:26:13,621 INFO Epoch 295, Itrs 27050/30000, Loss=0.090507
+2023-05-28 12:27:26,138 INFO Epoch 295, Itrs 27100/30000, Loss=0.089841
+2023-05-28 12:27:26,138 INFO validation...
+2023-05-28 12:27:49,613 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6495
+FreqW Acc: 0.8655
+Mean IoU: 0.5716
+
+2023-05-28 12:28:43,049 INFO 
+Current epoch: 296
+2023-05-28 12:28:59,043 INFO Epoch 296, Itrs 27150/30000, Loss=0.089503
+2023-05-28 12:30:12,124 INFO Epoch 296, Itrs 27200/30000, Loss=0.090129
+2023-05-28 12:30:12,125 INFO validation...
+2023-05-28 12:30:35,592 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6584
+FreqW Acc: 0.8659
+Mean IoU: 0.5760
+
+2023-05-28 12:31:17,349 INFO 
+Current epoch: 297
+2023-05-28 12:31:44,615 INFO Epoch 297, Itrs 27250/30000, Loss=0.090638
+2023-05-28 12:32:57,307 INFO Epoch 297, Itrs 27300/30000, Loss=0.088899
+2023-05-28 12:32:57,308 INFO validation...
+2023-05-28 12:33:21,817 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6491
+FreqW Acc: 0.8654
+Mean IoU: 0.5696
+
+2023-05-28 12:33:51,807 INFO 
+Current epoch: 298
+2023-05-28 12:34:29,689 INFO Epoch 298, Itrs 27350/30000, Loss=0.089953
+2023-05-28 12:35:41,780 INFO Epoch 298, Itrs 27400/30000, Loss=0.088930
+2023-05-28 12:35:41,781 INFO validation...
+2023-05-28 12:36:05,986 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6460
+FreqW Acc: 0.8654
+Mean IoU: 0.5701
+
+2023-05-28 12:36:23,995 INFO 
+Current epoch: 299
+2023-05-28 12:37:14,749 INFO Epoch 299, Itrs 27450/30000, Loss=0.090077
+2023-05-28 12:38:26,811 INFO Epoch 299, Itrs 27500/30000, Loss=0.088181
+2023-05-28 12:38:26,812 INFO validation...
+2023-05-28 12:38:51,596 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6472
+FreqW Acc: 0.8654
+Mean IoU: 0.5684
+
+2023-05-28 12:38:58,150 INFO 
+Current epoch: 300
+2023-05-28 12:40:01,128 INFO Epoch 300, Itrs 27550/30000, Loss=0.089728
+2023-05-28 12:41:13,527 INFO Epoch 300, Itrs 27600/30000, Loss=0.089765
+2023-05-28 12:41:13,527 INFO validation...
+2023-05-28 12:41:37,478 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6483
+FreqW Acc: 0.8658
+Mean IoU: 0.5689
+
+2023-05-28 12:41:37,564 INFO 
+Current epoch: 301
+2023-05-28 12:42:51,757 INFO Epoch 301, Itrs 27650/30000, Loss=0.088925
+2023-05-28 12:43:52,201 INFO 
+Current epoch: 302
+2023-05-28 12:44:04,673 INFO Epoch 302, Itrs 27700/30000, Loss=0.089799
+2023-05-28 12:44:04,673 INFO validation...
+2023-05-28 12:44:29,201 INFO 
+Overall Acc: 0.9238
+Mean Acc: 0.6530
+FreqW Acc: 0.8656
+Mean IoU: 0.5706
+
+2023-05-28 12:45:35,892 INFO Epoch 302, Itrs 27750/30000, Loss=0.088850
+2023-05-28 12:46:26,087 INFO 
+Current epoch: 303
+2023-05-28 12:46:50,297 INFO Epoch 303, Itrs 27800/30000, Loss=0.089240
+2023-05-28 12:46:50,297 INFO validation...
+2023-05-28 12:47:14,035 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6476
+FreqW Acc: 0.8655
+Mean IoU: 0.5698
+
+2023-05-28 12:48:23,082 INFO Epoch 303, Itrs 27850/30000, Loss=0.088988
+2023-05-28 12:49:01,208 INFO 
+Current epoch: 304
+2023-05-28 12:49:37,071 INFO Epoch 304, Itrs 27900/30000, Loss=0.088543
+2023-05-28 12:49:37,072 INFO validation...
+2023-05-28 12:50:02,117 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6472
+FreqW Acc: 0.8655
+Mean IoU: 0.5703
+
+2023-05-28 12:51:10,474 INFO Epoch 304, Itrs 27950/30000, Loss=0.089280
+2023-05-28 12:51:36,752 INFO 
+Current epoch: 305
+2023-05-28 12:52:25,086 INFO Epoch 305, Itrs 28000/30000, Loss=0.088872
+2023-05-28 12:52:25,086 INFO validation...
+2023-05-28 12:52:49,089 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6501
+FreqW Acc: 0.8657
+Mean IoU: 0.5700
+
+2023-05-28 12:53:57,500 INFO Epoch 305, Itrs 28050/30000, Loss=0.089025
+2023-05-28 12:54:12,339 INFO 
+Current epoch: 306
+2023-05-28 12:55:11,871 INFO Epoch 306, Itrs 28100/30000, Loss=0.087790
+2023-05-28 12:55:11,872 INFO validation...
+2023-05-28 12:55:36,922 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6497
+FreqW Acc: 0.8657
+Mean IoU: 0.5699
+
+2023-05-28 12:56:44,929 INFO Epoch 306, Itrs 28150/30000, Loss=0.089041
+2023-05-28 12:56:47,902 INFO 
+Current epoch: 307
+2023-05-28 12:57:57,940 INFO Epoch 307, Itrs 28200/30000, Loss=0.088237
+2023-05-28 12:57:57,941 INFO validation...
+2023-05-28 12:58:21,909 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6572
+FreqW Acc: 0.8662
+Mean IoU: 0.5742
+
+2023-05-28 12:59:20,166 INFO 
+Current epoch: 308
+2023-05-28 12:59:29,601 INFO Epoch 308, Itrs 28250/30000, Loss=0.088432
+2023-05-28 13:00:42,765 INFO Epoch 308, Itrs 28300/30000, Loss=0.087807
+2023-05-28 13:00:42,766 INFO validation...
+2023-05-28 13:01:07,455 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6549
+FreqW Acc: 0.8659
+Mean IoU: 0.5724
+
+2023-05-28 13:01:55,237 INFO 
+Current epoch: 309
+2023-05-28 13:02:16,243 INFO Epoch 309, Itrs 28350/30000, Loss=0.088476
+2023-05-28 13:03:29,204 INFO Epoch 309, Itrs 28400/30000, Loss=0.087791
+2023-05-28 13:03:29,204 INFO validation...
+2023-05-28 13:03:53,098 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6528
+FreqW Acc: 0.8657
+Mean IoU: 0.5730
+
+2023-05-28 13:04:28,921 INFO 
+Current epoch: 310
+2023-05-28 13:05:03,039 INFO Epoch 310, Itrs 28450/30000, Loss=0.087705
+2023-05-28 13:06:15,106 INFO Epoch 310, Itrs 28500/30000, Loss=0.088234
+2023-05-28 13:06:15,106 INFO validation...
+2023-05-28 13:06:40,691 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6541
+FreqW Acc: 0.8658
+Mean IoU: 0.5736
+
+2023-05-28 13:07:04,865 INFO 
+Current epoch: 311
+2023-05-28 13:07:49,525 INFO Epoch 311, Itrs 28550/30000, Loss=0.087332
+2023-05-28 13:09:02,106 INFO Epoch 311, Itrs 28600/30000, Loss=0.088328
+2023-05-28 13:09:02,106 INFO validation...
+2023-05-28 13:09:26,621 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6521
+FreqW Acc: 0.8657
+Mean IoU: 0.5722
+
+2023-05-28 13:09:38,546 INFO 
+Current epoch: 312
+2023-05-28 13:10:34,319 INFO Epoch 312, Itrs 28650/30000, Loss=0.089753
+2023-05-28 13:11:46,282 INFO Epoch 312, Itrs 28700/30000, Loss=0.087016
+2023-05-28 13:11:46,282 INFO validation...
+2023-05-28 13:12:10,139 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6487
+FreqW Acc: 0.8655
+Mean IoU: 0.5696
+
+2023-05-28 13:12:10,700 INFO 
+Current epoch: 313
+2023-05-28 13:13:17,933 INFO Epoch 313, Itrs 28750/30000, Loss=0.087542
+2023-05-28 13:14:25,318 INFO 
+Current epoch: 314
+2023-05-28 13:14:31,584 INFO Epoch 314, Itrs 28800/30000, Loss=0.088707
+2023-05-28 13:14:31,584 INFO validation...
+2023-05-28 13:14:56,149 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6487
+FreqW Acc: 0.8657
+Mean IoU: 0.5704
+
+2023-05-28 13:16:03,956 INFO Epoch 314, Itrs 28850/30000, Loss=0.087719
+2023-05-28 13:16:58,767 INFO 
+Current epoch: 315
+2023-05-28 13:17:17,062 INFO Epoch 315, Itrs 28900/30000, Loss=0.088001
+2023-05-28 13:17:17,062 INFO validation...
+2023-05-28 13:17:41,026 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6501
+FreqW Acc: 0.8657
+Mean IoU: 0.5713
+
+2023-05-28 13:18:47,610 INFO Epoch 315, Itrs 28950/30000, Loss=0.086005
+2023-05-28 13:19:30,423 INFO 
+Current epoch: 316
+2023-05-28 13:20:01,043 INFO Epoch 316, Itrs 29000/30000, Loss=0.087132
+2023-05-28 13:20:01,044 INFO validation...
+2023-05-28 13:20:25,074 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6484
+FreqW Acc: 0.8655
+Mean IoU: 0.5690
+
+2023-05-28 13:21:33,142 INFO Epoch 316, Itrs 29050/30000, Loss=0.087468
+2023-05-28 13:22:06,170 INFO 
+Current epoch: 317
+2023-05-28 13:22:47,505 INFO Epoch 317, Itrs 29100/30000, Loss=0.086797
+2023-05-28 13:22:47,506 INFO validation...
+2023-05-28 13:23:12,697 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6498
+FreqW Acc: 0.8656
+Mean IoU: 0.5710
+
+2023-05-28 13:24:20,169 INFO Epoch 317, Itrs 29150/30000, Loss=0.088265
+2023-05-28 13:24:40,155 INFO 
+Current epoch: 318
+2023-05-28 13:25:34,329 INFO Epoch 318, Itrs 29200/30000, Loss=0.086957
+2023-05-28 13:25:34,329 INFO validation...
+2023-05-28 13:25:57,922 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6495
+FreqW Acc: 0.8656
+Mean IoU: 0.5706
+
+2023-05-28 13:27:05,592 INFO Epoch 318, Itrs 29250/30000, Loss=0.086556
+2023-05-28 13:27:14,226 INFO 
+Current epoch: 319
+2023-05-28 13:28:18,443 INFO Epoch 319, Itrs 29300/30000, Loss=0.086233
+2023-05-28 13:28:18,443 INFO validation...
+2023-05-28 13:28:42,966 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6508
+FreqW Acc: 0.8655
+Mean IoU: 0.5712
+
+2023-05-28 13:29:47,695 INFO 
+Current epoch: 320
+2023-05-28 13:29:51,383 INFO Epoch 320, Itrs 29350/30000, Loss=0.088562
+2023-05-28 13:31:03,709 INFO Epoch 320, Itrs 29400/30000, Loss=0.087829
+2023-05-28 13:31:03,710 INFO validation...
+2023-05-28 13:31:29,031 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6497
+FreqW Acc: 0.8655
+Mean IoU: 0.5710
+
+2023-05-28 13:32:21,820 INFO 
+Current epoch: 321
+2023-05-28 13:32:36,975 INFO Epoch 321, Itrs 29450/30000, Loss=0.086119
+2023-05-28 13:33:49,928 INFO Epoch 321, Itrs 29500/30000, Loss=0.085026
+2023-05-28 13:33:49,929 INFO validation...
+2023-05-28 13:34:13,927 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6497
+FreqW Acc: 0.8656
+Mean IoU: 0.5704
+
+2023-05-28 13:34:55,562 INFO 
+Current epoch: 322
+2023-05-28 13:35:22,126 INFO Epoch 322, Itrs 29550/30000, Loss=0.087289
+2023-05-28 13:36:33,777 INFO Epoch 322, Itrs 29600/30000, Loss=0.087142
+2023-05-28 13:36:33,777 INFO validation...
+2023-05-28 13:36:58,067 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6492
+FreqW Acc: 0.8656
+Mean IoU: 0.5701
+
+2023-05-28 13:37:27,973 INFO 
+Current epoch: 323
+2023-05-28 13:38:05,792 INFO Epoch 323, Itrs 29650/30000, Loss=0.086554
+2023-05-28 13:39:18,258 INFO Epoch 323, Itrs 29700/30000, Loss=0.087154
+2023-05-28 13:39:18,259 INFO validation...
+2023-05-28 13:39:41,897 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6499
+FreqW Acc: 0.8657
+Mean IoU: 0.5707
+
+2023-05-28 13:39:59,713 INFO 
+Current epoch: 324
+2023-05-28 13:40:48,626 INFO Epoch 324, Itrs 29750/30000, Loss=0.086780
+2023-05-28 13:42:00,747 INFO Epoch 324, Itrs 29800/30000, Loss=0.087515
+2023-05-28 13:42:00,748 INFO validation...
+2023-05-28 13:42:25,233 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6517
+FreqW Acc: 0.8658
+Mean IoU: 0.5711
+
+2023-05-28 13:42:31,431 INFO 
+Current epoch: 325
+2023-05-28 13:43:33,066 INFO Epoch 325, Itrs 29850/30000, Loss=0.085920
+2023-05-28 13:44:46,350 INFO Epoch 325, Itrs 29900/30000, Loss=0.086873
+2023-05-28 13:44:46,351 INFO validation...
+2023-05-28 13:45:09,933 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6484
+FreqW Acc: 0.8655
+Mean IoU: 0.5702
+
+2023-05-28 13:45:10,021 INFO 
+Current epoch: 326
+2023-05-28 13:46:22,766 INFO Epoch 326, Itrs 29950/30000, Loss=0.086998
+2023-05-28 13:47:23,465 INFO 
+Current epoch: 327
+2023-05-28 13:47:35,547 INFO Epoch 327, Itrs 30000/30000, Loss=0.086440
+2023-05-28 13:47:35,548 INFO validation...
+2023-05-28 13:47:59,322 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6513
+FreqW Acc: 0.8657
+Mean IoU: 0.5709
+

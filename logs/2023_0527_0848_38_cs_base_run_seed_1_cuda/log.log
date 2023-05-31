@@ -1,0 +1,3721 @@
+2023-05-27 08:48:38,686 INFO Device: cuda
+2023-05-27 08:48:38,687 INFO Random Seed: 1 
+
+2023-05-27 08:48:38,687 INFO Options: {'aug_json': None,
+ 'aug_sample_ratio': 0.5,
+ 'batch_size': 32,
+ 'ckpt': None,
+ 'continue_training': False,
+ 'crop_size': 256,
+ 'crop_val': False,
+ 'data_root': '/mnt/raid/home/eyal_michaeli/datasets/cityscapes',
+ 'dataset': 'cityscapes',
+ 'download': False,
+ 'gpu_id': '2',
+ 'logdir': 'logs/2023_0527_0848_38_cs_base_run_seed_1_cuda',
+ 'loss_type': 'cross_entropy',
+ 'lr': 0.2,
+ 'lr_policy': 'poly',
+ 'model': 'deeplabv3plus_mobilenet',
+ 'num_classes': 19,
+ 'output_stride': 16,
+ 'print_interval': 50,
+ 'random_seed': 1,
+ 'save_val_results': True,
+ 'separable_conv': False,
+ 'step_size': 10000,
+ 'test_only': False,
+ 'total_itrs': 30000.0,
+ 'val_batch_size': 4,
+ 'val_interval': 100,
+ 'weight_decay': 0.0001,
+ 'year': '2012'}
+2023-05-27 08:48:38,768 INFO Not using augmented images
+2023-05-27 08:48:38,770 INFO Not using augmented images
+2023-05-27 08:48:38,771 INFO Dataset: cityscapes, Train set: 2975, Val set: 500
+2023-05-27 08:48:38,926 INFO [!] Training from scratch, no checkpoint file used
+2023-05-27 08:48:40,837 INFO 
+Current epoch: 1
+2023-05-27 08:48:46,497 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter1_epoch1_miou0.0000.pth
+2023-05-27 08:48:46,497 INFO validation...
+2023-05-27 08:49:12,203 INFO 
+Overall Acc: 0.2099
+Mean Acc: 0.0622
+FreqW Acc: 0.0766
+Mean IoU: 0.0229
+
+2023-05-27 08:49:12,290 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter1_epoch1_miou0.0229.pth
+2023-05-27 08:50:21,507 INFO Epoch 1, Itrs 50/30000, Loss=0.729931
+2023-05-27 08:51:23,062 INFO 
+Current epoch: 2
+2023-05-27 08:51:35,447 INFO Epoch 2, Itrs 100/30000, Loss=0.437384
+2023-05-27 08:51:35,529 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter100_epoch2_miou0.0229.pth
+2023-05-27 08:51:35,530 INFO validation...
+2023-05-27 08:52:00,768 INFO 
+Overall Acc: 0.8346
+Mean Acc: 0.3188
+FreqW Acc: 0.7192
+Mean IoU: 0.2643
+
+2023-05-27 08:52:00,840 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter100_epoch2_miou0.2643.pth
+2023-05-27 08:53:11,952 INFO Epoch 2, Itrs 150/30000, Loss=0.374609
+2023-05-27 08:54:03,856 INFO 
+Current epoch: 3
+2023-05-27 08:54:28,921 INFO Epoch 3, Itrs 200/30000, Loss=0.343917
+2023-05-27 08:54:29,002 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter200_epoch3_miou0.2643.pth
+2023-05-27 08:54:29,002 INFO validation...
+2023-05-27 08:54:53,409 INFO 
+Overall Acc: 0.8766
+Mean Acc: 0.4312
+FreqW Acc: 0.7918
+Mean IoU: 0.3640
+
+2023-05-27 08:54:53,499 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter200_epoch3_miou0.3640.pth
+2023-05-27 08:56:04,820 INFO Epoch 3, Itrs 250/30000, Loss=0.326258
+2023-05-27 08:56:43,872 INFO 
+Current epoch: 4
+2023-05-27 08:57:21,648 INFO Epoch 4, Itrs 300/30000, Loss=0.304712
+2023-05-27 08:57:21,716 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter300_epoch4_miou0.3640.pth
+2023-05-27 08:57:21,717 INFO validation...
+2023-05-27 08:57:45,895 INFO 
+Overall Acc: 0.8888
+Mean Acc: 0.4631
+FreqW Acc: 0.8096
+Mean IoU: 0.3973
+
+2023-05-27 08:57:45,970 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter300_epoch4_miou0.3973.pth
+2023-05-27 08:58:55,099 INFO Epoch 4, Itrs 350/30000, Loss=0.289403
+2023-05-27 08:59:21,789 INFO 
+Current epoch: 5
+2023-05-27 09:00:09,039 INFO Epoch 5, Itrs 400/30000, Loss=0.279550
+2023-05-27 09:00:09,122 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter400_epoch5_miou0.3973.pth
+2023-05-27 09:00:09,122 INFO validation...
+2023-05-27 09:00:33,750 INFO 
+Overall Acc: 0.8836
+Mean Acc: 0.4982
+FreqW Acc: 0.8022
+Mean IoU: 0.4136
+
+2023-05-27 09:00:33,833 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter400_epoch5_miou0.4136.pth
+2023-05-27 09:01:42,705 INFO Epoch 5, Itrs 450/30000, Loss=0.280742
+2023-05-27 09:01:57,130 INFO 
+Current epoch: 6
+2023-05-27 09:02:55,979 INFO Epoch 6, Itrs 500/30000, Loss=0.267650
+2023-05-27 09:02:56,056 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter500_epoch6_miou0.4136.pth
+2023-05-27 09:02:56,056 INFO validation...
+2023-05-27 09:03:20,903 INFO 
+Overall Acc: 0.8963
+Mean Acc: 0.5399
+FreqW Acc: 0.8222
+Mean IoU: 0.4466
+
+2023-05-27 09:03:20,973 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter500_epoch6_miou0.4466.pth
+2023-05-27 09:04:30,430 INFO Epoch 6, Itrs 550/30000, Loss=0.268350
+2023-05-27 09:04:33,321 INFO 
+Current epoch: 7
+2023-05-27 09:05:43,764 INFO Epoch 7, Itrs 600/30000, Loss=0.252251
+2023-05-27 09:05:43,849 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter600_epoch7_miou0.4466.pth
+2023-05-27 09:05:43,849 INFO validation...
+2023-05-27 09:06:07,647 INFO 
+Overall Acc: 0.8953
+Mean Acc: 0.4955
+FreqW Acc: 0.8177
+Mean IoU: 0.4295
+
+2023-05-27 09:07:07,138 INFO 
+Current epoch: 8
+2023-05-27 09:07:18,178 INFO Epoch 8, Itrs 650/30000, Loss=0.250765
+2023-05-27 09:08:30,284 INFO Epoch 8, Itrs 700/30000, Loss=0.245349
+2023-05-27 09:08:30,366 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter700_epoch8_miou0.4466.pth
+2023-05-27 09:08:30,366 INFO validation...
+2023-05-27 09:08:55,209 INFO 
+Overall Acc: 0.9018
+Mean Acc: 0.5515
+FreqW Acc: 0.8300
+Mean IoU: 0.4669
+
+2023-05-27 09:08:55,283 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter700_epoch8_miou0.4669.pth
+2023-05-27 09:09:43,489 INFO 
+Current epoch: 9
+2023-05-27 09:10:04,558 INFO Epoch 9, Itrs 750/30000, Loss=0.242472
+2023-05-27 09:11:17,940 INFO Epoch 9, Itrs 800/30000, Loss=0.235160
+2023-05-27 09:11:18,022 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter800_epoch9_miou0.4669.pth
+2023-05-27 09:11:18,022 INFO validation...
+2023-05-27 09:11:42,170 INFO 
+Overall Acc: 0.9032
+Mean Acc: 0.5617
+FreqW Acc: 0.8330
+Mean IoU: 0.4742
+
+2023-05-27 09:11:42,253 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter800_epoch9_miou0.4742.pth
+2023-05-27 09:12:19,104 INFO 
+Current epoch: 10
+2023-05-27 09:12:52,226 INFO Epoch 10, Itrs 850/30000, Loss=0.234444
+2023-05-27 09:14:04,086 INFO Epoch 10, Itrs 900/30000, Loss=0.235878
+2023-05-27 09:14:04,168 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter900_epoch10_miou0.4742.pth
+2023-05-27 09:14:04,168 INFO validation...
+2023-05-27 09:14:28,911 INFO 
+Overall Acc: 0.9028
+Mean Acc: 0.5839
+FreqW Acc: 0.8320
+Mean IoU: 0.4898
+
+2023-05-27 09:14:28,984 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter900_epoch10_miou0.4898.pth
+2023-05-27 09:14:53,803 INFO 
+Current epoch: 11
+2023-05-27 09:15:37,746 INFO Epoch 11, Itrs 950/30000, Loss=0.230898
+2023-05-27 09:16:50,661 INFO Epoch 11, Itrs 1000/30000, Loss=0.230485
+2023-05-27 09:16:50,752 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter1000_epoch11_miou0.4898.pth
+2023-05-27 09:16:50,752 INFO validation...
+2023-05-27 09:17:15,319 INFO 
+Overall Acc: 0.9069
+Mean Acc: 0.6047
+FreqW Acc: 0.8391
+Mean IoU: 0.5065
+
+2023-05-27 09:17:15,408 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter1000_epoch11_miou0.5065.pth
+2023-05-27 09:17:28,847 INFO 
+Current epoch: 12
+2023-05-27 09:18:27,150 INFO Epoch 12, Itrs 1050/30000, Loss=0.225039
+2023-05-27 09:19:39,929 INFO Epoch 12, Itrs 1100/30000, Loss=0.217950
+2023-05-27 09:19:40,012 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter1100_epoch12_miou0.5065.pth
+2023-05-27 09:19:40,012 INFO validation...
+2023-05-27 09:20:03,929 INFO 
+Overall Acc: 0.9065
+Mean Acc: 0.5960
+FreqW Acc: 0.8373
+Mean IoU: 0.5055
+
+2023-05-27 09:20:04,508 INFO 
+Current epoch: 13
+2023-05-27 09:21:14,266 INFO Epoch 13, Itrs 1150/30000, Loss=0.221601
+2023-05-27 09:22:22,144 INFO 
+Current epoch: 14
+2023-05-27 09:22:28,475 INFO Epoch 14, Itrs 1200/30000, Loss=0.216033
+2023-05-27 09:22:28,545 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter1200_epoch14_miou0.5065.pth
+2023-05-27 09:22:28,545 INFO validation...
+2023-05-27 09:22:52,540 INFO 
+Overall Acc: 0.9080
+Mean Acc: 0.5632
+FreqW Acc: 0.8392
+Mean IoU: 0.4854
+
+2023-05-27 09:24:01,135 INFO Epoch 14, Itrs 1250/30000, Loss=0.216906
+2023-05-27 09:24:57,116 INFO 
+Current epoch: 15
+2023-05-27 09:25:15,599 INFO Epoch 15, Itrs 1300/30000, Loss=0.219981
+2023-05-27 09:25:15,684 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter1300_epoch15_miou0.5065.pth
+2023-05-27 09:25:15,684 INFO validation...
+2023-05-27 09:25:40,375 INFO 
+Overall Acc: 0.9092
+Mean Acc: 0.6214
+FreqW Acc: 0.8429
+Mean IoU: 0.5251
+
+2023-05-27 09:25:40,460 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter1300_epoch15_miou0.5251.pth
+2023-05-27 09:26:49,755 INFO Epoch 15, Itrs 1350/30000, Loss=0.212198
+2023-05-27 09:27:33,074 INFO 
+Current epoch: 16
+2023-05-27 09:28:02,242 INFO Epoch 16, Itrs 1400/30000, Loss=0.212799
+2023-05-27 09:28:02,325 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter1400_epoch16_miou0.5251.pth
+2023-05-27 09:28:02,325 INFO validation...
+2023-05-27 09:28:26,984 INFO 
+Overall Acc: 0.9103
+Mean Acc: 0.6033
+FreqW Acc: 0.8432
+Mean IoU: 0.5133
+
+2023-05-27 09:29:34,048 INFO Epoch 16, Itrs 1450/30000, Loss=0.206841
+2023-05-27 09:30:07,353 INFO 
+Current epoch: 17
+2023-05-27 09:30:49,478 INFO Epoch 17, Itrs 1500/30000, Loss=0.206347
+2023-05-27 09:30:49,560 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter1500_epoch17_miou0.5251.pth
+2023-05-27 09:30:49,560 INFO validation...
+2023-05-27 09:31:13,609 INFO 
+Overall Acc: 0.9102
+Mean Acc: 0.5907
+FreqW Acc: 0.8418
+Mean IoU: 0.5136
+
+2023-05-27 09:32:22,065 INFO Epoch 17, Itrs 1550/30000, Loss=0.201508
+2023-05-27 09:32:42,365 INFO 
+Current epoch: 18
+2023-05-27 09:33:35,925 INFO Epoch 18, Itrs 1600/30000, Loss=0.206297
+2023-05-27 09:33:36,009 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter1600_epoch18_miou0.5251.pth
+2023-05-27 09:33:36,009 INFO validation...
+2023-05-27 09:34:00,272 INFO 
+Overall Acc: 0.9103
+Mean Acc: 0.5875
+FreqW Acc: 0.8428
+Mean IoU: 0.5107
+
+2023-05-27 09:35:08,318 INFO Epoch 18, Itrs 1650/30000, Loss=0.202839
+2023-05-27 09:35:17,531 INFO 
+Current epoch: 19
+2023-05-27 09:36:22,259 INFO Epoch 19, Itrs 1700/30000, Loss=0.197666
+2023-05-27 09:36:22,341 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter1700_epoch19_miou0.5251.pth
+2023-05-27 09:36:22,341 INFO validation...
+2023-05-27 09:36:46,468 INFO 
+Overall Acc: 0.9115
+Mean Acc: 0.5826
+FreqW Acc: 0.8436
+Mean IoU: 0.5121
+
+2023-05-27 09:37:52,418 INFO 
+Current epoch: 20
+2023-05-27 09:37:56,285 INFO Epoch 20, Itrs 1750/30000, Loss=0.200235
+2023-05-27 09:39:09,506 INFO Epoch 20, Itrs 1800/30000, Loss=0.197272
+2023-05-27 09:39:09,586 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter1800_epoch20_miou0.5251.pth
+2023-05-27 09:39:09,587 INFO validation...
+2023-05-27 09:39:34,476 INFO 
+Overall Acc: 0.9115
+Mean Acc: 0.6004
+FreqW Acc: 0.8450
+Mean IoU: 0.5123
+
+2023-05-27 09:40:29,675 INFO 
+Current epoch: 21
+2023-05-27 09:40:45,773 INFO Epoch 21, Itrs 1850/30000, Loss=0.197856
+2023-05-27 09:41:59,692 INFO Epoch 21, Itrs 1900/30000, Loss=0.195407
+2023-05-27 09:41:59,773 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter1900_epoch21_miou0.5251.pth
+2023-05-27 09:41:59,773 INFO validation...
+2023-05-27 09:42:25,103 INFO 
+Overall Acc: 0.9117
+Mean Acc: 0.6012
+FreqW Acc: 0.8476
+Mean IoU: 0.5131
+
+2023-05-27 09:43:07,051 INFO 
+Current epoch: 22
+2023-05-27 09:43:33,652 INFO Epoch 22, Itrs 1950/30000, Loss=0.193211
+2023-05-27 09:44:44,976 INFO Epoch 22, Itrs 2000/30000, Loss=0.190990
+2023-05-27 09:44:45,059 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter2000_epoch22_miou0.5251.pth
+2023-05-27 09:44:45,059 INFO validation...
+2023-05-27 09:45:08,444 INFO 
+Overall Acc: 0.9137
+Mean Acc: 0.5963
+FreqW Acc: 0.8492
+Mean IoU: 0.5153
+
+2023-05-27 09:45:37,790 INFO 
+Current epoch: 23
+2023-05-27 09:46:16,319 INFO Epoch 23, Itrs 2050/30000, Loss=0.189558
+2023-05-27 09:47:27,128 INFO Epoch 23, Itrs 2100/30000, Loss=0.189813
+2023-05-27 09:47:27,209 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter2100_epoch23_miou0.5251.pth
+2023-05-27 09:47:27,210 INFO validation...
+2023-05-27 09:47:51,214 INFO 
+Overall Acc: 0.9155
+Mean Acc: 0.6125
+FreqW Acc: 0.8510
+Mean IoU: 0.5338
+
+2023-05-27 09:47:51,294 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter2100_epoch23_miou0.5338.pth
+2023-05-27 09:48:10,405 INFO 
+Current epoch: 24
+2023-05-27 09:48:59,351 INFO Epoch 24, Itrs 2150/30000, Loss=0.185910
+2023-05-27 09:50:10,260 INFO Epoch 24, Itrs 2200/30000, Loss=0.187566
+2023-05-27 09:50:10,329 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter2200_epoch24_miou0.5338.pth
+2023-05-27 09:50:10,329 INFO validation...
+2023-05-27 09:50:34,540 INFO 
+Overall Acc: 0.9169
+Mean Acc: 0.6281
+FreqW Acc: 0.8534
+Mean IoU: 0.5453
+
+2023-05-27 09:50:34,609 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter2200_epoch24_miou0.5453.pth
+2023-05-27 09:50:41,209 INFO 
+Current epoch: 25
+2023-05-27 09:51:41,805 INFO Epoch 25, Itrs 2250/30000, Loss=0.183541
+2023-05-27 09:52:52,965 INFO Epoch 25, Itrs 2300/30000, Loss=0.186284
+2023-05-27 09:52:53,047 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter2300_epoch25_miou0.5453.pth
+2023-05-27 09:52:53,047 INFO validation...
+2023-05-27 09:53:16,434 INFO 
+Overall Acc: 0.9166
+Mean Acc: 0.6267
+FreqW Acc: 0.8535
+Mean IoU: 0.5416
+
+2023-05-27 09:53:16,503 INFO 
+Current epoch: 26
+2023-05-27 09:54:28,687 INFO Epoch 26, Itrs 2350/30000, Loss=0.180965
+2023-05-27 09:55:28,680 INFO 
+Current epoch: 27
+2023-05-27 09:55:40,710 INFO Epoch 27, Itrs 2400/30000, Loss=0.183986
+2023-05-27 09:55:40,792 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter2400_epoch27_miou0.5453.pth
+2023-05-27 09:55:40,792 INFO validation...
+2023-05-27 09:56:06,831 INFO 
+Overall Acc: 0.9162
+Mean Acc: 0.6230
+FreqW Acc: 0.8532
+Mean IoU: 0.5431
+
+2023-05-27 09:57:14,507 INFO Epoch 27, Itrs 2450/30000, Loss=0.177873
+2023-05-27 09:58:02,468 INFO 
+Current epoch: 28
+2023-05-27 09:58:25,918 INFO Epoch 28, Itrs 2500/30000, Loss=0.180738
+2023-05-27 09:58:26,000 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter2500_epoch28_miou0.5453.pth
+2023-05-27 09:58:26,000 INFO validation...
+2023-05-27 09:58:50,544 INFO 
+Overall Acc: 0.9138
+Mean Acc: 0.5976
+FreqW Acc: 0.8485
+Mean IoU: 0.5241
+
+2023-05-27 09:59:57,822 INFO Epoch 28, Itrs 2550/30000, Loss=0.180147
+2023-05-27 10:00:35,008 INFO 
+Current epoch: 29
+2023-05-27 10:01:10,437 INFO Epoch 29, Itrs 2600/30000, Loss=0.174540
+2023-05-27 10:01:10,529 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter2600_epoch29_miou0.5453.pth
+2023-05-27 10:01:10,529 INFO validation...
+2023-05-27 10:01:34,060 INFO 
+Overall Acc: 0.9134
+Mean Acc: 0.6215
+FreqW Acc: 0.8489
+Mean IoU: 0.5324
+
+2023-05-27 10:02:40,924 INFO Epoch 29, Itrs 2650/30000, Loss=0.181112
+2023-05-27 10:03:06,607 INFO 
+Current epoch: 30
+2023-05-27 10:03:53,775 INFO Epoch 30, Itrs 2700/30000, Loss=0.176500
+2023-05-27 10:03:53,857 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter2700_epoch30_miou0.5453.pth
+2023-05-27 10:03:53,857 INFO validation...
+2023-05-27 10:04:17,937 INFO 
+Overall Acc: 0.9161
+Mean Acc: 0.6236
+FreqW Acc: 0.8533
+Mean IoU: 0.5359
+
+2023-05-27 10:05:25,813 INFO Epoch 30, Itrs 2750/30000, Loss=0.174753
+2023-05-27 10:05:40,117 INFO 
+Current epoch: 31
+2023-05-27 10:06:38,578 INFO Epoch 31, Itrs 2800/30000, Loss=0.175335
+2023-05-27 10:06:38,647 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter2800_epoch31_miou0.5453.pth
+2023-05-27 10:06:38,647 INFO validation...
+2023-05-27 10:07:02,754 INFO 
+Overall Acc: 0.9145
+Mean Acc: 0.6204
+FreqW Acc: 0.8510
+Mean IoU: 0.5350
+
+2023-05-27 10:08:09,004 INFO Epoch 31, Itrs 2850/30000, Loss=0.174548
+2023-05-27 10:08:11,949 INFO 
+Current epoch: 32
+2023-05-27 10:09:20,541 INFO Epoch 32, Itrs 2900/30000, Loss=0.172597
+2023-05-27 10:09:20,622 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter2900_epoch32_miou0.5453.pth
+2023-05-27 10:09:20,623 INFO validation...
+2023-05-27 10:09:43,469 INFO 
+Overall Acc: 0.9165
+Mean Acc: 0.6272
+FreqW Acc: 0.8534
+Mean IoU: 0.5386
+
+2023-05-27 10:10:41,576 INFO 
+Current epoch: 33
+2023-05-27 10:10:50,815 INFO Epoch 33, Itrs 2950/30000, Loss=0.174801
+2023-05-27 10:12:02,900 INFO Epoch 33, Itrs 3000/30000, Loss=0.170606
+2023-05-27 10:12:02,982 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter3000_epoch33_miou0.5453.pth
+2023-05-27 10:12:02,982 INFO validation...
+2023-05-27 10:12:26,782 INFO 
+Overall Acc: 0.9185
+Mean Acc: 0.6188
+FreqW Acc: 0.8561
+Mean IoU: 0.5328
+
+2023-05-27 10:13:15,868 INFO 
+Current epoch: 34
+2023-05-27 10:13:37,811 INFO Epoch 34, Itrs 3050/30000, Loss=0.169156
+2023-05-27 10:14:51,074 INFO Epoch 34, Itrs 3100/30000, Loss=0.170680
+2023-05-27 10:14:51,291 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter3100_epoch34_miou0.5453.pth
+2023-05-27 10:14:51,291 INFO validation...
+2023-05-27 10:15:15,492 INFO 
+Overall Acc: 0.9169
+Mean Acc: 0.6216
+FreqW Acc: 0.8544
+Mean IoU: 0.5375
+
+2023-05-27 10:15:52,046 INFO 
+Current epoch: 35
+2023-05-27 10:16:24,597 INFO Epoch 35, Itrs 3150/30000, Loss=0.170539
+2023-05-27 10:17:38,094 INFO Epoch 35, Itrs 3200/30000, Loss=0.169795
+2023-05-27 10:17:38,174 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter3200_epoch35_miou0.5453.pth
+2023-05-27 10:17:38,174 INFO validation...
+2023-05-27 10:18:03,119 INFO 
+Overall Acc: 0.9194
+Mean Acc: 0.6484
+FreqW Acc: 0.8578
+Mean IoU: 0.5616
+
+2023-05-27 10:18:03,198 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter3200_epoch35_miou0.5616.pth
+2023-05-27 10:18:27,063 INFO 
+Current epoch: 36
+2023-05-27 10:19:10,425 INFO Epoch 36, Itrs 3250/30000, Loss=0.169866
+2023-05-27 10:20:21,467 INFO Epoch 36, Itrs 3300/30000, Loss=0.168878
+2023-05-27 10:20:21,548 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter3300_epoch36_miou0.5616.pth
+2023-05-27 10:20:21,548 INFO validation...
+2023-05-27 10:20:45,790 INFO 
+Overall Acc: 0.9189
+Mean Acc: 0.6284
+FreqW Acc: 0.8570
+Mean IoU: 0.5534
+
+2023-05-27 10:20:59,155 INFO 
+Current epoch: 37
+2023-05-27 10:21:54,300 INFO Epoch 37, Itrs 3350/30000, Loss=0.166347
+2023-05-27 10:23:05,811 INFO Epoch 37, Itrs 3400/30000, Loss=0.164577
+2023-05-27 10:23:05,899 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter3400_epoch37_miou0.5616.pth
+2023-05-27 10:23:05,899 INFO validation...
+2023-05-27 10:23:29,953 INFO 
+Overall Acc: 0.9175
+Mean Acc: 0.6081
+FreqW Acc: 0.8553
+Mean IoU: 0.5297
+
+2023-05-27 10:23:30,531 INFO 
+Current epoch: 38
+2023-05-27 10:24:36,262 INFO Epoch 38, Itrs 3450/30000, Loss=0.167507
+2023-05-27 10:25:41,836 INFO 
+Current epoch: 39
+2023-05-27 10:25:48,382 INFO Epoch 39, Itrs 3500/30000, Loss=0.165592
+2023-05-27 10:25:48,465 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter3500_epoch39_miou0.5616.pth
+2023-05-27 10:25:48,465 INFO validation...
+2023-05-27 10:26:12,822 INFO 
+Overall Acc: 0.9201
+Mean Acc: 0.6281
+FreqW Acc: 0.8589
+Mean IoU: 0.5488
+
+2023-05-27 10:27:21,683 INFO Epoch 39, Itrs 3550/30000, Loss=0.161404
+2023-05-27 10:28:17,131 INFO 
+Current epoch: 40
+2023-05-27 10:28:35,462 INFO Epoch 40, Itrs 3600/30000, Loss=0.162729
+2023-05-27 10:28:35,535 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter3600_epoch40_miou0.5616.pth
+2023-05-27 10:28:35,536 INFO validation...
+2023-05-27 10:29:00,010 INFO 
+Overall Acc: 0.9174
+Mean Acc: 0.6080
+FreqW Acc: 0.8550
+Mean IoU: 0.5353
+
+2023-05-27 10:30:08,556 INFO Epoch 40, Itrs 3650/30000, Loss=0.175872
+2023-05-27 10:30:51,936 INFO 
+Current epoch: 41
+2023-05-27 10:31:21,864 INFO Epoch 41, Itrs 3700/30000, Loss=0.165010
+2023-05-27 10:31:21,951 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter3700_epoch41_miou0.5616.pth
+2023-05-27 10:31:21,951 INFO validation...
+2023-05-27 10:31:45,975 INFO 
+Overall Acc: 0.9131
+Mean Acc: 0.5964
+FreqW Acc: 0.8485
+Mean IoU: 0.5169
+
+2023-05-27 10:32:54,839 INFO Epoch 41, Itrs 3750/30000, Loss=0.165080
+2023-05-27 10:33:27,416 INFO 
+Current epoch: 42
+2023-05-27 10:34:08,904 INFO Epoch 42, Itrs 3800/30000, Loss=0.162077
+2023-05-27 10:34:09,011 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter3800_epoch42_miou0.5616.pth
+2023-05-27 10:34:09,012 INFO validation...
+2023-05-27 10:34:32,785 INFO 
+Overall Acc: 0.9188
+Mean Acc: 0.6232
+FreqW Acc: 0.8559
+Mean IoU: 0.5425
+
+2023-05-27 10:35:40,741 INFO Epoch 42, Itrs 3850/30000, Loss=0.166406
+2023-05-27 10:36:00,960 INFO 
+Current epoch: 43
+2023-05-27 10:36:54,085 INFO Epoch 43, Itrs 3900/30000, Loss=0.159940
+2023-05-27 10:36:54,166 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter3900_epoch43_miou0.5616.pth
+2023-05-27 10:36:54,166 INFO validation...
+2023-05-27 10:37:18,567 INFO 
+Overall Acc: 0.9188
+Mean Acc: 0.6481
+FreqW Acc: 0.8575
+Mean IoU: 0.5559
+
+2023-05-27 10:38:27,912 INFO Epoch 43, Itrs 3950/30000, Loss=0.158643
+2023-05-27 10:38:36,659 INFO 
+Current epoch: 44
+2023-05-27 10:39:41,661 INFO Epoch 44, Itrs 4000/30000, Loss=0.157434
+2023-05-27 10:39:41,745 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter4000_epoch44_miou0.5616.pth
+2023-05-27 10:39:41,745 INFO validation...
+2023-05-27 10:40:05,569 INFO 
+Overall Acc: 0.9196
+Mean Acc: 0.6312
+FreqW Acc: 0.8584
+Mean IoU: 0.5471
+
+2023-05-27 10:41:10,785 INFO 
+Current epoch: 45
+2023-05-27 10:41:14,433 INFO Epoch 45, Itrs 4050/30000, Loss=0.162238
+2023-05-27 10:42:27,113 INFO Epoch 45, Itrs 4100/30000, Loss=0.156782
+2023-05-27 10:42:27,197 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter4100_epoch45_miou0.5616.pth
+2023-05-27 10:42:27,197 INFO validation...
+2023-05-27 10:42:51,352 INFO 
+Overall Acc: 0.9209
+Mean Acc: 0.6392
+FreqW Acc: 0.8597
+Mean IoU: 0.5603
+
+2023-05-27 10:43:45,270 INFO 
+Current epoch: 46
+2023-05-27 10:44:00,597 INFO Epoch 46, Itrs 4150/30000, Loss=0.158510
+2023-05-27 10:45:13,353 INFO Epoch 46, Itrs 4200/30000, Loss=0.156647
+2023-05-27 10:45:13,434 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter4200_epoch46_miou0.5616.pth
+2023-05-27 10:45:13,434 INFO validation...
+2023-05-27 10:45:38,013 INFO 
+Overall Acc: 0.9200
+Mean Acc: 0.6327
+FreqW Acc: 0.8591
+Mean IoU: 0.5551
+
+2023-05-27 10:46:20,550 INFO 
+Current epoch: 47
+2023-05-27 10:46:47,618 INFO Epoch 47, Itrs 4250/30000, Loss=0.157320
+2023-05-27 10:48:00,868 INFO Epoch 47, Itrs 4300/30000, Loss=0.156414
+2023-05-27 10:48:00,950 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter4300_epoch47_miou0.5616.pth
+2023-05-27 10:48:00,950 INFO validation...
+2023-05-27 10:48:26,386 INFO 
+Overall Acc: 0.9201
+Mean Acc: 0.6433
+FreqW Acc: 0.8604
+Mean IoU: 0.5527
+
+2023-05-27 10:48:56,189 INFO 
+Current epoch: 48
+2023-05-27 10:49:34,331 INFO Epoch 48, Itrs 4350/30000, Loss=0.154320
+2023-05-27 10:50:49,138 INFO Epoch 48, Itrs 4400/30000, Loss=0.154485
+2023-05-27 10:50:49,220 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter4400_epoch48_miou0.5616.pth
+2023-05-27 10:50:49,220 INFO validation...
+2023-05-27 10:51:14,271 INFO 
+Overall Acc: 0.9195
+Mean Acc: 0.6228
+FreqW Acc: 0.8586
+Mean IoU: 0.5413
+
+2023-05-27 10:51:32,356 INFO 
+Current epoch: 49
+2023-05-27 10:52:22,925 INFO Epoch 49, Itrs 4450/30000, Loss=0.155041
+2023-05-27 10:53:35,204 INFO Epoch 49, Itrs 4500/30000, Loss=0.154033
+2023-05-27 10:53:35,286 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter4500_epoch49_miou0.5616.pth
+2023-05-27 10:53:35,286 INFO validation...
+2023-05-27 10:53:59,721 INFO 
+Overall Acc: 0.9198
+Mean Acc: 0.6213
+FreqW Acc: 0.8588
+Mean IoU: 0.5461
+
+2023-05-27 10:54:06,786 INFO 
+Current epoch: 50
+2023-05-27 10:55:08,611 INFO Epoch 50, Itrs 4550/30000, Loss=0.153755
+2023-05-27 10:56:22,239 INFO Epoch 50, Itrs 4600/30000, Loss=0.156306
+2023-05-27 10:56:22,314 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter4600_epoch50_miou0.5616.pth
+2023-05-27 10:56:22,314 INFO validation...
+2023-05-27 10:56:46,072 INFO 
+Overall Acc: 0.9191
+Mean Acc: 0.6265
+FreqW Acc: 0.8558
+Mean IoU: 0.5487
+
+2023-05-27 10:56:46,140 INFO 
+Current epoch: 51
+2023-05-27 10:58:00,111 INFO Epoch 51, Itrs 4650/30000, Loss=0.150862
+2023-05-27 10:59:01,598 INFO 
+Current epoch: 52
+2023-05-27 10:59:14,147 INFO Epoch 52, Itrs 4700/30000, Loss=0.154490
+2023-05-27 10:59:14,230 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter4700_epoch52_miou0.5616.pth
+2023-05-27 10:59:14,230 INFO validation...
+2023-05-27 10:59:39,020 INFO 
+Overall Acc: 0.9206
+Mean Acc: 0.6247
+FreqW Acc: 0.8596
+Mean IoU: 0.5462
+
+2023-05-27 11:00:47,320 INFO Epoch 52, Itrs 4750/30000, Loss=0.152282
+2023-05-27 11:01:37,623 INFO 
+Current epoch: 53
+2023-05-27 11:02:02,515 INFO Epoch 53, Itrs 4800/30000, Loss=0.152706
+2023-05-27 11:02:02,599 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter4800_epoch53_miou0.5616.pth
+2023-05-27 11:02:02,599 INFO validation...
+2023-05-27 11:02:27,992 INFO 
+Overall Acc: 0.9166
+Mean Acc: 0.6389
+FreqW Acc: 0.8547
+Mean IoU: 0.5523
+
+2023-05-27 11:03:36,674 INFO Epoch 53, Itrs 4850/30000, Loss=0.154358
+2023-05-27 11:04:14,923 INFO 
+Current epoch: 54
+2023-05-27 11:04:50,869 INFO Epoch 54, Itrs 4900/30000, Loss=0.149259
+2023-05-27 11:04:50,953 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter4900_epoch54_miou0.5616.pth
+2023-05-27 11:04:50,953 INFO validation...
+2023-05-27 11:05:15,378 INFO 
+Overall Acc: 0.9210
+Mean Acc: 0.6335
+FreqW Acc: 0.8599
+Mean IoU: 0.5574
+
+2023-05-27 11:06:23,934 INFO Epoch 54, Itrs 4950/30000, Loss=0.153442
+2023-05-27 11:06:50,613 INFO 
+Current epoch: 55
+2023-05-27 11:07:38,238 INFO Epoch 55, Itrs 5000/30000, Loss=0.150814
+2023-05-27 11:07:38,320 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter5000_epoch55_miou0.5616.pth
+2023-05-27 11:07:38,320 INFO validation...
+2023-05-27 11:08:03,105 INFO 
+Overall Acc: 0.9212
+Mean Acc: 0.6318
+FreqW Acc: 0.8613
+Mean IoU: 0.5530
+
+2023-05-27 11:09:12,212 INFO Epoch 55, Itrs 5050/30000, Loss=0.149318
+2023-05-27 11:09:27,478 INFO 
+Current epoch: 56
+2023-05-27 11:10:26,892 INFO Epoch 56, Itrs 5100/30000, Loss=0.148355
+2023-05-27 11:10:26,972 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter5100_epoch56_miou0.5616.pth
+2023-05-27 11:10:26,973 INFO validation...
+2023-05-27 11:10:51,124 INFO 
+Overall Acc: 0.9176
+Mean Acc: 0.6235
+FreqW Acc: 0.8561
+Mean IoU: 0.5424
+
+2023-05-27 11:12:00,129 INFO Epoch 56, Itrs 5150/30000, Loss=0.148744
+2023-05-27 11:12:03,091 INFO 
+Current epoch: 57
+2023-05-27 11:13:15,964 INFO Epoch 57, Itrs 5200/30000, Loss=0.149490
+2023-05-27 11:13:16,052 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter5200_epoch57_miou0.5616.pth
+2023-05-27 11:13:16,052 INFO validation...
+2023-05-27 11:13:41,321 INFO 
+Overall Acc: 0.9188
+Mean Acc: 0.6379
+FreqW Acc: 0.8590
+Mean IoU: 0.5548
+
+2023-05-27 11:14:39,848 INFO 
+Current epoch: 58
+2023-05-27 11:14:49,254 INFO Epoch 58, Itrs 5250/30000, Loss=0.147396
+2023-05-27 11:16:01,320 INFO Epoch 58, Itrs 5300/30000, Loss=0.149352
+2023-05-27 11:16:01,401 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter5300_epoch58_miou0.5616.pth
+2023-05-27 11:16:01,401 INFO validation...
+2023-05-27 11:16:25,529 INFO 
+Overall Acc: 0.9212
+Mean Acc: 0.6375
+FreqW Acc: 0.8610
+Mean IoU: 0.5522
+
+2023-05-27 11:17:14,793 INFO 
+Current epoch: 59
+2023-05-27 11:17:36,082 INFO Epoch 59, Itrs 5350/30000, Loss=0.146543
+2023-05-27 11:18:50,221 INFO Epoch 59, Itrs 5400/30000, Loss=0.145062
+2023-05-27 11:18:50,303 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter5400_epoch59_miou0.5616.pth
+2023-05-27 11:18:50,303 INFO validation...
+2023-05-27 11:19:15,513 INFO 
+Overall Acc: 0.9218
+Mean Acc: 0.6463
+FreqW Acc: 0.8627
+Mean IoU: 0.5602
+
+2023-05-27 11:19:51,647 INFO 
+Current epoch: 60
+2023-05-27 11:20:24,363 INFO Epoch 60, Itrs 5450/30000, Loss=0.147239
+2023-05-27 11:21:37,804 INFO Epoch 60, Itrs 5500/30000, Loss=0.148741
+2023-05-27 11:21:37,895 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter5500_epoch60_miou0.5616.pth
+2023-05-27 11:21:37,895 INFO validation...
+2023-05-27 11:22:02,463 INFO 
+Overall Acc: 0.9221
+Mean Acc: 0.6403
+FreqW Acc: 0.8629
+Mean IoU: 0.5538
+
+2023-05-27 11:22:26,741 INFO 
+Current epoch: 61
+2023-05-27 11:23:11,842 INFO Epoch 61, Itrs 5550/30000, Loss=0.143421
+2023-05-27 11:24:26,253 INFO Epoch 61, Itrs 5600/30000, Loss=0.145919
+2023-05-27 11:24:26,334 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter5600_epoch61_miou0.5616.pth
+2023-05-27 11:24:26,334 INFO validation...
+2023-05-27 11:24:50,715 INFO 
+Overall Acc: 0.9218
+Mean Acc: 0.6315
+FreqW Acc: 0.8614
+Mean IoU: 0.5488
+
+2023-05-27 11:25:03,130 INFO 
+Current epoch: 62
+2023-05-27 11:25:59,563 INFO Epoch 62, Itrs 5650/30000, Loss=0.146404
+2023-05-27 11:27:11,900 INFO Epoch 62, Itrs 5700/30000, Loss=0.143107
+2023-05-27 11:27:11,982 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter5700_epoch62_miou0.5616.pth
+2023-05-27 11:27:11,982 INFO validation...
+2023-05-27 11:27:36,111 INFO 
+Overall Acc: 0.9227
+Mean Acc: 0.6462
+FreqW Acc: 0.8632
+Mean IoU: 0.5655
+
+2023-05-27 11:27:36,190 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter5700_epoch62_miou0.5655.pth
+2023-05-27 11:27:36,751 INFO 
+Current epoch: 63
+2023-05-27 11:28:44,327 INFO Epoch 63, Itrs 5750/30000, Loss=0.142509
+2023-05-27 11:29:50,513 INFO 
+Current epoch: 64
+2023-05-27 11:29:57,107 INFO Epoch 64, Itrs 5800/30000, Loss=0.142831
+2023-05-27 11:29:57,189 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter5800_epoch64_miou0.5655.pth
+2023-05-27 11:29:57,190 INFO validation...
+2023-05-27 11:30:21,384 INFO 
+Overall Acc: 0.9233
+Mean Acc: 0.6384
+FreqW Acc: 0.8639
+Mean IoU: 0.5602
+
+2023-05-27 11:31:27,889 INFO Epoch 64, Itrs 5850/30000, Loss=0.142436
+2023-05-27 11:32:23,730 INFO 
+Current epoch: 65
+2023-05-27 11:32:42,291 INFO Epoch 65, Itrs 5900/30000, Loss=0.143967
+2023-05-27 11:32:42,360 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter5900_epoch65_miou0.5655.pth
+2023-05-27 11:32:42,361 INFO validation...
+2023-05-27 11:33:07,639 INFO 
+Overall Acc: 0.9210
+Mean Acc: 0.6449
+FreqW Acc: 0.8618
+Mean IoU: 0.5593
+
+2023-05-27 11:34:17,184 INFO Epoch 65, Itrs 5950/30000, Loss=0.144119
+2023-05-27 11:35:00,835 INFO 
+Current epoch: 66
+2023-05-27 11:35:31,062 INFO Epoch 66, Itrs 6000/30000, Loss=0.145371
+2023-05-27 11:35:31,144 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter6000_epoch66_miou0.5655.pth
+2023-05-27 11:35:31,144 INFO validation...
+2023-05-27 11:35:55,227 INFO 
+Overall Acc: 0.9211
+Mean Acc: 0.6201
+FreqW Acc: 0.8599
+Mean IoU: 0.5433
+
+2023-05-27 11:37:02,978 INFO Epoch 66, Itrs 6050/30000, Loss=0.141769
+2023-05-27 11:37:36,627 INFO 
+Current epoch: 67
+2023-05-27 11:38:18,357 INFO Epoch 67, Itrs 6100/30000, Loss=0.141229
+2023-05-27 11:38:18,441 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter6100_epoch67_miou0.5655.pth
+2023-05-27 11:38:18,441 INFO validation...
+2023-05-27 11:38:42,974 INFO 
+Overall Acc: 0.9221
+Mean Acc: 0.6346
+FreqW Acc: 0.8625
+Mean IoU: 0.5560
+
+2023-05-27 11:39:51,070 INFO Epoch 67, Itrs 6150/30000, Loss=0.140397
+2023-05-27 11:40:11,318 INFO 
+Current epoch: 68
+2023-05-27 11:41:04,806 INFO Epoch 68, Itrs 6200/30000, Loss=0.142933
+2023-05-27 11:41:04,888 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter6200_epoch68_miou0.5655.pth
+2023-05-27 11:41:04,888 INFO validation...
+2023-05-27 11:41:28,408 INFO 
+Overall Acc: 0.9227
+Mean Acc: 0.6587
+FreqW Acc: 0.8643
+Mean IoU: 0.5695
+
+2023-05-27 11:41:28,494 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter6200_epoch68_miou0.5695.pth
+2023-05-27 11:42:37,002 INFO Epoch 68, Itrs 6250/30000, Loss=0.139847
+2023-05-27 11:42:45,737 INFO 
+Current epoch: 69
+2023-05-27 11:43:50,831 INFO Epoch 69, Itrs 6300/30000, Loss=0.139987
+2023-05-27 11:43:50,912 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter6300_epoch69_miou0.5695.pth
+2023-05-27 11:43:50,912 INFO validation...
+2023-05-27 11:44:15,026 INFO 
+Overall Acc: 0.9222
+Mean Acc: 0.6544
+FreqW Acc: 0.8630
+Mean IoU: 0.5650
+
+2023-05-27 11:45:20,328 INFO 
+Current epoch: 70
+2023-05-27 11:45:24,195 INFO Epoch 70, Itrs 6350/30000, Loss=0.142486
+2023-05-27 11:46:38,348 INFO Epoch 70, Itrs 6400/30000, Loss=0.141714
+2023-05-27 11:46:38,430 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter6400_epoch70_miou0.5695.pth
+2023-05-27 11:46:38,430 INFO validation...
+2023-05-27 11:47:03,140 INFO 
+Overall Acc: 0.9208
+Mean Acc: 0.6346
+FreqW Acc: 0.8605
+Mean IoU: 0.5533
+
+2023-05-27 11:47:58,001 INFO 
+Current epoch: 71
+2023-05-27 11:48:13,529 INFO Epoch 71, Itrs 6450/30000, Loss=0.138426
+2023-05-27 11:49:27,130 INFO Epoch 71, Itrs 6500/30000, Loss=0.138507
+2023-05-27 11:49:27,214 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter6500_epoch71_miou0.5695.pth
+2023-05-27 11:49:27,214 INFO validation...
+2023-05-27 11:49:52,221 INFO 
+Overall Acc: 0.9228
+Mean Acc: 0.6312
+FreqW Acc: 0.8636
+Mean IoU: 0.5496
+
+2023-05-27 11:50:34,234 INFO 
+Current epoch: 72
+2023-05-27 11:51:01,084 INFO Epoch 72, Itrs 6550/30000, Loss=0.138412
+2023-05-27 11:52:14,643 INFO Epoch 72, Itrs 6600/30000, Loss=0.139375
+2023-05-27 11:52:14,724 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter6600_epoch72_miou0.5695.pth
+2023-05-27 11:52:14,725 INFO validation...
+2023-05-27 11:52:40,079 INFO 
+Overall Acc: 0.9237
+Mean Acc: 0.6442
+FreqW Acc: 0.8653
+Mean IoU: 0.5610
+
+2023-05-27 11:53:10,467 INFO 
+Current epoch: 73
+2023-05-27 11:53:49,968 INFO Epoch 73, Itrs 6650/30000, Loss=0.136894
+2023-05-27 11:55:03,938 INFO Epoch 73, Itrs 6700/30000, Loss=0.137293
+2023-05-27 11:55:04,022 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter6700_epoch73_miou0.5695.pth
+2023-05-27 11:55:04,022 INFO validation...
+2023-05-27 11:55:29,219 INFO 
+Overall Acc: 0.9225
+Mean Acc: 0.6443
+FreqW Acc: 0.8630
+Mean IoU: 0.5630
+
+2023-05-27 11:55:47,449 INFO 
+Current epoch: 74
+2023-05-27 11:56:38,975 INFO Epoch 74, Itrs 6750/30000, Loss=0.138631
+2023-05-27 11:57:53,610 INFO Epoch 74, Itrs 6800/30000, Loss=0.136927
+2023-05-27 11:57:53,691 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter6800_epoch74_miou0.5695.pth
+2023-05-27 11:57:53,691 INFO validation...
+2023-05-27 11:58:18,119 INFO 
+Overall Acc: 0.9221
+Mean Acc: 0.6435
+FreqW Acc: 0.8625
+Mean IoU: 0.5604
+
+2023-05-27 11:58:24,933 INFO 
+Current epoch: 75
+2023-05-27 11:59:28,147 INFO Epoch 75, Itrs 6850/30000, Loss=0.136264
+2023-05-27 12:00:43,823 INFO Epoch 75, Itrs 6900/30000, Loss=0.138752
+2023-05-27 12:00:43,932 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter6900_epoch75_miou0.5695.pth
+2023-05-27 12:00:43,932 INFO validation...
+2023-05-27 12:01:08,670 INFO 
+Overall Acc: 0.9228
+Mean Acc: 0.6492
+FreqW Acc: 0.8637
+Mean IoU: 0.5646
+
+2023-05-27 12:01:08,771 INFO 
+Current epoch: 76
+2023-05-27 12:02:24,615 INFO Epoch 76, Itrs 6950/30000, Loss=0.139097
+2023-05-27 12:03:28,523 INFO 
+Current epoch: 77
+2023-05-27 12:03:41,655 INFO Epoch 77, Itrs 7000/30000, Loss=0.136407
+2023-05-27 12:03:41,726 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter7000_epoch77_miou0.5695.pth
+2023-05-27 12:03:41,726 INFO validation...
+2023-05-27 12:04:06,231 INFO 
+Overall Acc: 0.9225
+Mean Acc: 0.6505
+FreqW Acc: 0.8639
+Mean IoU: 0.5629
+
+2023-05-27 12:05:16,889 INFO Epoch 77, Itrs 7050/30000, Loss=0.137201
+2023-05-27 12:06:08,158 INFO 
+Current epoch: 78
+2023-05-27 12:06:32,834 INFO Epoch 78, Itrs 7100/30000, Loss=0.134860
+2023-05-27 12:06:32,917 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter7100_epoch78_miou0.5695.pth
+2023-05-27 12:06:32,917 INFO validation...
+2023-05-27 12:06:58,537 INFO 
+Overall Acc: 0.9232
+Mean Acc: 0.6347
+FreqW Acc: 0.8640
+Mean IoU: 0.5570
+
+2023-05-27 12:08:08,471 INFO Epoch 78, Itrs 7150/30000, Loss=0.137011
+2023-05-27 12:08:46,961 INFO 
+Current epoch: 79
+2023-05-27 12:09:24,618 INFO Epoch 79, Itrs 7200/30000, Loss=0.134840
+2023-05-27 12:09:24,703 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter7200_epoch79_miou0.5695.pth
+2023-05-27 12:09:24,704 INFO validation...
+2023-05-27 12:09:49,524 INFO 
+Overall Acc: 0.9212
+Mean Acc: 0.6469
+FreqW Acc: 0.8609
+Mean IoU: 0.5587
+
+2023-05-27 12:10:59,594 INFO Epoch 79, Itrs 7250/30000, Loss=0.135602
+2023-05-27 12:11:27,021 INFO 
+Current epoch: 80
+2023-05-27 12:12:16,743 INFO Epoch 80, Itrs 7300/30000, Loss=0.135343
+2023-05-27 12:12:16,815 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter7300_epoch80_miou0.5695.pth
+2023-05-27 12:12:16,815 INFO validation...
+2023-05-27 12:12:41,439 INFO 
+Overall Acc: 0.9224
+Mean Acc: 0.6503
+FreqW Acc: 0.8628
+Mean IoU: 0.5642
+
+2023-05-27 12:13:51,702 INFO Epoch 80, Itrs 7350/30000, Loss=0.133929
+2023-05-27 12:14:06,663 INFO 
+Current epoch: 81
+2023-05-27 12:15:07,280 INFO Epoch 81, Itrs 7400/30000, Loss=0.135770
+2023-05-27 12:15:07,354 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter7400_epoch81_miou0.5695.pth
+2023-05-27 12:15:07,354 INFO validation...
+2023-05-27 12:15:31,301 INFO 
+Overall Acc: 0.9237
+Mean Acc: 0.6551
+FreqW Acc: 0.8647
+Mean IoU: 0.5720
+
+2023-05-27 12:15:31,375 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter7400_epoch81_miou0.5720.pth
+2023-05-27 12:16:41,411 INFO Epoch 81, Itrs 7450/30000, Loss=0.133955
+2023-05-27 12:16:44,454 INFO 
+Current epoch: 82
+2023-05-27 12:17:58,320 INFO Epoch 82, Itrs 7500/30000, Loss=0.131929
+2023-05-27 12:17:58,403 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter7500_epoch82_miou0.5720.pth
+2023-05-27 12:17:58,403 INFO validation...
+2023-05-27 12:18:22,822 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6614
+FreqW Acc: 0.8662
+Mean IoU: 0.5777
+
+2023-05-27 12:18:22,901 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter7500_epoch82_miou0.5777.pth
+2023-05-27 12:19:22,462 INFO 
+Current epoch: 83
+2023-05-27 12:19:32,400 INFO Epoch 83, Itrs 7550/30000, Loss=0.132664
+2023-05-27 12:20:47,622 INFO Epoch 83, Itrs 7600/30000, Loss=0.131014
+2023-05-27 12:20:47,696 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter7600_epoch83_miou0.5777.pth
+2023-05-27 12:20:47,696 INFO validation...
+2023-05-27 12:21:12,034 INFO 
+Overall Acc: 0.9231
+Mean Acc: 0.6519
+FreqW Acc: 0.8641
+Mean IoU: 0.5710
+
+2023-05-27 12:22:00,554 INFO 
+Current epoch: 84
+2023-05-27 12:22:23,131 INFO Epoch 84, Itrs 7650/30000, Loss=0.132823
+2023-05-27 12:23:37,735 INFO Epoch 84, Itrs 7700/30000, Loss=0.129930
+2023-05-27 12:23:37,822 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter7700_epoch84_miou0.5777.pth
+2023-05-27 12:23:37,822 INFO validation...
+2023-05-27 12:24:02,342 INFO 
+Overall Acc: 0.9233
+Mean Acc: 0.6601
+FreqW Acc: 0.8648
+Mean IoU: 0.5762
+
+2023-05-27 12:24:38,906 INFO 
+Current epoch: 85
+2023-05-27 12:25:12,215 INFO Epoch 85, Itrs 7750/30000, Loss=0.133515
+2023-05-27 12:26:27,857 INFO Epoch 85, Itrs 7800/30000, Loss=0.130810
+2023-05-27 12:26:27,926 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter7800_epoch85_miou0.5777.pth
+2023-05-27 12:26:27,926 INFO validation...
+2023-05-27 12:26:52,133 INFO 
+Overall Acc: 0.9226
+Mean Acc: 0.6442
+FreqW Acc: 0.8636
+Mean IoU: 0.5610
+
+2023-05-27 12:27:16,608 INFO 
+Current epoch: 86
+2023-05-27 12:28:01,828 INFO Epoch 86, Itrs 7850/30000, Loss=0.131852
+2023-05-27 12:29:18,334 INFO Epoch 86, Itrs 7900/30000, Loss=0.132799
+2023-05-27 12:29:18,408 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter7900_epoch86_miou0.5777.pth
+2023-05-27 12:29:18,408 INFO validation...
+2023-05-27 12:29:44,810 INFO 
+Overall Acc: 0.9218
+Mean Acc: 0.6605
+FreqW Acc: 0.8639
+Mean IoU: 0.5594
+
+2023-05-27 12:29:57,917 INFO 
+Current epoch: 87
+2023-05-27 12:30:57,733 INFO Epoch 87, Itrs 7950/30000, Loss=0.133002
+2023-05-27 12:32:13,498 INFO Epoch 87, Itrs 8000/30000, Loss=0.134201
+2023-05-27 12:32:13,585 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter8000_epoch87_miou0.5777.pth
+2023-05-27 12:32:13,585 INFO validation...
+2023-05-27 12:32:37,867 INFO 
+Overall Acc: 0.9196
+Mean Acc: 0.6414
+FreqW Acc: 0.8585
+Mean IoU: 0.5523
+
+2023-05-27 12:32:39,230 INFO 
+Current epoch: 88
+2023-05-27 12:33:52,008 INFO Epoch 88, Itrs 8050/30000, Loss=0.136123
+2023-05-27 12:35:02,943 INFO 
+Current epoch: 89
+2023-05-27 12:35:10,018 INFO Epoch 89, Itrs 8100/30000, Loss=0.132479
+2023-05-27 12:35:10,109 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter8100_epoch89_miou0.5777.pth
+2023-05-27 12:35:10,110 INFO validation...
+2023-05-27 12:35:36,064 INFO 
+Overall Acc: 0.9216
+Mean Acc: 0.6282
+FreqW Acc: 0.8609
+Mean IoU: 0.5496
+
+2023-05-27 12:36:48,088 INFO Epoch 89, Itrs 8150/30000, Loss=0.130435
+2023-05-27 12:37:46,055 INFO 
+Current epoch: 90
+2023-05-27 12:38:04,878 INFO Epoch 90, Itrs 8200/30000, Loss=0.132159
+2023-05-27 12:38:05,072 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter8200_epoch90_miou0.5777.pth
+2023-05-27 12:38:05,072 INFO validation...
+2023-05-27 12:38:30,545 INFO 
+Overall Acc: 0.9225
+Mean Acc: 0.6422
+FreqW Acc: 0.8633
+Mean IoU: 0.5582
+
+2023-05-27 12:39:43,020 INFO Epoch 90, Itrs 8250/30000, Loss=0.130071
+2023-05-27 12:40:29,799 INFO 
+Current epoch: 91
+2023-05-27 12:41:01,593 INFO Epoch 91, Itrs 8300/30000, Loss=0.131762
+2023-05-27 12:41:01,675 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter8300_epoch91_miou0.5777.pth
+2023-05-27 12:41:01,675 INFO validation...
+2023-05-27 12:41:26,864 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6567
+FreqW Acc: 0.8653
+Mean IoU: 0.5699
+
+2023-05-27 12:42:38,467 INFO Epoch 91, Itrs 8350/30000, Loss=0.130746
+2023-05-27 12:43:11,361 INFO 
+Current epoch: 92
+2023-05-27 12:43:55,445 INFO Epoch 92, Itrs 8400/30000, Loss=0.130204
+2023-05-27 12:43:55,531 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter8400_epoch92_miou0.5777.pth
+2023-05-27 12:43:55,531 INFO validation...
+2023-05-27 12:44:20,206 INFO 
+Overall Acc: 0.9230
+Mean Acc: 0.6265
+FreqW Acc: 0.8634
+Mean IoU: 0.5558
+
+2023-05-27 12:45:30,742 INFO Epoch 92, Itrs 8450/30000, Loss=0.127495
+2023-05-27 12:45:53,104 INFO 
+Current epoch: 93
+2023-05-27 12:46:48,726 INFO Epoch 93, Itrs 8500/30000, Loss=0.128216
+2023-05-27 12:46:48,808 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter8500_epoch93_miou0.5777.pth
+2023-05-27 12:46:48,808 INFO validation...
+2023-05-27 12:47:14,498 INFO 
+Overall Acc: 0.9234
+Mean Acc: 0.6493
+FreqW Acc: 0.8651
+Mean IoU: 0.5647
+
+2023-05-27 12:48:24,867 INFO Epoch 93, Itrs 8550/30000, Loss=0.130297
+2023-05-27 12:48:33,912 INFO 
+Current epoch: 94
+2023-05-27 12:49:42,068 INFO Epoch 94, Itrs 8600/30000, Loss=0.126737
+2023-05-27 12:49:42,138 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter8600_epoch94_miou0.5777.pth
+2023-05-27 12:49:42,138 INFO validation...
+2023-05-27 12:50:06,515 INFO 
+Overall Acc: 0.9226
+Mean Acc: 0.6579
+FreqW Acc: 0.8641
+Mean IoU: 0.5702
+
+2023-05-27 12:51:15,823 INFO 
+Current epoch: 95
+2023-05-27 12:51:19,376 INFO Epoch 95, Itrs 8650/30000, Loss=0.130357
+2023-05-27 12:52:36,221 INFO Epoch 95, Itrs 8700/30000, Loss=0.128884
+2023-05-27 12:52:36,304 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter8700_epoch95_miou0.5777.pth
+2023-05-27 12:52:36,305 INFO validation...
+2023-05-27 12:53:01,724 INFO 
+Overall Acc: 0.9212
+Mean Acc: 0.6262
+FreqW Acc: 0.8607
+Mean IoU: 0.5520
+
+2023-05-27 12:53:57,252 INFO 
+Current epoch: 96
+2023-05-27 12:54:13,430 INFO Epoch 96, Itrs 8750/30000, Loss=0.126738
+2023-05-27 12:55:29,717 INFO Epoch 96, Itrs 8800/30000, Loss=0.127190
+2023-05-27 12:55:29,787 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter8800_epoch96_miou0.5777.pth
+2023-05-27 12:55:29,787 INFO validation...
+2023-05-27 12:55:54,820 INFO 
+Overall Acc: 0.9222
+Mean Acc: 0.6423
+FreqW Acc: 0.8619
+Mean IoU: 0.5605
+
+2023-05-27 12:56:38,872 INFO 
+Current epoch: 97
+2023-05-27 12:57:07,049 INFO Epoch 97, Itrs 8850/30000, Loss=0.127217
+2023-05-27 12:58:27,047 INFO Epoch 97, Itrs 8900/30000, Loss=0.128782
+2023-05-27 12:58:27,128 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter8900_epoch97_miou0.5777.pth
+2023-05-27 12:58:27,128 INFO validation...
+2023-05-27 12:58:52,311 INFO 
+Overall Acc: 0.9230
+Mean Acc: 0.6490
+FreqW Acc: 0.8649
+Mean IoU: 0.5634
+
+2023-05-27 12:59:23,721 INFO 
+Current epoch: 98
+2023-05-27 13:00:03,574 INFO Epoch 98, Itrs 8950/30000, Loss=0.126727
+2023-05-27 13:01:20,653 INFO Epoch 98, Itrs 9000/30000, Loss=0.126339
+2023-05-27 13:01:20,740 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter9000_epoch98_miou0.5777.pth
+2023-05-27 13:01:20,740 INFO validation...
+2023-05-27 13:01:46,195 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6591
+FreqW Acc: 0.8667
+Mean IoU: 0.5685
+
+2023-05-27 13:02:06,221 INFO 
+Current epoch: 99
+2023-05-27 13:02:58,788 INFO Epoch 99, Itrs 9050/30000, Loss=0.128881
+2023-05-27 13:04:16,013 INFO Epoch 99, Itrs 9100/30000, Loss=0.123726
+2023-05-27 13:04:16,097 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter9100_epoch99_miou0.5777.pth
+2023-05-27 13:04:16,097 INFO validation...
+2023-05-27 13:04:41,104 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6522
+FreqW Acc: 0.8661
+Mean IoU: 0.5683
+
+2023-05-27 13:04:47,957 INFO 
+Current epoch: 100
+2023-05-27 13:05:53,765 INFO Epoch 100, Itrs 9150/30000, Loss=0.126311
+2023-05-27 13:07:10,250 INFO Epoch 100, Itrs 9200/30000, Loss=0.129010
+2023-05-27 13:07:10,322 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter9200_epoch100_miou0.5777.pth
+2023-05-27 13:07:10,322 INFO validation...
+2023-05-27 13:07:36,095 INFO 
+Overall Acc: 0.9229
+Mean Acc: 0.6546
+FreqW Acc: 0.8641
+Mean IoU: 0.5666
+
+2023-05-27 13:07:36,165 INFO 
+Current epoch: 101
+2023-05-27 13:08:53,636 INFO Epoch 101, Itrs 9250/30000, Loss=0.126580
+2023-05-27 13:09:58,579 INFO 
+Current epoch: 102
+2023-05-27 13:10:11,474 INFO Epoch 102, Itrs 9300/30000, Loss=0.126728
+2023-05-27 13:10:11,557 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter9300_epoch102_miou0.5777.pth
+2023-05-27 13:10:11,557 INFO validation...
+2023-05-27 13:10:36,969 INFO 
+Overall Acc: 0.9193
+Mean Acc: 0.6533
+FreqW Acc: 0.8588
+Mean IoU: 0.5650
+
+2023-05-27 13:11:47,875 INFO Epoch 102, Itrs 9350/30000, Loss=0.126318
+2023-05-27 13:12:41,705 INFO 
+Current epoch: 103
+2023-05-27 13:13:07,954 INFO Epoch 103, Itrs 9400/30000, Loss=0.124928
+2023-05-27 13:13:08,037 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter9400_epoch103_miou0.5777.pth
+2023-05-27 13:13:08,037 INFO validation...
+2023-05-27 13:13:33,912 INFO 
+Overall Acc: 0.9248
+Mean Acc: 0.6474
+FreqW Acc: 0.8668
+Mean IoU: 0.5647
+
+2023-05-27 13:14:44,887 INFO Epoch 103, Itrs 9450/30000, Loss=0.125925
+2023-05-27 13:15:24,686 INFO 
+Current epoch: 104
+2023-05-27 13:16:02,983 INFO Epoch 104, Itrs 9500/30000, Loss=0.125147
+2023-05-27 13:16:03,065 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter9500_epoch104_miou0.5777.pth
+2023-05-27 13:16:03,065 INFO validation...
+2023-05-27 13:16:29,156 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6638
+FreqW Acc: 0.8674
+Mean IoU: 0.5765
+
+2023-05-27 13:17:42,079 INFO Epoch 104, Itrs 9550/30000, Loss=0.125963
+2023-05-27 13:18:08,918 INFO 
+Current epoch: 105
+2023-05-27 13:18:59,099 INFO Epoch 105, Itrs 9600/30000, Loss=0.124436
+2023-05-27 13:18:59,181 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter9600_epoch105_miou0.5777.pth
+2023-05-27 13:18:59,181 INFO validation...
+2023-05-27 13:19:25,395 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6642
+FreqW Acc: 0.8668
+Mean IoU: 0.5779
+
+2023-05-27 13:19:25,522 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter9600_epoch105_miou0.5779.pth
+2023-05-27 13:20:37,861 INFO Epoch 105, Itrs 9650/30000, Loss=0.124158
+2023-05-27 13:20:53,352 INFO 
+Current epoch: 106
+2023-05-27 13:21:55,597 INFO Epoch 106, Itrs 9700/30000, Loss=0.124897
+2023-05-27 13:21:55,682 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter9700_epoch106_miou0.5779.pth
+2023-05-27 13:21:55,682 INFO validation...
+2023-05-27 13:22:19,959 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6432
+FreqW Acc: 0.8654
+Mean IoU: 0.5652
+
+2023-05-27 13:23:30,009 INFO Epoch 106, Itrs 9750/30000, Loss=0.123652
+2023-05-27 13:23:33,023 INFO 
+Current epoch: 107
+2023-05-27 13:24:47,774 INFO Epoch 107, Itrs 9800/30000, Loss=0.123964
+2023-05-27 13:24:47,865 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter9800_epoch107_miou0.5779.pth
+2023-05-27 13:24:47,866 INFO validation...
+2023-05-27 13:25:12,398 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6616
+FreqW Acc: 0.8657
+Mean IoU: 0.5699
+
+2023-05-27 13:26:14,091 INFO 
+Current epoch: 108
+2023-05-27 13:26:24,955 INFO Epoch 108, Itrs 9850/30000, Loss=0.122536
+2023-05-27 13:27:42,468 INFO Epoch 108, Itrs 9900/30000, Loss=0.123162
+2023-05-27 13:27:42,589 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter9900_epoch108_miou0.5779.pth
+2023-05-27 13:27:42,589 INFO validation...
+2023-05-27 13:28:07,860 INFO 
+Overall Acc: 0.9219
+Mean Acc: 0.6480
+FreqW Acc: 0.8622
+Mean IoU: 0.5639
+
+2023-05-27 13:28:58,772 INFO 
+Current epoch: 109
+2023-05-27 13:29:21,080 INFO Epoch 109, Itrs 9950/30000, Loss=0.123731
+2023-05-27 13:30:36,547 INFO Epoch 109, Itrs 10000/30000, Loss=0.125292
+2023-05-27 13:30:36,631 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter10000_epoch109_miou0.5779.pth
+2023-05-27 13:30:36,631 INFO validation...
+2023-05-27 13:31:01,210 INFO 
+Overall Acc: 0.9248
+Mean Acc: 0.6488
+FreqW Acc: 0.8667
+Mean IoU: 0.5689
+
+2023-05-27 13:31:39,512 INFO 
+Current epoch: 110
+2023-05-27 13:32:13,837 INFO Epoch 110, Itrs 10050/30000, Loss=0.123953
+2023-05-27 13:33:31,809 INFO Epoch 110, Itrs 10100/30000, Loss=0.122982
+2023-05-27 13:33:31,893 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter10100_epoch110_miou0.5779.pth
+2023-05-27 13:33:31,893 INFO validation...
+2023-05-27 13:33:57,172 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6549
+FreqW Acc: 0.8661
+Mean IoU: 0.5650
+
+2023-05-27 13:34:23,173 INFO 
+Current epoch: 111
+2023-05-27 13:35:10,735 INFO Epoch 111, Itrs 10150/30000, Loss=0.121569
+2023-05-27 13:36:27,008 INFO Epoch 111, Itrs 10200/30000, Loss=0.122622
+2023-05-27 13:36:27,090 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter10200_epoch111_miou0.5779.pth
+2023-05-27 13:36:27,091 INFO validation...
+2023-05-27 13:36:52,901 INFO 
+Overall Acc: 0.9232
+Mean Acc: 0.6508
+FreqW Acc: 0.8648
+Mean IoU: 0.5624
+
+2023-05-27 13:37:06,376 INFO 
+Current epoch: 112
+2023-05-27 13:38:05,681 INFO Epoch 112, Itrs 10250/30000, Loss=0.122177
+2023-05-27 13:39:22,040 INFO Epoch 112, Itrs 10300/30000, Loss=0.121580
+2023-05-27 13:39:22,147 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter10300_epoch112_miou0.5779.pth
+2023-05-27 13:39:22,147 INFO validation...
+2023-05-27 13:39:47,287 INFO 
+Overall Acc: 0.9246
+Mean Acc: 0.6442
+FreqW Acc: 0.8663
+Mean IoU: 0.5668
+
+2023-05-27 13:39:47,871 INFO 
+Current epoch: 113
+2023-05-27 13:40:58,554 INFO Epoch 113, Itrs 10350/30000, Loss=0.120623
+2023-05-27 13:42:08,342 INFO 
+Current epoch: 114
+2023-05-27 13:42:15,490 INFO Epoch 114, Itrs 10400/30000, Loss=0.119988
+2023-05-27 13:42:15,584 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter10400_epoch114_miou0.5779.pth
+2023-05-27 13:42:15,584 INFO validation...
+2023-05-27 13:42:40,921 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6627
+FreqW Acc: 0.8676
+Mean IoU: 0.5768
+
+2023-05-27 13:43:55,248 INFO Epoch 114, Itrs 10450/30000, Loss=0.118810
+2023-05-27 13:44:51,907 INFO 
+Current epoch: 115
+2023-05-27 13:45:11,418 INFO Epoch 115, Itrs 10500/30000, Loss=0.120700
+2023-05-27 13:45:11,508 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter10500_epoch115_miou0.5779.pth
+2023-05-27 13:45:11,508 INFO validation...
+2023-05-27 13:45:36,234 INFO 
+Overall Acc: 0.9237
+Mean Acc: 0.6352
+FreqW Acc: 0.8639
+Mean IoU: 0.5622
+
+2023-05-27 13:46:48,663 INFO Epoch 115, Itrs 10550/30000, Loss=0.120260
+2023-05-27 13:47:35,973 INFO 
+Current epoch: 116
+2023-05-27 13:48:07,851 INFO Epoch 116, Itrs 10600/30000, Loss=0.119995
+2023-05-27 13:48:07,922 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter10600_epoch116_miou0.5779.pth
+2023-05-27 13:48:07,923 INFO validation...
+2023-05-27 13:48:32,375 INFO 
+Overall Acc: 0.9226
+Mean Acc: 0.6344
+FreqW Acc: 0.8637
+Mean IoU: 0.5547
+
+2023-05-27 13:49:43,529 INFO Epoch 116, Itrs 10650/30000, Loss=0.119171
+2023-05-27 13:50:17,383 INFO 
+Current epoch: 117
+2023-05-27 13:51:00,929 INFO Epoch 117, Itrs 10700/30000, Loss=0.121537
+2023-05-27 13:51:01,013 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter10700_epoch117_miou0.5779.pth
+2023-05-27 13:51:01,013 INFO validation...
+2023-05-27 13:51:27,013 INFO 
+Overall Acc: 0.9234
+Mean Acc: 0.6332
+FreqW Acc: 0.8641
+Mean IoU: 0.5571
+
+2023-05-27 13:52:37,974 INFO Epoch 117, Itrs 10750/30000, Loss=0.120448
+2023-05-27 13:52:59,949 INFO 
+Current epoch: 118
+2023-05-27 13:53:57,257 INFO Epoch 118, Itrs 10800/30000, Loss=0.119999
+2023-05-27 13:53:57,341 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter10800_epoch118_miou0.5779.pth
+2023-05-27 13:53:57,341 INFO validation...
+2023-05-27 13:54:24,032 INFO 
+Overall Acc: 0.9234
+Mean Acc: 0.6568
+FreqW Acc: 0.8648
+Mean IoU: 0.5730
+
+2023-05-27 13:55:37,835 INFO Epoch 118, Itrs 10850/30000, Loss=0.120943
+2023-05-27 13:55:46,942 INFO 
+Current epoch: 119
+2023-05-27 13:56:56,607 INFO Epoch 119, Itrs 10900/30000, Loss=0.120288
+2023-05-27 13:56:56,697 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter10900_epoch119_miou0.5779.pth
+2023-05-27 13:56:56,697 INFO validation...
+2023-05-27 13:57:22,849 INFO 
+Overall Acc: 0.9236
+Mean Acc: 0.6600
+FreqW Acc: 0.8658
+Mean IoU: 0.5708
+
+2023-05-27 13:58:30,673 INFO 
+Current epoch: 120
+2023-05-27 13:58:34,333 INFO Epoch 120, Itrs 10950/30000, Loss=0.118585
+2023-05-27 13:59:50,666 INFO Epoch 120, Itrs 11000/30000, Loss=0.117595
+2023-05-27 13:59:50,753 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter11000_epoch120_miou0.5779.pth
+2023-05-27 13:59:50,753 INFO validation...
+2023-05-27 14:00:16,773 INFO 
+Overall Acc: 0.9231
+Mean Acc: 0.6600
+FreqW Acc: 0.8652
+Mean IoU: 0.5684
+
+2023-05-27 14:01:13,772 INFO 
+Current epoch: 121
+2023-05-27 14:01:29,394 INFO Epoch 121, Itrs 11050/30000, Loss=0.119782
+2023-05-27 14:02:47,516 INFO Epoch 121, Itrs 11100/30000, Loss=0.119125
+2023-05-27 14:02:47,604 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter11100_epoch121_miou0.5779.pth
+2023-05-27 14:02:47,604 INFO validation...
+2023-05-27 14:03:13,858 INFO 
+Overall Acc: 0.9225
+Mean Acc: 0.6440
+FreqW Acc: 0.8625
+Mean IoU: 0.5628
+
+2023-05-27 14:03:58,063 INFO 
+Current epoch: 122
+2023-05-27 14:04:27,915 INFO Epoch 122, Itrs 11150/30000, Loss=0.119944
+2023-05-27 14:05:45,670 INFO Epoch 122, Itrs 11200/30000, Loss=0.119412
+2023-05-27 14:05:45,756 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter11200_epoch122_miou0.5779.pth
+2023-05-27 14:05:45,756 INFO validation...
+2023-05-27 14:06:10,852 INFO 
+Overall Acc: 0.9246
+Mean Acc: 0.6510
+FreqW Acc: 0.8672
+Mean IoU: 0.5669
+
+2023-05-27 14:06:42,320 INFO 
+Current epoch: 123
+2023-05-27 14:07:23,100 INFO Epoch 123, Itrs 11250/30000, Loss=0.119302
+2023-05-27 14:08:38,677 INFO Epoch 123, Itrs 11300/30000, Loss=0.119026
+2023-05-27 14:08:38,749 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter11300_epoch123_miou0.5779.pth
+2023-05-27 14:08:38,749 INFO validation...
+2023-05-27 14:09:04,543 INFO 
+Overall Acc: 0.9236
+Mean Acc: 0.6427
+FreqW Acc: 0.8640
+Mean IoU: 0.5670
+
+2023-05-27 14:09:23,938 INFO 
+Current epoch: 124
+2023-05-27 14:10:16,504 INFO Epoch 124, Itrs 11350/30000, Loss=0.119353
+2023-05-27 14:11:33,272 INFO Epoch 124, Itrs 11400/30000, Loss=0.119498
+2023-05-27 14:11:33,343 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter11400_epoch124_miou0.5779.pth
+2023-05-27 14:11:33,343 INFO validation...
+2023-05-27 14:11:58,376 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6558
+FreqW Acc: 0.8662
+Mean IoU: 0.5732
+
+2023-05-27 14:12:05,322 INFO 
+Current epoch: 125
+2023-05-27 14:13:09,257 INFO Epoch 125, Itrs 11450/30000, Loss=0.116006
+2023-05-27 14:14:25,674 INFO Epoch 125, Itrs 11500/30000, Loss=0.120031
+2023-05-27 14:14:25,745 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter11500_epoch125_miou0.5779.pth
+2023-05-27 14:14:25,745 INFO validation...
+2023-05-27 14:14:50,381 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6540
+FreqW Acc: 0.8655
+Mean IoU: 0.5713
+
+2023-05-27 14:14:50,479 INFO 
+Current epoch: 126
+2023-05-27 14:16:10,400 INFO Epoch 126, Itrs 11550/30000, Loss=0.118259
+2023-05-27 14:17:13,964 INFO 
+Current epoch: 127
+2023-05-27 14:17:27,720 INFO Epoch 127, Itrs 11600/30000, Loss=0.119348
+2023-05-27 14:17:27,806 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter11600_epoch127_miou0.5779.pth
+2023-05-27 14:17:27,806 INFO validation...
+2023-05-27 14:17:53,029 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6543
+FreqW Acc: 0.8657
+Mean IoU: 0.5702
+
+2023-05-27 14:19:05,083 INFO Epoch 127, Itrs 11650/30000, Loss=0.117612
+2023-05-27 14:19:56,768 INFO 
+Current epoch: 128
+2023-05-27 14:20:21,757 INFO Epoch 128, Itrs 11700/30000, Loss=0.118788
+2023-05-27 14:20:21,828 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter11700_epoch128_miou0.5779.pth
+2023-05-27 14:20:21,828 INFO validation...
+2023-05-27 14:20:47,220 INFO 
+Overall Acc: 0.9236
+Mean Acc: 0.6524
+FreqW Acc: 0.8656
+Mean IoU: 0.5651
+
+2023-05-27 14:21:58,638 INFO Epoch 128, Itrs 11750/30000, Loss=0.119013
+2023-05-27 14:22:38,258 INFO 
+Current epoch: 129
+2023-05-27 14:23:16,948 INFO Epoch 129, Itrs 11800/30000, Loss=0.116429
+2023-05-27 14:23:17,033 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter11800_epoch129_miou0.5779.pth
+2023-05-27 14:23:17,033 INFO validation...
+2023-05-27 14:23:42,825 INFO 
+Overall Acc: 0.9236
+Mean Acc: 0.6492
+FreqW Acc: 0.8663
+Mean IoU: 0.5633
+
+2023-05-27 14:24:55,511 INFO Epoch 129, Itrs 11850/30000, Loss=0.117841
+2023-05-27 14:25:22,786 INFO 
+Current epoch: 130
+2023-05-27 14:26:11,361 INFO Epoch 130, Itrs 11900/30000, Loss=0.117832
+2023-05-27 14:26:11,450 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter11900_epoch130_miou0.5779.pth
+2023-05-27 14:26:11,450 INFO validation...
+2023-05-27 14:26:36,865 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6581
+FreqW Acc: 0.8667
+Mean IoU: 0.5726
+
+2023-05-27 14:27:45,929 INFO Epoch 130, Itrs 11950/30000, Loss=0.117454
+2023-05-27 14:28:01,087 INFO 
+Current epoch: 131
+2023-05-27 14:29:02,618 INFO Epoch 131, Itrs 12000/30000, Loss=0.117300
+2023-05-27 14:29:02,701 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter12000_epoch131_miou0.5779.pth
+2023-05-27 14:29:02,702 INFO validation...
+2023-05-27 14:29:28,199 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6506
+FreqW Acc: 0.8663
+Mean IoU: 0.5668
+
+2023-05-27 14:30:39,754 INFO Epoch 131, Itrs 12050/30000, Loss=0.118127
+2023-05-27 14:30:42,820 INFO 
+Current epoch: 132
+2023-05-27 14:31:56,655 INFO Epoch 132, Itrs 12100/30000, Loss=0.117460
+2023-05-27 14:31:56,745 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter12100_epoch132_miou0.5779.pth
+2023-05-27 14:31:56,745 INFO validation...
+2023-05-27 14:32:21,878 INFO 
+Overall Acc: 0.9234
+Mean Acc: 0.6483
+FreqW Acc: 0.8646
+Mean IoU: 0.5654
+
+2023-05-27 14:33:23,463 INFO 
+Current epoch: 133
+2023-05-27 14:33:34,335 INFO Epoch 133, Itrs 12150/30000, Loss=0.116116
+2023-05-27 14:34:49,480 INFO Epoch 133, Itrs 12200/30000, Loss=0.114647
+2023-05-27 14:34:49,552 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter12200_epoch133_miou0.5779.pth
+2023-05-27 14:34:49,553 INFO validation...
+2023-05-27 14:35:14,170 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6572
+FreqW Acc: 0.8671
+Mean IoU: 0.5739
+
+2023-05-27 14:36:03,833 INFO 
+Current epoch: 134
+2023-05-27 14:36:25,659 INFO Epoch 134, Itrs 12250/30000, Loss=0.117699
+2023-05-27 14:37:42,547 INFO Epoch 134, Itrs 12300/30000, Loss=0.116257
+2023-05-27 14:37:42,621 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter12300_epoch134_miou0.5779.pth
+2023-05-27 14:37:42,621 INFO validation...
+2023-05-27 14:38:07,545 INFO 
+Overall Acc: 0.9219
+Mean Acc: 0.6469
+FreqW Acc: 0.8632
+Mean IoU: 0.5609
+
+2023-05-27 14:38:44,635 INFO 
+Current epoch: 135
+2023-05-27 14:39:18,276 INFO Epoch 135, Itrs 12350/30000, Loss=0.116185
+2023-05-27 14:40:34,584 INFO Epoch 135, Itrs 12400/30000, Loss=0.115022
+2023-05-27 14:40:34,696 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter12400_epoch135_miou0.5779.pth
+2023-05-27 14:40:34,696 INFO validation...
+2023-05-27 14:40:59,658 INFO 
+Overall Acc: 0.9233
+Mean Acc: 0.6565
+FreqW Acc: 0.8640
+Mean IoU: 0.5732
+
+2023-05-27 14:41:25,890 INFO 
+Current epoch: 136
+2023-05-27 14:42:12,776 INFO Epoch 136, Itrs 12450/30000, Loss=0.113891
+2023-05-27 14:43:29,388 INFO Epoch 136, Itrs 12500/30000, Loss=0.115135
+2023-05-27 14:43:29,474 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter12500_epoch136_miou0.5779.pth
+2023-05-27 14:43:29,474 INFO validation...
+2023-05-27 14:43:55,165 INFO 
+Overall Acc: 0.9246
+Mean Acc: 0.6627
+FreqW Acc: 0.8674
+Mean IoU: 0.5708
+
+2023-05-27 14:44:08,250 INFO 
+Current epoch: 137
+2023-05-27 14:45:06,030 INFO Epoch 137, Itrs 12550/30000, Loss=0.116659
+2023-05-27 14:46:22,350 INFO Epoch 137, Itrs 12600/30000, Loss=0.115255
+2023-05-27 14:46:22,433 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter12600_epoch137_miou0.5779.pth
+2023-05-27 14:46:22,433 INFO validation...
+2023-05-27 14:46:48,945 INFO 
+Overall Acc: 0.9223
+Mean Acc: 0.6397
+FreqW Acc: 0.8628
+Mean IoU: 0.5580
+
+2023-05-27 14:46:49,524 INFO 
+Current epoch: 138
+2023-05-27 14:48:01,862 INFO Epoch 138, Itrs 12650/30000, Loss=0.114577
+2023-05-27 14:49:12,884 INFO 
+Current epoch: 139
+2023-05-27 14:49:20,463 INFO Epoch 139, Itrs 12700/30000, Loss=0.116484
+2023-05-27 14:49:20,548 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter12700_epoch139_miou0.5779.pth
+2023-05-27 14:49:20,548 INFO validation...
+2023-05-27 14:49:46,694 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6596
+FreqW Acc: 0.8663
+Mean IoU: 0.5719
+
+2023-05-27 14:50:57,820 INFO Epoch 139, Itrs 12750/30000, Loss=0.113902
+2023-05-27 14:51:55,977 INFO 
+Current epoch: 140
+2023-05-27 14:52:15,487 INFO Epoch 140, Itrs 12800/30000, Loss=0.114471
+2023-05-27 14:52:15,558 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter12800_epoch140_miou0.5779.pth
+2023-05-27 14:52:15,558 INFO validation...
+2023-05-27 14:52:43,192 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6564
+FreqW Acc: 0.8671
+Mean IoU: 0.5703
+
+2023-05-27 14:53:54,195 INFO Epoch 140, Itrs 12850/30000, Loss=0.113869
+2023-05-27 14:54:40,896 INFO 
+Current epoch: 141
+2023-05-27 14:55:12,987 INFO Epoch 141, Itrs 12900/30000, Loss=0.116446
+2023-05-27 14:55:13,068 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter12900_epoch141_miou0.5779.pth
+2023-05-27 14:55:13,069 INFO validation...
+2023-05-27 14:55:37,740 INFO 
+Overall Acc: 0.9247
+Mean Acc: 0.6467
+FreqW Acc: 0.8664
+Mean IoU: 0.5685
+
+2023-05-27 14:56:47,463 INFO Epoch 141, Itrs 12950/30000, Loss=0.112797
+2023-05-27 14:57:22,296 INFO 
+Current epoch: 142
+2023-05-27 14:58:06,368 INFO Epoch 142, Itrs 13000/30000, Loss=0.114992
+2023-05-27 14:58:06,458 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter13000_epoch142_miou0.5779.pth
+2023-05-27 14:58:06,458 INFO validation...
+2023-05-27 14:58:33,393 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6553
+FreqW Acc: 0.8661
+Mean IoU: 0.5715
+
+2023-05-27 14:59:44,267 INFO Epoch 142, Itrs 13050/30000, Loss=0.115625
+2023-05-27 15:00:06,890 INFO 
+Current epoch: 143
+2023-05-27 15:01:03,014 INFO Epoch 143, Itrs 13100/30000, Loss=0.114443
+2023-05-27 15:01:03,098 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter13100_epoch143_miou0.5779.pth
+2023-05-27 15:01:03,098 INFO validation...
+2023-05-27 15:01:30,212 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6557
+FreqW Acc: 0.8668
+Mean IoU: 0.5730
+
+2023-05-27 15:02:40,595 INFO Epoch 143, Itrs 13150/30000, Loss=0.112689
+2023-05-27 15:02:49,631 INFO 
+Current epoch: 144
+2023-05-27 15:03:58,067 INFO Epoch 144, Itrs 13200/30000, Loss=0.114093
+2023-05-27 15:03:58,153 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter13200_epoch144_miou0.5779.pth
+2023-05-27 15:03:58,153 INFO validation...
+2023-05-27 15:04:22,798 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6441
+FreqW Acc: 0.8653
+Mean IoU: 0.5656
+
+2023-05-27 15:05:31,350 INFO 
+Current epoch: 145
+2023-05-27 15:05:35,301 INFO Epoch 145, Itrs 13250/30000, Loss=0.113247
+2023-05-27 15:06:52,724 INFO Epoch 145, Itrs 13300/30000, Loss=0.112973
+2023-05-27 15:06:52,807 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter13300_epoch145_miou0.5779.pth
+2023-05-27 15:06:52,807 INFO validation...
+2023-05-27 15:07:18,827 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6672
+FreqW Acc: 0.8665
+Mean IoU: 0.5741
+
+2023-05-27 15:08:15,306 INFO 
+Current epoch: 146
+2023-05-27 15:08:31,118 INFO Epoch 146, Itrs 13350/30000, Loss=0.113690
+2023-05-27 15:09:49,036 INFO Epoch 146, Itrs 13400/30000, Loss=0.113918
+2023-05-27 15:09:49,111 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter13400_epoch146_miou0.5779.pth
+2023-05-27 15:09:49,111 INFO validation...
+2023-05-27 15:10:15,383 INFO 
+Overall Acc: 0.9233
+Mean Acc: 0.6527
+FreqW Acc: 0.8646
+Mean IoU: 0.5676
+
+2023-05-27 15:10:59,553 INFO 
+Current epoch: 147
+2023-05-27 15:11:28,993 INFO Epoch 147, Itrs 13450/30000, Loss=0.114101
+2023-05-27 15:12:45,237 INFO Epoch 147, Itrs 13500/30000, Loss=0.112912
+2023-05-27 15:12:45,323 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter13500_epoch147_miou0.5779.pth
+2023-05-27 15:12:45,323 INFO validation...
+2023-05-27 15:13:10,505 INFO 
+Overall Acc: 0.9234
+Mean Acc: 0.6482
+FreqW Acc: 0.8645
+Mean IoU: 0.5673
+
+2023-05-27 15:13:41,976 INFO 
+Current epoch: 148
+2023-05-27 15:14:22,609 INFO Epoch 148, Itrs 13550/30000, Loss=0.111809
+2023-05-27 15:15:38,428 INFO Epoch 148, Itrs 13600/30000, Loss=0.114643
+2023-05-27 15:15:38,509 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter13600_epoch148_miou0.5779.pth
+2023-05-27 15:15:38,510 INFO validation...
+2023-05-27 15:16:04,060 INFO 
+Overall Acc: 0.9237
+Mean Acc: 0.6654
+FreqW Acc: 0.8660
+Mean IoU: 0.5743
+
+2023-05-27 15:16:23,082 INFO 
+Current epoch: 149
+2023-05-27 15:17:15,412 INFO Epoch 149, Itrs 13650/30000, Loss=0.112908
+2023-05-27 15:18:31,194 INFO Epoch 149, Itrs 13700/30000, Loss=0.113058
+2023-05-27 15:18:31,277 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter13700_epoch149_miou0.5779.pth
+2023-05-27 15:18:31,277 INFO validation...
+2023-05-27 15:18:56,769 INFO 
+Overall Acc: 0.9247
+Mean Acc: 0.6672
+FreqW Acc: 0.8673
+Mean IoU: 0.5788
+
+2023-05-27 15:18:56,843 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter13700_epoch149_miou0.5788.pth
+2023-05-27 15:19:03,873 INFO 
+Current epoch: 150
+2023-05-27 15:20:09,510 INFO Epoch 150, Itrs 13750/30000, Loss=0.114034
+2023-05-27 15:21:25,370 INFO Epoch 150, Itrs 13800/30000, Loss=0.112466
+2023-05-27 15:21:25,455 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter13800_epoch150_miou0.5788.pth
+2023-05-27 15:21:25,455 INFO validation...
+2023-05-27 15:21:51,966 INFO 
+Overall Acc: 0.9247
+Mean Acc: 0.6639
+FreqW Acc: 0.8669
+Mean IoU: 0.5718
+
+2023-05-27 15:21:52,076 INFO 
+Current epoch: 151
+2023-05-27 15:23:09,329 INFO Epoch 151, Itrs 13850/30000, Loss=0.113688
+2023-05-27 15:24:12,159 INFO 
+Current epoch: 152
+2023-05-27 15:24:25,524 INFO Epoch 152, Itrs 13900/30000, Loss=0.111564
+2023-05-27 15:24:25,607 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter13900_epoch152_miou0.5788.pth
+2023-05-27 15:24:25,607 INFO validation...
+2023-05-27 15:24:51,408 INFO 
+Overall Acc: 0.9231
+Mean Acc: 0.6447
+FreqW Acc: 0.8641
+Mean IoU: 0.5645
+
+2023-05-27 15:26:01,507 INFO Epoch 152, Itrs 13950/30000, Loss=0.111318
+2023-05-27 15:26:53,020 INFO 
+Current epoch: 153
+2023-05-27 15:27:18,671 INFO Epoch 153, Itrs 14000/30000, Loss=0.114223
+2023-05-27 15:27:18,753 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter14000_epoch153_miou0.5788.pth
+2023-05-27 15:27:18,753 INFO validation...
+2023-05-27 15:27:43,715 INFO 
+Overall Acc: 0.9234
+Mean Acc: 0.6741
+FreqW Acc: 0.8659
+Mean IoU: 0.5770
+
+2023-05-27 15:28:55,973 INFO Epoch 153, Itrs 14050/30000, Loss=0.110207
+2023-05-27 15:29:35,658 INFO 
+Current epoch: 154
+2023-05-27 15:30:13,148 INFO Epoch 154, Itrs 14100/30000, Loss=0.111454
+2023-05-27 15:30:13,233 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter14100_epoch154_miou0.5788.pth
+2023-05-27 15:30:13,233 INFO validation...
+2023-05-27 15:30:37,919 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6592
+FreqW Acc: 0.8658
+Mean IoU: 0.5755
+
+2023-05-27 15:31:48,526 INFO Epoch 154, Itrs 14150/30000, Loss=0.112605
+2023-05-27 15:32:16,653 INFO 
+Current epoch: 155
+2023-05-27 15:33:05,752 INFO Epoch 155, Itrs 14200/30000, Loss=0.110672
+2023-05-27 15:33:05,834 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter14200_epoch155_miou0.5788.pth
+2023-05-27 15:33:05,834 INFO validation...
+2023-05-27 15:33:31,684 INFO 
+Overall Acc: 0.9236
+Mean Acc: 0.6550
+FreqW Acc: 0.8649
+Mean IoU: 0.5745
+
+2023-05-27 15:34:42,389 INFO Epoch 155, Itrs 14250/30000, Loss=0.113673
+2023-05-27 15:34:57,417 INFO 
+Current epoch: 156
+2023-05-27 15:36:00,561 INFO Epoch 156, Itrs 14300/30000, Loss=0.112886
+2023-05-27 15:36:00,648 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter14300_epoch156_miou0.5788.pth
+2023-05-27 15:36:00,648 INFO validation...
+2023-05-27 15:36:25,766 INFO 
+Overall Acc: 0.9248
+Mean Acc: 0.6588
+FreqW Acc: 0.8671
+Mean IoU: 0.5754
+
+2023-05-27 15:37:36,752 INFO Epoch 156, Itrs 14350/30000, Loss=0.110511
+2023-05-27 15:37:39,829 INFO 
+Current epoch: 157
+2023-05-27 15:38:53,583 INFO Epoch 157, Itrs 14400/30000, Loss=0.112282
+2023-05-27 15:38:53,666 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter14400_epoch157_miou0.5788.pth
+2023-05-27 15:38:53,666 INFO validation...
+2023-05-27 15:39:19,893 INFO 
+Overall Acc: 0.9237
+Mean Acc: 0.6580
+FreqW Acc: 0.8659
+Mean IoU: 0.5710
+
+2023-05-27 15:40:21,489 INFO 
+Current epoch: 158
+2023-05-27 15:40:31,602 INFO Epoch 158, Itrs 14450/30000, Loss=0.109645
+2023-05-27 15:41:48,139 INFO Epoch 158, Itrs 14500/30000, Loss=0.109829
+2023-05-27 15:41:48,259 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter14500_epoch158_miou0.5788.pth
+2023-05-27 15:41:48,259 INFO validation...
+2023-05-27 15:42:13,649 INFO 
+Overall Acc: 0.9230
+Mean Acc: 0.6468
+FreqW Acc: 0.8643
+Mean IoU: 0.5665
+
+2023-05-27 15:43:03,686 INFO 
+Current epoch: 159
+2023-05-27 15:43:26,333 INFO Epoch 159, Itrs 14550/30000, Loss=0.112323
+2023-05-27 15:44:42,682 INFO Epoch 159, Itrs 14600/30000, Loss=0.110163
+2023-05-27 15:44:42,754 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter14600_epoch159_miou0.5788.pth
+2023-05-27 15:44:42,754 INFO validation...
+2023-05-27 15:45:07,418 INFO 
+Overall Acc: 0.9247
+Mean Acc: 0.6673
+FreqW Acc: 0.8675
+Mean IoU: 0.5786
+
+2023-05-27 15:45:45,085 INFO 
+Current epoch: 160
+2023-05-27 15:46:19,288 INFO Epoch 160, Itrs 14650/30000, Loss=0.112205
+2023-05-27 15:47:37,164 INFO Epoch 160, Itrs 14700/30000, Loss=0.109335
+2023-05-27 15:47:37,247 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter14700_epoch160_miou0.5788.pth
+2023-05-27 15:47:37,248 INFO validation...
+2023-05-27 15:48:02,452 INFO 
+Overall Acc: 0.9249
+Mean Acc: 0.6586
+FreqW Acc: 0.8670
+Mean IoU: 0.5740
+
+2023-05-27 15:48:26,927 INFO 
+Current epoch: 161
+2023-05-27 15:49:13,712 INFO Epoch 161, Itrs 14750/30000, Loss=0.109703
+2023-05-27 15:50:29,261 INFO Epoch 161, Itrs 14800/30000, Loss=0.110634
+2023-05-27 15:50:29,344 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter14800_epoch161_miou0.5788.pth
+2023-05-27 15:50:29,344 INFO validation...
+2023-05-27 15:50:54,425 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6591
+FreqW Acc: 0.8664
+Mean IoU: 0.5755
+
+2023-05-27 15:51:07,064 INFO 
+Current epoch: 162
+2023-05-27 15:52:05,417 INFO Epoch 162, Itrs 14850/30000, Loss=0.110403
+2023-05-27 15:53:22,801 INFO Epoch 162, Itrs 14900/30000, Loss=0.110506
+2023-05-27 15:53:22,890 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter14900_epoch162_miou0.5788.pth
+2023-05-27 15:53:22,890 INFO validation...
+2023-05-27 15:53:48,567 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6680
+FreqW Acc: 0.8668
+Mean IoU: 0.5779
+
+2023-05-27 15:53:49,145 INFO 
+Current epoch: 163
+2023-05-27 15:55:00,495 INFO Epoch 163, Itrs 14950/30000, Loss=0.109801
+2023-05-27 15:56:10,756 INFO 
+Current epoch: 164
+2023-05-27 15:56:17,836 INFO Epoch 164, Itrs 15000/30000, Loss=0.109981
+2023-05-27 15:56:17,919 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter15000_epoch164_miou0.5788.pth
+2023-05-27 15:56:17,919 INFO validation...
+2023-05-27 15:56:43,476 INFO 
+Overall Acc: 0.9249
+Mean Acc: 0.6592
+FreqW Acc: 0.8666
+Mean IoU: 0.5764
+
+2023-05-27 15:57:58,192 INFO Epoch 164, Itrs 15050/30000, Loss=0.108979
+2023-05-27 15:58:56,561 INFO 
+Current epoch: 165
+2023-05-27 15:59:16,984 INFO Epoch 165, Itrs 15100/30000, Loss=0.109432
+2023-05-27 15:59:17,075 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter15100_epoch165_miou0.5788.pth
+2023-05-27 15:59:17,075 INFO validation...
+2023-05-27 15:59:42,689 INFO 
+Overall Acc: 0.9226
+Mean Acc: 0.6652
+FreqW Acc: 0.8640
+Mean IoU: 0.5789
+
+2023-05-27 15:59:42,781 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter15100_epoch165_miou0.5789.pth
+2023-05-27 16:00:54,547 INFO Epoch 165, Itrs 15150/30000, Loss=0.109018
+2023-05-27 16:01:39,815 INFO 
+Current epoch: 166
+2023-05-27 16:02:10,879 INFO Epoch 166, Itrs 15200/30000, Loss=0.109349
+2023-05-27 16:02:10,961 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter15200_epoch166_miou0.5789.pth
+2023-05-27 16:02:10,961 INFO validation...
+2023-05-27 16:02:36,761 INFO 
+Overall Acc: 0.9249
+Mean Acc: 0.6696
+FreqW Acc: 0.8671
+Mean IoU: 0.5810
+
+2023-05-27 16:02:36,881 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter15200_epoch166_miou0.5810.pth
+2023-05-27 16:03:47,236 INFO Epoch 166, Itrs 15250/30000, Loss=0.108975
+2023-05-27 16:04:20,688 INFO 
+Current epoch: 167
+2023-05-27 16:05:03,955 INFO Epoch 167, Itrs 15300/30000, Loss=0.110055
+2023-05-27 16:05:04,413 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter15300_epoch167_miou0.5810.pth
+2023-05-27 16:05:04,413 INFO validation...
+2023-05-27 16:05:30,083 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6623
+FreqW Acc: 0.8661
+Mean IoU: 0.5762
+
+2023-05-27 16:06:42,466 INFO Epoch 167, Itrs 15350/30000, Loss=0.110724
+2023-05-27 16:07:03,396 INFO 
+Current epoch: 168
+2023-05-27 16:07:58,749 INFO Epoch 168, Itrs 15400/30000, Loss=0.109065
+2023-05-27 16:07:58,824 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter15400_epoch168_miou0.5810.pth
+2023-05-27 16:07:58,824 INFO validation...
+2023-05-27 16:08:24,284 INFO 
+Overall Acc: 0.9233
+Mean Acc: 0.6591
+FreqW Acc: 0.8651
+Mean IoU: 0.5704
+
+2023-05-27 16:09:35,698 INFO Epoch 168, Itrs 15450/30000, Loss=0.109500
+2023-05-27 16:09:44,732 INFO 
+Current epoch: 169
+2023-05-27 16:10:53,138 INFO Epoch 169, Itrs 15500/30000, Loss=0.108589
+2023-05-27 16:10:53,220 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter15500_epoch169_miou0.5810.pth
+2023-05-27 16:10:53,221 INFO validation...
+2023-05-27 16:11:18,217 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6604
+FreqW Acc: 0.8669
+Mean IoU: 0.5749
+
+2023-05-27 16:12:27,963 INFO 
+Current epoch: 170
+2023-05-27 16:12:31,832 INFO Epoch 170, Itrs 15550/30000, Loss=0.108172
+2023-05-27 16:13:47,862 INFO Epoch 170, Itrs 15600/30000, Loss=0.108548
+2023-05-27 16:13:47,951 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter15600_epoch170_miou0.5810.pth
+2023-05-27 16:13:47,951 INFO validation...
+2023-05-27 16:14:13,711 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6569
+FreqW Acc: 0.8666
+Mean IoU: 0.5719
+
+2023-05-27 16:15:10,497 INFO 
+Current epoch: 171
+2023-05-27 16:15:26,603 INFO Epoch 171, Itrs 15650/30000, Loss=0.109544
+2023-05-27 16:16:42,213 INFO Epoch 171, Itrs 15700/30000, Loss=0.107739
+2023-05-27 16:16:42,296 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter15700_epoch171_miou0.5810.pth
+2023-05-27 16:16:42,296 INFO validation...
+2023-05-27 16:17:07,388 INFO 
+Overall Acc: 0.9236
+Mean Acc: 0.6622
+FreqW Acc: 0.8656
+Mean IoU: 0.5713
+
+2023-05-27 16:17:50,825 INFO 
+Current epoch: 172
+2023-05-27 16:18:21,166 INFO Epoch 172, Itrs 15750/30000, Loss=0.108760
+2023-05-27 16:19:38,186 INFO Epoch 172, Itrs 15800/30000, Loss=0.109117
+2023-05-27 16:19:38,268 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter15800_epoch172_miou0.5810.pth
+2023-05-27 16:19:38,268 INFO validation...
+2023-05-27 16:20:03,632 INFO 
+Overall Acc: 0.9236
+Mean Acc: 0.6387
+FreqW Acc: 0.8649
+Mean IoU: 0.5595
+
+2023-05-27 16:20:34,409 INFO 
+Current epoch: 173
+2023-05-27 16:21:14,981 INFO Epoch 173, Itrs 15850/30000, Loss=0.107928
+2023-05-27 16:22:30,651 INFO Epoch 173, Itrs 15900/30000, Loss=0.108223
+2023-05-27 16:22:30,722 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter15900_epoch173_miou0.5810.pth
+2023-05-27 16:22:30,722 INFO validation...
+2023-05-27 16:22:55,650 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6562
+FreqW Acc: 0.8658
+Mean IoU: 0.5746
+
+2023-05-27 16:23:14,821 INFO 
+Current epoch: 174
+2023-05-27 16:24:08,618 INFO Epoch 174, Itrs 15950/30000, Loss=0.106491
+2023-05-27 16:25:24,254 INFO Epoch 174, Itrs 16000/30000, Loss=0.109434
+2023-05-27 16:25:24,344 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter16000_epoch174_miou0.5810.pth
+2023-05-27 16:25:24,345 INFO validation...
+2023-05-27 16:25:51,242 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6679
+FreqW Acc: 0.8674
+Mean IoU: 0.5786
+
+2023-05-27 16:25:58,982 INFO 
+Current epoch: 175
+2023-05-27 16:27:03,886 INFO Epoch 175, Itrs 16050/30000, Loss=0.106016
+2023-05-27 16:28:19,150 INFO Epoch 175, Itrs 16100/30000, Loss=0.107431
+2023-05-27 16:28:19,232 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter16100_epoch175_miou0.5810.pth
+2023-05-27 16:28:19,232 INFO validation...
+2023-05-27 16:28:44,601 INFO 
+Overall Acc: 0.9237
+Mean Acc: 0.6599
+FreqW Acc: 0.8655
+Mean IoU: 0.5719
+
+2023-05-27 16:28:44,705 INFO 
+Current epoch: 176
+2023-05-27 16:30:02,280 INFO Epoch 176, Itrs 16150/30000, Loss=0.108243
+2023-05-27 16:31:07,335 INFO 
+Current epoch: 177
+2023-05-27 16:31:20,193 INFO Epoch 177, Itrs 16200/30000, Loss=0.108434
+2023-05-27 16:31:20,262 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter16200_epoch177_miou0.5810.pth
+2023-05-27 16:31:20,262 INFO validation...
+2023-05-27 16:31:45,297 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6564
+FreqW Acc: 0.8662
+Mean IoU: 0.5680
+
+2023-05-27 16:32:56,889 INFO Epoch 177, Itrs 16250/30000, Loss=0.106828
+2023-05-27 16:33:48,404 INFO 
+Current epoch: 178
+2023-05-27 16:34:14,078 INFO Epoch 178, Itrs 16300/30000, Loss=0.107394
+2023-05-27 16:34:14,161 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter16300_epoch178_miou0.5810.pth
+2023-05-27 16:34:14,161 INFO validation...
+2023-05-27 16:34:40,628 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6607
+FreqW Acc: 0.8665
+Mean IoU: 0.5735
+
+2023-05-27 16:35:52,671 INFO Epoch 178, Itrs 16350/30000, Loss=0.107873
+2023-05-27 16:36:32,131 INFO 
+Current epoch: 179
+2023-05-27 16:37:08,895 INFO Epoch 179, Itrs 16400/30000, Loss=0.106051
+2023-05-27 16:37:08,985 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter16400_epoch179_miou0.5810.pth
+2023-05-27 16:37:08,985 INFO validation...
+2023-05-27 16:37:34,661 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6540
+FreqW Acc: 0.8662
+Mean IoU: 0.5690
+
+2023-05-27 16:38:45,037 INFO Epoch 179, Itrs 16450/30000, Loss=0.106257
+2023-05-27 16:39:13,078 INFO 
+Current epoch: 180
+2023-05-27 16:40:03,025 INFO Epoch 180, Itrs 16500/30000, Loss=0.106930
+2023-05-27 16:40:03,110 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter16500_epoch180_miou0.5810.pth
+2023-05-27 16:40:03,110 INFO validation...
+2023-05-27 16:40:27,828 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6434
+FreqW Acc: 0.8659
+Mean IoU: 0.5660
+
+2023-05-27 16:41:38,825 INFO Epoch 180, Itrs 16550/30000, Loss=0.107566
+2023-05-27 16:41:54,578 INFO 
+Current epoch: 181
+2023-05-27 16:42:58,576 INFO Epoch 181, Itrs 16600/30000, Loss=0.106035
+2023-05-27 16:42:58,660 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter16600_epoch181_miou0.5810.pth
+2023-05-27 16:42:58,660 INFO validation...
+2023-05-27 16:43:23,998 INFO 
+Overall Acc: 0.9247
+Mean Acc: 0.6488
+FreqW Acc: 0.8664
+Mean IoU: 0.5678
+
+2023-05-27 16:44:37,087 INFO Epoch 181, Itrs 16650/30000, Loss=0.106765
+2023-05-27 16:44:40,191 INFO 
+Current epoch: 182
+2023-05-27 16:45:55,813 INFO Epoch 182, Itrs 16700/30000, Loss=0.106475
+2023-05-27 16:45:55,900 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter16700_epoch182_miou0.5810.pth
+2023-05-27 16:45:55,900 INFO validation...
+2023-05-27 16:46:21,065 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6638
+FreqW Acc: 0.8672
+Mean IoU: 0.5734
+
+2023-05-27 16:47:23,948 INFO 
+Current epoch: 183
+2023-05-27 16:47:34,298 INFO Epoch 183, Itrs 16750/30000, Loss=0.105026
+2023-05-27 16:48:51,995 INFO Epoch 183, Itrs 16800/30000, Loss=0.106163
+2023-05-27 16:48:52,078 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter16800_epoch183_miou0.5810.pth
+2023-05-27 16:48:52,078 INFO validation...
+2023-05-27 16:49:18,336 INFO 
+Overall Acc: 0.9235
+Mean Acc: 0.6625
+FreqW Acc: 0.8659
+Mean IoU: 0.5736
+
+2023-05-27 16:50:08,128 INFO 
+Current epoch: 184
+2023-05-27 16:50:30,570 INFO Epoch 184, Itrs 16850/30000, Loss=0.107089
+2023-05-27 16:51:47,743 INFO Epoch 184, Itrs 16900/30000, Loss=0.103995
+2023-05-27 16:51:47,817 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter16900_epoch184_miou0.5810.pth
+2023-05-27 16:51:47,817 INFO validation...
+2023-05-27 16:52:13,085 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6552
+FreqW Acc: 0.8665
+Mean IoU: 0.5708
+
+2023-05-27 16:52:51,469 INFO 
+Current epoch: 185
+2023-05-27 16:53:26,784 INFO Epoch 185, Itrs 16950/30000, Loss=0.107137
+2023-05-27 16:54:44,227 INFO Epoch 185, Itrs 17000/30000, Loss=0.106438
+2023-05-27 16:54:44,312 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter17000_epoch185_miou0.5810.pth
+2023-05-27 16:54:44,312 INFO validation...
+2023-05-27 16:55:10,274 INFO 
+Overall Acc: 0.9237
+Mean Acc: 0.6536
+FreqW Acc: 0.8658
+Mean IoU: 0.5672
+
+2023-05-27 16:55:36,908 INFO 
+Current epoch: 186
+2023-05-27 16:56:23,728 INFO Epoch 186, Itrs 17050/30000, Loss=0.107798
+2023-05-27 16:57:40,043 INFO Epoch 186, Itrs 17100/30000, Loss=0.105859
+2023-05-27 16:57:40,132 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter17100_epoch186_miou0.5810.pth
+2023-05-27 16:57:40,132 INFO validation...
+2023-05-27 16:58:05,984 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6595
+FreqW Acc: 0.8663
+Mean IoU: 0.5720
+
+2023-05-27 16:58:18,658 INFO 
+Current epoch: 187
+2023-05-27 16:59:18,115 INFO Epoch 187, Itrs 17150/30000, Loss=0.104262
+2023-05-27 17:00:34,722 INFO Epoch 187, Itrs 17200/30000, Loss=0.106578
+2023-05-27 17:00:34,804 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter17200_epoch187_miou0.5810.pth
+2023-05-27 17:00:34,804 INFO validation...
+2023-05-27 17:01:00,580 INFO 
+Overall Acc: 0.9236
+Mean Acc: 0.6424
+FreqW Acc: 0.8651
+Mean IoU: 0.5620
+
+2023-05-27 17:01:01,174 INFO 
+Current epoch: 188
+2023-05-27 17:02:11,860 INFO Epoch 188, Itrs 17250/30000, Loss=0.104453
+2023-05-27 17:03:22,254 INFO 
+Current epoch: 189
+2023-05-27 17:03:29,745 INFO Epoch 189, Itrs 17300/30000, Loss=0.106104
+2023-05-27 17:03:29,816 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter17300_epoch189_miou0.5810.pth
+2023-05-27 17:03:29,816 INFO validation...
+2023-05-27 17:03:54,157 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6622
+FreqW Acc: 0.8666
+Mean IoU: 0.5745
+
+2023-05-27 17:05:04,990 INFO Epoch 189, Itrs 17350/30000, Loss=0.103853
+2023-05-27 17:06:02,643 INFO 
+Current epoch: 190
+2023-05-27 17:06:21,721 INFO Epoch 190, Itrs 17400/30000, Loss=0.106154
+2023-05-27 17:06:21,804 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter17400_epoch190_miou0.5810.pth
+2023-05-27 17:06:21,804 INFO validation...
+2023-05-27 17:06:47,133 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6523
+FreqW Acc: 0.8659
+Mean IoU: 0.5714
+
+2023-05-27 17:07:58,160 INFO Epoch 190, Itrs 17450/30000, Loss=0.104657
+2023-05-27 17:08:43,976 INFO 
+Current epoch: 191
+2023-05-27 17:09:15,375 INFO Epoch 191, Itrs 17500/30000, Loss=0.105903
+2023-05-27 17:09:15,466 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter17500_epoch191_miou0.5810.pth
+2023-05-27 17:09:15,466 INFO validation...
+2023-05-27 17:09:41,214 INFO 
+Overall Acc: 0.9236
+Mean Acc: 0.6477
+FreqW Acc: 0.8652
+Mean IoU: 0.5700
+
+2023-05-27 17:10:53,383 INFO Epoch 191, Itrs 17550/30000, Loss=0.104344
+2023-05-27 17:11:26,951 INFO 
+Current epoch: 192
+2023-05-27 17:12:10,635 INFO Epoch 192, Itrs 17600/30000, Loss=0.104712
+2023-05-27 17:12:10,706 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter17600_epoch192_miou0.5810.pth
+2023-05-27 17:12:10,707 INFO validation...
+2023-05-27 17:12:35,713 INFO 
+Overall Acc: 0.9246
+Mean Acc: 0.6643
+FreqW Acc: 0.8674
+Mean IoU: 0.5769
+
+2023-05-27 17:13:48,467 INFO Epoch 192, Itrs 17650/30000, Loss=0.104877
+2023-05-27 17:14:09,437 INFO 
+Current epoch: 193
+2023-05-27 17:15:04,638 INFO Epoch 193, Itrs 17700/30000, Loss=0.104302
+2023-05-27 17:15:04,726 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter17700_epoch193_miou0.5810.pth
+2023-05-27 17:15:04,726 INFO validation...
+2023-05-27 17:15:30,629 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6528
+FreqW Acc: 0.8666
+Mean IoU: 0.5682
+
+2023-05-27 17:16:42,810 INFO Epoch 193, Itrs 17750/30000, Loss=0.103767
+2023-05-27 17:16:52,338 INFO 
+Current epoch: 194
+2023-05-27 17:18:01,611 INFO Epoch 194, Itrs 17800/30000, Loss=0.103797
+2023-05-27 17:18:01,685 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter17800_epoch194_miou0.5810.pth
+2023-05-27 17:18:01,685 INFO validation...
+2023-05-27 17:18:28,276 INFO 
+Overall Acc: 0.9235
+Mean Acc: 0.6478
+FreqW Acc: 0.8650
+Mean IoU: 0.5675
+
+2023-05-27 17:19:37,363 INFO 
+Current epoch: 195
+2023-05-27 17:19:41,282 INFO Epoch 195, Itrs 17850/30000, Loss=0.105057
+2023-05-27 17:20:56,657 INFO Epoch 195, Itrs 17900/30000, Loss=0.103192
+2023-05-27 17:20:56,740 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter17900_epoch195_miou0.5810.pth
+2023-05-27 17:20:56,740 INFO validation...
+2023-05-27 17:21:22,220 INFO 
+Overall Acc: 0.9254
+Mean Acc: 0.6613
+FreqW Acc: 0.8687
+Mean IoU: 0.5783
+
+2023-05-27 17:22:17,683 INFO 
+Current epoch: 196
+2023-05-27 17:22:34,282 INFO Epoch 196, Itrs 17950/30000, Loss=0.103219
+2023-05-27 17:23:49,744 INFO Epoch 196, Itrs 18000/30000, Loss=0.104770
+2023-05-27 17:23:49,835 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter18000_epoch196_miou0.5810.pth
+2023-05-27 17:23:49,836 INFO validation...
+2023-05-27 17:24:14,814 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6650
+FreqW Acc: 0.8669
+Mean IoU: 0.5752
+
+2023-05-27 17:24:59,301 INFO 
+Current epoch: 197
+2023-05-27 17:25:27,134 INFO Epoch 197, Itrs 18050/30000, Loss=0.103980
+2023-05-27 17:26:43,613 INFO Epoch 197, Itrs 18100/30000, Loss=0.102370
+2023-05-27 17:26:43,686 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter18100_epoch197_miou0.5810.pth
+2023-05-27 17:26:43,687 INFO validation...
+2023-05-27 17:27:08,955 INFO 
+Overall Acc: 0.9247
+Mean Acc: 0.6632
+FreqW Acc: 0.8675
+Mean IoU: 0.5784
+
+2023-05-27 17:27:40,097 INFO 
+Current epoch: 198
+2023-05-27 17:28:20,738 INFO Epoch 198, Itrs 18150/30000, Loss=0.103996
+2023-05-27 17:29:36,136 INFO Epoch 198, Itrs 18200/30000, Loss=0.104955
+2023-05-27 17:29:36,222 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter18200_epoch198_miou0.5810.pth
+2023-05-27 17:29:36,222 INFO validation...
+2023-05-27 17:30:01,596 INFO 
+Overall Acc: 0.9238
+Mean Acc: 0.6687
+FreqW Acc: 0.8661
+Mean IoU: 0.5776
+
+2023-05-27 17:30:21,856 INFO 
+Current epoch: 199
+2023-05-27 17:31:15,321 INFO Epoch 199, Itrs 18250/30000, Loss=0.102421
+2023-05-27 17:32:31,989 INFO Epoch 199, Itrs 18300/30000, Loss=0.104146
+2023-05-27 17:32:32,070 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter18300_epoch199_miou0.5810.pth
+2023-05-27 17:32:32,071 INFO validation...
+2023-05-27 17:32:57,332 INFO 
+Overall Acc: 0.9247
+Mean Acc: 0.6573
+FreqW Acc: 0.8670
+Mean IoU: 0.5729
+
+2023-05-27 17:33:04,138 INFO 
+Current epoch: 200
+2023-05-27 17:34:08,754 INFO Epoch 200, Itrs 18350/30000, Loss=0.105614
+2023-05-27 17:35:25,682 INFO Epoch 200, Itrs 18400/30000, Loss=0.105372
+2023-05-27 17:35:25,791 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter18400_epoch200_miou0.5810.pth
+2023-05-27 17:35:25,791 INFO validation...
+2023-05-27 17:35:51,320 INFO 
+Overall Acc: 0.9218
+Mean Acc: 0.6472
+FreqW Acc: 0.8628
+Mean IoU: 0.5598
+
+2023-05-27 17:35:51,413 INFO 
+Current epoch: 201
+2023-05-27 17:37:09,454 INFO Epoch 201, Itrs 18450/30000, Loss=0.103793
+2023-05-27 17:38:12,061 INFO 
+Current epoch: 202
+2023-05-27 17:38:25,011 INFO Epoch 202, Itrs 18500/30000, Loss=0.104324
+2023-05-27 17:38:25,102 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter18500_epoch202_miou0.5810.pth
+2023-05-27 17:38:25,102 INFO validation...
+2023-05-27 17:38:52,225 INFO 
+Overall Acc: 0.9234
+Mean Acc: 0.6590
+FreqW Acc: 0.8656
+Mean IoU: 0.5707
+
+2023-05-27 17:40:02,812 INFO Epoch 202, Itrs 18550/30000, Loss=0.103321
+2023-05-27 17:40:55,372 INFO 
+Current epoch: 203
+2023-05-27 17:41:20,848 INFO Epoch 203, Itrs 18600/30000, Loss=0.103261
+2023-05-27 17:41:20,932 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter18600_epoch203_miou0.5810.pth
+2023-05-27 17:41:20,933 INFO validation...
+2023-05-27 17:41:46,248 INFO 
+Overall Acc: 0.9248
+Mean Acc: 0.6672
+FreqW Acc: 0.8675
+Mean IoU: 0.5790
+
+2023-05-27 17:42:59,264 INFO Epoch 203, Itrs 18650/30000, Loss=0.103012
+2023-05-27 17:43:38,090 INFO 
+Current epoch: 204
+2023-05-27 17:44:17,384 INFO Epoch 204, Itrs 18700/30000, Loss=0.103595
+2023-05-27 17:44:17,469 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter18700_epoch204_miou0.5810.pth
+2023-05-27 17:44:17,469 INFO validation...
+2023-05-27 17:44:41,976 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6545
+FreqW Acc: 0.8655
+Mean IoU: 0.5719
+
+2023-05-27 17:45:52,526 INFO Epoch 204, Itrs 18750/30000, Loss=0.101495
+2023-05-27 17:46:19,810 INFO 
+Current epoch: 205
+2023-05-27 17:47:09,118 INFO Epoch 205, Itrs 18800/30000, Loss=0.102359
+2023-05-27 17:47:09,202 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter18800_epoch205_miou0.5810.pth
+2023-05-27 17:47:09,202 INFO validation...
+2023-05-27 17:47:34,043 INFO 
+Overall Acc: 0.9247
+Mean Acc: 0.6569
+FreqW Acc: 0.8667
+Mean IoU: 0.5741
+
+2023-05-27 17:48:45,114 INFO Epoch 205, Itrs 18850/30000, Loss=0.103539
+2023-05-27 17:49:00,086 INFO 
+Current epoch: 206
+2023-05-27 17:50:01,570 INFO Epoch 206, Itrs 18900/30000, Loss=0.101644
+2023-05-27 17:50:01,654 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter18900_epoch206_miou0.5810.pth
+2023-05-27 17:50:01,654 INFO validation...
+2023-05-27 17:50:25,922 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6630
+FreqW Acc: 0.8668
+Mean IoU: 0.5777
+
+2023-05-27 17:51:38,466 INFO Epoch 206, Itrs 18950/30000, Loss=0.102960
+2023-05-27 17:51:41,970 INFO 
+Current epoch: 207
+2023-05-27 17:52:54,858 INFO Epoch 207, Itrs 19000/30000, Loss=0.101004
+2023-05-27 17:52:54,948 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter19000_epoch207_miou0.5810.pth
+2023-05-27 17:52:54,948 INFO validation...
+2023-05-27 17:53:21,344 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6511
+FreqW Acc: 0.8662
+Mean IoU: 0.5712
+
+2023-05-27 17:54:24,040 INFO 
+Current epoch: 208
+2023-05-27 17:54:34,081 INFO Epoch 208, Itrs 19050/30000, Loss=0.101939
+2023-05-27 17:55:51,129 INFO Epoch 208, Itrs 19100/30000, Loss=0.102830
+2023-05-27 17:55:51,212 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter19100_epoch208_miou0.5810.pth
+2023-05-27 17:55:51,212 INFO validation...
+2023-05-27 17:56:16,358 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6455
+FreqW Acc: 0.8656
+Mean IoU: 0.5686
+
+2023-05-27 17:57:08,955 INFO 
+Current epoch: 209
+2023-05-27 17:57:30,870 INFO Epoch 209, Itrs 19150/30000, Loss=0.101185
+2023-05-27 17:58:47,840 INFO Epoch 209, Itrs 19200/30000, Loss=0.102743
+2023-05-27 17:58:47,957 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter19200_epoch209_miou0.5810.pth
+2023-05-27 17:58:47,957 INFO validation...
+2023-05-27 17:59:13,877 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6524
+FreqW Acc: 0.8656
+Mean IoU: 0.5739
+
+2023-05-27 17:59:52,687 INFO 
+Current epoch: 210
+2023-05-27 18:00:26,899 INFO Epoch 210, Itrs 19250/30000, Loss=0.102678
+2023-05-27 18:01:45,824 INFO Epoch 210, Itrs 19300/30000, Loss=0.103012
+2023-05-27 18:01:45,907 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter19300_epoch210_miou0.5810.pth
+2023-05-27 18:01:45,908 INFO validation...
+2023-05-27 18:02:11,526 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6537
+FreqW Acc: 0.8663
+Mean IoU: 0.5708
+
+2023-05-27 18:02:36,576 INFO 
+Current epoch: 211
+2023-05-27 18:03:24,309 INFO Epoch 211, Itrs 19350/30000, Loss=0.102424
+2023-05-27 18:04:40,808 INFO Epoch 211, Itrs 19400/30000, Loss=0.102431
+2023-05-27 18:04:40,892 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter19400_epoch211_miou0.5810.pth
+2023-05-27 18:04:40,892 INFO validation...
+2023-05-27 18:05:05,840 INFO 
+Overall Acc: 0.9237
+Mean Acc: 0.6483
+FreqW Acc: 0.8660
+Mean IoU: 0.5635
+
+2023-05-27 18:05:19,148 INFO 
+Current epoch: 212
+2023-05-27 18:06:18,631 INFO Epoch 212, Itrs 19450/30000, Loss=0.100543
+2023-05-27 18:07:34,946 INFO Epoch 212, Itrs 19500/30000, Loss=0.101494
+2023-05-27 18:07:35,030 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter19500_epoch212_miou0.5810.pth
+2023-05-27 18:07:35,030 INFO validation...
+2023-05-27 18:08:00,519 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6607
+FreqW Acc: 0.8669
+Mean IoU: 0.5725
+
+2023-05-27 18:08:01,129 INFO 
+Current epoch: 213
+2023-05-27 18:09:14,160 INFO Epoch 213, Itrs 19550/30000, Loss=0.101338
+2023-05-27 18:10:24,252 INFO 
+Current epoch: 214
+2023-05-27 18:10:31,687 INFO Epoch 214, Itrs 19600/30000, Loss=0.100260
+2023-05-27 18:10:31,758 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter19600_epoch214_miou0.5810.pth
+2023-05-27 18:10:31,758 INFO validation...
+2023-05-27 18:10:56,353 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6475
+FreqW Acc: 0.8665
+Mean IoU: 0.5668
+
+2023-05-27 18:12:07,660 INFO Epoch 214, Itrs 19650/30000, Loss=0.100957
+2023-05-27 18:13:05,152 INFO 
+Current epoch: 215
+2023-05-27 18:13:24,691 INFO Epoch 215, Itrs 19700/30000, Loss=0.101385
+2023-05-27 18:13:24,775 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter19700_epoch215_miou0.5810.pth
+2023-05-27 18:13:24,775 INFO validation...
+2023-05-27 18:13:49,748 INFO 
+Overall Acc: 0.9238
+Mean Acc: 0.6530
+FreqW Acc: 0.8651
+Mean IoU: 0.5696
+
+2023-05-27 18:15:00,111 INFO Epoch 215, Itrs 19750/30000, Loss=0.100021
+2023-05-27 18:15:46,894 INFO 
+Current epoch: 216
+2023-05-27 18:16:18,583 INFO Epoch 216, Itrs 19800/30000, Loss=0.101379
+2023-05-27 18:16:18,665 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter19800_epoch216_miou0.5810.pth
+2023-05-27 18:16:18,665 INFO validation...
+2023-05-27 18:16:43,604 INFO 
+Overall Acc: 0.9247
+Mean Acc: 0.6597
+FreqW Acc: 0.8670
+Mean IoU: 0.5780
+
+2023-05-27 18:17:56,068 INFO Epoch 216, Itrs 19850/30000, Loss=0.101003
+2023-05-27 18:18:29,409 INFO 
+Current epoch: 217
+2023-05-27 18:19:16,027 INFO Epoch 217, Itrs 19900/30000, Loss=0.100218
+2023-05-27 18:19:16,099 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter19900_epoch217_miou0.5810.pth
+2023-05-27 18:19:16,100 INFO validation...
+2023-05-27 18:19:41,966 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6588
+FreqW Acc: 0.8666
+Mean IoU: 0.5742
+
+2023-05-27 18:20:53,119 INFO Epoch 217, Itrs 19950/30000, Loss=0.101412
+2023-05-27 18:21:14,875 INFO 
+Current epoch: 218
+2023-05-27 18:22:11,933 INFO Epoch 218, Itrs 20000/30000, Loss=0.100925
+2023-05-27 18:22:12,005 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter20000_epoch218_miou0.5810.pth
+2023-05-27 18:22:12,005 INFO validation...
+2023-05-27 18:22:38,321 INFO 
+Overall Acc: 0.9246
+Mean Acc: 0.6559
+FreqW Acc: 0.8669
+Mean IoU: 0.5744
+
+2023-05-27 18:23:49,808 INFO Epoch 218, Itrs 20050/30000, Loss=0.100871
+2023-05-27 18:23:58,913 INFO 
+Current epoch: 219
+2023-05-27 18:25:07,857 INFO Epoch 219, Itrs 20100/30000, Loss=0.100172
+2023-05-27 18:25:07,933 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter20100_epoch219_miou0.5810.pth
+2023-05-27 18:25:07,934 INFO validation...
+2023-05-27 18:25:33,968 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6468
+FreqW Acc: 0.8647
+Mean IoU: 0.5697
+
+2023-05-27 18:26:42,457 INFO 
+Current epoch: 220
+2023-05-27 18:26:45,868 INFO Epoch 220, Itrs 20150/30000, Loss=0.101230
+2023-05-27 18:28:03,903 INFO Epoch 220, Itrs 20200/30000, Loss=0.100820
+2023-05-27 18:28:03,986 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter20200_epoch220_miou0.5810.pth
+2023-05-27 18:28:03,986 INFO validation...
+2023-05-27 18:28:29,308 INFO 
+Overall Acc: 0.9248
+Mean Acc: 0.6527
+FreqW Acc: 0.8665
+Mean IoU: 0.5737
+
+2023-05-27 18:29:25,414 INFO 
+Current epoch: 221
+2023-05-27 18:29:41,078 INFO Epoch 221, Itrs 20250/30000, Loss=0.101309
+2023-05-27 18:30:57,901 INFO Epoch 221, Itrs 20300/30000, Loss=0.100172
+2023-05-27 18:30:57,985 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter20300_epoch221_miou0.5810.pth
+2023-05-27 18:30:57,985 INFO validation...
+2023-05-27 18:31:23,908 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6547
+FreqW Acc: 0.8665
+Mean IoU: 0.5718
+
+2023-05-27 18:32:06,681 INFO 
+Current epoch: 222
+2023-05-27 18:32:36,191 INFO Epoch 222, Itrs 20350/30000, Loss=0.099493
+2023-05-27 18:33:52,326 INFO Epoch 222, Itrs 20400/30000, Loss=0.099630
+2023-05-27 18:33:52,403 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter20400_epoch222_miou0.5810.pth
+2023-05-27 18:33:52,403 INFO validation...
+2023-05-27 18:34:17,587 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6520
+FreqW Acc: 0.8662
+Mean IoU: 0.5692
+
+2023-05-27 18:34:49,124 INFO 
+Current epoch: 223
+2023-05-27 18:35:30,825 INFO Epoch 223, Itrs 20450/30000, Loss=0.100474
+2023-05-27 18:36:49,362 INFO Epoch 223, Itrs 20500/30000, Loss=0.098871
+2023-05-27 18:36:49,434 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter20500_epoch223_miou0.5810.pth
+2023-05-27 18:36:49,435 INFO validation...
+2023-05-27 18:37:15,686 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6591
+FreqW Acc: 0.8663
+Mean IoU: 0.5712
+
+2023-05-27 18:37:34,538 INFO 
+Current epoch: 224
+2023-05-27 18:38:26,468 INFO Epoch 224, Itrs 20550/30000, Loss=0.101519
+2023-05-27 18:39:43,357 INFO Epoch 224, Itrs 20600/30000, Loss=0.099723
+2023-05-27 18:39:43,441 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter20600_epoch224_miou0.5810.pth
+2023-05-27 18:39:43,441 INFO validation...
+2023-05-27 18:40:09,086 INFO 
+Overall Acc: 0.9248
+Mean Acc: 0.6638
+FreqW Acc: 0.8675
+Mean IoU: 0.5781
+
+2023-05-27 18:40:16,149 INFO 
+Current epoch: 225
+2023-05-27 18:41:21,889 INFO Epoch 225, Itrs 20650/30000, Loss=0.098968
+2023-05-27 18:42:40,551 INFO Epoch 225, Itrs 20700/30000, Loss=0.099553
+2023-05-27 18:42:40,623 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter20700_epoch225_miou0.5810.pth
+2023-05-27 18:42:40,623 INFO validation...
+2023-05-27 18:43:06,133 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6570
+FreqW Acc: 0.8665
+Mean IoU: 0.5711
+
+2023-05-27 18:43:06,230 INFO 
+Current epoch: 226
+2023-05-27 18:44:26,159 INFO Epoch 226, Itrs 20750/30000, Loss=0.099200
+2023-05-27 18:45:28,867 INFO 
+Current epoch: 227
+2023-05-27 18:45:42,206 INFO Epoch 227, Itrs 20800/30000, Loss=0.098810
+2023-05-27 18:45:42,291 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter20800_epoch227_miou0.5810.pth
+2023-05-27 18:45:42,291 INFO validation...
+2023-05-27 18:46:06,643 INFO 
+Overall Acc: 0.9249
+Mean Acc: 0.6678
+FreqW Acc: 0.8679
+Mean IoU: 0.5783
+
+2023-05-27 18:47:18,414 INFO Epoch 227, Itrs 20850/30000, Loss=0.098041
+2023-05-27 18:48:10,144 INFO 
+Current epoch: 228
+2023-05-27 18:48:35,520 INFO Epoch 228, Itrs 20900/30000, Loss=0.098853
+2023-05-27 18:48:35,590 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter20900_epoch228_miou0.5810.pth
+2023-05-27 18:48:35,590 INFO validation...
+2023-05-27 18:49:00,176 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6561
+FreqW Acc: 0.8659
+Mean IoU: 0.5714
+
+2023-05-27 18:50:10,282 INFO Epoch 228, Itrs 20950/30000, Loss=0.099250
+2023-05-27 18:50:50,775 INFO 
+Current epoch: 229
+2023-05-27 18:51:28,445 INFO Epoch 229, Itrs 21000/30000, Loss=0.096907
+2023-05-27 18:51:28,532 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter21000_epoch229_miou0.5810.pth
+2023-05-27 18:51:28,533 INFO validation...
+2023-05-27 18:51:54,037 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6667
+FreqW Acc: 0.8670
+Mean IoU: 0.5753
+
+2023-05-27 18:53:06,430 INFO Epoch 229, Itrs 21050/30000, Loss=0.100188
+2023-05-27 18:53:34,862 INFO 
+Current epoch: 230
+2023-05-27 18:54:26,501 INFO Epoch 230, Itrs 21100/30000, Loss=0.098296
+2023-05-27 18:54:26,575 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter21100_epoch230_miou0.5810.pth
+2023-05-27 18:54:26,575 INFO validation...
+2023-05-27 18:54:51,999 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6434
+FreqW Acc: 0.8654
+Mean IoU: 0.5649
+
+2023-05-27 18:56:02,706 INFO Epoch 230, Itrs 21150/30000, Loss=0.098502
+2023-05-27 18:56:17,783 INFO 
+Current epoch: 231
+2023-05-27 18:57:19,435 INFO Epoch 231, Itrs 21200/30000, Loss=0.098289
+2023-05-27 18:57:19,508 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter21200_epoch231_miou0.5810.pth
+2023-05-27 18:57:19,508 INFO validation...
+2023-05-27 18:57:44,670 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6589
+FreqW Acc: 0.8669
+Mean IoU: 0.5739
+
+2023-05-27 18:58:54,791 INFO Epoch 231, Itrs 21250/30000, Loss=0.098702
+2023-05-27 18:58:58,531 INFO 
+Current epoch: 232
+2023-05-27 19:00:14,274 INFO Epoch 232, Itrs 21300/30000, Loss=0.098961
+2023-05-27 19:00:14,390 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter21300_epoch232_miou0.5810.pth
+2023-05-27 19:00:14,390 INFO validation...
+2023-05-27 19:00:38,759 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6538
+FreqW Acc: 0.8662
+Mean IoU: 0.5716
+
+2023-05-27 19:01:41,999 INFO 
+Current epoch: 233
+2023-05-27 19:01:51,684 INFO Epoch 233, Itrs 21350/30000, Loss=0.099594
+2023-05-27 19:03:08,661 INFO Epoch 233, Itrs 21400/30000, Loss=0.098008
+2023-05-27 19:03:08,732 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter21400_epoch233_miou0.5810.pth
+2023-05-27 19:03:08,732 INFO validation...
+2023-05-27 19:03:33,163 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6484
+FreqW Acc: 0.8666
+Mean IoU: 0.5653
+
+2023-05-27 19:04:22,456 INFO 
+Current epoch: 234
+2023-05-27 19:04:45,476 INFO Epoch 234, Itrs 21450/30000, Loss=0.099588
+2023-05-27 19:06:01,826 INFO Epoch 234, Itrs 21500/30000, Loss=0.097465
+2023-05-27 19:06:01,928 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter21500_epoch234_miou0.5810.pth
+2023-05-27 19:06:01,928 INFO validation...
+2023-05-27 19:06:27,544 INFO 
+Overall Acc: 0.9233
+Mean Acc: 0.6661
+FreqW Acc: 0.8655
+Mean IoU: 0.5748
+
+2023-05-27 19:07:05,105 INFO 
+Current epoch: 235
+2023-05-27 19:07:38,929 INFO Epoch 235, Itrs 21550/30000, Loss=0.097446
+2023-05-27 19:08:54,945 INFO Epoch 235, Itrs 21600/30000, Loss=0.099057
+2023-05-27 19:08:55,036 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter21600_epoch235_miou0.5810.pth
+2023-05-27 19:08:55,037 INFO validation...
+2023-05-27 19:09:20,661 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6486
+FreqW Acc: 0.8657
+Mean IoU: 0.5690
+
+2023-05-27 19:09:46,415 INFO 
+Current epoch: 236
+2023-05-27 19:10:33,003 INFO Epoch 236, Itrs 21650/30000, Loss=0.096539
+2023-05-27 19:11:47,792 INFO Epoch 236, Itrs 21700/30000, Loss=0.098504
+2023-05-27 19:11:47,865 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter21700_epoch236_miou0.5810.pth
+2023-05-27 19:11:47,865 INFO validation...
+2023-05-27 19:12:13,729 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6564
+FreqW Acc: 0.8661
+Mean IoU: 0.5706
+
+2023-05-27 19:12:26,575 INFO 
+Current epoch: 237
+2023-05-27 19:13:27,795 INFO Epoch 237, Itrs 21750/30000, Loss=0.098060
+2023-05-27 19:14:45,054 INFO Epoch 237, Itrs 21800/30000, Loss=0.098171
+2023-05-27 19:14:45,127 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter21800_epoch237_miou0.5810.pth
+2023-05-27 19:14:45,127 INFO validation...
+2023-05-27 19:15:11,147 INFO 
+Overall Acc: 0.9246
+Mean Acc: 0.6487
+FreqW Acc: 0.8662
+Mean IoU: 0.5710
+
+2023-05-27 19:15:11,673 INFO 
+Current epoch: 238
+2023-05-27 19:16:22,280 INFO Epoch 238, Itrs 21850/30000, Loss=0.097341
+2023-05-27 19:17:32,439 INFO 
+Current epoch: 239
+2023-05-27 19:17:39,290 INFO Epoch 239, Itrs 21900/30000, Loss=0.098256
+2023-05-27 19:17:39,374 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter21900_epoch239_miou0.5810.pth
+2023-05-27 19:17:39,375 INFO validation...
+2023-05-27 19:18:04,091 INFO 
+Overall Acc: 0.9236
+Mean Acc: 0.6565
+FreqW Acc: 0.8652
+Mean IoU: 0.5727
+
+2023-05-27 19:19:15,976 INFO Epoch 239, Itrs 21950/30000, Loss=0.096581
+2023-05-27 19:20:13,847 INFO 
+Current epoch: 240
+2023-05-27 19:20:32,943 INFO Epoch 240, Itrs 22000/30000, Loss=0.098834
+2023-05-27 19:20:33,038 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter22000_epoch240_miou0.5810.pth
+2023-05-27 19:20:33,038 INFO validation...
+2023-05-27 19:20:59,143 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6571
+FreqW Acc: 0.8671
+Mean IoU: 0.5706
+
+2023-05-27 19:22:10,314 INFO Epoch 240, Itrs 22050/30000, Loss=0.097318
+2023-05-27 19:22:56,374 INFO 
+Current epoch: 241
+2023-05-27 19:23:28,374 INFO Epoch 241, Itrs 22100/30000, Loss=0.097604
+2023-05-27 19:23:28,462 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter22100_epoch241_miou0.5810.pth
+2023-05-27 19:23:28,463 INFO validation...
+2023-05-27 19:23:55,052 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6687
+FreqW Acc: 0.8677
+Mean IoU: 0.5765
+
+2023-05-27 19:25:06,460 INFO Epoch 241, Itrs 22150/30000, Loss=0.096754
+2023-05-27 19:25:41,292 INFO 
+Current epoch: 242
+2023-05-27 19:26:25,433 INFO Epoch 242, Itrs 22200/30000, Loss=0.096427
+2023-05-27 19:26:25,519 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter22200_epoch242_miou0.5810.pth
+2023-05-27 19:26:25,519 INFO validation...
+2023-05-27 19:26:50,501 INFO 
+Overall Acc: 0.9246
+Mean Acc: 0.6574
+FreqW Acc: 0.8665
+Mean IoU: 0.5748
+
+2023-05-27 19:28:02,942 INFO Epoch 242, Itrs 22250/30000, Loss=0.096922
+2023-05-27 19:28:24,382 INFO 
+Current epoch: 243
+2023-05-27 19:29:21,162 INFO Epoch 243, Itrs 22300/30000, Loss=0.096716
+2023-05-27 19:29:21,248 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter22300_epoch243_miou0.5810.pth
+2023-05-27 19:29:21,248 INFO validation...
+2023-05-27 19:29:45,779 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6598
+FreqW Acc: 0.8664
+Mean IoU: 0.5739
+
+2023-05-27 19:30:56,798 INFO Epoch 243, Itrs 22350/30000, Loss=0.097506
+2023-05-27 19:31:05,732 INFO 
+Current epoch: 244
+2023-05-27 19:32:13,365 INFO Epoch 244, Itrs 22400/30000, Loss=0.098342
+2023-05-27 19:32:13,438 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter22400_epoch244_miou0.5810.pth
+2023-05-27 19:32:13,438 INFO validation...
+2023-05-27 19:32:38,558 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6558
+FreqW Acc: 0.8666
+Mean IoU: 0.5720
+
+2023-05-27 19:33:45,893 INFO 
+Current epoch: 245
+2023-05-27 19:33:50,020 INFO Epoch 245, Itrs 22450/30000, Loss=0.096606
+2023-05-27 19:35:06,580 INFO Epoch 245, Itrs 22500/30000, Loss=0.096417
+2023-05-27 19:35:06,705 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter22500_epoch245_miou0.5810.pth
+2023-05-27 19:35:06,705 INFO validation...
+2023-05-27 19:35:31,787 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6504
+FreqW Acc: 0.8662
+Mean IoU: 0.5641
+
+2023-05-27 19:36:28,045 INFO 
+Current epoch: 246
+2023-05-27 19:36:45,256 INFO Epoch 246, Itrs 22550/30000, Loss=0.096352
+2023-05-27 19:38:00,750 INFO Epoch 246, Itrs 22600/30000, Loss=0.096372
+2023-05-27 19:38:01,517 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter22600_epoch246_miou0.5810.pth
+2023-05-27 19:38:01,517 INFO validation...
+2023-05-27 19:38:26,650 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6506
+FreqW Acc: 0.8658
+Mean IoU: 0.5705
+
+2023-05-27 19:39:10,832 INFO 
+Current epoch: 247
+2023-05-27 19:39:38,121 INFO Epoch 247, Itrs 22650/30000, Loss=0.095941
+2023-05-27 19:40:53,956 INFO Epoch 247, Itrs 22700/30000, Loss=0.096989
+2023-05-27 19:40:54,032 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter22700_epoch247_miou0.5810.pth
+2023-05-27 19:40:54,032 INFO validation...
+2023-05-27 19:41:18,694 INFO 
+Overall Acc: 0.9247
+Mean Acc: 0.6559
+FreqW Acc: 0.8670
+Mean IoU: 0.5718
+
+2023-05-27 19:41:50,709 INFO 
+Current epoch: 248
+2023-05-27 19:42:32,085 INFO Epoch 248, Itrs 22750/30000, Loss=0.095930
+2023-05-27 19:43:48,363 INFO Epoch 248, Itrs 22800/30000, Loss=0.096994
+2023-05-27 19:43:48,445 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter22800_epoch248_miou0.5810.pth
+2023-05-27 19:43:48,445 INFO validation...
+2023-05-27 19:44:13,936 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6636
+FreqW Acc: 0.8668
+Mean IoU: 0.5744
+
+2023-05-27 19:44:32,830 INFO 
+Current epoch: 249
+2023-05-27 19:45:26,056 INFO Epoch 249, Itrs 22850/30000, Loss=0.095773
+2023-05-27 19:46:44,439 INFO Epoch 249, Itrs 22900/30000, Loss=0.097432
+2023-05-27 19:46:44,522 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter22900_epoch249_miou0.5810.pth
+2023-05-27 19:46:44,522 INFO validation...
+2023-05-27 19:47:10,577 INFO 
+Overall Acc: 0.9248
+Mean Acc: 0.6699
+FreqW Acc: 0.8675
+Mean IoU: 0.5791
+
+2023-05-27 19:47:17,685 INFO 
+Current epoch: 250
+2023-05-27 19:48:22,617 INFO Epoch 250, Itrs 22950/30000, Loss=0.095856
+2023-05-27 19:49:39,286 INFO Epoch 250, Itrs 23000/30000, Loss=0.095269
+2023-05-27 19:49:39,367 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter23000_epoch250_miou0.5810.pth
+2023-05-27 19:49:39,367 INFO validation...
+2023-05-27 19:50:05,610 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6685
+FreqW Acc: 0.8670
+Mean IoU: 0.5781
+
+2023-05-27 19:50:06,344 INFO 
+Current epoch: 251
+2023-05-27 19:51:24,121 INFO Epoch 251, Itrs 23050/30000, Loss=0.095455
+2023-05-27 19:52:28,177 INFO 
+Current epoch: 252
+2023-05-27 19:52:41,126 INFO Epoch 252, Itrs 23100/30000, Loss=0.096765
+2023-05-27 19:52:41,219 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter23100_epoch252_miou0.5810.pth
+2023-05-27 19:52:41,219 INFO validation...
+2023-05-27 19:53:07,016 INFO 
+Overall Acc: 0.9256
+Mean Acc: 0.6754
+FreqW Acc: 0.8691
+Mean IoU: 0.5844
+
+2023-05-27 19:53:07,120 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16_iter23100_epoch252_miou0.5844.pth
+2023-05-27 19:54:17,927 INFO Epoch 252, Itrs 23150/30000, Loss=0.095789
+2023-05-27 19:55:09,269 INFO 
+Current epoch: 253
+2023-05-27 19:55:33,751 INFO Epoch 253, Itrs 23200/30000, Loss=0.095570
+2023-05-27 19:55:33,823 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter23200_epoch253_miou0.5844.pth
+2023-05-27 19:55:33,823 INFO validation...
+2023-05-27 19:55:59,384 INFO 
+Overall Acc: 0.9246
+Mean Acc: 0.6633
+FreqW Acc: 0.8671
+Mean IoU: 0.5772
+
+2023-05-27 19:57:11,533 INFO Epoch 253, Itrs 23250/30000, Loss=0.096133
+2023-05-27 19:57:51,500 INFO 
+Current epoch: 254
+2023-05-27 19:58:29,229 INFO Epoch 254, Itrs 23300/30000, Loss=0.095757
+2023-05-27 19:58:29,312 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter23300_epoch254_miou0.5844.pth
+2023-05-27 19:58:29,313 INFO validation...
+2023-05-27 19:58:54,463 INFO 
+Overall Acc: 0.9246
+Mean Acc: 0.6529
+FreqW Acc: 0.8672
+Mean IoU: 0.5703
+
+2023-05-27 20:00:05,252 INFO Epoch 254, Itrs 23350/30000, Loss=0.094654
+2023-05-27 20:00:32,177 INFO 
+Current epoch: 255
+2023-05-27 20:01:21,750 INFO Epoch 255, Itrs 23400/30000, Loss=0.095462
+2023-05-27 20:01:21,843 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter23400_epoch255_miou0.5844.pth
+2023-05-27 20:01:21,843 INFO validation...
+2023-05-27 20:01:46,468 INFO 
+Overall Acc: 0.9247
+Mean Acc: 0.6600
+FreqW Acc: 0.8671
+Mean IoU: 0.5711
+
+2023-05-27 20:02:59,356 INFO Epoch 255, Itrs 23450/30000, Loss=0.096492
+2023-05-27 20:03:14,234 INFO 
+Current epoch: 256
+2023-05-27 20:04:15,343 INFO Epoch 256, Itrs 23500/30000, Loss=0.095618
+2023-05-27 20:04:15,428 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter23500_epoch256_miou0.5844.pth
+2023-05-27 20:04:15,428 INFO validation...
+2023-05-27 20:04:39,500 INFO 
+Overall Acc: 0.9251
+Mean Acc: 0.6521
+FreqW Acc: 0.8676
+Mean IoU: 0.5716
+
+2023-05-27 20:05:50,521 INFO Epoch 256, Itrs 23550/30000, Loss=0.095428
+2023-05-27 20:05:53,616 INFO 
+Current epoch: 257
+2023-05-27 20:07:06,715 INFO Epoch 257, Itrs 23600/30000, Loss=0.094672
+2023-05-27 20:07:06,801 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter23600_epoch257_miou0.5844.pth
+2023-05-27 20:07:06,801 INFO validation...
+2023-05-27 20:07:31,900 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6428
+FreqW Acc: 0.8658
+Mean IoU: 0.5663
+
+2023-05-27 20:08:33,303 INFO 
+Current epoch: 258
+2023-05-27 20:08:43,520 INFO Epoch 258, Itrs 23650/30000, Loss=0.096233
+2023-05-27 20:09:59,666 INFO Epoch 258, Itrs 23700/30000, Loss=0.095599
+2023-05-27 20:09:59,750 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter23700_epoch258_miou0.5844.pth
+2023-05-27 20:09:59,750 INFO validation...
+2023-05-27 20:10:26,181 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6493
+FreqW Acc: 0.8660
+Mean IoU: 0.5675
+
+2023-05-27 20:11:17,142 INFO 
+Current epoch: 259
+2023-05-27 20:11:39,455 INFO Epoch 259, Itrs 23750/30000, Loss=0.094835
+2023-05-27 20:12:55,966 INFO Epoch 259, Itrs 23800/30000, Loss=0.094776
+2023-05-27 20:12:56,050 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter23800_epoch259_miou0.5844.pth
+2023-05-27 20:12:56,051 INFO validation...
+2023-05-27 20:13:20,978 INFO 
+Overall Acc: 0.9250
+Mean Acc: 0.6655
+FreqW Acc: 0.8677
+Mean IoU: 0.5781
+
+2023-05-27 20:13:58,536 INFO 
+Current epoch: 260
+2023-05-27 20:14:33,396 INFO Epoch 260, Itrs 23850/30000, Loss=0.094715
+2023-05-27 20:15:48,326 INFO Epoch 260, Itrs 23900/30000, Loss=0.095120
+2023-05-27 20:15:48,411 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter23900_epoch260_miou0.5844.pth
+2023-05-27 20:15:48,411 INFO validation...
+2023-05-27 20:16:14,973 INFO 
+Overall Acc: 0.9246
+Mean Acc: 0.6702
+FreqW Acc: 0.8675
+Mean IoU: 0.5801
+
+2023-05-27 20:16:39,800 INFO 
+Current epoch: 261
+2023-05-27 20:17:26,828 INFO Epoch 261, Itrs 23950/30000, Loss=0.095412
+2023-05-27 20:18:43,711 INFO Epoch 261, Itrs 24000/30000, Loss=0.094667
+2023-05-27 20:18:43,785 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter24000_epoch261_miou0.5844.pth
+2023-05-27 20:18:43,785 INFO validation...
+2023-05-27 20:19:08,551 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6552
+FreqW Acc: 0.8662
+Mean IoU: 0.5736
+
+2023-05-27 20:19:22,713 INFO 
+Current epoch: 262
+2023-05-27 20:20:22,604 INFO Epoch 262, Itrs 24050/30000, Loss=0.094079
+2023-05-27 20:21:39,728 INFO Epoch 262, Itrs 24100/30000, Loss=0.093788
+2023-05-27 20:21:39,815 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter24100_epoch262_miou0.5844.pth
+2023-05-27 20:21:39,815 INFO validation...
+2023-05-27 20:22:04,877 INFO 
+Overall Acc: 0.9238
+Mean Acc: 0.6566
+FreqW Acc: 0.8654
+Mean IoU: 0.5684
+
+2023-05-27 20:22:05,421 INFO 
+Current epoch: 263
+2023-05-27 20:23:16,457 INFO Epoch 263, Itrs 24150/30000, Loss=0.094360
+2023-05-27 20:24:25,717 INFO 
+Current epoch: 264
+2023-05-27 20:24:32,391 INFO Epoch 264, Itrs 24200/30000, Loss=0.094754
+2023-05-27 20:24:32,473 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter24200_epoch264_miou0.5844.pth
+2023-05-27 20:24:32,473 INFO validation...
+2023-05-27 20:24:57,550 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6526
+FreqW Acc: 0.8657
+Mean IoU: 0.5717
+
+2023-05-27 20:26:08,013 INFO Epoch 264, Itrs 24250/30000, Loss=0.094970
+2023-05-27 20:27:05,079 INFO 
+Current epoch: 265
+2023-05-27 20:27:23,868 INFO Epoch 265, Itrs 24300/30000, Loss=0.094826
+2023-05-27 20:27:23,952 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter24300_epoch265_miou0.5844.pth
+2023-05-27 20:27:23,953 INFO validation...
+2023-05-27 20:27:49,266 INFO 
+Overall Acc: 0.9248
+Mean Acc: 0.6517
+FreqW Acc: 0.8668
+Mean IoU: 0.5725
+
+2023-05-27 20:29:00,155 INFO Epoch 265, Itrs 24350/30000, Loss=0.092396
+2023-05-27 20:29:45,092 INFO 
+Current epoch: 266
+2023-05-27 20:30:16,500 INFO Epoch 266, Itrs 24400/30000, Loss=0.093235
+2023-05-27 20:30:16,571 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter24400_epoch266_miou0.5844.pth
+2023-05-27 20:30:16,572 INFO validation...
+2023-05-27 20:30:42,159 INFO 
+Overall Acc: 0.9249
+Mean Acc: 0.6595
+FreqW Acc: 0.8673
+Mean IoU: 0.5734
+
+2023-05-27 20:31:54,620 INFO Epoch 266, Itrs 24450/30000, Loss=0.093147
+2023-05-27 20:32:28,650 INFO 
+Current epoch: 267
+2023-05-27 20:33:13,347 INFO Epoch 267, Itrs 24500/30000, Loss=0.094741
+2023-05-27 20:33:13,430 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter24500_epoch267_miou0.5844.pth
+2023-05-27 20:33:13,430 INFO validation...
+2023-05-27 20:33:39,692 INFO 
+Overall Acc: 0.9248
+Mean Acc: 0.6552
+FreqW Acc: 0.8663
+Mean IoU: 0.5745
+
+2023-05-27 20:34:51,442 INFO Epoch 267, Itrs 24550/30000, Loss=0.093273
+2023-05-27 20:35:12,604 INFO 
+Current epoch: 268
+2023-05-27 20:36:07,761 INFO Epoch 268, Itrs 24600/30000, Loss=0.093906
+2023-05-27 20:36:07,845 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter24600_epoch268_miou0.5844.pth
+2023-05-27 20:36:07,845 INFO validation...
+2023-05-27 20:36:33,460 INFO 
+Overall Acc: 0.9250
+Mean Acc: 0.6629
+FreqW Acc: 0.8672
+Mean IoU: 0.5775
+
+2023-05-27 20:37:44,047 INFO Epoch 268, Itrs 24650/30000, Loss=0.092451
+2023-05-27 20:37:53,126 INFO 
+Current epoch: 269
+2023-05-27 20:39:01,970 INFO Epoch 269, Itrs 24700/30000, Loss=0.092630
+2023-05-27 20:39:02,053 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter24700_epoch269_miou0.5844.pth
+2023-05-27 20:39:02,053 INFO validation...
+2023-05-27 20:39:26,734 INFO 
+Overall Acc: 0.9246
+Mean Acc: 0.6589
+FreqW Acc: 0.8672
+Mean IoU: 0.5712
+
+2023-05-27 20:40:33,767 INFO 
+Current epoch: 270
+2023-05-27 20:40:37,715 INFO Epoch 270, Itrs 24750/30000, Loss=0.094284
+2023-05-27 20:41:53,117 INFO Epoch 270, Itrs 24800/30000, Loss=0.093018
+2023-05-27 20:41:53,199 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter24800_epoch270_miou0.5844.pth
+2023-05-27 20:41:53,199 INFO validation...
+2023-05-27 20:42:18,020 INFO 
+Overall Acc: 0.9240
+Mean Acc: 0.6556
+FreqW Acc: 0.8666
+Mean IoU: 0.5698
+
+2023-05-27 20:43:15,080 INFO 
+Current epoch: 271
+2023-05-27 20:43:33,651 INFO Epoch 271, Itrs 24850/30000, Loss=0.093223
+2023-05-27 20:44:49,230 INFO Epoch 271, Itrs 24900/30000, Loss=0.092579
+2023-05-27 20:44:49,315 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter24900_epoch271_miou0.5844.pth
+2023-05-27 20:44:49,315 INFO validation...
+2023-05-27 20:45:14,385 INFO 
+Overall Acc: 0.9238
+Mean Acc: 0.6612
+FreqW Acc: 0.8664
+Mean IoU: 0.5721
+
+2023-05-27 20:45:58,251 INFO 
+Current epoch: 272
+2023-05-27 20:46:26,247 INFO Epoch 272, Itrs 24950/30000, Loss=0.093108
+2023-05-27 20:47:43,062 INFO Epoch 272, Itrs 25000/30000, Loss=0.093079
+2023-05-27 20:47:43,147 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter25000_epoch272_miou0.5844.pth
+2023-05-27 20:47:43,147 INFO validation...
+2023-05-27 20:48:09,070 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6567
+FreqW Acc: 0.8665
+Mean IoU: 0.5744
+
+2023-05-27 20:48:41,183 INFO 
+Current epoch: 273
+2023-05-27 20:49:21,449 INFO Epoch 273, Itrs 25050/30000, Loss=0.094200
+2023-05-27 20:50:38,926 INFO Epoch 273, Itrs 25100/30000, Loss=0.092587
+2023-05-27 20:50:39,012 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter25100_epoch273_miou0.5844.pth
+2023-05-27 20:50:39,012 INFO validation...
+2023-05-27 20:51:04,986 INFO 
+Overall Acc: 0.9247
+Mean Acc: 0.6551
+FreqW Acc: 0.8667
+Mean IoU: 0.5743
+
+2023-05-27 20:51:23,873 INFO 
+Current epoch: 274
+2023-05-27 20:52:16,286 INFO Epoch 274, Itrs 25150/30000, Loss=0.092723
+2023-05-27 20:53:33,894 INFO Epoch 274, Itrs 25200/30000, Loss=0.093245
+2023-05-27 20:53:33,970 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter25200_epoch274_miou0.5844.pth
+2023-05-27 20:53:33,970 INFO validation...
+2023-05-27 20:54:00,272 INFO 
+Overall Acc: 0.9246
+Mean Acc: 0.6535
+FreqW Acc: 0.8666
+Mean IoU: 0.5715
+
+2023-05-27 20:54:07,304 INFO 
+Current epoch: 275
+2023-05-27 20:55:13,885 INFO Epoch 275, Itrs 25250/30000, Loss=0.092281
+2023-05-27 20:56:29,967 INFO Epoch 275, Itrs 25300/30000, Loss=0.092253
+2023-05-27 20:56:30,036 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter25300_epoch275_miou0.5844.pth
+2023-05-27 20:56:30,037 INFO validation...
+2023-05-27 20:56:54,932 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6609
+FreqW Acc: 0.8670
+Mean IoU: 0.5759
+
+2023-05-27 20:56:55,034 INFO 
+Current epoch: 276
+2023-05-27 20:58:11,624 INFO Epoch 276, Itrs 25350/30000, Loss=0.092141
+2023-05-27 20:59:15,261 INFO 
+Current epoch: 277
+2023-05-27 20:59:28,878 INFO Epoch 277, Itrs 25400/30000, Loss=0.093078
+2023-05-27 20:59:28,949 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter25400_epoch277_miou0.5844.pth
+2023-05-27 20:59:28,949 INFO validation...
+2023-05-27 20:59:54,988 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6573
+FreqW Acc: 0.8668
+Mean IoU: 0.5737
+
+2023-05-27 21:01:05,741 INFO Epoch 277, Itrs 25450/30000, Loss=0.091780
+2023-05-27 21:01:57,577 INFO 
+Current epoch: 278
+2023-05-27 21:02:22,295 INFO Epoch 278, Itrs 25500/30000, Loss=0.091630
+2023-05-27 21:02:23,229 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter25500_epoch278_miou0.5844.pth
+2023-05-27 21:02:23,230 INFO validation...
+2023-05-27 21:02:49,272 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6456
+FreqW Acc: 0.8657
+Mean IoU: 0.5687
+
+2023-05-27 21:04:02,500 INFO Epoch 278, Itrs 25550/30000, Loss=0.092096
+2023-05-27 21:04:43,111 INFO 
+Current epoch: 279
+2023-05-27 21:05:20,267 INFO Epoch 279, Itrs 25600/30000, Loss=0.092516
+2023-05-27 21:05:20,350 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter25600_epoch279_miou0.5844.pth
+2023-05-27 21:05:20,350 INFO validation...
+2023-05-27 21:05:46,192 INFO 
+Overall Acc: 0.9250
+Mean Acc: 0.6604
+FreqW Acc: 0.8672
+Mean IoU: 0.5777
+
+2023-05-27 21:06:57,185 INFO Epoch 279, Itrs 25650/30000, Loss=0.091540
+2023-05-27 21:07:24,667 INFO 
+Current epoch: 280
+2023-05-27 21:08:14,588 INFO Epoch 280, Itrs 25700/30000, Loss=0.089802
+2023-05-27 21:08:14,671 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter25700_epoch280_miou0.5844.pth
+2023-05-27 21:08:14,671 INFO validation...
+2023-05-27 21:08:39,245 INFO 
+Overall Acc: 0.9246
+Mean Acc: 0.6518
+FreqW Acc: 0.8671
+Mean IoU: 0.5685
+
+2023-05-27 21:09:50,619 INFO Epoch 280, Itrs 25750/30000, Loss=0.093850
+2023-05-27 21:10:05,573 INFO 
+Current epoch: 281
+2023-05-27 21:11:07,532 INFO Epoch 281, Itrs 25800/30000, Loss=0.092719
+2023-05-27 21:11:07,617 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter25800_epoch281_miou0.5844.pth
+2023-05-27 21:11:07,617 INFO validation...
+2023-05-27 21:11:33,141 INFO 
+Overall Acc: 0.9246
+Mean Acc: 0.6537
+FreqW Acc: 0.8671
+Mean IoU: 0.5723
+
+2023-05-27 21:12:43,974 INFO Epoch 281, Itrs 25850/30000, Loss=0.091080
+2023-05-27 21:12:47,043 INFO 
+Current epoch: 282
+2023-05-27 21:14:00,879 INFO Epoch 282, Itrs 25900/30000, Loss=0.091039
+2023-05-27 21:14:00,961 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter25900_epoch282_miou0.5844.pth
+2023-05-27 21:14:00,962 INFO validation...
+2023-05-27 21:14:26,111 INFO 
+Overall Acc: 0.9249
+Mean Acc: 0.6559
+FreqW Acc: 0.8674
+Mean IoU: 0.5698
+
+2023-05-27 21:15:28,303 INFO 
+Current epoch: 283
+2023-05-27 21:15:38,016 INFO Epoch 283, Itrs 25950/30000, Loss=0.091936
+2023-05-27 21:16:55,368 INFO Epoch 283, Itrs 26000/30000, Loss=0.091483
+2023-05-27 21:16:55,439 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter26000_epoch283_miou0.5844.pth
+2023-05-27 21:16:55,439 INFO validation...
+2023-05-27 21:17:22,204 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6578
+FreqW Acc: 0.8665
+Mean IoU: 0.5713
+
+2023-05-27 21:18:12,731 INFO 
+Current epoch: 284
+2023-05-27 21:18:34,888 INFO Epoch 284, Itrs 26050/30000, Loss=0.091526
+2023-05-27 21:19:51,635 INFO Epoch 284, Itrs 26100/30000, Loss=0.090635
+2023-05-27 21:19:51,752 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter26100_epoch284_miou0.5844.pth
+2023-05-27 21:19:51,752 INFO validation...
+2023-05-27 21:20:16,794 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6587
+FreqW Acc: 0.8667
+Mean IoU: 0.5741
+
+2023-05-27 21:20:55,755 INFO 
+Current epoch: 285
+2023-05-27 21:21:29,678 INFO Epoch 285, Itrs 26150/30000, Loss=0.090945
+2023-05-27 21:22:47,255 INFO Epoch 285, Itrs 26200/30000, Loss=0.089589
+2023-05-27 21:22:47,327 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter26200_epoch285_miou0.5844.pth
+2023-05-27 21:22:47,328 INFO validation...
+2023-05-27 21:23:13,496 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6563
+FreqW Acc: 0.8664
+Mean IoU: 0.5725
+
+2023-05-27 21:23:39,126 INFO 
+Current epoch: 286
+2023-05-27 21:24:27,571 INFO Epoch 286, Itrs 26250/30000, Loss=0.091109
+2023-05-27 21:25:42,503 INFO Epoch 286, Itrs 26300/30000, Loss=0.091064
+2023-05-27 21:25:42,594 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter26300_epoch286_miou0.5844.pth
+2023-05-27 21:25:42,594 INFO validation...
+2023-05-27 21:26:08,070 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6628
+FreqW Acc: 0.8669
+Mean IoU: 0.5746
+
+2023-05-27 21:26:20,664 INFO 
+Current epoch: 287
+2023-05-27 21:27:20,400 INFO Epoch 287, Itrs 26350/30000, Loss=0.089844
+2023-05-27 21:28:37,222 INFO Epoch 287, Itrs 26400/30000, Loss=0.091439
+2023-05-27 21:28:37,302 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter26400_epoch287_miou0.5844.pth
+2023-05-27 21:28:37,303 INFO validation...
+2023-05-27 21:29:01,855 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6636
+FreqW Acc: 0.8668
+Mean IoU: 0.5746
+
+2023-05-27 21:29:02,460 INFO 
+Current epoch: 288
+2023-05-27 21:30:13,983 INFO Epoch 288, Itrs 26450/30000, Loss=0.091213
+2023-05-27 21:31:23,830 INFO 
+Current epoch: 289
+2023-05-27 21:31:30,876 INFO Epoch 289, Itrs 26500/30000, Loss=0.090214
+2023-05-27 21:31:30,946 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter26500_epoch289_miou0.5844.pth
+2023-05-27 21:31:30,946 INFO validation...
+2023-05-27 21:31:56,475 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6581
+FreqW Acc: 0.8665
+Mean IoU: 0.5721
+
+2023-05-27 21:33:07,250 INFO Epoch 289, Itrs 26550/30000, Loss=0.090558
+2023-05-27 21:34:04,856 INFO 
+Current epoch: 290
+2023-05-27 21:34:23,793 INFO Epoch 290, Itrs 26600/30000, Loss=0.090603
+2023-05-27 21:34:23,895 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter26600_epoch290_miou0.5844.pth
+2023-05-27 21:34:23,896 INFO validation...
+2023-05-27 21:34:48,674 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6552
+FreqW Acc: 0.8663
+Mean IoU: 0.5729
+
+2023-05-27 21:36:01,701 INFO Epoch 290, Itrs 26650/30000, Loss=0.090477
+2023-05-27 21:36:46,746 INFO 
+Current epoch: 291
+2023-05-27 21:37:17,358 INFO Epoch 291, Itrs 26700/30000, Loss=0.091830
+2023-05-27 21:37:17,448 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter26700_epoch291_miou0.5844.pth
+2023-05-27 21:37:17,448 INFO validation...
+2023-05-27 21:37:42,265 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6574
+FreqW Acc: 0.8667
+Mean IoU: 0.5719
+
+2023-05-27 21:38:55,448 INFO Epoch 291, Itrs 26750/30000, Loss=0.089623
+2023-05-27 21:39:30,678 INFO 
+Current epoch: 292
+2023-05-27 21:40:14,406 INFO Epoch 292, Itrs 26800/30000, Loss=0.090495
+2023-05-27 21:40:14,477 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter26800_epoch292_miou0.5844.pth
+2023-05-27 21:40:14,477 INFO validation...
+2023-05-27 21:40:40,354 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6585
+FreqW Acc: 0.8664
+Mean IoU: 0.5730
+
+2023-05-27 21:41:53,292 INFO Epoch 292, Itrs 26850/30000, Loss=0.090262
+2023-05-27 21:42:15,467 INFO 
+Current epoch: 293
+2023-05-27 21:43:13,793 INFO Epoch 293, Itrs 26900/30000, Loss=0.091727
+2023-05-27 21:43:13,865 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter26900_epoch293_miou0.5844.pth
+2023-05-27 21:43:13,865 INFO validation...
+2023-05-27 21:43:39,865 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6638
+FreqW Acc: 0.8668
+Mean IoU: 0.5741
+
+2023-05-27 21:44:51,753 INFO Epoch 293, Itrs 26950/30000, Loss=0.088964
+2023-05-27 21:45:01,299 INFO 
+Current epoch: 294
+2023-05-27 21:46:07,923 INFO Epoch 294, Itrs 27000/30000, Loss=0.089881
+2023-05-27 21:46:08,006 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter27000_epoch294_miou0.5844.pth
+2023-05-27 21:46:08,007 INFO validation...
+2023-05-27 21:46:33,108 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6571
+FreqW Acc: 0.8661
+Mean IoU: 0.5720
+
+2023-05-27 21:47:42,504 INFO 
+Current epoch: 295
+2023-05-27 21:47:46,730 INFO Epoch 295, Itrs 27050/30000, Loss=0.089229
+2023-05-27 21:49:03,075 INFO Epoch 295, Itrs 27100/30000, Loss=0.090777
+2023-05-27 21:49:03,157 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter27100_epoch295_miou0.5844.pth
+2023-05-27 21:49:03,157 INFO validation...
+2023-05-27 21:49:29,995 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6564
+FreqW Acc: 0.8655
+Mean IoU: 0.5728
+
+2023-05-27 21:50:26,845 INFO 
+Current epoch: 296
+2023-05-27 21:50:43,170 INFO Epoch 296, Itrs 27150/30000, Loss=0.088850
+2023-05-27 21:51:59,449 INFO Epoch 296, Itrs 27200/30000, Loss=0.089093
+2023-05-27 21:51:59,533 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter27200_epoch296_miou0.5844.pth
+2023-05-27 21:51:59,533 INFO validation...
+2023-05-27 21:52:24,955 INFO 
+Overall Acc: 0.9239
+Mean Acc: 0.6525
+FreqW Acc: 0.8657
+Mean IoU: 0.5703
+
+2023-05-27 21:53:08,336 INFO 
+Current epoch: 297
+2023-05-27 21:53:37,947 INFO Epoch 297, Itrs 27250/30000, Loss=0.090566
+2023-05-27 21:54:54,339 INFO Epoch 297, Itrs 27300/30000, Loss=0.089185
+2023-05-27 21:54:54,421 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter27300_epoch297_miou0.5844.pth
+2023-05-27 21:54:54,421 INFO validation...
+2023-05-27 21:55:18,364 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6583
+FreqW Acc: 0.8663
+Mean IoU: 0.5732
+
+2023-05-27 21:55:49,756 INFO 
+Current epoch: 298
+2023-05-27 21:56:30,755 INFO Epoch 298, Itrs 27350/30000, Loss=0.090065
+2023-05-27 21:57:47,552 INFO Epoch 298, Itrs 27400/30000, Loss=0.089796
+2023-05-27 21:57:47,634 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter27400_epoch298_miou0.5844.pth
+2023-05-27 21:57:47,634 INFO validation...
+2023-05-27 21:58:13,067 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6574
+FreqW Acc: 0.8664
+Mean IoU: 0.5733
+
+2023-05-27 21:58:33,020 INFO 
+Current epoch: 299
+2023-05-27 21:59:25,972 INFO Epoch 299, Itrs 27450/30000, Loss=0.089143
+2023-05-27 22:00:42,785 INFO Epoch 299, Itrs 27500/30000, Loss=0.088462
+2023-05-27 22:00:42,870 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter27500_epoch299_miou0.5844.pth
+2023-05-27 22:00:42,870 INFO validation...
+2023-05-27 22:01:07,911 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6480
+FreqW Acc: 0.8660
+Mean IoU: 0.5672
+
+2023-05-27 22:01:14,714 INFO 
+Current epoch: 300
+2023-05-27 22:02:20,323 INFO Epoch 300, Itrs 27550/30000, Loss=0.088741
+2023-05-27 22:03:35,891 INFO Epoch 300, Itrs 27600/30000, Loss=0.089418
+2023-05-27 22:03:35,973 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter27600_epoch300_miou0.5844.pth
+2023-05-27 22:03:35,973 INFO validation...
+2023-05-27 22:04:00,708 INFO 
+Overall Acc: 0.9246
+Mean Acc: 0.6563
+FreqW Acc: 0.8669
+Mean IoU: 0.5715
+
+2023-05-27 22:04:00,801 INFO 
+Current epoch: 301
+2023-05-27 22:05:18,481 INFO Epoch 301, Itrs 27650/30000, Loss=0.089549
+2023-05-27 22:06:23,860 INFO 
+Current epoch: 302
+2023-05-27 22:06:37,682 INFO Epoch 302, Itrs 27700/30000, Loss=0.089597
+2023-05-27 22:06:37,774 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter27700_epoch302_miou0.5844.pth
+2023-05-27 22:06:37,774 INFO validation...
+2023-05-27 22:07:02,865 INFO 
+Overall Acc: 0.9246
+Mean Acc: 0.6607
+FreqW Acc: 0.8671
+Mean IoU: 0.5724
+
+2023-05-27 22:08:13,461 INFO Epoch 302, Itrs 27750/30000, Loss=0.088273
+2023-05-27 22:09:07,041 INFO 
+Current epoch: 303
+2023-05-27 22:09:33,602 INFO Epoch 303, Itrs 27800/30000, Loss=0.089029
+2023-05-27 22:09:33,685 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter27800_epoch303_miou0.5844.pth
+2023-05-27 22:09:33,685 INFO validation...
+2023-05-27 22:09:59,563 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6552
+FreqW Acc: 0.8665
+Mean IoU: 0.5723
+
+2023-05-27 22:11:11,311 INFO Epoch 303, Itrs 27850/30000, Loss=0.089005
+2023-05-27 22:11:51,179 INFO 
+Current epoch: 304
+2023-05-27 22:12:28,758 INFO Epoch 304, Itrs 27900/30000, Loss=0.087777
+2023-05-27 22:12:28,840 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter27900_epoch304_miou0.5844.pth
+2023-05-27 22:12:28,840 INFO validation...
+2023-05-27 22:12:55,240 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6533
+FreqW Acc: 0.8662
+Mean IoU: 0.5711
+
+2023-05-27 22:14:06,610 INFO Epoch 304, Itrs 27950/30000, Loss=0.088450
+2023-05-27 22:14:33,535 INFO 
+Current epoch: 305
+2023-05-27 22:15:24,655 INFO Epoch 305, Itrs 28000/30000, Loss=0.088331
+2023-05-27 22:15:24,738 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter28000_epoch305_miou0.5844.pth
+2023-05-27 22:15:24,738 INFO validation...
+2023-05-27 22:15:50,744 INFO 
+Overall Acc: 0.9245
+Mean Acc: 0.6561
+FreqW Acc: 0.8664
+Mean IoU: 0.5728
+
+2023-05-27 22:17:04,472 INFO Epoch 305, Itrs 28050/30000, Loss=0.088945
+2023-05-27 22:17:20,088 INFO 
+Current epoch: 306
+2023-05-27 22:18:22,146 INFO Epoch 306, Itrs 28100/30000, Loss=0.088437
+2023-05-27 22:18:22,223 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter28100_epoch306_miou0.5844.pth
+2023-05-27 22:18:22,223 INFO validation...
+2023-05-27 22:18:46,826 INFO 
+Overall Acc: 0.9246
+Mean Acc: 0.6549
+FreqW Acc: 0.8668
+Mean IoU: 0.5722
+
+2023-05-27 22:19:57,865 INFO Epoch 306, Itrs 28150/30000, Loss=0.088641
+2023-05-27 22:20:00,924 INFO 
+Current epoch: 307
+2023-05-27 22:21:18,699 INFO Epoch 307, Itrs 28200/30000, Loss=0.088861
+2023-05-27 22:21:18,782 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter28200_epoch307_miou0.5844.pth
+2023-05-27 22:21:18,782 INFO validation...
+2023-05-27 22:21:43,568 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6542
+FreqW Acc: 0.8662
+Mean IoU: 0.5706
+
+2023-05-27 22:22:45,966 INFO 
+Current epoch: 308
+2023-05-27 22:22:55,587 INFO Epoch 308, Itrs 28250/30000, Loss=0.088382
+2023-05-27 22:24:13,633 INFO Epoch 308, Itrs 28300/30000, Loss=0.088267
+2023-05-27 22:24:13,719 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter28300_epoch308_miou0.5844.pth
+2023-05-27 22:24:13,720 INFO validation...
+2023-05-27 22:24:38,386 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6530
+FreqW Acc: 0.8664
+Mean IoU: 0.5697
+
+2023-05-27 22:25:28,497 INFO 
+Current epoch: 309
+2023-05-27 22:25:50,408 INFO Epoch 309, Itrs 28350/30000, Loss=0.088142
+2023-05-27 22:27:07,180 INFO Epoch 309, Itrs 28400/30000, Loss=0.088512
+2023-05-27 22:27:07,582 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter28400_epoch309_miou0.5844.pth
+2023-05-27 22:27:07,582 INFO validation...
+2023-05-27 22:27:32,881 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6545
+FreqW Acc: 0.8662
+Mean IoU: 0.5714
+
+2023-05-27 22:28:10,720 INFO 
+Current epoch: 310
+2023-05-27 22:28:45,345 INFO Epoch 310, Itrs 28450/30000, Loss=0.088206
+2023-05-27 22:30:00,860 INFO Epoch 310, Itrs 28500/30000, Loss=0.088959
+2023-05-27 22:30:00,977 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter28500_epoch310_miou0.5844.pth
+2023-05-27 22:30:00,978 INFO validation...
+2023-05-27 22:30:26,337 INFO 
+Overall Acc: 0.9241
+Mean Acc: 0.6501
+FreqW Acc: 0.8661
+Mean IoU: 0.5685
+
+2023-05-27 22:30:50,976 INFO 
+Current epoch: 311
+2023-05-27 22:31:38,137 INFO Epoch 311, Itrs 28550/30000, Loss=0.086936
+2023-05-27 22:32:55,374 INFO Epoch 311, Itrs 28600/30000, Loss=0.088394
+2023-05-27 22:32:55,458 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter28600_epoch311_miou0.5844.pth
+2023-05-27 22:32:55,459 INFO validation...
+2023-05-27 22:33:19,609 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6550
+FreqW Acc: 0.8664
+Mean IoU: 0.5709
+
+2023-05-27 22:33:33,167 INFO 
+Current epoch: 312
+2023-05-27 22:34:31,938 INFO Epoch 312, Itrs 28650/30000, Loss=0.089702
+2023-05-27 22:35:47,218 INFO Epoch 312, Itrs 28700/30000, Loss=0.086985
+2023-05-27 22:35:47,310 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter28700_epoch312_miou0.5844.pth
+2023-05-27 22:35:47,310 INFO validation...
+2023-05-27 22:36:12,765 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6506
+FreqW Acc: 0.8664
+Mean IoU: 0.5684
+
+2023-05-27 22:36:13,304 INFO 
+Current epoch: 313
+2023-05-27 22:37:24,895 INFO Epoch 313, Itrs 28750/30000, Loss=0.086979
+2023-05-27 22:38:34,757 INFO 
+Current epoch: 314
+2023-05-27 22:38:41,880 INFO Epoch 314, Itrs 28800/30000, Loss=0.087363
+2023-05-27 22:38:41,950 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter28800_epoch314_miou0.5844.pth
+2023-05-27 22:38:41,950 INFO validation...
+2023-05-27 22:39:07,692 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6523
+FreqW Acc: 0.8661
+Mean IoU: 0.5688
+
+2023-05-27 22:40:20,705 INFO Epoch 314, Itrs 28850/30000, Loss=0.087019
+2023-05-27 22:41:20,140 INFO 
+Current epoch: 315
+2023-05-27 22:41:40,069 INFO Epoch 315, Itrs 28900/30000, Loss=0.087483
+2023-05-27 22:41:40,157 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter28900_epoch315_miou0.5844.pth
+2023-05-27 22:41:40,158 INFO validation...
+2023-05-27 22:42:05,652 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6517
+FreqW Acc: 0.8663
+Mean IoU: 0.5694
+
+2023-05-27 22:43:17,699 INFO Epoch 315, Itrs 28950/30000, Loss=0.087523
+2023-05-27 22:44:04,082 INFO 
+Current epoch: 316
+2023-05-27 22:44:36,251 INFO Epoch 316, Itrs 29000/30000, Loss=0.088083
+2023-05-27 22:44:36,323 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter29000_epoch316_miou0.5844.pth
+2023-05-27 22:44:36,323 INFO validation...
+2023-05-27 22:45:01,721 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6521
+FreqW Acc: 0.8663
+Mean IoU: 0.5681
+
+2023-05-27 22:46:14,234 INFO Epoch 316, Itrs 29050/30000, Loss=0.087569
+2023-05-27 22:46:47,504 INFO 
+Current epoch: 317
+2023-05-27 22:47:31,858 INFO Epoch 317, Itrs 29100/30000, Loss=0.087073
+2023-05-27 22:47:31,929 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter29100_epoch317_miou0.5844.pth
+2023-05-27 22:47:31,929 INFO validation...
+2023-05-27 22:47:57,460 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6546
+FreqW Acc: 0.8665
+Mean IoU: 0.5706
+
+2023-05-27 22:49:08,751 INFO Epoch 317, Itrs 29150/30000, Loss=0.087036
+2023-05-27 22:49:30,504 INFO 
+Current epoch: 318
+2023-05-27 22:50:25,909 INFO Epoch 318, Itrs 29200/30000, Loss=0.087336
+2023-05-27 22:50:25,996 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter29200_epoch318_miou0.5844.pth
+2023-05-27 22:50:25,996 INFO validation...
+2023-05-27 22:50:52,936 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6511
+FreqW Acc: 0.8662
+Mean IoU: 0.5685
+
+2023-05-27 22:52:05,020 INFO Epoch 318, Itrs 29250/30000, Loss=0.087552
+2023-05-27 22:52:14,030 INFO 
+Current epoch: 319
+2023-05-27 22:53:23,823 INFO Epoch 319, Itrs 29300/30000, Loss=0.086504
+2023-05-27 22:53:23,930 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter29300_epoch319_miou0.5844.pth
+2023-05-27 22:53:23,930 INFO validation...
+2023-05-27 22:53:48,211 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6527
+FreqW Acc: 0.8662
+Mean IoU: 0.5691
+
+2023-05-27 22:54:56,126 INFO 
+Current epoch: 320
+2023-05-27 22:55:00,174 INFO Epoch 320, Itrs 29350/30000, Loss=0.087845
+2023-05-27 22:56:16,334 INFO Epoch 320, Itrs 29400/30000, Loss=0.088307
+2023-05-27 22:56:16,408 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter29400_epoch320_miou0.5844.pth
+2023-05-27 22:56:16,409 INFO validation...
+2023-05-27 22:56:41,540 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6530
+FreqW Acc: 0.8662
+Mean IoU: 0.5696
+
+2023-05-27 22:57:37,312 INFO 
+Current epoch: 321
+2023-05-27 22:57:53,734 INFO Epoch 321, Itrs 29450/30000, Loss=0.086226
+2023-05-27 22:59:09,191 INFO Epoch 321, Itrs 29500/30000, Loss=0.085274
+2023-05-27 22:59:09,370 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter29500_epoch321_miou0.5844.pth
+2023-05-27 22:59:09,370 INFO validation...
+2023-05-27 22:59:35,013 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6500
+FreqW Acc: 0.8661
+Mean IoU: 0.5679
+
+2023-05-27 23:00:18,931 INFO 
+Current epoch: 322
+2023-05-27 23:00:47,087 INFO Epoch 322, Itrs 29550/30000, Loss=0.088428
+2023-05-27 23:02:04,065 INFO Epoch 322, Itrs 29600/30000, Loss=0.086120
+2023-05-27 23:02:04,149 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter29600_epoch322_miou0.5844.pth
+2023-05-27 23:02:04,149 INFO validation...
+2023-05-27 23:02:28,817 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6513
+FreqW Acc: 0.8661
+Mean IoU: 0.5686
+
+2023-05-27 23:02:59,922 INFO 
+Current epoch: 323
+2023-05-27 23:03:40,621 INFO Epoch 323, Itrs 29650/30000, Loss=0.086024
+2023-05-27 23:04:56,403 INFO Epoch 323, Itrs 29700/30000, Loss=0.086368
+2023-05-27 23:04:56,485 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter29700_epoch323_miou0.5844.pth
+2023-05-27 23:04:56,485 INFO validation...
+2023-05-27 23:05:21,772 INFO 
+Overall Acc: 0.9242
+Mean Acc: 0.6503
+FreqW Acc: 0.8660
+Mean IoU: 0.5682
+
+2023-05-27 23:05:42,541 INFO 
+Current epoch: 324
+2023-05-27 23:06:35,356 INFO Epoch 324, Itrs 29750/30000, Loss=0.087080
+2023-05-27 23:07:50,435 INFO Epoch 324, Itrs 29800/30000, Loss=0.086348
+2023-05-27 23:07:50,518 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter29800_epoch324_miou0.5844.pth
+2023-05-27 23:07:50,519 INFO validation...
+2023-05-27 23:08:16,574 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6542
+FreqW Acc: 0.8664
+Mean IoU: 0.5708
+
+2023-05-27 23:08:23,751 INFO 
+Current epoch: 325
+2023-05-27 23:09:30,582 INFO Epoch 325, Itrs 29850/30000, Loss=0.085920
+2023-05-27 23:10:45,876 INFO Epoch 325, Itrs 29900/30000, Loss=0.086888
+2023-05-27 23:10:45,956 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter29900_epoch325_miou0.5844.pth
+2023-05-27 23:10:45,956 INFO validation...
+2023-05-27 23:11:10,976 INFO 
+Overall Acc: 0.9244
+Mean Acc: 0.6520
+FreqW Acc: 0.8662
+Mean IoU: 0.5698
+
+2023-05-27 23:11:11,046 INFO 
+Current epoch: 326
+2023-05-27 23:12:27,994 INFO Epoch 326, Itrs 29950/30000, Loss=0.086109
+2023-05-27 23:13:31,891 INFO 
+Current epoch: 327
+2023-05-27 23:13:44,739 INFO Epoch 327, Itrs 30000/30000, Loss=0.086992
+2023-05-27 23:13:44,826 INFO Model saved as logs/2023_0527_0848_38_cs_base_run_seed_1_cuda/checkpoints/deeplabv3plus_mobilenet_cityscapes_os16_iter30000_epoch327_miou0.5844.pth
+2023-05-27 23:13:44,827 INFO validation...
+2023-05-27 23:14:10,127 INFO 
+Overall Acc: 0.9243
+Mean Acc: 0.6537
+FreqW Acc: 0.8663
+Mean IoU: 0.5702
+
