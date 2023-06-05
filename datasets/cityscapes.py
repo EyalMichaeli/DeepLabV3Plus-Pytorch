@@ -105,6 +105,27 @@ class Cityscapes(data.Dataset):
                                              self._get_target_suffix(self.mode, self.target_type))
                 self.targets.append(os.path.join(target_dir, target_name))
 
+
+        # # add one city from the test set of cityscapes:
+        # extra_img_dir = self.root + '/leftImg8bit/test/berlin/'
+        # extra_target_dir = self.root + '/gtFine/test/berlin/'
+        # for file_name in os.listdir(extra_img_dir):
+        #     self.images.append(os.path.join(extra_img_dir, file_name))
+        #     target_name = '{}_{}'.format(file_name.split('_leftImg8bit')[0],
+        #                                     self._get_target_suffix(self.mode, self.target_type))
+        #     self.targets.append(os.path.join(extra_target_dir, target_name))
+
+        # if split == 'train':
+        #     # print one example:
+        #     logging.info(self.images[0])
+        #     logging.info(self.targets[0])
+        #     logging.info(self.images[2975])
+        #     logging.info(self.targets[2975])
+
+
+        logging.info(f"Found {len(self.images)} {split} images")
+        logging.info(f"Found {len(self.targets)} {split} targets")
+
         if aug_json:
             assert sample_aug_ratio is not None
             assert sample_aug_ratio > 0 and sample_aug_ratio <= 1

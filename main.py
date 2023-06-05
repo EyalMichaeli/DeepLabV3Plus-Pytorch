@@ -36,6 +36,15 @@ nohup sh -c 'python main.py \
             2>&1 | tee -a nohup_outputs/nohup_output-cs_base_run_seed_3_cuda.log &
 
             
+nohup sh -c 'python main.py \
+    --gpu_id 1 \
+    --random_seed 1 \
+    --logdir logs/cs_base_run_seed_1_extra_544_test_data_berlin \
+        --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
+            --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
+            2>&1 | tee -a nohup_outputs/nohup_output-cs_base_run_seed_1_extra_544_test_data_berlin.log &
+
+            
 # resume training with diff seed
 nohup sh -c 'python main.py \
     --gpu_id 1 \
@@ -47,18 +56,30 @@ nohup sh -c 'python main.py \
             2>&1 | tee -a nohup_outputs/nohup_output-.log &
                   
 
-# train from scratch with aug, MUNIT
+# train from scratch with aug, ip2p
 nohup sh -c 'python main.py \
     --gpu_id 2 \
     --random_seed 1 \
-    --logdir logs/cs_aug_run_munit_default_run_style_1.5_seed_1_cuda \
-    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cs2cs-style_recon_2_perceptual_1/2023_0518_1805_39_ampO1_lower_LR/inference_cp_400k_style_std_2.0.json \
-    --aug_sample_ratio 0.5 \
+    --logdir logs/cs_aug_ratio_0.1_cs_ip2p_2x_constant_instructions_image_w_1.5 \
+    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/cs_ip2p_2x_constant_instructions_image_w_1.5/images.json \
+    --aug_sample_ratio 0.1 \
         --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
-            2>&1 | tee -a nohup_outputs/nohup_output-cs_aug_run_munit_default_run_style_1.5_seed_1_cuda.log &
+            2>&1 | tee -a nohup_outputs/nohup_output-cs_aug_ratio_0.1_cs_ip2p_2x_constant_instructions_image_w_1.5.log &
 
             
+# train from scratch with aug, ip2p
+nohup sh -c 'python main.py \
+    --gpu_id 3 \
+    --random_seed 1 \
+    --logdir logs/cs_aug_ratio_0.2_cs_ip2p_2x_constant_instructions_image_w_1.5 \
+    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/cs_ip2p_2x_constant_instructions_image_w_1.5/images.json \
+    --aug_sample_ratio 0.2 \
+        --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
+            --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
+            2>&1 | tee -a nohup_outputs/nohup_output-cs_aug_ratio_0.2_cs_ip2p_2x_constant_instructions_image_w_1.5.log &
+
+
 # train from scratch with aug, MUNIT
 nohup sh -c 'python main.py \
     --gpu_id 2 \
@@ -121,7 +142,7 @@ def get_argparser():
     parser.add_argument("--save_val_results", action='store_true', default=False,
                         help="save segmentation results to \"./results\"")
     parser.add_argument("--total_itrs", type=int, default=30e3,
-                        help="epoch number (default: 30k)")
+                        help="max num of iters (default: 30k)")
     parser.add_argument("--lr", type=float, default=0.01,
                         help="learning rate (default: 0.01)")
     parser.add_argument("--lr_policy", type=str, default='poly', choices=['poly', 'step'],

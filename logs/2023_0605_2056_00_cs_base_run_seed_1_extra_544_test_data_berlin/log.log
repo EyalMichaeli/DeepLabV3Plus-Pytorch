@@ -1,0 +1,47 @@
+2023-06-05 20:56:01,069 INFO Device: cuda
+2023-06-05 20:56:01,071 INFO Random Seed: 1 
+
+2023-06-05 20:56:01,071 INFO Options: {'aug_json': None,
+ 'aug_sample_ratio': 0.5,
+ 'batch_size': 32,
+ 'ckpt': None,
+ 'continue_training': False,
+ 'crop_size': 256,
+ 'crop_val': False,
+ 'data_root': '/mnt/raid/home/eyal_michaeli/datasets/cityscapes',
+ 'dataset': 'cityscapes',
+ 'download': False,
+ 'gpu_id': '1',
+ 'logdir': 'logs/2023_0605_2056_00_cs_base_run_seed_1_extra_544_test_data_berlin',
+ 'loss_type': 'cross_entropy',
+ 'lr': 0.2,
+ 'lr_policy': 'poly',
+ 'model': 'deeplabv3plus_mobilenet',
+ 'num_classes': 19,
+ 'output_stride': 16,
+ 'print_interval': 50,
+ 'random_seed': 1,
+ 'save_val_results': True,
+ 'separable_conv': False,
+ 'step_size': 10000,
+ 'test_only': False,
+ 'total_itrs': 30000.0,
+ 'val_batch_size': 4,
+ 'val_interval': 100,
+ 'weight_decay': 0.0001,
+ 'year': '2012'}
+2023-06-05 20:56:01,088 INFO Found 3519 train images
+2023-06-05 20:56:01,088 INFO Found 3519 train targets
+2023-06-05 20:56:01,088 INFO /mnt/raid/home/eyal_michaeli/datasets/cityscapes/leftImg8bit/train/stuttgart/stuttgart_000167_000019_leftImg8bit.png
+2023-06-05 20:56:01,088 INFO /mnt/raid/home/eyal_michaeli/datasets/cityscapes/gtFine/train/stuttgart/stuttgart_000167_000019_gtFine_labelIds.png
+2023-06-05 20:56:01,088 INFO /mnt/raid/home/eyal_michaeli/datasets/cityscapes/leftImg8bit/test/berlin/berlin_000122_000019_leftImg8bit.png
+2023-06-05 20:56:01,088 INFO /mnt/raid/home/eyal_michaeli/datasets/cityscapes/gtFine/test/berlin/berlin_000122_000019_gtFine_labelIds.png
+2023-06-05 20:56:01,089 INFO Not using augmented images
+2023-06-05 20:56:01,092 INFO Found 1044 val images
+2023-06-05 20:56:01,092 INFO Found 1044 val targets
+2023-06-05 20:56:01,093 INFO Not using augmented images
+2023-06-05 20:56:01,093 INFO Dataset: cityscapes, Train set: 3519, Val set: 1044
+2023-06-05 20:56:01,231 INFO [!] Training from scratch, no checkpoint file used
+2023-06-05 20:56:02,535 INFO 
+Current epoch: 1
+2023-06-05 20:56:08,451 INFO validation...
