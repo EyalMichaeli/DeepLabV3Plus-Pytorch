@@ -47,7 +47,7 @@ nohup sh -c 'python main.py \
             
 # resume training with diff seed
 nohup sh -c 'python main.py \
-    --gpu_id 1 \
+    --gpu_id 0 \
     --random_seed 2 \
     --logdir logs/cs_base_run_continue \
         --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
@@ -58,14 +58,14 @@ nohup sh -c 'python main.py \
 
 # train from scratch with aug, ip2p
 nohup sh -c 'python main.py \
-    --gpu_id 2 \
+    --gpu_id 1 \
     --random_seed 1 \
-    --logdir logs/cs_aug_ratio_0.1_cs_ip2p_2x_constant_instructions_image_w_1.5 \
-    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/cs_ip2p_2x_constant_instructions_image_w_1.5/images.json \
+    --logdir logs/cs_aug_ratio_0.1_cs_ip2p_2x_constant_instructions_image_w_1.5_lpips_filter_0.1_0.48 \
+    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/cs_ip2p_2x_constant_instructions_image_w_1.5_filtered_lpips_0.1_0.48.json \
     --aug_sample_ratio 0.1 \
         --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
-            2>&1 | tee -a nohup_outputs/nohup_output-cs_aug_ratio_0.1_cs_ip2p_2x_constant_instructions_image_w_1.5.log &
+            2>&1 | tee -a nohup_outputs/nohup_output-cs_aug_ratio_0.1_cs_ip2p_2x_constant_instructions_image_w_1.5_lpips_filter_0.1_0.48.log &
 
             
 # train from scratch with aug, ip2p

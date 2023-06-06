@@ -160,15 +160,17 @@ class Cityscapes(data.Dataset):
             tuple: (image, target) where target is a tuple of all target types if target_type is a list with more
             than one item. Otherwise target is a json object if target_type="polygon", else the image segmentation.
         """
+        use_transform = True
         image_path = self.images[index]
         if self.aug_json:
             if random.random() < self.sample_aug_ratio:
+                use_transform = False
                 image_path = self.aug_json.get(image_path, image_path)  # if image_path is not in aug_json, return image_path
                 #logging.info(f"Using augmented image: {image_path}")
 
         image = Image.open(image_path).convert('RGB')
         target = Image.open(self.targets[index])
-        if self.transform:
+        if self.transform and use_transform:
             image, target = self.transform(image, target)
         target = self.encode_target(target)
         return image, target
