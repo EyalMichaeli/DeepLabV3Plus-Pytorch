@@ -1,0 +1,45 @@
+nohup: ignoring input
+2023-06-06 11:42:50,631 INFO Device: cuda
+2023-06-06 11:42:50,633 INFO Random Seed: 1 
+
+2023-06-06 11:42:50,633 INFO Options: {'aug_json': '/mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/cs_ip2p_2x_constant_instructions_image_w_1.5/images.json',
+ 'aug_sample_ratio': 0.1,
+ 'batch_size': 32,
+ 'ckpt': None,
+ 'continue_training': False,
+ 'crop_size': 256,
+ 'crop_val': False,
+ 'data_root': '/mnt/raid/home/eyal_michaeli/datasets/cityscapes',
+ 'dataset': 'cityscapes',
+ 'download': False,
+ 'gpu_id': '3',
+ 'logdir': 'logs/2023_0606_1142_50_cs_aug_ratio_0.1_cs_ip2p_2x_constant_instructions_image_w_1.5_no_double_aug',
+ 'loss_type': 'cross_entropy',
+ 'lr': 0.2,
+ 'lr_policy': 'poly',
+ 'model': 'deeplabv3plus_mobilenet',
+ 'num_classes': 19,
+ 'output_stride': 16,
+ 'print_interval': 50,
+ 'random_seed': 1,
+ 'save_val_results': True,
+ 'separable_conv': False,
+ 'step_size': 10000,
+ 'test_only': False,
+ 'total_itrs': 30000.0,
+ 'val_batch_size': 4,
+ 'val_interval': 100,
+ 'weight_decay': 0.0001,
+ 'year': '2012'}
+2023-06-06 11:42:50,648 INFO Found 2975 train images
+2023-06-06 11:42:50,648 INFO Found 2975 train targets
+Traceback (most recent call last):
+  File "main.py", line 569, in <module>
+    main()
+  File "main.py", line 399, in main
+    train_dst, val_dst = get_dataset(opts)
+  File "main.py", line 272, in get_dataset
+    train_dst = Cityscapes(root=opts.data_root,
+  File "/mnt/raid/home/eyal_michaeli/git/DeepLabV3Plus-Pytorch/datasets/cityscapes.py", line 132, in __init__
+    with open(aug_json, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/cs_ip2p_2x_constant_instructions_image_w_1.5/images.json'

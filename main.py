@@ -35,14 +35,27 @@ nohup sh -c 'python main.py \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
             2>&1 | tee -a nohup_outputs/nohup_output-cs_base_run_seed_3_cuda.log &
 
+
             
+# using a subset (67%, 2k) for training data  
 nohup sh -c 'python main.py \
-    --gpu_id 1 \
-    --random_seed 1 \
-    --logdir logs/cs_base_run_seed_1_extra_544_test_data_berlin \
+    --gpu_id 0 \
+    --random_seed 2 \
+    --logdir logs/cs_base_run_seed_2_using_subset_2k \
+    --train_sample_ratio 0.67 \
         --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
-            2>&1 | tee -a nohup_outputs/nohup_output-cs_base_run_seed_1_extra_544_test_data_berlin.log &
+            2>&1 | tee -a nohup_outputs/nohup_output-cs_base_run_seed_2_using_subset_2k.log &
+
+            
+# using extra test data   
+nohup sh -c 'python main.py \
+    --gpu_id 2 \
+    --random_seed 1 \
+    --logdir logs/cs_base_run_seed_1_extra_test_data_all_cities \
+        --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
+            --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
+            2>&1 | tee -a nohup_outputs/nohup_output-cs_base_run_seed_1_extra_test_data_all_cities.log &
 
             
 # resume training with diff seed
@@ -58,38 +71,39 @@ nohup sh -c 'python main.py \
 
 # train from scratch with aug, ip2p
 nohup sh -c 'python main.py \
-    --gpu_id 1 \
+    --gpu_id 3 \
     --random_seed 1 \
-    --logdir logs/cs_aug_ratio_0.1_cs_ip2p_2x_constant_instructions_image_w_1.5_lpips_filter_0.1_0.48 \
+    --logdir logs/cs_subset_2k_aug_ratio_0.3_cs_ip2p_2x_constant_instructions_image_w_1.5_lpips_filter_0.1_0.48 \
+    --train_sample_ratio 0.67 \
     --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/cs_ip2p_2x_constant_instructions_image_w_1.5_filtered_lpips_0.1_0.48.json \
-    --aug_sample_ratio 0.1 \
+    --aug_sample_ratio 0.3 \
         --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
-            2>&1 | tee -a nohup_outputs/nohup_output-cs_aug_ratio_0.1_cs_ip2p_2x_constant_instructions_image_w_1.5_lpips_filter_0.1_0.48.log &
+            2>&1 | tee -a nohup_outputs/nohup_output-cs_subset_2k_aug_ratio_0.3_cs_ip2p_2x_constant_instructions_image_w_1.5_lpips_filter_0.1_0.48.log &
 
             
 # train from scratch with aug, ip2p
 nohup sh -c 'python main.py \
     --gpu_id 3 \
     --random_seed 1 \
-    --logdir logs/cs_aug_ratio_0.2_cs_ip2p_2x_constant_instructions_image_w_1.5 \
+    --logdir logs/cs_aug_ratio_0.1_cs_ip2p_2x_constant_instructions_image_w_1.5_no_double_aug \
     --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/cs_ip2p_2x_constant_instructions_image_w_1.5/images.json \
-    --aug_sample_ratio 0.2 \
+    --aug_sample_ratio 0.1 \
         --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
-            2>&1 | tee -a nohup_outputs/nohup_output-cs_aug_ratio_0.2_cs_ip2p_2x_constant_instructions_image_w_1.5.log &
+            2>&1 | tee -a nohup_outputs/nohup_output-cs_aug_ratio_0.1_cs_ip2p_2x_constant_instructions_image_w_1.5_no_double_aug.log &
 
 
 # train from scratch with aug, MUNIT
 nohup sh -c 'python main.py \
-    --gpu_id 2 \
+    --gpu_id 3 \
     --random_seed 1 \
-    --logdir logs/cs_aug_run_munit_style_recon_2_perceptual_1_style_1.5_aug_ratio_0.75 \
-    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cs2cs-style_recon_2_perceptual_1/2023_0518_1805_39_ampO1_lower_LR/inference_cp_400k_style_std_1.5.json \
-    --aug_sample_ratio 0.75 \
+    --logdir logs/cs_aug_run_munit_v0_cp_450k_style_std_1.85_lpips_filter_0.1_0.5_aug_ratio_0.15 \
+    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/2023_0603_1025_25_ampO1_lower_LR_lower_res_inference_inference_cp_000450000_style_std_1.85_lpips_filter_0.1_0.5.json \
+    --aug_sample_ratio 0.15 \
         --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
-            2>&1 | tee -a nohup_outputs/nohup_output-cs_aug_run_munit_style_recon_2_perceptual_1_style_1.5_aug_ratio_0.75.log &
+            2>&1 | tee -a nohup_outputs/nohup_output-cs_aug_run_munit_v0_cp_450k_style_std_1.85_lpips_filter_0.1_0.5_aug_ratio_0.15.log &
 
             
 # train from scratch with aug, MUNIT
@@ -125,6 +139,9 @@ def get_argparser():
                         choices=['voc', 'cityscapes'], help='Name of dataset')
     parser.add_argument("--num_classes", type=int, default=None,
                         help="num classes (default: None)")
+    # add arg to take only some amount for the train set
+    parser.add_argument("--train_sample_ratio", type=float, default=1.0,
+                        help="ratio of train set to take")
 
     # Deeplab Options
     available_models = sorted(name for name in network.modeling.__dict__ if name.islower() and \
@@ -269,8 +286,8 @@ def get_dataset(opts):
                             std=[0.229, 0.224, 0.225]),
         ])
 
-        train_dst = Cityscapes(root=opts.data_root,
-                               split='train', transform=train_transform, aug_json=opts.aug_json, sample_aug_ratio=opts.aug_sample_ratio)
+        train_dst = Cityscapes(root=opts.data_root, split='train', transform=train_transform, aug_json=opts.aug_json, 
+                               sample_aug_ratio=opts.aug_sample_ratio, train_sample_ratio=opts.train_sample_ratio)
         val_dst = Cityscapes(root=opts.data_root,
                              split='val', transform=val_transform)
     return train_dst, val_dst

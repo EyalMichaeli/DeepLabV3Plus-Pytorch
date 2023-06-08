@@ -74,7 +74,8 @@ class Cityscapes(data.Dataset):
     #train_id_to_color = np.array(train_id_to_color)
     #id_to_train_id = np.array([c.category_id for c in classes], dtype='uint8') - 1
 
-    def __init__(self, root, split='train', mode='fine', target_type='semantic', transform=None, aug_json=None, sample_aug_ratio: float = None):
+    def __init__(self, root, split='train', mode='fine', target_type='semantic', transform=None, aug_json=None, 
+                 sample_aug_ratio: float = None, train_sample_ratio: float = 1.0):
         self.root = os.path.expanduser(root)
         self.mode = 'gtFine'
         self.target_type = target_type
@@ -106,16 +107,19 @@ class Cityscapes(data.Dataset):
                 self.targets.append(os.path.join(target_dir, target_name))
 
 
-        # # add one city from the test set of cityscapes:
-        # extra_img_dir = self.root + '/leftImg8bit/test/berlin/'
-        # extra_target_dir = self.root + '/gtFine/test/berlin/'
-        # for file_name in os.listdir(extra_img_dir):
-        #     self.images.append(os.path.join(extra_img_dir, file_name))
-        #     target_name = '{}_{}'.format(file_name.split('_leftImg8bit')[0],
-        #                                     self._get_target_suffix(self.mode, self.target_type))
-        #     self.targets.append(os.path.join(extra_target_dir, target_name))
-
+        # # add cities from the test set of cityscapes, to see if the model will improve from the extra data
         # if split == 'train':
+        #     logging.info("Adding extra data from the test set of cityscapes")
+        #     test_cities_list = ['berlin', 'bielefeld', 'bonn', 'leverkusen', 'mainz', 'munich']
+        #     for test_city in test_cities_list:
+        #         extra_img_dir = self.root + '/leftImg8bit/test/' + test_city + '/'
+        #         extra_target_dir = self.root + '/gtFine/test/' + test_city + '/'
+        #         for file_name in os.listdir(extra_img_dir):
+        #             self.images.append(os.path.join(extra_img_dir, file_name))
+        #             target_name = '{}_{}'.format(file_name.split('_leftImg8bit')[0],
+        #                                             self._get_target_suffix(self.mode, self.target_type))
+        #             self.targets.append(os.path.join(extra_target_dir, target_name))
+            
         #     # print one example:
         #     logging.info(self.images[0])
         #     logging.info(self.targets[0])
@@ -126,7 +130,16 @@ class Cityscapes(data.Dataset):
         logging.info(f"Found {len(self.images)} {split} images")
         logging.info(f"Found {len(self.targets)} {split} targets")
 
-        if aug_json:
+
+        # use only a subset of the images for training, if train_sample_ratio < 1
+        if split == 'train' and train_sample_ratio < 1:
+            assert train_sample_ratio > 0, "train_sample_ratio must be > 0"
+            subset_size = int(len(self.images) * train_sample_ratio)
+            self.images = self.images[:subset_size]
+            self.targets = self.targets[:subset_size]
+            logging.info(f"With ratio {train_sample_ratio}, using only {subset_size} images for training, out of {len(self.images)}")
+
+        if split == 'train' and aug_json:
             assert sample_aug_ratio is not None
             assert sample_aug_ratio > 0 and sample_aug_ratio <= 1
             with open(aug_json, 'r') as f:
@@ -160,17 +173,16 @@ class Cityscapes(data.Dataset):
             tuple: (image, target) where target is a tuple of all target types if target_type is a list with more
             than one item. Otherwise target is a json object if target_type="polygon", else the image segmentation.
         """
-        use_transform = True
         image_path = self.images[index]
-        if self.aug_json:
-            if random.random() < self.sample_aug_ratio:
-                use_transform = False
-                image_path = self.aug_json.get(image_path, image_path)  # if image_path is not in aug_json, return image_path
-                #logging.info(f"Using augmented image: {image_path}")
+        if self.split == 'train':
+            if self.aug_json:
+                if random.random() < self.sample_aug_ratio:
+                    image_path = self.aug_json.get(image_path, image_path)  # if image_path is not in aug_json, return image_path
+                    # logging.info(f"Using augmented image: {image_path}")
 
         image = Image.open(image_path).convert('RGB')
         target = Image.open(self.targets[index])
-        if self.transform and use_transform:
+        if self.transform:
             image, target = self.transform(image, target)
         target = self.encode_target(target)
         return image, target
