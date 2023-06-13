@@ -26,6 +26,37 @@ import pprint
 
 
 """
+ ----------------------------- PASCAL VOC -----------------------------
+
+
+# train base model from scratch
+nohup sh -c 'python main.py \
+    --gpu_id 1 \adde
+    --random_seed 3 \
+    --logdir logs/voc/base_seed_3 \
+    --train_sample_ratio 0.75 \
+        --model deeplabv3plus_mobilenet --dataset voc --year 2012 --crop_val \
+            --lr 0.02 --crop_size 513 --batch_size 32 --output_stride 16 \
+            --save_val_results' \
+            2>&1 | tee -a nohup_outputs/voc/base_seed_3.log &
+
+
+# train from scratch with aug, ip2p
+nohup sh -c 'python main.py \
+    --gpu_id 3 \
+    --random_seed 1 \
+    --logdir logs/voc/seed_1_aug_ratio_0.3_pascal_ip2p_2x_constant_instructions_image_w_1.5_images_lpips_filter_0.1_0.6 \
+    --train_sample_ratio 0.75 \
+    --aug_json /mnt/raid/home/eyal_michaeli/git/DeepLabV3Plus-Pytorch/datasets/data/aug_json_files/pascal/ip2p/pascal_pascal_ip2p_2x_constant_instructions_image_w_1.5_images_lpips_filter_0.1_0.6.json \
+    --sample_aug_ratio 0.3 \
+    --model deeplabv3plus_mobilenet --dataset voc --year 2012 --crop_val \
+        --lr 0.02 --crop_size 513 --batch_size 32 --output_stride 16 \
+        --save_val_results' \
+        2>&1 | tee -a nohup_outputs/voc/seed_1_aug_ratio_0.3_pascal_ip2p_2x_constant_instructions_image_w_1.5_images_lpips_filter_0.1_0.6.log &
+   
+
+----------------------------- CITYSCAPES -----------------------------
+
 # train base model from scratch
 nohup sh -c 'python main.py \
     --gpu_id 3 \
@@ -71,15 +102,15 @@ nohup sh -c 'python main.py \
 
 # train from scratch with aug, ip2p
 nohup sh -c 'python main.py \
-    --gpu_id 3 \
+    --gpu_id 2 \
     --random_seed 1 \
-    --logdir logs/cs_subset_2k_aug_ratio_0.3_cs_ip2p_2x_constant_instructions_image_w_1.5_lpips_filter_0.1_0.48 \
+    --logdir logs/cs_subset_2k_aug_ratio_0.05_cs_ip2p_2x_constant_instructions_image_w_1.5_images_masked_person_rider_min_blob_size_100000_v0_lpips_filter_0.1_0.6 \
     --train_sample_ratio 0.67 \
-    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/cs_ip2p_2x_constant_instructions_image_w_1.5_filtered_lpips_0.1_0.48.json \
-    --aug_sample_ratio 0.3 \
+    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/cs_ip2p_2x_constant_instructions_image_w_1.5_images_masked_person_rider_min_blob_size_100000_v0_lpips_filter_0.1_0.6.json \
+    --sample_aug_ratio 0.05 \
         --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
-            2>&1 | tee -a nohup_outputs/nohup_output-cs_subset_2k_aug_ratio_0.3_cs_ip2p_2x_constant_instructions_image_w_1.5_lpips_filter_0.1_0.48.log &
+            2>&1 | tee -a nohup_outputs/nohup_output-cs_cs_subset_2k_aug_ratio_0.05_cs_ip2p_2x_constant_instructions_image_w_1.5_images_masked_person_rider_min_blob_size_100000_v0_lpips_filter_0.1_0.6.log &
 
             
 # train from scratch with aug, ip2p
@@ -88,7 +119,7 @@ nohup sh -c 'python main.py \
     --random_seed 1 \
     --logdir logs/cs_aug_ratio_0.1_cs_ip2p_2x_constant_instructions_image_w_1.5_no_double_aug \
     --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/cs_ip2p_2x_constant_instructions_image_w_1.5/images.json \
-    --aug_sample_ratio 0.1 \
+    --sample_aug_ratio 0.1 \
         --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
             2>&1 | tee -a nohup_outputs/nohup_output-cs_aug_ratio_0.1_cs_ip2p_2x_constant_instructions_image_w_1.5_no_double_aug.log &
@@ -100,7 +131,7 @@ nohup sh -c 'python main.py \
     --random_seed 1 \
     --logdir logs/cs_aug_run_munit_v0_cp_450k_style_std_1.85_lpips_filter_0.1_0.5_aug_ratio_0.15 \
     --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/2023_0603_1025_25_ampO1_lower_LR_lower_res_inference_inference_cp_000450000_style_std_1.85_lpips_filter_0.1_0.5.json \
-    --aug_sample_ratio 0.15 \
+    --sample_aug_ratio 0.15 \
         --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
             2>&1 | tee -a nohup_outputs/nohup_output-cs_aug_run_munit_v0_cp_450k_style_std_1.85_lpips_filter_0.1_0.5_aug_ratio_0.15.log &
@@ -112,7 +143,7 @@ nohup sh -c 'python main.py \
     --random_seed 1 \
     --logdir logs/cs_aug_run_munit_style_recon_2_perceptual_1_style_1.5_aug_ratio_0.5 \
     --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cs2cs-style_recon_2_perceptual_1/2023_0518_1805_39_ampO1_lower_LR/inference_cp_400k_style_std_1.5.json \
-    --aug_sample_ratio 0.5 \
+    --sample_aug_ratio 0.5 \
         --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
             2>&1 | tee -a nohup_outputs/nohup_output-cs_aug_run_munit_style_recon_2_perceptual_1_style_1.5_aug_ratio_0.5.log &
@@ -205,7 +236,7 @@ def get_argparser():
     # augmentation options
     parser.add_argument("--aug_json", type=str, default=None,
                         help="path to augmentation json file")
-    parser.add_argument("--aug_sample_ratio", type=float, default=0.5,
+    parser.add_argument("--sample_aug_ratio", type=float, default=0.5,
                         help="ratio to augment the original image")
     
     return parser
@@ -241,6 +272,7 @@ def get_dataset(opts):
             et.ExtResize(size=opts.crop_size),
             et.ExtRandomScale((0.5, 2.0)),
             et.ExtRandomCrop(size=(opts.crop_size, opts.crop_size), pad_if_needed=True),
+            et.ExtColorJitter(brightness=0.5, contrast=0.5, saturation=0.5),
             et.ExtRandomHorizontalFlip(),
             et.ExtToTensor(),
             et.ExtNormalize(mean=[0.485, 0.456, 0.406],
@@ -263,7 +295,8 @@ def get_dataset(opts):
                                 std=[0.229, 0.224, 0.225]),
             ])
         train_dst = VOCSegmentation(root=opts.data_root, year=opts.year,
-                                    image_set='train', download=opts.download, transform=train_transform)
+                                    image_set='train', download=opts.download, transform=train_transform, 
+                                    aug_json=opts.aug_json, sample_aug_ratio=opts.sample_aug_ratio, train_sample_ratio=opts.train_sample_ratio)
         val_dst = VOCSegmentation(root=opts.data_root, year=opts.year,
                                   image_set='val', download=False, transform=val_transform)
 
@@ -287,7 +320,7 @@ def get_dataset(opts):
         ])
 
         train_dst = Cityscapes(root=opts.data_root, split='train', transform=train_transform, aug_json=opts.aug_json, 
-                               sample_aug_ratio=opts.aug_sample_ratio, train_sample_ratio=opts.train_sample_ratio)
+                               sample_aug_ratio=opts.sample_aug_ratio, train_sample_ratio=opts.train_sample_ratio)
         val_dst = Cityscapes(root=opts.data_root,
                              split='val', transform=val_transform)
     return train_dst, val_dst
@@ -556,10 +589,12 @@ def main():
                     writer.add_scalar('Val_mean_class_wise_acc', val_score['Mean Acc'], cur_itrs)
                     writer.add_scalar('Val_MIoU', val_score['Mean IoU'], cur_itrs)
                     # add also class IOU, but all in the same graph
-                    for class_id, iou in val_score['Class IoU'].items():
-                        class_name = train_dst.classes[class_id].name
-                        class_name = class_name.replace(' ', '_')
-                        writer.add_scalar(f'Val_class_iou/{class_name}', iou, cur_itrs)
+                    # only if it's cityscapes
+                    if opts.dataset == 'cityscapes':
+                        for class_id, iou in val_score['Class IoU'].items():
+                            class_name = train_dst.classes[class_id].name
+                            class_name = class_name.replace(' ', '_')
+                            writer.add_scalar(f'Val_class_iou/{class_name}', iou, cur_itrs)
                         
                     for k, (img, target, lbl) in enumerate(images_to_visualize):
                         img = (denorm(img) * 255).astype(np.uint8)
