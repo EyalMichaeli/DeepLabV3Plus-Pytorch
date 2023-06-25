@@ -23,6 +23,7 @@ import matplotlib.pyplot as plt
 from tensorboardX import SummaryWriter
 import pprint
 
+from knockknock import telegram_sender
 
 
 """
@@ -31,29 +32,52 @@ import pprint
 
 # train base model from scratch
 nohup sh -c 'python main.py \
-    --gpu_id 1 \adde
+    --gpu_id 1 \
     --random_seed 3 \
     --logdir logs/voc/base_seed_3 \
     --train_sample_ratio 0.75 \
         --model deeplabv3plus_mobilenet --dataset voc --year 2012 --crop_val \
             --lr 0.02 --crop_size 513 --batch_size 32 --output_stride 16 \
             --save_val_results' \
-            2>&1 | tee -a nohup_outputs/voc/base_seed_3.log &
+            2>&1 | tee -a nohup_outputs/voc/base.log &
 
 
 # train from scratch with aug, ip2p
 nohup sh -c 'python main.py \
     --gpu_id 3 \
-    --random_seed 1 \
-    --logdir logs/voc/seed_1_aug_ratio_0.3_pascal_ip2p_2x_constant_instructions_image_w_1.5_images_lpips_filter_0.1_0.6 \
+    --random_seed 3 \
+    --logdir logs/voc/seed_3_aug_ratio_0.3_pascal_ip2p_2x_image_w_1.5_both_constant_instructions_with_blip_and_gpt_images_lpips_filter_0.1_0.6 \
     --train_sample_ratio 0.75 \
-    --aug_json /mnt/raid/home/eyal_michaeli/git/DeepLabV3Plus-Pytorch/datasets/data/aug_json_files/pascal/ip2p/pascal_pascal_ip2p_2x_constant_instructions_image_w_1.5_images_lpips_filter_0.1_0.6.json \
-    --sample_aug_ratio 0.3 \
+    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/pascal_pascal_ip2p_2x_image_w_1.5_both_constant_instructions_with_blip_and_gpt_images_lpips_filter_0.1_0.6.json \
+    --sample_aug_ratio 0.4 \
     --model deeplabv3plus_mobilenet --dataset voc --year 2012 --crop_val \
         --lr 0.02 --crop_size 513 --batch_size 32 --output_stride 16 \
         --save_val_results' \
-        2>&1 | tee -a nohup_outputs/voc/seed_1_aug_ratio_0.3_pascal_ip2p_2x_constant_instructions_image_w_1.5_images_lpips_filter_0.1_0.6.log &
+        2>&1 | tee -a nohup_outputs/voc/output.log &
    
+        
+# aug jsons: 
+    # first one, constant instuctions
+    --aug_json /mnt/raid/home/eyal_michaeli/git/DeepLabV3Plus-Pytorch/datasets/data/aug_json_files/pascal/ip2p/pascal_pascal_ip2p_2x_constant_instructions_image_w_1.5_images_lpips_filter_0.1_0.6.json \
+    # second one, instructions based on blip + gpt
+    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/pascal_pascal_ip2p_2x_constant_instructions_image_w_1.5_with_blip_and_gpt_images_lpips_filter_0.1_0.6.json \
+    # same with filter for small blobs
+    --aug_json /mnt/raid/home/eyal_michaeli/git/DeepLabV3Plus-Pytorch/datasets/data/aug_json_files/pascal/ip2p/pascal_pascal_ip2p_2x_constant_instructions_image_w_1.5_with_blip_and_gpt_images_masked__min_blob_size_100000_v0_lpips_filter_0.1_0.6.json \
+    # third one, instructions based on both blip + gpt, and constant instructions
+    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/pascal_pascal_ip2p_2x_image_w_1.5_both_constant_instructions_with_blip_and_gpt_images_lpips_filter_0.1_0.6.json \
+    # forth one, instructions only constant instructions, 4 outputs
+    --aug_json /mnt/raid/home/eyal_michaeli/git/DeepLabV3Plus-Pytorch/datasets/data/aug_json_files/pascal/ip2p/pascal_pascal_ip2p_4x_image_w_1.5_only_constant_images_lpips_filter_0.1_0.6.json \
+    # fifth one, instructions based only on blip + gpt, but gentler 
+
+
+        
+pkill -u eyal_michaeli tensorboard
+tensorboard --logdir=logs/voc --port=6006
+tensorboard --logdir=logs/cityscapes --port=6006
+
+
+# send command after x minutes: (does it work??? YES): 
+# nohup sh -c 'sleep 1m; ls' 2>&1 | tee -a bla.log &
 
 ----------------------------- CITYSCAPES -----------------------------
 
@@ -150,7 +174,8 @@ nohup sh -c 'python main.py \
             
             
 pkill -u eyal_michaeli tensorboard
-tensorboard --logdir=logs --port=6006
+tensorboard --logdir=logs/voc --port=6006
+tensorboard --logdir=logs/cityscapes --port=6006
 
 
 # send command after x minutes: (does it work???) perhaps try: 
@@ -406,8 +431,8 @@ def validate(opts, model, loader, device, metrics, epoch=0, iter=0):
     return score, images_to_visualize
 
 
-def main():
-    opts = get_argparser().parse_args()
+#@telegram_sender(token="2139102797:AAEieyZeXgDM9srZTsH2Aou7mSaUukfGQJA", chat_id=432012184)
+def main(opts):
     
     # init logging
     if opts.logdir is not None:
@@ -426,8 +451,7 @@ def main():
     text_for_tensorboard = pprint.pformat(str(vars(opts)))
     writer.add_text('opts', text_for_tensorboard)
 
-    os.environ['CUDA_VISIBLE_DEVICES'] = opts.gpu_id
-    device = torch.device(f'cuda' if torch.cuda.is_available() else 'cpu')
+    device = torch.device(f'cuda:{opts.gpu_id}')
     logging.info("Device: %s" % device)
     logging.info("Random Seed: %d \n" % opts.random_seed)
     logging.info("Options: %s" % pprint.pformat(vars(opts)))
@@ -457,7 +481,7 @@ def main():
 
     # Set up model (all models are 'constructed at network.modeling)
     model = network.modeling.__dict__[opts.model](num_classes=opts.num_classes, output_stride=opts.output_stride)
-    # compile with pytorch 2.0
+    # compile with pytorch 2.0  (UPDATE: resulted in an error)
     # model = torch.compile(model)
 
     if opts.separable_conv and 'plus' in opts.model:
@@ -590,7 +614,7 @@ def main():
                     writer.add_scalar('Val_MIoU', val_score['Mean IoU'], cur_itrs)
                     # add also class IOU, but all in the same graph
                     # only if it's cityscapes
-                    if opts.dataset == 'cityscapes':
+                    if opts.dataset == 'cityscapes' or True:
                         for class_id, iou in val_score['Class IoU'].items():
                             class_name = train_dst.classes[class_id].name
                             class_name = class_name.replace(' ', '_')
@@ -617,5 +641,76 @@ def main():
                 return
 
 
+class Args:
+    def __init__(self):
+        # Dataset Options
+        self.data_root = './datasets/data'
+        self.dataset = 'voc'
+        self.num_classes = None
+        self.train_sample_ratio = 1.0
+
+        # Deeplab Options
+        self.model = 'deeplabv3plus_mobilenet'
+        self.separable_conv = False
+        self.output_stride = 16
+
+        # Train Options
+        self.test_only = False
+        self.save_val_results = False
+        self.total_itrs = 30e3
+        self.lr = 0.01
+        self.lr_policy = 'poly'
+        self.step_size = 10000
+        self.crop_val = False
+        self.batch_size = 16
+        self.val_batch_size = 4
+
+        self.crop_size = 256
+
+        self.ckpt = None
+        self.continue_training = False
+
+        self.loss_type = 'cross_entropy'
+        self.gpu_id = 0
+        self.weight_decay = 1e-4
+        self.random_seed = 1
+
+        self.print_interval = 50
+        self.val_interval = 100
+        self.download = False
+
+        # PASCAL VOC Options
+        self.year = '2012'
+
+        # Log directory
+        self.logdir = None
+
+        # Augmentation options
+        self.aug_json = None
+        self.sample_aug_ratio = 0.5
+
+
+
 if __name__ == '__main__':
-    main()
+    debug = True
+    if debug:
+        args = Args()
+        args.gpu_id = 3
+        args.random_seed = 3
+        args.logdir = "logs/voc/seed_3_aug_ratio_0.3_pascal_ip2p_2x_image_w_1.5_both_constant_instructions_with_blip_and_gpt_images_lpips_filter_0.1_0.6"
+        args.train_sample_ratio = 0.75
+        args.aug_json = "/mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/pascal_pascal_ip2p_2x_image_w_1.5_both_constant_instructions_with_blip_and_gpt_images_lpips_filter_0.1_0.6.json"
+        args.sample_aug_ratio = 0.4
+        args.model = "deeplabv3plus_mobilenet"
+        args.dataset = "voc"
+        args.year = "2012"
+        args.crop_val = True
+        args.lr = 0.02
+        args.crop_size = 513
+        args.batch_size = 32
+        args.output_stride = 16
+        args.save_val_results = True
+
+    args = get_argparser().parse_args()
+    
+    main(args)

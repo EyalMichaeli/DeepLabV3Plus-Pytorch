@@ -1,10 +1,13 @@
+import json
 import os
+import random
 import sys
 import tarfile
 import collections
 import torch.utils.data as data
 import shutil
 import numpy as np
+import logging
 
 from PIL import Image
 from torchvision.datasets.utils import download_url, check_integrity
@@ -87,7 +90,8 @@ class VOCSegmentation(data.Dataset):
                  year='2012',
                  image_set='train',
                  download=False,
-                 transform=None):
+                 transform=None, train_sample_ratio: float = 1.0, 
+                 aug_json=None, sample_aug_ratio: float = None):
 
         is_aug=False
         if year=='2012_aug':
@@ -95,6 +99,7 @@ class VOCSegmentation(data.Dataset):
             year = '2012'
         
         self.root = os.path.expanduser(root)
+        self.train_sample_ratio = train_sample_ratio
         self.year = year
         self.url = DATASET_YEAR_DICT[year]['url']
         self.filename = DATASET_YEAR_DICT[year]['filename']
@@ -133,6 +138,30 @@ class VOCSegmentation(data.Dataset):
         self.images = [os.path.join(image_dir, x + ".jpg") for x in file_names]
         self.masks = [os.path.join(mask_dir, x + ".png") for x in file_names]
         assert (len(self.images) == len(self.masks))
+        
+        # use only a subset of the images for training, if train_sample_ratio < 1
+        if image_set == 'train' and train_sample_ratio < 1:
+            assert train_sample_ratio > 0, "train_sample_ratio must be > 0"
+            subset_size = int(len(self.images) * train_sample_ratio)
+            logging.info(f"With ratio {train_sample_ratio}, using only {subset_size} images for training, out of {len(self.images)}")
+            self.images = self.images[:subset_size]
+            self.masks = self.masks[:subset_size]
+
+        if image_set == 'train' and aug_json:
+            assert sample_aug_ratio is not None
+            assert sample_aug_ratio > 0 and sample_aug_ratio <= 1
+            with open(aug_json, 'r') as f:
+                self.aug_json = json.load(f)
+            self.sample_aug_ratio = sample_aug_ratio
+
+            logging.info(f"Using augmented images with ratio {sample_aug_ratio}")
+            logging.info(f"Number of augmented images: {len(self.aug_json)}")
+            logging.info(f"json file: {aug_json}")
+
+        else:
+            self.aug_json = None
+            logging.info('Not using augmented images')
+
 
     def __getitem__(self, index):
         """
@@ -141,11 +170,18 @@ class VOCSegmentation(data.Dataset):
         Returns:
             tuple: (image, target) where target is the image segmentation.
         """
-        img = Image.open(self.images[index]).convert('RGB')
+        image_path = self.images[index]
+        if self.image_set == 'train':
+            if self.aug_json:
+                if random.random() < self.sample_aug_ratio:
+                    image_path = self.aug_json.get(image_path, image_path)  # if image_path is not in aug_json, return image_path
+                    # logging.info(f"Using augmented image: {image_path}")
+
+        img = Image.open(image_path).convert('RGB')
         target = Image.open(self.masks[index])
         if self.transform is not None:
             img, target = self.transform(img, target)
-
+    
         return img, target
 
 
