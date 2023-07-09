@@ -49,7 +49,7 @@ nohup sh -c 'python main.py \
     --logdir logs/voc/seed_3_aug_ratio_0.3_pascal_ip2p_2x_image_w_1.5_both_constant_instructions_with_blip_and_gpt_images_lpips_filter_0.1_0.6 \
     --train_sample_ratio 0.75 \
     --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/pascal_pascal_ip2p_2x_image_w_1.5_both_constant_instructions_with_blip_and_gpt_images_lpips_filter_0.1_0.6.json \
-    --sample_aug_ratio 0.4 \
+    --aug_sample_ratio 0.4 \
     --model deeplabv3plus_mobilenet --dataset voc --year 2012 --crop_val \
         --lr 0.02 --crop_size 513 --batch_size 32 --output_stride 16 \
         --save_val_results' \
@@ -67,13 +67,15 @@ nohup sh -c 'python main.py \
     --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/pascal_pascal_ip2p_2x_image_w_1.5_both_constant_instructions_with_blip_and_gpt_images_lpips_filter_0.1_0.6.json \
     # forth one, instructions only constant instructions, 4 outputs
     --aug_json /mnt/raid/home/eyal_michaeli/git/DeepLabV3Plus-Pytorch/datasets/data/aug_json_files/pascal/ip2p/pascal_pascal_ip2p_4x_image_w_1.5_only_constant_images_lpips_filter_0.1_0.6.json \
-    # fifth one, instructions based only on blip + gpt, but gentler 
+    # blip + gpt v1 (newer), 4 outputs
+    --aug_json /mnt/raid/home/eyal_michaeli/git/DeepLabV3Plus-Pytorch/datasets/data/aug_json_files/pascal/ip2p/pascal_pascal_ip2p_4x_image_w_1.5_blip_gpt_v1_images_masked__min_blob_size_100000__lpips_filter_0.1_0.6.json \
 
 
         
 pkill -u eyal_michaeli tensorboard
 tensorboard --logdir=logs/voc --port=6006
-tensorboard --logdir=logs/cityscapes --port=6006
+tensorboard --logdir=logs/cityscapes --port=6007
+tensorboard --logdir=logs/cityscapes_with_bug --port=6008
 
 
 # send command after x minutes: (does it work??? YES): 
@@ -84,11 +86,12 @@ tensorboard --logdir=logs/cityscapes --port=6006
 # train base model from scratch
 nohup sh -c 'python main.py \
     --gpu_id 3 \
-    --random_seed 3 \
-    --logdir logs/cs_base_run_seed_3_cuda \
+    --random_seed 1 \
+    --logdir logs/cityscapes/cs_subset_2k_seed_1_base \
+    --train_sample_ratio 0.67 \
         --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
-            2>&1 | tee -a nohup_outputs/nohup_output-cs_base_run_seed_3_cuda.log &
+            2>&1 | tee -a nohup_outputs/cityscapes/nohup.log &
 
 
             
@@ -96,7 +99,7 @@ nohup sh -c 'python main.py \
 nohup sh -c 'python main.py \
     --gpu_id 0 \
     --random_seed 2 \
-    --logdir logs/cs_base_run_seed_2_using_subset_2k \
+    --logdir logs/cityscapes/cs_base_run_seed_2_using_subset_2k \
     --train_sample_ratio 0.67 \
         --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
@@ -107,7 +110,7 @@ nohup sh -c 'python main.py \
 nohup sh -c 'python main.py \
     --gpu_id 2 \
     --random_seed 1 \
-    --logdir logs/cs_base_run_seed_1_extra_test_data_all_cities \
+    --logdir logs/cityscapes/cs_base_run_seed_1_extra_test_data_all_cities \
         --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
             2>&1 | tee -a nohup_outputs/nohup_output-cs_base_run_seed_1_extra_test_data_all_cities.log &
@@ -117,7 +120,7 @@ nohup sh -c 'python main.py \
 nohup sh -c 'python main.py \
     --gpu_id 0 \
     --random_seed 2 \
-    --logdir logs/cs_base_run_continue \
+    --logdir logs/cityscapes/cs_base_run_continue \
         --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results\
                   --continue_training --ckpt logs/2023_0520_2331_56_cs_base_run/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16.pth' \
@@ -126,24 +129,24 @@ nohup sh -c 'python main.py \
 
 # train from scratch with aug, ip2p
 nohup sh -c 'python main.py \
-    --gpu_id 2 \
+    --gpu_id 3 \
     --random_seed 1 \
-    --logdir logs/cs_subset_2k_aug_ratio_0.05_cs_ip2p_2x_constant_instructions_image_w_1.5_images_masked_person_rider_min_blob_size_100000_v0_lpips_filter_0.1_0.6 \
+    --logdir logs/cityscapes/cs_subset_2k_seed_1_aug_ratio_0.25_cs_ip2p_2x_constant_instructions_image_w_1.5_images_masked_person_rider_min_blob_size_100000_v0_lpips_filter_0.1_0.6 \
     --train_sample_ratio 0.67 \
     --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/cs_ip2p_2x_constant_instructions_image_w_1.5_images_masked_person_rider_min_blob_size_100000_v0_lpips_filter_0.1_0.6.json \
-    --sample_aug_ratio 0.05 \
+    --aug_sample_ratio 0.25 \
         --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
-            2>&1 | tee -a nohup_outputs/nohup_output-cs_cs_subset_2k_aug_ratio_0.05_cs_ip2p_2x_constant_instructions_image_w_1.5_images_masked_person_rider_min_blob_size_100000_v0_lpips_filter_0.1_0.6.log &
+            2>&1 | tee -a nohup_outputs/cs/nohup.log &
 
             
 # train from scratch with aug, ip2p
 nohup sh -c 'python main.py \
     --gpu_id 3 \
     --random_seed 1 \
-    --logdir logs/cs_aug_ratio_0.1_cs_ip2p_2x_constant_instructions_image_w_1.5_no_double_aug \
+    --logdir logs/cityscapes/cs_aug_ratio_0.1_cs_ip2p_2x_constant_instructions_image_w_1.5_no_double_aug \
     --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/cs_ip2p_2x_constant_instructions_image_w_1.5/images.json \
-    --sample_aug_ratio 0.1 \
+    --aug_sample_ratio 0.1 \
         --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
             2>&1 | tee -a nohup_outputs/nohup_output-cs_aug_ratio_0.1_cs_ip2p_2x_constant_instructions_image_w_1.5_no_double_aug.log &
@@ -153,9 +156,9 @@ nohup sh -c 'python main.py \
 nohup sh -c 'python main.py \
     --gpu_id 3 \
     --random_seed 1 \
-    --logdir logs/cs_aug_run_munit_v0_cp_450k_style_std_1.85_lpips_filter_0.1_0.5_aug_ratio_0.15 \
+    --logdir logs/cityscapes/cs_aug_run_munit_v0_cp_450k_style_std_1.85_lpips_filter_0.1_0.5_aug_ratio_0.15 \
     --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/2023_0603_1025_25_ampO1_lower_LR_lower_res_inference_inference_cp_000450000_style_std_1.85_lpips_filter_0.1_0.5.json \
-    --sample_aug_ratio 0.15 \
+    --aug_sample_ratio 0.15 \
         --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
             2>&1 | tee -a nohup_outputs/nohup_output-cs_aug_run_munit_v0_cp_450k_style_std_1.85_lpips_filter_0.1_0.5_aug_ratio_0.15.log &
@@ -163,24 +166,38 @@ nohup sh -c 'python main.py \
             
 # train from scratch with aug, MUNIT
 nohup sh -c 'python main.py \
-    --gpu_id 2 \
+    --gpu_id 0 \
     --random_seed 1 \
-    --logdir logs/cs_aug_run_munit_style_recon_2_perceptual_1_style_1.5_aug_ratio_0.5 \
+    --logdir logs/cityscapes/cs_subset_2k_aug_run_munit_style_recon_2_perceptual_1_style_1.5_aug_ratio_0.5 \
+    --train_sample_ratio 0.67 \
     --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cs2cs-style_recon_2_perceptual_1/2023_0518_1805_39_ampO1_lower_LR/inference_cp_400k_style_std_1.5.json \
-    --sample_aug_ratio 0.5 \
+    --aug_sample_ratio 0.5 \
         --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2  --crop_size 256 --batch_size 32 \
             --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
-            2>&1 | tee -a nohup_outputs/nohup_output-cs_aug_run_munit_style_recon_2_perceptual_1_style_1.5_aug_ratio_0.5.log &
+            2>&1 | tee -a nohup_outputs/cityscapes/nohup.log &
             
             
+#### aug jsons ####
+
+# ip2p
+    # first try on cityscapes. ok results, but could be better
+    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/cs_ip2p_2x_constant_instructions_image_w_1.5_filtered_lpips_0.1_0.48.json \
+    # same, filtered with lpips and min blob size
+
+    # second try on cityscapes. better results, but still not good enough
+    
+    # munit
+    # v0
+    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cs2cs-style_recon_2_perceptual_1/2023_0518_1805_39_ampO1_lower_LR/inference_cp_400k_style_std_1.5.json \
+    # v1
+    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/2023_0603_1025_25_ampO1_lower_LR_lower_res_inference_inference_cp_000450000_style_std_1.85_lpips_filter_0.1_0.5.json \
+    # same, filtered with lpips and min blob size
+    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/2023_0603_1025_25_ampO1_lower_LR_lower_res_inference_inference_cp_000450000_style_std_1.85_masked_person_rider_min_blob_size_3125_v0_lpips_filter_0.1_0.5.json \
+
+
 pkill -u eyal_michaeli tensorboard
 tensorboard --logdir=logs/voc --port=6006
-tensorboard --logdir=logs/cityscapes --port=6006
-
-
-# send command after x minutes: (does it work???) perhaps try: 
-# try with diff syntax:
-# nohup sh -c 'sleep 1m; python main.py \
+tensorboard --logdir=logs/cityscapes --port=6007
 
 """
 
@@ -214,7 +231,7 @@ def get_argparser():
     parser.add_argument("--test_only", action='store_true', default=False)
     parser.add_argument("--save_val_results", action='store_true', default=False,
                         help="save segmentation results to \"./results\"")
-    parser.add_argument("--total_itrs", type=int, default=30e3,
+    parser.add_argument("--total_itrs", type=int, default=20e3,
                         help="max num of iters (default: 30k)")
     parser.add_argument("--lr", type=float, default=0.01,
                         help="learning rate (default: 0.01)")
@@ -261,7 +278,7 @@ def get_argparser():
     # augmentation options
     parser.add_argument("--aug_json", type=str, default=None,
                         help="path to augmentation json file")
-    parser.add_argument("--sample_aug_ratio", type=float, default=0.5,
+    parser.add_argument("--aug_sample_ratio", type=float, default=0.5,
                         help="ratio to augment the original image")
     
     return parser
@@ -321,7 +338,7 @@ def get_dataset(opts):
             ])
         train_dst = VOCSegmentation(root=opts.data_root, year=opts.year,
                                     image_set='train', download=opts.download, transform=train_transform, 
-                                    aug_json=opts.aug_json, sample_aug_ratio=opts.sample_aug_ratio, train_sample_ratio=opts.train_sample_ratio)
+                                    aug_json=opts.aug_json, aug_sample_ratio=opts.aug_sample_ratio, train_sample_ratio=opts.train_sample_ratio)
         val_dst = VOCSegmentation(root=opts.data_root, year=opts.year,
                                   image_set='val', download=False, transform=val_transform)
 
@@ -345,7 +362,7 @@ def get_dataset(opts):
         ])
 
         train_dst = Cityscapes(root=opts.data_root, split='train', transform=train_transform, aug_json=opts.aug_json, 
-                               sample_aug_ratio=opts.sample_aug_ratio, train_sample_ratio=opts.train_sample_ratio)
+                               aug_sample_ratio=opts.aug_sample_ratio, train_sample_ratio=opts.train_sample_ratio)
         val_dst = Cityscapes(root=opts.data_root,
                              split='val', transform=val_transform)
     return train_dst, val_dst
@@ -451,11 +468,16 @@ def main(opts):
     text_for_tensorboard = pprint.pformat(str(vars(opts)))
     writer.add_text('opts', text_for_tensorboard)
 
-    device = torch.device(f'cuda:{opts.gpu_id}')
-    logging.info("Device: %s" % device)
+    # Setup device
+    os.environ['CUDA_VISIBLE_DEVICES'] = opts.gpu_id
+    device = torch.device(f'cuda')
+    logging.info("CUDA_VISIBLE_DEVICES: %s" % opts.gpu_id)
     logging.info("Random Seed: %d \n" % opts.random_seed)
     logging.info("Options: %s" % pprint.pformat(vars(opts)))
     
+    # print pid
+    logging.info("PID: {}".format(os.getpid()))
+
     # Setup random seed
     torch.manual_seed(opts.random_seed)
     torch.cuda.manual_seed(opts.random_seed)
@@ -472,7 +494,7 @@ def main(opts):
 
     train_dst, val_dst = get_dataset(opts)
     train_loader = data.DataLoader(
-        train_dst, batch_size=opts.batch_size, shuffle=True, num_workers=2,
+        train_dst, batch_size=opts.batch_size, shuffle=True, num_workers=4,
         drop_last=True)  # drop_last=True to ignore single-image batches.
     val_loader = data.DataLoader(
         val_dst, batch_size=opts.val_batch_size, shuffle=False, num_workers=2)
@@ -614,19 +636,27 @@ def main(opts):
                     writer.add_scalar('Val_MIoU', val_score['Mean IoU'], cur_itrs)
                     # add also class IOU, but all in the same graph
                     # only if it's cityscapes
-                    if opts.dataset == 'cityscapes' or True:
-                        for class_id, iou in val_score['Class IoU'].items():
-                            class_name = train_dst.classes[class_id].name
+                    if opts.dataset in ['cityscapes', 'voc']:
+                        for train_id, iou in val_score['Class IoU'].items():
+                            if opts.dataset == 'cityscapes':
+                                class_name = train_dst.train_id_to_class_name[train_id]
+                            elif opts.dataset == 'voc':
+                                class_name = train_dst.classes[train_id]
+                            else:
+                                raise NotImplementedError
+                            
                             class_name = class_name.replace(' ', '_')
                             writer.add_scalar(f'Val_class_iou/{class_name}', iou, cur_itrs)
-                        
-                    for k, (img, target, lbl) in enumerate(images_to_visualize):
-                        img = (denorm(img) * 255).astype(np.uint8)
-                        target = train_dst.decode_target(target).transpose(2, 0, 1).astype(np.uint8)
-                        lbl = train_dst.decode_target(lbl).transpose(2, 0, 1).astype(np.uint8)
-                        concat_img = np.concatenate((img, target, lbl), axis=2)
-                        # write with a good title
-                        writer.add_image(f"images/Val_image_pred{k}", concat_img, cur_itrs, dataformats='CHW')
+                    
+                    # 1/4 the time do this
+                    if cur_itrs % (opts.val_interval * 4) == 0:
+                        for k, (img, target, lbl) in enumerate(images_to_visualize):
+                            img = (denorm(img) * 255).astype(np.uint8)
+                            target = train_dst.decode_target(target).transpose(2, 0, 1).astype(np.uint8)
+                            lbl = train_dst.decode_target(lbl).transpose(2, 0, 1).astype(np.uint8)
+                            concat_img = np.concatenate((img, target, lbl), axis=2)
+                            # write with a good title
+                            writer.add_image(f"images/Val_image_pred{k}", concat_img, cur_itrs, dataformats='CHW')
                                          
                 
                 model.train()
@@ -687,12 +717,12 @@ class Args:
 
         # Augmentation options
         self.aug_json = None
-        self.sample_aug_ratio = 0.5
+        self.aug_sample_ratio = 0.5
 
 
 
 if __name__ == '__main__':
-    debug = True
+    debug = False
     if debug:
         args = Args()
         args.gpu_id = 3
@@ -700,7 +730,7 @@ if __name__ == '__main__':
         args.logdir = "logs/voc/seed_3_aug_ratio_0.3_pascal_ip2p_2x_image_w_1.5_both_constant_instructions_with_blip_and_gpt_images_lpips_filter_0.1_0.6"
         args.train_sample_ratio = 0.75
         args.aug_json = "/mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/pascal_pascal_ip2p_2x_image_w_1.5_both_constant_instructions_with_blip_and_gpt_images_lpips_filter_0.1_0.6.json"
-        args.sample_aug_ratio = 0.4
+        args.aug_sample_ratio = 0.4
         args.model = "deeplabv3plus_mobilenet"
         args.dataset = "voc"
         args.year = "2012"
@@ -710,7 +740,9 @@ if __name__ == '__main__':
         args.batch_size = 32
         args.output_stride = 16
         args.save_val_results = True
+        print("\n"*5, "running in DEBUG MODE".upper(), "\n"*5)
 
-    args = get_argparser().parse_args()
+    else:
+        args = get_argparser().parse_args()
     
     main(args)

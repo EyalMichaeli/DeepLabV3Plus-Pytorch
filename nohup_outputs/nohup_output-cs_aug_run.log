@@ -1,84 +1,0 @@
-nohup: ignoring input
-Traceback (most recent call last):
-  File "main.py", line 487, in <module>
-    main()
-  File "main.py", line 297, in main
-    writer = SummaryWriter(log_dir=str(Path(opts.logdir) / 'tensorboard'), max_images=30) 
-  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/tensorboardX/writer.py", line 300, in __init__
-    self._get_file_writer()
-  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/tensorboardX/writer.py", line 348, in _get_file_writer
-    self.file_writer = FileWriter(logdir=self.logdir,
-TypeError: __init__() got an unexpected keyword argument 'max_images'
-nohup: ignoring input
-2023-05-22 10:26:55,453 INFO Device: cuda
-2023-05-22 10:26:55,478 INFO Using augmented images with ratio 0.5
-2023-05-22 10:26:55,478 INFO Number of augmented images: 2975
-2023-05-22 10:26:55,478 INFO json file: /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cs2cs-default_run/2023_0519_1215_17_ampO1_lower_LR/inference_cp_400k_style_std_1.5.json
-2023-05-22 10:26:55,480 INFO Not using augmented images
-2023-05-22 10:26:55,480 INFO Dataset: cityscapes, Train set: 2975, Val set: 500
-2023-05-22 10:26:55,624 INFO [!] Training from scratch, no checkpoint file used
-2023-05-22 10:28:08,474 INFO Epoch 1, Itrs 50/30000, Loss=0.734718
-Terminated
-nohup: ignoring input
-2023-05-22 11:42:19,589 INFO Device: cuda:1
-2023-05-22 11:42:19,608 INFO Using augmented images with ratio 0.5
-2023-05-22 11:42:19,609 INFO Number of augmented images: 2975
-2023-05-22 11:42:19,609 INFO json file: /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cs2cs-default_run/2023_0519_1215_17_ampO1_lower_LR/inference_cp_400k_style_std_1.5.json
-2023-05-22 11:42:19,610 INFO Not using augmented images
-2023-05-22 11:42:19,610 INFO Dataset: cityscapes, Train set: 2975, Val set: 500
-2023-05-22 11:42:19,740 INFO [!] Training from scratch, no checkpoint file used
-Traceback (most recent call last):
-  File "main.py", line 487, in <module>
-    main()
-  File "main.py", line 426, in main
-    outputs = model(images)
-  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/nn/parallel/data_parallel.py", line 157, in forward
-    raise RuntimeError("module must have its parameters and buffers "
-RuntimeError: module must have its parameters and buffers on device cuda:0 (device_ids[0]) but found one of them on device: cuda:1
-nohup: ignoring input
-2023-05-22 11:43:08,973 INFO Device: cuda
-2023-05-22 11:43:09,000 INFO Using augmented images with ratio 0.5
-2023-05-22 11:43:09,001 INFO Number of augmented images: 2975
-2023-05-22 11:43:09,001 INFO json file: /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cs2cs-default_run/2023_0519_1215_17_ampO1_lower_LR/inference_cp_400k_style_std_1.5.json
-2023-05-22 11:43:09,003 INFO Not using augmented images
-2023-05-22 11:43:09,003 INFO Dataset: cityscapes, Train set: 2975, Val set: 500
-2023-05-22 11:43:09,152 INFO [!] Training from scratch, no checkpoint file used
-2023-05-22 11:44:21,117 INFO Epoch 1, Itrs 50/30000, Loss=0.734305
-2023-05-22 11:45:31,464 INFO Epoch 2, Itrs 100/30000, Loss=0.452769
-2023-05-22 11:46:39,511 INFO Epoch 2, Itrs 150/30000, Loss=0.378684
-2023-05-22 11:47:49,427 INFO Epoch 3, Itrs 200/30000, Loss=0.326107
-2023-05-22 11:47:49,508 INFO Model saved as logs/2023_0522_1143_08_cs_aug_run/checkpoints/latest_deeplabv3plus_mobilenet_cityscapes_os16.pth
-2023-05-22 11:47:49,509 INFO validation...
-0it [00:00, ?it/s]1it [00:00,  1.14it/s]3it [00:00,  3.70it/s]5it [00:01,  4.11it/s]7it [00:01,  4.38it/s]9it [00:02,  4.79it/s]11it [00:02,  5.05it/s]12it [00:02,  5.19it/s]13it [00:02,  5.17it/s]14it [00:03,  4.79it/s]15it [00:03,  5.39it/s]16it [00:03,  4.48it/s]18it [00:04,  4.77it/s]20it [00:04,  5.07it/s]21it [00:04,  4.64it/s]23it [00:04,  6.32it/s]24it [00:05,  5.24it/s]26it [00:05,  5.38it/s]28it [00:05,  5.56it/s]30it [00:06,  5.59it/s]32it [00:06,  5.71it/s]34it [00:06,  5.70it/s]36it [00:07,  5.69it/s]38it [00:07,  5.78it/s]40it [00:07,  5.78it/s]41it [00:08,  5.54it/s]42it [00:08,  5.82it/s]44it [00:08,  5.89it/s]46it [00:08,  5.89it/s]48it [00:09,  5.83it/s]50it [00:09,  5.91it/s]52it [00:09,  5.88it/s]54it [00:10,  5.85it/s]56it [00:10,  5.90it/s]58it [00:10,  5.88it/s]60it [00:11,  5.76it/s]61it [00:11,  5.11it/s]63it [00:11,  6.66it/s]64it [00:11,  5.83it/s]66it [00:12,  5.80it/s]68it [00:12,  5.80it/s]70it [00:12,  5.85it/s]72it [00:13,  5.80it/s]74it [00:13,  5.84it/s]76it [00:14,  5.80it/s]78it [00:14,  5.83it/s]80it [00:14,  5.83it/s]81it [00:15,  5.04it/s]83it [00:15,  6.52it/s]84it [00:15,  5.73it/s]86it [00:15,  5.83it/s]88it [00:16,  5.84it/s]90it [00:16,  5.79it/s]92it [00:16,  5.74it/s]94it [00:17,  5.75it/s]96it [00:17,  5.82it/s]98it [00:17,  5.85it/s]100it [00:18,  5.85it/s]101it [00:18,  5.20it/s]103it [00:18,  6.73it/s]104it [00:18,  5.22it/s]106it [00:19,  4.88it/s]108it [00:19,  4.71it/s]110it [00:20,  4.60it/s]112it [00:20,  4.59it/s]114it [00:21,  4.85it/s]116it [00:21,  5.12it/s]118it [00:21,  5.25it/s]120it [00:22,  5.37it/s]121it [00:22,  5.03it/s]123it [00:22,  6.64it/s]124it [00:22,  5.47it/s]125it [00:22,  5.44it/s]
-2023-05-22 11:48:12,545 INFO 
-Overall Acc: 0.869503
-Mean Acc: 0.404408
-FreqW Acc: 0.777990
-Mean IoU: 0.339269
-
-2023-05-22 11:48:12,628 INFO Model saved as logs/2023_0522_1143_08_cs_aug_run/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16.pth
-2023-05-22 11:49:16,337 INFO Epoch 3, Itrs 250/30000, Loss=0.315610
-2023-05-22 11:50:26,087 INFO Epoch 4, Itrs 300/30000, Loss=0.308841
-Terminated
-nohup: ignoring input
-2023-05-22 11:58:23,981 INFO Device: cuda
-2023-05-22 11:58:24,004 INFO Using augmented images with ratio 0.5
-2023-05-22 11:58:24,004 INFO Number of augmented images: 2975
-2023-05-22 11:58:24,004 INFO json file: /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cs2cs-default_run/2023_0519_1215_17_ampO1_lower_LR/inference_cp_400k_style_std_1.5.json
-2023-05-22 11:58:24,006 INFO Not using augmented images
-2023-05-22 11:58:24,006 INFO Dataset: cityscapes, Train set: 2975, Val set: 500
-2023-05-22 11:58:24,112 INFO [!] Training from scratch, no checkpoint file used
-2023-05-22 11:58:25,243 INFO 
-Current epoch: 1
-2023-05-22 11:58:30,408 INFO Model saved as logs/2023_0522_1158_23_cs_aug_run/checkpoints/latest_deeplabv3plus_mobilenet_cityscapes_os16.pth
-2023-05-22 11:58:30,409 INFO validation...
-0it [00:00, ?it/s]1it [00:00,  1.15it/s]3it [00:00,  3.80it/s]5it [00:01,  4.16it/s]7it [00:01,  4.30it/s]9it [00:02,  4.55it/s]11it [00:02,  4.85it/s]13it [00:02,  5.04it/s]15it [00:03,  5.21it/s]17it [00:03,  5.32it/s]19it [00:04,  5.38it/s]21it [00:04,  4.57it/s]23it [00:04,  5.92it/s]25it [00:05,  5.83it/s]27it [00:05,  5.81it/s]29it [00:05,  5.80it/s]31it [00:06,  5.78it/s]33it [00:06,  5.70it/s]35it [00:06,  5.67it/s]37it [00:07,  5.69it/s]39it [00:07,  5.76it/s]41it [00:08,  4.66it/s]45it [00:08,  6.13it/s]47it [00:08,  6.02it/s]49it [00:09,  5.98it/s]51it [00:09,  5.89it/s]53it [00:09,  5.90it/s]55it [00:10,  5.85it/s]57it [00:10,  5.86it/s]59it [00:11,  5.84it/s]61it [00:11,  4.74it/s]64it [00:11,  6.96it/s]66it [00:12,  6.65it/s]67it [00:12,  5.60it/s]69it [00:12,  5.69it/s]71it [00:13,  5.69it/s]73it [00:13,  5.77it/s]75it [00:13,  5.80it/s]77it [00:14,  5.75it/s]79it [00:14,  5.78it/s]81it [00:15,  4.81it/s]83it [00:15,  6.21it/s]85it [00:15,  6.00it/s]87it [00:15,  5.94it/s]89it [00:16,  5.95it/s]91it [00:16,  5.87it/s]93it [00:16,  5.84it/s]95it [00:17,  5.76it/s]97it [00:17,  5.75it/s]99it [00:17,  5.72it/s]101it [00:18,  4.74it/s]103it [00:18,  5.98it/s]105it [00:19,  5.43it/s]107it [00:19,  5.07it/s]109it [00:20,  4.87it/s]111it [00:20,  4.69it/s]113it [00:20,  4.60it/s]115it [00:21,  4.41it/s]117it [00:21,  4.41it/s]119it [00:22,  4.55it/s]121it [00:22,  4.18it/s]123it [00:22,  5.38it/s]125it [00:23,  5.49it/s]125it [00:23,  5.34it/s]
-2023-05-22 11:58:53,916 INFO 
-Overall Acc: 0.212693
-Mean Acc: 0.061804
-FreqW Acc: 0.079626
-Mean IoU: 0.023527
-
-2023-05-22 11:58:53,998 INFO Model saved as logs/2023_0522_1158_23_cs_aug_run/checkpoints/best_deeplabv3plus_mobilenet_cityscapes_os16.pth

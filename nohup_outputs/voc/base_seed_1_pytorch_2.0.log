@@ -1,0 +1,335 @@
+nohup: ignoring input
+2023-06-15 21:58:20,922 INFO Device: cuda
+2023-06-15 21:58:20,923 INFO Random Seed: 1 
+
+2023-06-15 21:58:20,923 INFO Options: {'aug_json': None,
+ 'batch_size': 32,
+ 'ckpt': None,
+ 'continue_training': False,
+ 'crop_size': 513,
+ 'crop_val': True,
+ 'data_root': './datasets/data',
+ 'dataset': 'voc',
+ 'download': False,
+ 'gpu_id': '0',
+ 'logdir': 'logs/voc/2023_0615_2158_20_base_seed_1_pytorch_2.0',
+ 'loss_type': 'cross_entropy',
+ 'lr': 0.02,
+ 'lr_policy': 'poly',
+ 'model': 'deeplabv3plus_mobilenet',
+ 'num_classes': 21,
+ 'output_stride': 16,
+ 'print_interval': 50,
+ 'random_seed': 1,
+ 'sample_aug_ratio': 0.5,
+ 'save_val_results': True,
+ 'separable_conv': False,
+ 'step_size': 10000,
+ 'test_only': False,
+ 'total_itrs': 30000.0,
+ 'train_sample_ratio': 0.75,
+ 'val_batch_size': 4,
+ 'val_interval': 100,
+ 'weight_decay': 0.0001,
+ 'year': '2012'}
+2023-06-15 21:58:20,930 INFO With ratio 0.75, using only 1098 images for training, out of 1464
+2023-06-15 21:58:20,930 INFO Not using augmented images
+2023-06-15 21:58:20,933 INFO Not using augmented images
+2023-06-15 21:58:20,934 INFO Dataset: voc, Train set: 1098, Val set: 1449
+2023-06-15 21:58:21,330 INFO [!] Training from scratch, no checkpoint file used
+2023-06-15 21:58:22,791 INFO 
+Current epoch: 1
+[2023-06-15 21:58:23,985] torch._dynamo.symbolic_convert: [INFO] Step 1: torchdynamo start tracing forward
+[2023-06-15 21:58:24,213] torch._dynamo.symbolic_convert: [INFO] Step 1: torchdynamo start tracing forward
+[2023-06-15 21:58:24,225] torch._dynamo.symbolic_convert: [INFO] Step 1: torchdynamo start tracing <graph break in forward>
+[2023-06-15 21:58:24,236] torch._dynamo.symbolic_convert: [INFO] Step 1: torchdynamo start tracing <graph break in forward>
+[2023-06-15 21:58:24,241] torch._dynamo.symbolic_convert: [INFO] Step 1: torchdynamo start tracing forward
+[2023-06-15 21:58:24,611] torch._dynamo.symbolic_convert: [INFO] Step 1: torchdynamo done tracing forward (RETURN_VALUE)
+[2023-06-15 21:58:24,615] torch._dynamo.output_graph: [INFO] Step 2: calling compiler function debug_wrapper
+[2023-06-15 21:58:28,970] torch._inductor.compile_fx: [INFO] Step 3: torchinductor compiling FORWARDS graph 0
+[2023-06-15 21:58:31,566] torch._inductor.compile_fx: [INFO] Step 3: torchinductor done compiling FORWARDS graph 0
+[2023-06-15 21:58:31,567] torch._dynamo.output_graph: [INFO] Step 2: done compiler function debug_wrapper
+[2023-06-15 21:58:33,374] torch._dynamo.symbolic_convert: [INFO] Step 1: torchdynamo start tracing forward
+[2023-06-15 21:58:34,183] torch._dynamo.symbolic_convert: [INFO] Step 1: torchdynamo done tracing forward (RETURN_VALUE)
+[2023-06-15 21:58:34,195] torch._dynamo.output_graph: [INFO] Step 2: calling compiler function debug_wrapper
+[2023-06-15 21:58:39,985] torch._inductor.compile_fx: [INFO] Step 3: torchinductor compiling FORWARDS graph 1
+[2023-06-15 21:58:44,740] torch._inductor.compile_fx: [INFO] Step 3: torchinductor done compiling FORWARDS graph 1
+[2023-06-15 21:58:44,742] torch._dynamo.output_graph: [INFO] Step 2: done compiler function debug_wrapper
+[2023-06-15 21:58:44,821] torch._dynamo.symbolic_convert: [INFO] Step 1: torchdynamo start tracing <graph break in forward>
+[2023-06-15 21:58:45,120] torch._dynamo.symbolic_convert: [INFO] Step 1: torchdynamo done tracing <graph break in forward> (RETURN_VALUE)
+[2023-06-15 21:58:45,124] torch._dynamo.output_graph: [INFO] Step 2: calling compiler function debug_wrapper
+[2023-06-15 21:58:47,060] torch._inductor.compile_fx: [INFO] Step 3: torchinductor compiling FORWARDS graph 2
+[2023-06-15 21:58:47,246] torch._inductor.utils: [WARNING] using triton random, expect difference from eager
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/compiler.py", line 937, in build_triton_ir
+    generator.visit(fn.parse())
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/compiler.py", line 855, in visit
+    return super().visit(node)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/ast.py", line 371, in visit
+    return visitor(node)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/compiler.py", line 183, in visit_Module
+    ast.NodeVisitor.generic_visit(self, node)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/ast.py", line 379, in generic_visit
+    self.visit(item)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/compiler.py", line 855, in visit
+    return super().visit(node)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/ast.py", line 371, in visit
+    return visitor(node)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/compiler.py", line 252, in visit_FunctionDef
+    has_ret = self.visit_compound_statement(node.body)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/compiler.py", line 177, in visit_compound_statement
+    self.last_ret_type = self.visit(stmt)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/compiler.py", line 855, in visit
+    return super().visit(node)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/ast.py", line 371, in visit
+    return visitor(node)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/compiler.py", line 301, in visit_Assign
+    values = self.visit(node.value)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/compiler.py", line 855, in visit
+    return super().visit(node)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/ast.py", line 371, in visit
+    return visitor(node)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/compiler.py", line 778, in visit_Call
+    generator.visit(fn.parse())
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/compiler.py", line 855, in visit
+    return super().visit(node)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/ast.py", line 371, in visit
+    return visitor(node)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/compiler.py", line 183, in visit_Module
+    ast.NodeVisitor.generic_visit(self, node)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/ast.py", line 379, in generic_visit
+    self.visit(item)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/compiler.py", line 855, in visit
+    return super().visit(node)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/ast.py", line 371, in visit
+    return visitor(node)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/compiler.py", line 252, in visit_FunctionDef
+    has_ret = self.visit_compound_statement(node.body)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/compiler.py", line 177, in visit_compound_statement
+    self.last_ret_type = self.visit(stmt)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/compiler.py", line 855, in visit
+    return super().visit(node)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/ast.py", line 371, in visit
+    return visitor(node)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/compiler.py", line 301, in visit_Assign
+    values = self.visit(node.value)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/compiler.py", line 855, in visit
+    return super().visit(node)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/ast.py", line 371, in visit
+    return visitor(node)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/compiler.py", line 797, in visit_Call
+    return fn(*args, _builder=self.builder, **kws)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/impl/base.py", line 22, in wrapper
+    return fn(*args, **kwargs)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/language/core.py", line 653, in to
+    return semantic.bitcast(self, dtype, _builder)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/language/semantic.py", line 633, in bitcast
+    raise ValueError("Cannot bitcast data-type of size " + str(src_bits) + "to "
+ValueError: Cannot bitcast data-type of size 64to data-type of size 32
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/concurrent/futures/process.py", line 239, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_inductor/codecache.py", line 549, in _worker_compile
+    kernel.precompile(warm_cache_only_with_cc=cc)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_inductor/triton_ops/autotune.py", line 69, in precompile
+    self.launchers = [
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_inductor/triton_ops/autotune.py", line 70, in <listcomp>
+    self._precompile_config(c, warm_cache_only_with_cc)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_inductor/triton_ops/autotune.py", line 83, in _precompile_config
+    triton.compile(
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/compiler.py", line 1621, in compile
+    next_module = compile(module)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/compiler.py", line 1550, in <lambda>
+    lambda src: ast_to_ttir(src, signature, configs[0], constants)),
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/compiler.py", line 962, in ast_to_ttir
+    mod, _ = build_triton_ir(fn, signature, specialization, constants)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/triton/compiler.py", line 942, in build_triton_ir
+    raise CompilationError(fn.src, node) from e
+triton.compiler.CompilationError: at 21:25:
+def triton_(in_ptr0, in_ptr1, seed2, in_ptr3, in_ptr4, out_ptr1, xnumel, XBLOCK : tl.constexpr):
+    xnumel = 134217728
+    xoffset = tl.program_id(0) * XBLOCK
+    xindex = xoffset + tl.arange(0, XBLOCK)[:]
+    xmask = xindex < xnumel
+    x1 = (xindex // 128) % 128
+    x0 = xindex % 128
+    x2 = (xindex // 16384)
+    x4 = xindex
+    x6 = (xindex // 4194304)
+    x7 = xindex % 4194304
+    tmp0 = tl.load(in_ptr0 + (x1), xmask)
+    tmp1 = tl.load(in_ptr1 + (x0), xmask)
+    tmp2_load = tl.load(seed2 + (0))
+    tmp2 = tl.broadcast_to(tmp2_load, [XBLOCK])
+    tmp13 = tl.load(in_ptr4 + (x1), xmask)
+    tmp18 = tl.load(in_ptr1 + (x1), xmask)
+    tmp28 = tl.load(in_ptr4 + (x0), xmask)
+    tmp29 = tl.load(in_ptr0 + (x0), xmask)
+    tmp3 = tmp1 + (32*tmp0) + (1024*x2)
+    tmp4 = tl.rand(tmp2, tmp3)
+                         ^
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/output_graph.py", line 670, in call_user_compiler
+    compiled_fn = compiler_fn(gm, self.fake_example_inputs())
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/debug_utils.py", line 1055, in debug_wrapper
+    compiled_gm = compiler_fn(gm, example_inputs)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/__init__.py", line 1390, in __call__
+    return compile_fx(model_, inputs_, config_patches=self.config)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_inductor/compile_fx.py", line 455, in compile_fx
+    return aot_autograd(
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/backends/common.py", line 48, in compiler_fn
+    cg = aot_module_simplified(gm, example_inputs, **kwargs)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_functorch/aot_autograd.py", line 2822, in aot_module_simplified
+    compiled_fn = create_aot_dispatcher_function(
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/utils.py", line 163, in time_wrapper
+    r = func(*args, **kwargs)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_functorch/aot_autograd.py", line 2515, in create_aot_dispatcher_function
+    compiled_fn = compiler_fn(flat_fn, fake_flat_args, aot_config)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_functorch/aot_autograd.py", line 1715, in aot_wrapper_dedupe
+    return compiler_fn(flat_fn, leaf_flat_args, aot_config)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_functorch/aot_autograd.py", line 2150, in aot_dispatch_autograd
+    compiled_fw_func = aot_config.fw_compiler(
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/utils.py", line 163, in time_wrapper
+    r = func(*args, **kwargs)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_inductor/compile_fx.py", line 430, in fw_compiler
+    return inner_compile(
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/debug_utils.py", line 595, in debug_wrapper
+    compiled_fn = compiler_fn(gm, example_inputs)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_inductor/debug.py", line 239, in inner
+    return fn(*args, **kwargs)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_inductor/compile_fx.py", line 177, in compile_fx_inner
+    compiled_fn = graph.compile_to_fn()
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_inductor/graph.py", line 586, in compile_to_fn
+    return self.compile_to_module().call
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/utils.py", line 163, in time_wrapper
+    r = func(*args, **kwargs)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_inductor/graph.py", line 575, in compile_to_module
+    mod = PyCodeCache.load(code)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_inductor/codecache.py", line 528, in load
+    exec(code, mod.__dict__, mod.__dict__)
+  File "/tmp/torchinductor_eyal_michaeli/zp/czppvg7bj25vrms3iw3ynk2ikz7ctbaatbvqxuziqdydyfyzt33y.py", line 964, in <module>
+    async_compile.wait(globals())
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_inductor/codecache.py", line 715, in wait
+    scope[key] = result.result()
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_inductor/codecache.py", line 573, in result
+    self.future.result()
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+triton.compiler.CompilationError: at 21:25:
+def triton_(in_ptr0, in_ptr1, seed2, in_ptr3, in_ptr4, out_ptr1, xnumel, XBLOCK : tl.constexpr):
+    xnumel = 134217728
+    xoffset = tl.program_id(0) * XBLOCK
+    xindex = xoffset + tl.arange(0, XBLOCK)[:]
+    xmask = xindex < xnumel
+    x1 = (xindex // 128) % 128
+    x0 = xindex % 128
+    x2 = (xindex // 16384)
+    x4 = xindex
+    x6 = (xindex // 4194304)
+    x7 = xindex % 4194304
+    tmp0 = tl.load(in_ptr0 + (x1), xmask)
+    tmp1 = tl.load(in_ptr1 + (x0), xmask)
+    tmp2_load = tl.load(seed2 + (0))
+    tmp2 = tl.broadcast_to(tmp2_load, [XBLOCK])
+    tmp13 = tl.load(in_ptr4 + (x1), xmask)
+    tmp18 = tl.load(in_ptr1 + (x1), xmask)
+    tmp28 = tl.load(in_ptr4 + (x0), xmask)
+    tmp29 = tl.load(in_ptr0 + (x0), xmask)
+    tmp3 = tmp1 + (32*tmp0) + (1024*x2)
+    tmp4 = tl.rand(tmp2, tmp3)
+                         ^
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "main.py", line 622, in <module>
+    main()
+  File "main.py", line 555, in main
+    outputs = model(images)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/nn/parallel/data_parallel.py", line 169, in forward
+    return self.module(*inputs[0], **kwargs[0])
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/eval_frame.py", line 82, in forward
+    return self.dynamo_ctx(self._orig_mod.forward)(*args, **kwargs)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/eval_frame.py", line 209, in _fn
+    return fn(*args, **kwargs)
+  File "/mnt/raid/home/eyal_michaeli/git/DeepLabV3Plus-Pytorch/network/utils.py", line 15, in forward
+    features = self.backbone(x)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/eval_frame.py", line 337, in catch_errors
+    return callback(frame, cache_size, hooks)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/convert_frame.py", line 404, in _convert_frame
+    result = inner_convert(frame, cache_size, hooks)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/convert_frame.py", line 104, in _fn
+    return fn(*args, **kwargs)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/convert_frame.py", line 262, in _convert_frame_assert
+    return _compile(
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/utils.py", line 163, in time_wrapper
+    r = func(*args, **kwargs)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/convert_frame.py", line 324, in _compile
+    out_code = transform_code_object(code, transform)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/bytecode_transformation.py", line 445, in transform_code_object
+    transformations(instructions, code_options)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/convert_frame.py", line 311, in transform
+    tracer.run()
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/symbolic_convert.py", line 1726, in run
+    super().run()
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/symbolic_convert.py", line 576, in run
+    and self.step()
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/symbolic_convert.py", line 540, in step
+    getattr(self, inst.opname)(inst)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/symbolic_convert.py", line 1792, in RETURN_VALUE
+    self.output.compile_subgraph(
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/output_graph.py", line 517, in compile_subgraph
+    self.compile_and_call_fx_graph(tx, list(reversed(stack_values)), root)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/output_graph.py", line 588, in compile_and_call_fx_graph
+    compiled_fn = self.call_user_compiler(gm)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/utils.py", line 163, in time_wrapper
+    r = func(*args, **kwargs)
+  File "/mnt/raid/home/eyal_michaeli/anaconda3/envs/DeepLabV3Plus-Pytorch/lib/python3.8/site-packages/torch/_dynamo/output_graph.py", line 675, in call_user_compiler
+    raise BackendCompilerFailed(self.compiler_fn, e) from e
+torch._dynamo.exc.BackendCompilerFailed: debug_wrapper raised CompilationError: at 21:25:
+def triton_(in_ptr0, in_ptr1, seed2, in_ptr3, in_ptr4, out_ptr1, xnumel, XBLOCK : tl.constexpr):
+    xnumel = 134217728
+    xoffset = tl.program_id(0) * XBLOCK
+    xindex = xoffset + tl.arange(0, XBLOCK)[:]
+    xmask = xindex < xnumel
+    x1 = (xindex // 128) % 128
+    x0 = xindex % 128
+    x2 = (xindex // 16384)
+    x4 = xindex
+    x6 = (xindex // 4194304)
+    x7 = xindex % 4194304
+    tmp0 = tl.load(in_ptr0 + (x1), xmask)
+    tmp1 = tl.load(in_ptr1 + (x0), xmask)
+    tmp2_load = tl.load(seed2 + (0))
+    tmp2 = tl.broadcast_to(tmp2_load, [XBLOCK])
+    tmp13 = tl.load(in_ptr4 + (x1), xmask)
+    tmp18 = tl.load(in_ptr1 + (x1), xmask)
+    tmp28 = tl.load(in_ptr4 + (x0), xmask)
+    tmp29 = tl.load(in_ptr0 + (x0), xmask)
+    tmp3 = tmp1 + (32*tmp0) + (1024*x2)
+    tmp4 = tl.rand(tmp2, tmp3)
+                         ^
+
+Set torch._dynamo.config.verbose=True for more information
+
+
+You can suppress this exception and fall back to eager by setting:
+    torch._dynamo.config.suppress_errors = True
+

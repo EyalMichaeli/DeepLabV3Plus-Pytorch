@@ -1,29 +1,27 @@
-export CUDA_VISIBLE_DEVICES=3
 
-# train from scratch with aug, ip2p
+# train base model from scratch
+
+
 nohup sh -c 'python main.py \
-    --gpu_id 0 \
-    --random_seed 3 \
-    --logdir logs/voc/seed_3_aug_ratio_0.35_pascal_ip2p_2x_constant_instructions_image_w_1.5_with_blip_and_gpt_images_masked__min_blob_size_100000_v0_lpips_filter_0.1_0.6 \
-    --train_sample_ratio 0.75 \
-    --aug_json /mnt/raid/home/eyal_michaeli/git/DeepLabV3Plus-Pytorch/datasets/data/aug_json_files/pascal/ip2p/pascal_pascal_ip2p_2x_constant_instructions_image_w_1.5_with_blip_and_gpt_images_masked__min_blob_size_100000_v0_lpips_filter_0.1_0.6.json \
-    --sample_aug_ratio 0.35 \
-    --model deeplabv3plus_mobilenet --dataset voc --year 2012 --crop_val \
-        --lr 0.02 --crop_size 513 --batch_size 32 --output_stride 16 \
-        --save_val_results' \
-        2>&1 | tee -a nohup_outputs/voc/output.log &
+    --gpu_id 3 \
+    --random_seed 1 \
+    --logdir logs/cityscapes/cs_subset_2k_seed_1_munit_aug_ratio_0.25_2023_0603_1025_25_style_std_1.85_lpips_filter_0.1_0.5 \
+    --train_sample_ratio 0.67 \
+    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/2023_0603_1025_25_ampO1_lower_LR_lower_res_inference_inference_cp_000450000_style_std_1.85_lpips_filter_0.1_0.5.json \
+    --aug_sample_ratio 0.25 \
+        --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2 --crop_size 256 --batch_size 32 \
+            --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
+            2>&1 | tee -a nohup_outputs/cityscapes/nohup.log &
 
 wait
-# train from scratch with aug, ip2p
-nohup sh -c 'python main.py \
-    --gpu_id 0 \
-    --random_seed 3 \
-    --logdir logs/voc/seed_3_aug_ratio_0.5_pascal_ip2p_2x_constant_instructions_image_w_1.5_with_blip_and_gpt_images_masked__min_blob_size_100000_v0_lpips_filter_0.1_0.6 \
-    --train_sample_ratio 0.75 \
-    --aug_json /mnt/raid/home/eyal_michaeli/git/DeepLabV3Plus-Pytorch/datasets/data/aug_json_files/pascal/ip2p/pascal_pascal_ip2p_2x_constant_instructions_image_w_1.5_with_blip_and_gpt_images_masked__min_blob_size_100000_v0_lpips_filter_0.1_0.6.json \
-    --sample_aug_ratio 0.5 \
-    --model deeplabv3plus_mobilenet --dataset voc --year 2012 --crop_val \
-        --lr 0.02 --crop_size 513 --batch_size 32 --output_stride 16 \
-        --save_val_results' \
-        2>&1 | tee -a nohup_outputs/voc/output.log &
 
+nohup sh -c 'python main.py \
+    --gpu_id 3 \
+    --random_seed 1 \
+    --logdir logs/cityscapes/cs_subset_2k_seed_1_munit_aug_ratio_0.25_2023_0518_1805_39 \
+    --train_sample_ratio 0.67 \
+    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cs2cs-style_recon_2_perceptual_1/2023_0518_1805_39_ampO1_lower_LR/inference_cp_400k_style_std_1.5.json \
+    --aug_sample_ratio 0.25 \
+        --model deeplabv3plus_mobilenet --dataset cityscapes --lr 0.2 --crop_size 256 --batch_size 32 \
+            --data_root /mnt/raid/home/eyal_michaeli/datasets/cityscapes --save_val_results' \
+            2>&1 | tee -a nohup_outputs/cityscapes/nohup.log &

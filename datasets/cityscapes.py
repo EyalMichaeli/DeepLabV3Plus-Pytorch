@@ -3,6 +3,7 @@ import os
 from collections import namedtuple
 from pathlib import Path
 import random
+import warnings
 
 import torch
 import torch.utils.data as data
@@ -69,13 +70,14 @@ class Cityscapes(data.Dataset):
     train_id_to_color = np.array(train_id_to_color)
     id_to_train_id = np.array([c.train_id for c in classes])
     
+    train_id_to_class_name = {c.train_id: c.name for c in classes}
     #train_id_to_color = [(0, 0, 0), (128, 64, 128), (70, 70, 70), (153, 153, 153), (107, 142, 35),
     #                      (70, 130, 180), (220, 20, 60), (0, 0, 142)]
     #train_id_to_color = np.array(train_id_to_color)
     #id_to_train_id = np.array([c.category_id for c in classes], dtype='uint8') - 1
 
     def __init__(self, root, split='train', mode='fine', target_type='semantic', transform=None, aug_json=None, 
-                 sample_aug_ratio: float = None, train_sample_ratio: float = 1.0):
+                 aug_sample_ratio: float = None, train_sample_ratio: float = 1.0):
         self.root = os.path.expanduser(root)
         self.mode = 'gtFine'
         self.target_type = target_type
@@ -85,6 +87,7 @@ class Cityscapes(data.Dataset):
         self.transform = transform
 
         self.split = split
+        self.is_train = split == 'train'
         self.images = []
         self.targets = []
 
@@ -139,15 +142,20 @@ class Cityscapes(data.Dataset):
             self.targets = self.targets[:subset_size]
             logging.info(f"With ratio {train_sample_ratio}, using only {subset_size} images for training, out of {len(self.images)}")
 
-        if split == 'train' and aug_json:
-            assert sample_aug_ratio is not None
-            assert sample_aug_ratio > 0 and sample_aug_ratio <= 1
+        if self.is_train and aug_json:
+            assert aug_sample_ratio is not None
+            assert aug_sample_ratio > 0 and aug_sample_ratio <= 1
             with open(aug_json, 'r') as f:
                 self.aug_json = json.load(f)
-            self.sample_aug_ratio = sample_aug_ratio
+            # leave only keys that thier values (which is a list) is not empty
+            self.aug_json = {k: v for k, v in self.aug_json.items() if v}
 
-            logging.info(f"Using augmented images with ratio {sample_aug_ratio}")
-            logging.info(f"Number of augmented images: {len(self.aug_json)}")
+            self.aug_sample_ratio = aug_sample_ratio
+            self.times_used_orig_images = 0
+            self.times_used_aug_images = 0
+
+            logging.info(f"Using augmented images with ratio {aug_sample_ratio}")
+            logging.info(f"There are {len(self.aug_json)} augmented images, out of {len(self.images)} original images, \n which is {round(len(self.aug_json)/len(self.images), 2)*100}% of the original images")
             logging.info(f"json file: {aug_json}")
 
         else:
@@ -174,11 +182,36 @@ class Cityscapes(data.Dataset):
             than one item. Otherwise target is a json object if target_type="polygon", else the image segmentation.
         """
         image_path = self.images[index]
-        if self.split == 'train':
+        if self.is_train:
             if self.aug_json:
-                if random.random() < self.sample_aug_ratio:
-                    image_path = self.aug_json.get(image_path, image_path)  # if image_path is not in aug_json, return image_path
-                    # logging.info(f"Using augmented image: {image_path}")
+                ratio_used_aug = 0
+                if random.random() < self.aug_sample_ratio:
+                    original_image_path = image_path
+                    aug_img_files = self.aug_json.get(Path(image_path).name, [image_path])  # if image_path is not in aug_json, returns image_path
+                    aug_img_files = [image_path] if len(aug_img_files) == 0 else aug_img_files
+                    image_path = random.choice(aug_img_files)
+                    if original_image_path == image_path:  # didn't use augmented image
+                        #print("Augmented image not found in aug_json")
+                        self.times_used_orig_images += 1
+
+                    else:  # used augmented image
+                        #print(f"Using Augmented image found in aug_json: {image_path}")
+                        self.times_used_aug_images += 1
+                    pass
+
+                else:
+                    self.times_used_orig_images += 1
+
+                ratio_used_aug = self.times_used_aug_images / (self.times_used_orig_images + self.times_used_aug_images)
+
+                if index % 100 == 0 and ratio_used_aug < self.aug_sample_ratio / 3:  # check every 100 iters. e.g, if aug_sample_ratio = 0.3, then ratio_used_aug should not be less than 0.1
+                    warn = f"Using augmented images is probably lacking, ratio: {ratio_used_aug:.4f} when it should be around {self.aug_sample_ratio}"
+                    warnings.warn(warn)
+                    logging.info(f"self.times_used_aug_images = {self.times_used_aug_images}, self.times_used_orig_images = {self.times_used_orig_images}")
+                    
+                # every 500 iters, print the ratio of original images to augmented images
+                if index % 1000 == 0:
+                    logging.info(f"Used augmented images {(ratio_used_aug*100):.4f}% of the time")
 
         image = Image.open(image_path).convert('RGB')
         target = Image.open(self.targets[index])

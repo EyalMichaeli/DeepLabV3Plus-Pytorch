@@ -1,49 +1,0 @@
-nohup: ignoring input
-2023-06-08 22:21:15,315 INFO Device: cuda
-2023-06-08 22:21:15,316 INFO Random Seed: 1 
-
-2023-06-08 22:21:15,317 INFO Options: {'aug_json': '/mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/cs_ip2p_2x_constant_instructions_image_w_1.5_filtered_lpips_0.1_0.48.json',
- 'aug_sample_ratio': 0.3,
- 'batch_size': 32,
- 'ckpt': None,
- 'continue_training': False,
- 'crop_size': 256,
- 'crop_val': False,
- 'data_root': '/mnt/raid/home/eyal_michaeli/datasets/cityscapes',
- 'dataset': 'cityscapes',
- 'download': False,
- 'gpu_id': '3',
- 'logdir': 'logs/2023_0608_2221_15_cs_subset_2k_aug_ratio_0.3_cs_ip2p_2x_constant_instructions_image_w_1.5_lpips_filter_0.1_0.48',
- 'loss_type': 'cross_entropy',
- 'lr': 0.2,
- 'lr_policy': 'poly',
- 'model': 'deeplabv3plus_mobilenet',
- 'num_classes': 19,
- 'output_stride': 16,
- 'print_interval': 50,
- 'random_seed': 1,
- 'save_val_results': True,
- 'separable_conv': False,
- 'step_size': 10000,
- 'test_only': False,
- 'total_itrs': 30000.0,
- 'train_sample_ratio': 0.67,
- 'val_batch_size': 4,
- 'val_interval': 100,
- 'weight_decay': 0.0001,
- 'year': '2012'}
-2023-06-08 22:21:15,330 INFO Found 2975 train images
-2023-06-08 22:21:15,330 INFO Found 2975 train targets
-2023-06-08 22:21:15,330 INFO With ratio 0.67, using only 1993 images for training, out of 1993
-2023-06-08 22:21:15,334 INFO Using augmented images with ratio 0.3
-2023-06-08 22:21:15,334 INFO Number of augmented images: 2975
-2023-06-08 22:21:15,334 INFO json file: /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/cs_ip2p_2x_constant_instructions_image_w_1.5_filtered_lpips_0.1_0.48.json
-2023-06-08 22:21:15,336 INFO Found 500 val images
-2023-06-08 22:21:15,336 INFO Found 500 val targets
-2023-06-08 22:21:15,336 INFO Not using augmented images
-2023-06-08 22:21:15,337 INFO Dataset: cityscapes, Train set: 1993, Val set: 500
-2023-06-08 22:21:15,479 INFO [!] Training from scratch, no checkpoint file used
-2023-06-08 22:21:16,862 INFO 
-Current epoch: 1
-2023-06-08 22:21:22,119 INFO validation...
-0it [00:00, ?it/s]1it [00:00,  1.81it/s]3it [00:00,  3.33it/s]5it [00:01,  3.87it/s]7it [00:01,  4.10it/s]9it [00:02,  4.21it/s]11it [00:02,  4.25it/s]13it [00:03,  4.30it/s]15it [00:03,  4.33it/s]17it [00:04,  4.44it/s]19it [00:04,  4.78it/s]21it [00:04,  4.95it/s]23it [00:05,  5.09it/s]25it [00:05,  5.24it/s]27it [00:05,  5.27it/s]29it [00:06,  5.33it/s]31it [00:06,  5.38it/s]33it [00:07,  5.45it/s]35it [00:07,  5.51it/s]37it [00:07,  5.09it/s]39it [00:08,  4.78it/s]41it [00:08,  4.70it/s]43it [00:09,  4.62it/s]

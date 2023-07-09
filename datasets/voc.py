@@ -1,9 +1,11 @@
 import json
 import os
+from pathlib import Path
 import random
 import sys
 import tarfile
 import collections
+import warnings
 import torch.utils.data as data
 import shutil
 import numpy as np
@@ -52,6 +54,8 @@ DATASET_YEAR_DICT = {
 }
 
 
+
+
 def voc_cmap(N=256, normalized=False):
     def bitget(byteval, idx):
         return ((byteval & (1 << idx)) != 0)
@@ -84,6 +88,30 @@ class VOCSegmentation(data.Dataset):
         transform (callable, optional): A function/transform that  takes in an PIL image
             and returns a transformed version. E.g, ``transforms.RandomCrop``
     """
+    classes = {
+        0: 'background',
+        1: 'aeroplane',
+        2: 'bicycle',
+        3: 'bird',
+        4: 'boat',
+        5: 'bottle',
+        6: 'bus',
+        7: 'car',
+        8: 'cat',
+        9: 'chair',
+        10: 'cow',
+        11: 'dining table',
+        12: 'dog',
+        13: 'horse',
+        14: 'motorbike',
+        15: 'person',
+        16: 'potted plant',
+        17: 'sheep',
+        18: 'sofa',
+        19: 'train',
+        20: 'TV monitor',
+        255: 'background'
+    }
     cmap = voc_cmap()
     def __init__(self,
                  root,
@@ -91,7 +119,7 @@ class VOCSegmentation(data.Dataset):
                  image_set='train',
                  download=False,
                  transform=None, train_sample_ratio: float = 1.0, 
-                 aug_json=None, sample_aug_ratio: float = None):
+                 aug_json=None, aug_sample_ratio: float = None):
 
         is_aug=False
         if year=='2012_aug':
@@ -105,7 +133,7 @@ class VOCSegmentation(data.Dataset):
         self.filename = DATASET_YEAR_DICT[year]['filename']
         self.md5 = DATASET_YEAR_DICT[year]['md5']
         self.transform = transform
-        
+        self.is_train = image_set == 'train'
         self.image_set = image_set
         base_dir = DATASET_YEAR_DICT[year]['base_dir']
         voc_root = os.path.join(self.root, base_dir)
@@ -147,15 +175,20 @@ class VOCSegmentation(data.Dataset):
             self.images = self.images[:subset_size]
             self.masks = self.masks[:subset_size]
 
-        if image_set == 'train' and aug_json:
-            assert sample_aug_ratio is not None
-            assert sample_aug_ratio > 0 and sample_aug_ratio <= 1
+        if self.is_train and aug_json:
+            assert aug_sample_ratio is not None
+            assert aug_sample_ratio > 0 and aug_sample_ratio <= 1
             with open(aug_json, 'r') as f:
                 self.aug_json = json.load(f)
-            self.sample_aug_ratio = sample_aug_ratio
+            # leave only keys that thier values (which is a list) is not empty
+            self.aug_json = {k: v for k, v in self.aug_json.items() if v}
 
-            logging.info(f"Using augmented images with ratio {sample_aug_ratio}")
-            logging.info(f"Number of augmented images: {len(self.aug_json)}")
+            self.aug_sample_ratio = aug_sample_ratio
+            self.times_used_orig_images = 0
+            self.times_used_aug_images = 0
+
+            logging.info(f"Using augmented images with ratio {aug_sample_ratio}")
+            logging.info(f"There are {len(self.aug_json)} augmented images, out of {len(self.images)} original images, \n which is {round(len(self.aug_json)/len(self.images), 2)*100}% of the original images")
             logging.info(f"json file: {aug_json}")
 
         else:
@@ -170,18 +203,45 @@ class VOCSegmentation(data.Dataset):
         Returns:
             tuple: (image, target) where target is the image segmentation.
         """
-        image_path = self.images[index]
-        if self.image_set == 'train':
-            if self.aug_json:
-                if random.random() < self.sample_aug_ratio:
-                    image_path = self.aug_json.get(image_path, image_path)  # if image_path is not in aug_json, return image_path
-                    # logging.info(f"Using augmented image: {image_path}")
 
+        image_path = self.images[index]
+        if self.is_train:
+            if self.aug_json:
+                ratio_used_aug = 0
+                if random.random() < self.aug_sample_ratio:
+                    original_image_path = image_path
+                    aug_img_files = self.aug_json.get(Path(image_path).name, [image_path])  # if image_path is not in aug_json, returns image_path
+                    aug_img_files = [image_path] if len(aug_img_files) == 0 else aug_img_files  # if image_path key in the json returns an enpty list, use current image_path
+                    image_path = random.choice(aug_img_files)
+                    if original_image_path == image_path:  # didn't use augmented image
+                        #print("Augmented image not found in aug_json")
+                        self.times_used_orig_images += 1
+
+                    else:  # used augmented image
+                        #print(f"Using Augmented image found in aug_json: {image_path}")
+                        self.times_used_aug_images += 1
+                    pass
+
+                else:
+                    self.times_used_orig_images += 1
+
+                ratio_used_aug = self.times_used_aug_images / (self.times_used_orig_images + self.times_used_aug_images)
+
+                if index % 100 == 0 and ratio_used_aug < self.aug_sample_ratio / 3:  # check every 100 iters. e.g, if aug_sample_ratio = 0.3, then ratio_used_aug should not be less than 0.1
+                    warn = f"Using augmented images is probably lacking, ratio: {ratio_used_aug:.4f} when it should be around {self.aug_sample_ratio}"
+                    warnings.warn(warn)
+                    logging.info(f"self.times_used_aug_images = {self.times_used_aug_images}, self.times_used_orig_images = {self.times_used_orig_images}")
+                    
+                # every 500 iters, print the ratio of original images to augmented images
+                if index % 1000 == 0:
+                    logging.info(f"Used augmented images {(ratio_used_aug*100):.4f}% of the time")
+
+        # print(f"image_path: {image_path}")
         img = Image.open(image_path).convert('RGB')
         target = Image.open(self.masks[index])
         if self.transform is not None:
             img, target = self.transform(img, target)
-    
+
         return img, target
 
 

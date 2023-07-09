@@ -1,11 +1,0 @@
-nohup: ignoring input
-2023-05-22 14:09:55,058 INFO Device: cuda
-2023-05-22 14:09:55,076 INFO Not using augmented images
-2023-05-22 14:09:55,078 INFO Not using augmented images
-2023-05-22 14:09:55,078 INFO Dataset: cityscapes, Train set: 2975, Val set: 500
-2023-05-22 14:09:55,219 INFO [!] Training from scratch, no checkpoint file used
-2023-05-22 14:09:56,664 INFO 
-Current epoch: 1
-2023-05-22 14:10:02,428 INFO Model saved as logs/2023_0522_1409_54_cs_base_run/checkpoints/latest_deeplabv3plus_mobilenet_cityscapes_os16.pth
-2023-05-22 14:10:02,429 INFO validation...
-0it [00:00, ?it/s]1it [00:00,  1.70it/s]3it [00:00,  3.48it/s]5it [00:01,  3.95it/s]7it [00:01,  4.15it/s]9it [00:02,  4.51it/s]11it [00:02,  4.80it/s]13it [00:02,  4.99it/s]15it [00:03,  5.16it/s]17it [00:03,  5.25it/s]19it [00:04,  5.35it/s]21it [00:04,  5.38it/s]23it [00:04,  5.48it/s]
