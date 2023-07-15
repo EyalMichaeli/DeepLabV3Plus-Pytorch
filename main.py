@@ -37,37 +37,37 @@ nohup sh -c 'python main.py \
     --logdir logs/voc/base_seed_3 \
     --train_sample_ratio 0.75 \
         --model deeplabv3plus_mobilenet --dataset voc --year 2012 --crop_val \
-            --lr 0.02 --crop_size 513 --batch_size 32 --output_stride 16 \
-            --save_val_results' \
+        --lr 0.02 --crop_size 513 --batch_size 32 --output_stride 16 \
+        --save_val_results --total_itrs 30000' \
             2>&1 | tee -a nohup_outputs/voc/base.log &
 
 
 # train from scratch with aug, ip2p
 nohup sh -c 'python main.py \
-    --gpu_id 3 \
-    --random_seed 3 \
-    --logdir logs/voc/seed_3_aug_ratio_0.3_pascal_ip2p_2x_image_w_1.5_both_constant_instructions_with_blip_and_gpt_images_lpips_filter_0.1_0.6 \
+    --gpu_id 2 \
+    --random_seed 1 \
+    --logdir logs/voc/seed_1_aug_ratio_0.15_pascal_ip2p_2x_image_w_1.5_both_constant_instructions_with_blip_and_gpt_images_lpips_filter_0.1_0.6 \
     --train_sample_ratio 0.75 \
     --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/pascal_pascal_ip2p_2x_image_w_1.5_both_constant_instructions_with_blip_and_gpt_images_lpips_filter_0.1_0.6.json \
-    --aug_sample_ratio 0.4 \
-    --model deeplabv3plus_mobilenet --dataset voc --year 2012 --crop_val \
+    --aug_sample_ratio 0.15 \
+        --model deeplabv3plus_mobilenet --dataset voc --year 2012 --crop_val \
         --lr 0.02 --crop_size 513 --batch_size 32 --output_stride 16 \
-        --save_val_results' \
+        --save_val_results --total_itrs 30000' \
         2>&1 | tee -a nohup_outputs/voc/output.log &
    
         
 # aug jsons: 
-    # first one, constant instuctions
+    # first one, constant instuctions. Looks pretty good. basic, yet meaningful changes.
     --aug_json /mnt/raid/home/eyal_michaeli/git/DeepLabV3Plus-Pytorch/datasets/data/aug_json_files/pascal/ip2p/pascal_pascal_ip2p_2x_constant_instructions_image_w_1.5_images_lpips_filter_0.1_0.6.json \
-    # second one, instructions based on blip + gpt
+    # second one, instructions based on blip + gpt. Cool, but has much more artifacts than the first one.
     --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/pascal_pascal_ip2p_2x_constant_instructions_image_w_1.5_with_blip_and_gpt_images_lpips_filter_0.1_0.6.json \
-    # same with filter for small blobs
+    # same with filter for small blobs (look above)
     --aug_json /mnt/raid/home/eyal_michaeli/git/DeepLabV3Plus-Pytorch/datasets/data/aug_json_files/pascal/ip2p/pascal_pascal_ip2p_2x_constant_instructions_image_w_1.5_with_blip_and_gpt_images_masked__min_blob_size_100000_v0_lpips_filter_0.1_0.6.json \
-    # third one, instructions based on both blip + gpt, and constant instructions
+    # third one, instructions based on both blip + gpt, and constant instructions. Looks pretty good. (provided the best reults yet)
     --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/pascal_pascal_ip2p_2x_image_w_1.5_both_constant_instructions_with_blip_and_gpt_images_lpips_filter_0.1_0.6.json \
-    # forth one, instructions only constant instructions, 4 outputs
+    # forth one, instructions only constant instructions, 4 outputs. Probably not as good as the first one.
     --aug_json /mnt/raid/home/eyal_michaeli/git/DeepLabV3Plus-Pytorch/datasets/data/aug_json_files/pascal/ip2p/pascal_pascal_ip2p_4x_image_w_1.5_only_constant_images_lpips_filter_0.1_0.6.json \
-    # blip + gpt v1 (newer), 4 outputs
+    # blip + gpt v1 (newer), 4 outputs. tbh, doesn't look good
     --aug_json /mnt/raid/home/eyal_michaeli/git/DeepLabV3Plus-Pytorch/datasets/data/aug_json_files/pascal/ip2p/pascal_pascal_ip2p_4x_image_w_1.5_blip_gpt_v1_images_masked__min_blob_size_100000__lpips_filter_0.1_0.6.json \
 
 
@@ -184,8 +184,12 @@ nohup sh -c 'python main.py \
     --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/cs_ip2p_2x_constant_instructions_image_w_1.5_filtered_lpips_0.1_0.48.json \
     # same, filtered with lpips and min blob size
 
-    # second try on cityscapes. better results, but still not good enough
-    
+    # tried with magic brush, also ont really good. filtered with lpips 
+    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/cityscapes_2023_0708_2338_27_cityscapes_ip2p__2x_constant_instructions_image_w_1.5_images_lpips_filter_0.1_0.6.json
+    # same, filtered with lpips and min blob size
+    --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cityscapes/ip2p/2023_0708_2338_27_cityscapes_ip2p__2x_constant_instructions_image_w_1.5_images_masked_person_rider_min_blob_size_1562.5_v0_lpips_filter_0.1_0.6.json \
+
+        
     # munit
     # v0
     --aug_json /mnt/raid/home/eyal_michaeli/datasets/cityscapes/aug_json_files/cs2cs-style_recon_2_perceptual_1/2023_0518_1805_39_ampO1_lower_LR/inference_cp_400k_style_std_1.5.json \
@@ -381,6 +385,10 @@ def validate(opts, model, loader, device, metrics, epoch=0, iter=0):
         denorm = utils.Denormalize(mean=[0.485, 0.456, 0.406],
                                    std=[0.229, 0.224, 0.225])
 
+    # divide results_dir into subdirs, that are named after the epoch
+    results_dir = os.path.join(results_dir, str(epoch))
+    os.makedirs(results_dir, exist_ok=True)
+        
     with torch.no_grad():
         for batch_index, (images, labels) in tqdm(enumerate(loader)):
             images = images.to(device, dtype=torch.float32)
@@ -393,22 +401,19 @@ def validate(opts, model, loader, device, metrics, epoch=0, iter=0):
             metrics.update(targets, preds)
 
             if batch_index % 20 == 0 and opts.save_val_results:
-                # if iter is higher than 5000: do it for iter % 1000 == 0
-                # if iter is higher than 1000: do it for iter % 300 == 0
-                # else: do it for iter % 100 == 0
+                # if iter is higher than 5000: do it for iter % 5000 == 0
+                # if iter is higher than 1000: do it for iter % 100 == 0
+                # else: do it for iter % 200 == 0
                 if iter > 5000:
-                    if iter % 1000 != 0:
+                    if iter % 5000 != 0:
                         continue
                 elif iter > 1000:
-                    if iter % 300 != 0:
+                    if iter % 1000 != 0:
                         continue
                 else:
-                    if iter % 100 != 0:
+                    if iter % 200 != 0:
                         continue
                 
-                # divide results_dir into subdirs, that are named after the epoch
-                results_dir = os.path.join(results_dir, str(epoch))
-                os.makedirs(results_dir, exist_ok=True)
 
                 i = 0  # only save one image per batch, the first one
 
@@ -626,8 +631,9 @@ def main(opts):
                     best_score = val_score['Mean IoU']
 
                     # convert the above line to f strinng
-                    save_ckpt(f'checkpoints/best_{opts.model}_{opts.dataset}_os{opts.output_stride}_iter{cur_itrs}_epoch{cur_epochs}_miou{val_score["Mean IoU"]:.4f}.pth')
-
+                    #save_ckpt(f'checkpoints/best_{opts.model}_{opts.dataset}_os{opts.output_stride}_iter{cur_itrs}_epoch{cur_epochs}_miou{val_score["Mean IoU"]:.4f}.pth')
+                    # instead of saving every best model, save only the last one
+                    save_ckpt(f'checkpoints/best_{opts.model}_{opts.dataset}_os{opts.output_stride}_miou{val_score["Mean IoU"]:.4f}.pth')
 
                 # same for tensorboard
                 if writer is not None:

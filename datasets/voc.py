@@ -165,7 +165,9 @@ class VOCSegmentation(data.Dataset):
         
         self.images = [os.path.join(image_dir, x + ".jpg") for x in file_names]
         self.masks = [os.path.join(mask_dir, x + ".png") for x in file_names]
-        assert (len(self.images) == len(self.masks))
+        if (len(self.images) != len(self.masks)):
+            warnings.warn(f"Number of images ({len(self.images)}) != number of masks ({len(self.masks)}). This should make sense only if using 2012_aug dataset")
+
         
         # use only a subset of the images for training, if train_sample_ratio < 1
         if image_set == 'train' and train_sample_ratio < 1:
@@ -228,7 +230,7 @@ class VOCSegmentation(data.Dataset):
                 ratio_used_aug = self.times_used_aug_images / (self.times_used_orig_images + self.times_used_aug_images)
 
                 if index % 100 == 0 and ratio_used_aug < self.aug_sample_ratio / 3:  # check every 100 iters. e.g, if aug_sample_ratio = 0.3, then ratio_used_aug should not be less than 0.1
-                    warn = f"Using augmented images is probably lacking, ratio: {ratio_used_aug:.4f} when it should be around {self.aug_sample_ratio}"
+                    warn = f"Using augmented images might be lacking, ratio: {ratio_used_aug:.4f} when it should be around {self.aug_sample_ratio}"
                     warnings.warn(warn)
                     logging.info(f"self.times_used_aug_images = {self.times_used_aug_images}, self.times_used_orig_images = {self.times_used_orig_images}")
                     

@@ -1,4 +1,6 @@
 import collections
+import time
+from matplotlib import pyplot as plt
 import torchvision
 import torch
 import torchvision.transforms.functional as F
@@ -420,6 +422,8 @@ class ExtResize(object):
         Returns:
             PIL Image: Rescaled image.
         """
+        if img.size != lbl.size:
+            img = img.resize(lbl.size)  # for the augmented images, need to make sure size is the same for the crop to be the same
         return F.resize(img, self.size, self.interpolation), F.resize(lbl, self.size, Image.NEAREST)
 
     def __repr__(self):
