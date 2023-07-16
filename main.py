@@ -69,13 +69,14 @@ nohup sh -c 'python main.py \
     --aug_json /mnt/raid/home/eyal_michaeli/git/DeepLabV3Plus-Pytorch/datasets/data/aug_json_files/pascal/ip2p/pascal_pascal_ip2p_4x_image_w_1.5_only_constant_images_lpips_filter_0.1_0.6.json \
     # blip + gpt v1 (newer), 4 outputs. tbh, doesn't look good
     --aug_json /mnt/raid/home/eyal_michaeli/git/DeepLabV3Plus-Pytorch/datasets/data/aug_json_files/pascal/ip2p/pascal_pascal_ip2p_4x_image_w_1.5_blip_gpt_v1_images_masked__min_blob_size_100000__lpips_filter_0.1_0.6.json \
-
+    # blip + gpt v2 (newer), 2 outputs. 
+    --aug_json /mnt/raid/home/eyal_michaeli/git/DeepLabV3Plus-Pytorch/datasets/data/aug_json_files/pascal/ip2p/pascal_2023_0713_2225_51_pascal_ip2p_regular_2x_image_w_1.5_blip_gpt_v1_ratio_0.3_images_lpips_filter_0.1_0.6.json \
 
         
 pkill -u eyal_michaeli tensorboard
-tensorboard --logdir=logs/voc --port=6006
-tensorboard --logdir=logs/cityscapes --port=6007
-tensorboard --logdir=logs/cityscapes_with_bug --port=6008
+nohup tensorboard --logdir=logs/voc --port=6006
+nohup tensorboard --logdir=logs/cityscapes --port=6007
+nohup tensorboard --logdir=logs/cityscapes_with_bug --port=6008
 
 
 # send command after x minutes: (does it work??? YES): 
@@ -284,7 +285,8 @@ def get_argparser():
                         help="path to augmentation json file")
     parser.add_argument("--aug_sample_ratio", type=float, default=0.5,
                         help="ratio to augment the original image")
-    
+    parser.add_argument("--limit_aug_per_image", type=int, default=None,
+                        help="limit augmentations per image, default None, which is take all")
     return parser
 
 
@@ -342,7 +344,7 @@ def get_dataset(opts):
             ])
         train_dst = VOCSegmentation(root=opts.data_root, year=opts.year,
                                     image_set='train', download=opts.download, transform=train_transform, 
-                                    aug_json=opts.aug_json, aug_sample_ratio=opts.aug_sample_ratio, train_sample_ratio=opts.train_sample_ratio)
+                                    aug_json=opts.aug_json, aug_sample_ratio=opts.aug_sample_ratio, train_sample_ratio=opts.train_sample_ratio, limit_aug_per_image=opts.limit_aug_per_image)
         val_dst = VOCSegmentation(root=opts.data_root, year=opts.year,
                                   image_set='val', download=False, transform=val_transform)
 
@@ -366,7 +368,7 @@ def get_dataset(opts):
         ])
 
         train_dst = Cityscapes(root=opts.data_root, split='train', transform=train_transform, aug_json=opts.aug_json, 
-                               aug_sample_ratio=opts.aug_sample_ratio, train_sample_ratio=opts.train_sample_ratio)
+                               aug_sample_ratio=opts.aug_sample_ratio, train_sample_ratio=opts.train_sample_ratio, limit_aug_per_image=opts.limit_aug_per_image)
         val_dst = Cityscapes(root=opts.data_root,
                              split='val', transform=val_transform)
     return train_dst, val_dst

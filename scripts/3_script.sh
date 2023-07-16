@@ -5,7 +5,7 @@ nohup sh -c 'python main.py \
     --gpu_id 3 \
     --random_seed 1 \
     --logdir logs/voc/base_seed_1_use_data_0.5 \
-    --train_sample_ratio 0.75 \
+    --train_sample_ratio 0.5 \
         --model deeplabv3plus_mobilenet --dataset voc --year 2012 --crop_val \
         --lr 0.02 --crop_size 513 --batch_size 32 --output_stride 16 \
         --save_val_results --total_itrs 30000' \

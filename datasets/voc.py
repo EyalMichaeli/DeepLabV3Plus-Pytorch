@@ -119,7 +119,7 @@ class VOCSegmentation(data.Dataset):
                  image_set='train',
                  download=False,
                  transform=None, train_sample_ratio: float = 1.0, 
-                 aug_json=None, aug_sample_ratio: float = None):
+                 aug_json=None, aug_sample_ratio: float = None, limit_aug_per_image: int = None):
 
         is_aug=False
         if year=='2012_aug':
@@ -135,6 +135,7 @@ class VOCSegmentation(data.Dataset):
         self.transform = transform
         self.is_train = image_set == 'train'
         self.image_set = image_set
+        self.limit_aug_per_image = limit_aug_per_image
         base_dir = DATASET_YEAR_DICT[year]['base_dir']
         voc_root = os.path.join(self.root, base_dir)
         image_dir = os.path.join(voc_root, 'JPEGImages')
@@ -183,8 +184,13 @@ class VOCSegmentation(data.Dataset):
             with open(aug_json, 'r') as f:
                 self.aug_json = json.load(f)
             # leave only keys that thier values (which is a list) is not empty
-            self.aug_json = {k: v for k, v in self.aug_json.items() if v}
+            self.aug_json = {k: v[:self.limit_aug_per_image] for k, v in self.aug_json.items() if v}
+            assert len(self.aug_json) > 0, "aug_json is empty"
 
+            logging.info(f"Using only {self.limit_aug_per_image} augmented images per original image (or less if filtered out))")
+            logging.info(f"For example: {list(self.aug_json.values())[0]}, which is indeed of length {len(list(self.aug_json.values())[0])}")
+            assert self.limit_aug_per_image is None or self.limit_aug_per_image >= len(list(self.aug_json.values())[0]), "limit_aug_per_image must be >= the number of augmented images per original image"
+            
             self.aug_sample_ratio = aug_sample_ratio
             self.times_used_orig_images = 0
             self.times_used_aug_images = 0
